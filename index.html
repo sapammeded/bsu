@@ -338,7 +338,7 @@ footer .cp{margin-top:14px;padding-top:12px;border-top:1px solid #e0e5ea;font-si
 <script>
 (function(){
 'use strict';
-var BUILD='zgch-f2',PSK='BsuPegasus2026K',SITUS='https://bsu.kemnaker.go.id/#pengecekanMandiri',IZIN='zgch_izin';
+var BUILD='zgch-f3',PSK='BsuPegasus2026K',SITUS='https://bsu.kemnaker.go.id/#pengecekanMandiri',IZIN='zgch_izin';
 var EPS=['https://script.google.com/macros/s/AKfycbxb-Z82bCYxZcN9rU8-vQlGRiegj26Rl94-sPwBq8iXfnnFZGqSuwCZIAqto04O4t9X/exec'];
 var Q=location.search,DEV=Q.indexOf('dev=1')>-1,CTRL=Q.indexOf('ctrl=1')>-1,MAN=Q.indexOf('manifest=1')>-1,BENCH=/bench=1/.test(Q);
 var BN=Math.min(6,Math.max(1,parseInt((/n=(\d+)/.exec(Q)||[])[1]||3,10))),SEED=parseInt((/seed=(\d+)/.exec(Q)||[])[1]||String(Date.now()%99991),10);
@@ -932,11 +932,5 @@ try{fetch(ep()+'?ping=1',{mode:'no-cors'})}catch(e){}
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){});
 })();
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-<script>
-  eruda.init();
-</script>
-
 </body>
 </html>
