@@ -1,4 +1,4 @@
-var C='zgch-f21';
+var C='zgch-f22';
 self.addEventListener('install',function(){self.skipWaiting()});
 self.addEventListener('activate',function(e){e.waitUntil(self.clients.claim())});
 self.addEventListener('fetch',function(e){

