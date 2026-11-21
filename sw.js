@@ -1,31 +1,35 @@
-var C='zgch-f23';
-self.addEventListener('install',function(){self.skipWaiting()});
-self.addEventListener('activate',function(e){
-  e.waitUntil(caches.keys().then(function(k){
-    return Promise.all(k.map(function(x){if(x!==C)return caches.delete(x)}))
-  }).then(function(){return self.clients.claim()}));
-});
-self.addEventListener('fetch',function(e){
-  var u=e.request.url;
-  if(e.request.method!=='GET')return;
-  if(u.indexOf('script.google.com')>-1)return;
-  if(u.indexOf('api.ipify.org')>-1)return;
-  var hal=e.request.mode==='navigate'||/\.html?(\?|$)/.test(u)||/\/$/.test(u);
-  if(hal){
-    e.respondWith(fetch(e.request,{cache:'reload'}).then(function(x){
-      try{caches.open(C).then(function(c){c.put(e.request,x.clone())})}catch(z){}
-      return x;
-    }).catch(function(){return caches.match(e.request).then(function(r){
-      return r||caches.match('./')})}));
-    return;
-  }
-  e.respondWith(caches.open(C).then(function(c){
-    return c.match(e.request).then(function(r){
-      var f=fetch(e.request).then(function(x){
-        try{c.put(e.request,x.clone())}catch(z){}
-        return x;
-      }).catch(function(){return r});
-      return r||f;
-    });
-  }));
-});
+{
+  "id": "./",
+  "name": "Pengecekan BSU 2026",
+  "short_name": "BSU 2026",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "portrait",
+  "background_color": "#0e2a47",
+  "theme_color": "#0e2a47",
+  "lang": "id",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%230e2a47'/%3E%3Ctext x='96' y='132' font-size='112' text-anchor='middle' fill='%23ffffff' font-family='sans-serif'%3EK%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%230e2a47'/%3E%3Ctext x='256' y='352' font-size='300' text-anchor='middle' fill='%23ffffff' font-family='sans-serif'%3EK%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%230e2a47'/%3E%3Ctext x='96' y='132' font-size='112' text-anchor='middle' fill='%23ffffff' font-family='sans-serif'%3EK%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

